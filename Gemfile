@@ -3,18 +3,22 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.1'
 gem 'mysql'
 
-gem 'unicorn'
+# user auth
+gem 'devise'
+gem 'omniauth'
 
 # Interaction with facebook
-gem 'facebooker'
+gem 'facebooker2'
+
+gem 'jquery-rails'
+
+# Heroku gem
+gem 'heroku'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-gem 'ruby-debug19'
-
-group :development, :test do
+group :test do
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'pickle'
@@ -22,4 +26,10 @@ group :development, :test do
   gem 'shoulda'
   gem 'mocha'
   gem 'rcov'
+end
+
+group :development do
+  # To use debugger
+  gem 'ruby-debug19'
+  gem 'unicorn'
 end
