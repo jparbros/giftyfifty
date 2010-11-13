@@ -30,6 +30,6 @@ end
 
 group :development do
   # To use debugger
-  gem 'ruby-debug19'
+  gem 'ruby-debug'
   gem 'unicorn'
 end
