@@ -14,6 +14,7 @@ gem 'jquery-rails'
 
 # Heroku gem
 gem 'heroku'
+gem 'hoptoad_notifier'
 
 # Deploy with Capistrano
 # gem 'capistrano'
