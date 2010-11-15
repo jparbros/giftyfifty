@@ -2,14 +2,30 @@
 <html>
 <head>
   <title>Giftyfifty</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag 'cupertino/jquery-ui.css','print.css','screen.css','application.css' %>
+  <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'ie.css' %>
+  <![endif]--> 
   <%= javascript_include_tag 'jquery.min','jquery-ui.min','rails','application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div class="container">
+    <div id="header" class="header">
+      <div id="login-header" class="span-4 prepend-20 last">
+        <%= render :partial => 'shared/login_status' %>
+      </div>
+      <%= image_tag 'logo.png'%>
+    </div>
+    <div id="content" class="content">
+      <%= yield %>
+    </div>
+    <div id="footer" class="footer">
 
-  <%= yield %>
+    </div>
+  </div>
 
-  <%= render :partial => 'shared/login'%>
+  <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'}%>
+  <%= render :partial => 'shared/box', :locals => {:type => 'login'}%>
 </body>
 </html>
