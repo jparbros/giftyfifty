@@ -46,7 +46,7 @@ Devise.setup do |config|
   config.encryptor = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
-  config.pepper = "b9d3045758c5e470cee3e5c2a8d46be0fe525f8d4d94770ea3037e4036f36d44b6614a6b15aa57a3761039e280865c79bf3fc036b08980c0aca8a49107532386"
+  config.pepper = "08fe8e142debceef0bf818d1ed7ae1d02512778132e8d3e31d584b0e6d325c24a12ca2bd048e65fa78cfd783301c66da2dd1b90873452d5427343e1af7dcd9d9"
 
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time

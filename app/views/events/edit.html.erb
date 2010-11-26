@@ -1,0 +1,41 @@
+<div class="event-gift span-24 last">
+  <div class="span-6">
+    <%= image_tag @event['event']['item']['image_url'], :size => '50%'%>
+  </div>
+  <div class="span-18 last">
+    <%= content_tag 'h1', @event['event']['item']['name'] %>
+    <%= content_tag 'h3', 'By ' + @event['event']['provider'].humanize %>
+    <%= content_tag 'h3', number_to_currency((@event['event']['item']['price'].to_i/100)) %>
+  </div>
+  <div class="span-24 last">
+    <% form_tag event_path, :method => :put do%>
+      <p>
+        <%= label_tag 'title:' %><br/>
+        <%= text_field_tag 'event[title]', @event['event']['title'] %>
+      </p>
+    
+      <p>
+        <%= label_tag 'description:' %><br/>
+        <%= text_area_tag 'event[description]', @event['event']['description'] %>
+      </p>
+    
+      <p>
+        <%= label_tag 'start:' %>
+        <%= text_field_tag 'event[start_at]', @event['event']['start_at'] %>
+      
+        <%= label_tag 'end:' %>
+        <%= text_field_tag 'event[end_at]', @event['event']['end_at'] %>
+      </p>
+    
+      <p>
+        <%= label_tag 'event:' %><br/>
+        <%= select_tag 'event[occasion_id]', options_for_select(@occasions,@event['event']['occasion']) %>
+      </p>
+    
+      <p>
+        <%= submit_tag 'Save' %>
+      </p>
+    <% end %>
+  </div>
+</div>
+

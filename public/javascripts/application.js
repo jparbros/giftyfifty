@@ -10,6 +10,8 @@ var cacheElements = function() {
   loginLink = $('a#login-link');
   buttonLogin = $('input#go-sign-in');
   buttonSearch = $('input#search-gift');
+  startInput = $('input#event_start_at');
+  endInput = $('input#event_end_at');
 };
 
 // Initializing boxes to login and sign in
@@ -42,11 +44,18 @@ var declaringEvents = function() {
   });
   buttonLogin.click(function() {
     signinBox.dialog('open');
+    return false;
   });
 };
+
+var setTimePickers = function() {
+  startInput.datepicker({ minDate: 0});
+  endInput.datepicker({ minDate: +5});
+}
 
 $(document).ready(function() {
   cacheElements();
   setBoxes();
   declaringEvents();
+  setTimePickers();
 });

@@ -1,0 +1,39 @@
+<div class="event-gift span-24 last">
+  <div class="span-6">
+    <%= image_tag @event['event']['item']['image_url'], :size => '50%'%>
+  </div>
+  <div class="span-18 last">
+    <%= content_tag 'h1', @event['event']['item']['name'] %>
+    <%= content_tag 'h3', 'By ' + @event['event']['provider'].humanize %>
+    <%= content_tag 'h3', number_to_currency((@event['event']['item']['price'].to_i/100)) %>
+  </div>
+  <div class="span-24 last">
+    <p>
+      <%= label_tag 'title:' %><br/>
+      <%= @event['event']['title'] %>
+    </p>
+  
+    <p>
+      <%= label_tag 'description:' %><br/>
+      <%= @event['event']['description'] %>
+    </p>
+  
+    <p>
+      <%= label_tag 'start:' %>
+      <%= @event['event']['start_at'] %>
+    
+      <%= label_tag 'end:' %>
+      <%= @event['event']['end_at'] %>
+    </p>
+  
+    <p>
+      <%= label_tag 'event:' %><br/>
+      <%=  @occassion['occasion']['name'].humanize %>
+    </p>  
+  </div>
+  <% if is_owner? %>
+    <div class="name">
+    dueño
+    </div>
+  <% end %>
+</div>

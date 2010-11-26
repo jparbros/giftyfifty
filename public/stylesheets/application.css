@@ -42,12 +42,13 @@
   margin-right: 15px;
 }
 
-#search-gift input[type=submit] {
+#search-gift input[type=submit], .event-gift input[type=submit] {
   width: 120px;
   height: 70px;
   background: #5F6062;
   color: #FFFFFF;
   font-size: 30px;
+  margin: 0px;
 }
 
 #search-gift #search-gift-label {
@@ -69,4 +70,18 @@
   background: #e4f1fb url(images/ui-bg_glass_100_e4f1fb_1x400.png) 50% 50% repeat-x;
   font-weight: bold;
   color: #0070a3;
+}
+
+.event-gift img {
+  max-width: 220px;
+}
+
+.event-gift h1 {
+  color: #5F6062;
+  font-size: 26px;
+}
+
+.event-gift h3 {
+  color: #5F6062;
+  font-size: 22px;
 }

@@ -3,21 +3,17 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.1'
 gem 'mysql'
 
-# user auth
-gem 'devise'
-gem 'omniauth'
-
-# Interaction with facebook
-gem 'facebooker2'
-
 gem 'jquery-rails'
 
 # Heroku gem
 gem 'heroku'
 gem 'hoptoad_notifier'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+gem 'devise'
+
+gem "oauth"
+gem "omniauth"
+gem "oauth-plugin", ">=0.4.0.pre1"
 
 group :test do
   gem 'cucumber-rails'
@@ -30,7 +26,6 @@ group :test do
 end
 
 group :development do
-  # To use debugger
   gem 'ruby-debug'
-  gem 'unicorn'
+  gem 'mongrel'
 end
