@@ -4,7 +4,7 @@ module Gifty
       module Event
 
         def new_event(url)
-          response = get("/api/events/new?url=#{url}?user_id=#{self.user_id}")
+          response = get("/api/events/new?url=#{url}&user_id=#{self.user_id}")
           parse(response)
         end
 

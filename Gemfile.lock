@@ -235,3 +235,6 @@ DEPENDENCIES
   rcov
   ruby-debug
   shoulda
+
+METADATA
+  version: 1.0.6
