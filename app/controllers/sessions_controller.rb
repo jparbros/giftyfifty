@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       else
       end
     else
-      user = create_by_provider(@auth,params[:provider])
+      user = User.create_by_provider(@auth,params[:provider])
       sign_in_and_redirect(:user, user)
     end
   end
