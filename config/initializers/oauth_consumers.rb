@@ -6,4 +6,9 @@ OAUTH_CREDENTIALS={
   }
 } unless defined? OAUTH_CREDENTIALS
 
-  load 'oauth/models/consumers/service_loader.rb'
+load 'oauth/models/consumers/service_loader.rb'
+
+TWITTER_CREDENTIALS = {
+  :consumer_key => 'xJazt51TQ2ZGwUa6LIwcQ',
+  :consumer_secret => 'Wf3vKm7yYYD4VUKJHoWKUEUIepu68vVdUTOo96IB4mE'
+}  
