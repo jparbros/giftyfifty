@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
     when 'facebook'
       {:account_type => 'Facebook', :token => provider_info['credentials']['token']}
     end
-    current_user.gateway.new_account(provider_params)
+    user.gateway.new_account(provider_params)
     user
   end
   
