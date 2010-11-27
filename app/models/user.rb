@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   def load_token
     unless consumer_tokens.blank?
       @gateway = Gifty::Api::Base.new
-      @gateway.user_id = self.id
+      @gateway.user_id = self.user_id
       @gateway.access_token= OAuth::AccessToken.from_hash(@gateway.consumer, {:oauth_token => consumer_tokens.last.token,:oauth_token_secret => consumer_tokens.last.secret})
     end
   end
@@ -27,11 +27,19 @@ class User < ActiveRecord::Base
   private
   
   def create_consumer_token
-    gateway = Gifty::Api::Base.new
-    gateway.consumer
-    gateway.request_token_authorized
-    gateway.access_token
-    gateway.user_id = self.id
-    consumer_tokens.create(:token => gateway.access_token.token, :secret => gateway.access_token.secret, :type => 'AccessToken')
+    if consumer_tokens.blank?
+      @gateway = Gifty::Api::Base.new
+      @gateway.consumer
+      @gateway.request_token_authorized
+      @gateway.access_token
+      self.consumer_tokens.create(:token => @gateway.access_token.token, :secret => @gateway.access_token.secret, :type => 'AccessToken')
+      send_to_api
+    end
+  end
+  
+  def send_to_api
+    user = @gateway.new_user({:email => self.email, :password => self.password, :password_confirmation => self.password_confirmation})
+    self.user_id = user['user']['id']
+    self.save
   end
 end

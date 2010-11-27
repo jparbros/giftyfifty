@@ -8,6 +8,7 @@ module Gifty
       include Gifty::Api::Operations::Event
       include Gifty::Api::Operations::Occasion
       include Gifty::Api::Operations::OauthAccount
+      include Gifty::Api::Operations::User
       
     end
   end
