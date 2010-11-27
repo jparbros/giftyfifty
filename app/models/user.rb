@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   
   def self.create_by_provider(provider_info,provider)
     password = generate_password
-    user = self.find_by_user_email(provider_info['extra']['user_hash']['email'] || '')
+    user = self.find_by_email(provider_info['extra']['user_hash']['email'] || '')
     unless user
       user = self.new(:email => provider_info['extra']['user_hash']['email'], :password => password, :password_confirmation => password)
       user.save
