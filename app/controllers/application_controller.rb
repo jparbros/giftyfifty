@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include Facebooker2::Rails::Controller
   protect_from_forgery
 
   before_filter :get_user, :get_event_url, :get_recent_event
