@@ -3,6 +3,17 @@ class SessionsController < ApplicationController
   
   def create
     @auth = request.env["omniauth.auth"]
+    if params[:provider] == 'twitter'
+      @oauth_account = gateway.find_by_uid @auth['uid']
+      unless @oauth_account.blank?
+        user = User.find_by_user_id(@oauth_account['oauth_account']['user_id'])
+        if user
+          sign_in_and_redirect(:user, user)
+        end
+      else
+        
+      end
+    end
     # authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
     #     if authentication
     #       flash[:notice] = "Signed in successfully."

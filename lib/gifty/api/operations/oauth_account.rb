@@ -15,6 +15,15 @@ module Gifty
           parse(response)
         end
         
+        def find_by_provider(provider)
+          response = get("/api/users/#{self.user_id}/oauth_accounts/provider/#{provider}")
+          parse(response)
+        end
+        
+        def find_by_uid(uid)
+          response = get("/api/oauth_accounts/uid/#{uid}")
+          parse(response)
+        end
       end
     end
   end
