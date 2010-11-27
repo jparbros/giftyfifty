@@ -24,6 +24,19 @@ class User < ActiveRecord::Base
     @gateway
   end
   
+  def self.create_by_provider(provider_info,provider)
+    password = generate_password
+    user = self.new{:email => provider_info['extra']['user_hash']['email'], :password => , :password_confirmation =>}
+    provider_params = case provider
+    when 'twitter'
+      {:account_type => 'Twitter', :token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']}
+    when 'facebook'
+      {:account_type => 'Facebook', :token => provider_info['credentials']['token']}
+    end
+    current_user.gateway.new_account(provider_params)
+    user
+  end
+  
   private
   
   def create_consumer_token
@@ -41,5 +54,12 @@ class User < ActiveRecord::Base
     user = @gateway.new_user({:email => self.email, :password => self.password, :password_confirmation => self.password_confirmation})
     self.user_id = user['user']['id']
     self.save
+  end
+  
+  def self.generate_password(length = 10)
+    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + %w{$ | !}
+    code = ""
+    1.upto(length) { |i| code << chars[rand(chars.size-1)] }
+    code
   end
 end
