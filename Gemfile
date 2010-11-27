@@ -16,6 +16,7 @@ gem "omniauth"
 gem "oauth-plugin", ">=0.4.0.pre1"
 
 gem 'twitter_oauth'
+gem 'facebooker2'
 
 group :test do
   gem 'cucumber-rails'
