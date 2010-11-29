@@ -1,3 +1,7 @@
+body {
+  background: url('../images/bg.png') repeat;
+}
+
 .container #header {
   text-align: center;
 }

@@ -12,6 +12,7 @@ gem 'hoptoad_notifier'
 gem 'devise'
 
 gem "oauth"
+gem 'oauth2'
 gem "omniauth"
 gem "oauth-plugin", ">=0.4.0.pre1"
 

@@ -233,6 +233,7 @@ DEPENDENCIES
   mysql
   oauth
   oauth-plugin (>= 0.4.0.pre1)
+  oauth2
   omniauth
   pickle
   rails (= 3.0.1)
@@ -240,3 +241,6 @@ DEPENDENCIES
   ruby-debug
   shoulda
   twitter_oauth
+
+METADATA
+  version: 1.0.6

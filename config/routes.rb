@@ -10,6 +10,8 @@ Giftyfifty::Application.routes.draw do
       member do
         get 'create_twitter'
         get 'new_twitter'
+        get 'create_facebook'
+        get 'new_facebook'
       end
     end
   end
