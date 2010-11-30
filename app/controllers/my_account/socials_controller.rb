@@ -21,11 +21,11 @@ class MyAccount::SocialsController < ApplicationController
   end
   
   def new_facebook
-    redirect_to client.web_server.authorize_url(:redirect_uri => create_facebook_my_account_socials_url, :scope => 'email,user_photos,publish_stream')
+    redirect_to facebook_client.web_server.authorize_url(:redirect_uri => create_facebook_my_account_socials_url, :scope => 'email,user_photos,publish_stream')
   end
   
   def create_facebook
-    access_token = client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)  
+    access_token = facebook_client.web_server.get_access_token(params[:code], :redirect_uri => redirect_uri)  
     @user = JSON.parse(access_token.get('/me'))  
     #current_user.gateway.new_account({:account_type => 'Facebook', :token => @access_token.token ,:secret => @access_token.secret})
     render :text => @user.inspect
