@@ -1,2 +1,0 @@
-class FacebookController < ApplicationController
-end
