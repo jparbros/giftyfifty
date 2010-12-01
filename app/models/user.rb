@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     password = generate_password
     user = self.find_by_email(provider_info['extra']['user_hash']['email'] || '')
     unless user
-      user = self.new(:email => provider_info['extra']['user_hash']['email'] || " ", :password => password, :password_confirmation => password)
+      user = self.new(:email => provider_info['extra']['user_hash']['email'] || "user_#{Time.now.to_i}@giftyfifty.com", :password => password, :password_confirmation => password)
       user.save
     else
       return user
