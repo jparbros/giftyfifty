@@ -8,8 +8,8 @@ module EventsHelper
   end
   
   def twitter_link
-    link_path = (current_user.twitter_account)?  user_event_twitter_path(current_user, @event), : my_account_facebook_path
-    link_to(image_tag('twitter_64.png'), link_path)
+    link_path = (current_user.twitter_account)?  user_event_twitter_path(current_user, @event) : my_account_facebook_path
+    link_to(image_tag('twitter_64.png'), link_path, :method => :post)
   end
   
   def facebook_link
