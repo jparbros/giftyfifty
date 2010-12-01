@@ -4,20 +4,16 @@ Giftyfifty::Application.routes.draw do
   root :to => "main#index" 
   
   resources :users do
-    resources :events
+    resources :events do
+      resource :twitter
+      resource :facebook
+    end
   end
   
   namespace :my_account do
-    resource :socials do
-      member do
-        get 'create_twitter'
-        get 'new_twitter'
-        get 'create_facebook'
-        get 'new_facebook'
-      end
-    end
+    resource :twitter
+    resource :facebook
   end
 
-  match '/login', :to => 'sessions#login', :as => :login
   match '/auth/:provider/callback', :to => 'sessions#create'
 end
