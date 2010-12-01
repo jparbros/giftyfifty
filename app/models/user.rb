@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
       when 'twitter'
         user.twitter_account = TwitterAccount.new({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
       when 'facebook'
-        user.facebook_account = FacebookAccount.new({:account_type => 'Facebook', :token => provider_info['credentials']['token']})
+        user.facebook_account = FacebookAccount.new({ :token => provider_info['credentials']['token']})
     end
     user
   end
