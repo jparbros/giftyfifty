@@ -27,7 +27,7 @@ class MyAccount::SocialsController < ApplicationController
   def create_facebook
     access_token = facebook_client.web_server.get_access_token(params[:code], :redirect_uri => create_facebook_my_account_socials_url)  
     @user = JSON.parse(access_token.get('/me'))  
-    #current_user.gateway.new_account({:account_type => 'Facebook', :token => @access_token.token ,:secret => @access_token.secret})
+    #current_user.gateway.new_account({:account_type => 'Facebook', :token => @user.token ,:secret => @access_token.secret})
     render :text => @user.inspect
     #redirect_to :action => :show
   end

@@ -3,7 +3,9 @@ Giftyfifty::Application.routes.draw do
   
   root :to => "main#index" 
   
-  resources :events, :only => [:create, :new, :show, :edit, :update]
+  resources :users do
+    resources :events
+  end
   
   namespace :my_account do
     resource :socials do

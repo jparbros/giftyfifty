@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101126180538) do
+ActiveRecord::Schema.define(:version => 20101201150136) do
+
+  create_table "amazon_shipments", :force => true do |t|
+    t.text     "category"
+    t.integer  "per_shipment"
+    t.integer  "per_item"
+    t.integer  "location_id"
+    t.boolean  "per_pound"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "consumer_tokens", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +32,62 @@ ActiveRecord::Schema.define(:version => 20101126180538) do
   end
 
   add_index "consumer_tokens", ["token"], :name => "index_consumer_tokens_on_token", :unique => true
+
+  create_table "events", :force => true do |t|
+    t.integer  "occasion_id"
+    t.integer  "user_id"
+    t.integer  "provider_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start_at"
+    t.datetime "end_at"
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.text     "url"
+    t.string   "cart_id"
+    t.string   "cart_item_id"
+    t.string   "item_id"
+    t.integer  "event_id"
+    t.text     "purchase_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_url"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "oauth_accounts", :force => true do |t|
+    t.string   "token"
+    t.string   "secret"
+    t.integer  "user_id"
+    t.integer  "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.string   "type"
+  end
+
+  create_table "occasions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "providers", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

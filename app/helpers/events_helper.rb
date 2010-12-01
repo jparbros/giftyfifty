@@ -1,7 +1,7 @@
 module EventsHelper
   def is_owner?
     if current_user
-      @event['event']['user_id'].to_i == current_user.id
+      @event.user == current_user
     else
       false
     end

@@ -7,58 +7,48 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
+  #
+  # Associations
+  #
   has_many :consumer_tokens
+  has_many :events
+  has_one :twitter_account, :as => :owner
+  has_one :facebook_account, :as => :owner
   
-  after_create :create_consumer_token
-  after_initialize :load_token
-  
-  def load_token
-    unless consumer_tokens.blank?
-      @gateway = Gifty::Api::Base.new
-      @gateway.user_id = self.user_id
-      @gateway.access_token= OAuth::AccessToken.from_hash(@gateway.consumer, {:oauth_token => consumer_tokens.last.token,:oauth_token_secret => consumer_tokens.last.secret})
-    end
-  end
-  
-  def gateway
-    @gateway
-  end
-  
+  #
+  # Scopes
+  #
+  scope :by_facebook_uid, lambda {|uid| joins(:facebook_account).where('oauth_accounts.uid' => uid) }
+  scope :by_twitter_uid, lambda {|uid| joins(:twitter_account).where('oauth_accounts.uid' => uid) }
+
   def self.create_by_provider(provider_info,provider)
     password = generate_password
     user = self.find_by_email(provider_info['extra']['user_hash']['email'] || '')
     unless user
       user = self.new(:email => provider_info['extra']['user_hash']['email'], :password => password, :password_confirmation => password)
       user.save
+    else
+      return user
     end
-    provider_params = case provider
-    when 'twitter'
-      {:account_type => 'Twitter', :token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']}
-    when 'facebook'
-      {:account_type => 'Facebook', :token => provider_info['credentials']['token']}
+    case provider
+      when 'twitter'
+        user.twitter_account = TwitterAccount.new({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
+      when 'facebook'
+        user.facebook_account = FacebookAccount.new({:account_type => 'Facebook', :token => provider_info['credentials']['token']})
     end
-    user.gateway.new_account(provider_params)
     user
   end
   
-  private
-  
-  def create_consumer_token
-    if consumer_tokens.blank?
-      @gateway = Gifty::Api::Base.new
-      @gateway.consumer
-      @gateway.request_token_authorized
-      @gateway.access_token
-      self.consumer_tokens.create(:token => @gateway.access_token.token, :secret => @gateway.access_token.secret, :type => 'AccessToken')
-      send_to_api
+  def self.find_by_uid_provider(provider, uid)
+    case provider
+    when 'twitter'
+      self.by_twitter_uid(uid)
+    when 'facebook'
+      self.by_facebook_uid(uid)
     end
   end
   
-  def send_to_api
-    user = @gateway.new_user({:email => self.email, :password => self.password, :password_confirmation => self.password_confirmation})
-    self.user_id = user['user']['id']
-    self.save
-  end
+  private
   
   def self.generate_password(length = 10)
     chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + %w{$ | !}

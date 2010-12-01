@@ -1,0 +1,2 @@
+module MyAccount::FacebookHelper
+end

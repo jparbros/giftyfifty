@@ -83,6 +83,7 @@ GEM
     hoptoad_notifier (2.3.12)
       activesupport
       builder
+    hpricot (0.8.3)
     i18n (0.4.2)
     jquery-rails (0.2.5)
       rails (~> 3.0)
@@ -227,6 +228,7 @@ DEPENDENCIES
   devise
   heroku
   hoptoad_notifier
+  hpricot
   jquery-rails
   mocha
   mongrel

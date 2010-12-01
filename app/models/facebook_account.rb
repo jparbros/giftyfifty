@@ -1,0 +1,2 @@
+class FacebookAccount < OauthAccount
+end

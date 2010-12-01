@@ -21,4 +21,12 @@ module MainHelper
     submit_tag 'Next', {:id => (user_signed_in?)? 'search-gift': 'go-sign-in'}
   end
   
+  def event_form_path
+    if current_user
+      user_events_path(current_user)
+    else
+      registration_path(@user)
+    end
+  end
+  
 end

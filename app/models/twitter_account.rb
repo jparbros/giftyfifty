@@ -1,0 +1,2 @@
+class TwitterAccount < OauthAccount
+end
