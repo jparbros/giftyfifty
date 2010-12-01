@@ -29,8 +29,8 @@ class Event < ActiveRecord::Base
   # Instances Methods
   #
 
-  def share_on_twitter
-    self.user.twitter_account.client.update(TWITTER_MESSAGE.gsub('/GIFT_URL/', user_event_url(self.user,self)).gsub('/OCCASION/',self.occasion.name.humanize))
+  def share_on_twitter(event_url)
+    self.user.twitter_account.client.update(TWITTER_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize))
   end
 
 
