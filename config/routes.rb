@@ -11,8 +11,16 @@ Giftyfifty::Application.routes.draw do
   end
   
   namespace :my_account do
-    resource :twitter
-    resource :facebook
+    resource :twitter do
+      member do
+        get 'create_twitter'
+      end
+    end
+    resource :facebook do
+      member do
+        get 'create_facebook'
+      end
+    end
   end
 
   match '/auth/:provider/callback', :to => 'sessions#create'

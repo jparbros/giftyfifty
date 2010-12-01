@@ -1,6 +1,10 @@
 class MyAccount::TwittersController < ApplicationController
   
-  def create
+  def new
+    redirect_to request_token.authorize_url
+  end
+  
+  def create_twitter
     access_token
     current_user.twitter_account = TwitterAccount.new({:token => access_token.token ,:secret => access_token.secret})
     current_user.save
