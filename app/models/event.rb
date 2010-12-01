@@ -20,13 +20,23 @@ class Event < ActiveRecord::Base
   #
   after_create :create_event
   
+  #
+  # Constants
+  #
+  TWITTER_MESSAGE = "Hey!!, looks my gift to my /OCCASION/ in GiftyFifty.com, /GIFT_URL/"
   
   #
-  # Methods
+  # Instances Methods
   #
 
+  def share_on_twitter
+    self.user.twitter_account.client.update(TWITTER_MESSAGE.gsub('/GIFT_URL/', user_event_url(self.user,self)).gsub('/OCCASION/',self.occasion.name.humanize))
+  end
 
 
+  #
+  # Provate Methods
+  #
   private
 
   def scrap_store
