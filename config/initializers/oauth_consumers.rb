@@ -1,14 +1,9 @@
-OAUTH_CREDENTIALS={
-  :key=>"MYRtMZPE0k7oNDti67oWtV2KUb0cr7BFJCAOg43T",
-  :secret=>"tzsD69jDSerPytNEwuq4orpDn62RnU0Lwz4bRYAy",
-  :options=>{
-    :site=> (Rails.env.production?)? "http://gifty-api.heroku.com/" : "http://localhost:3000/"
-  }
-} unless defined? OAUTH_CREDENTIALS
-
-load 'oauth/models/consumers/service_loader.rb'
-
 TWITTER_CREDENTIALS = {
   :consumer_key => 'xJazt51TQ2ZGwUa6LIwcQ',
   :consumer_secret => 'Wf3vKm7yYYD4VUKJHoWKUEUIepu68vVdUTOo96IB4mE'
+}
+
+FACEBOOK_CREDENTIAL = {
+  :client_id => '9265497607cecc1f3ee4877400859b89', 
+  :secret_id => '46c0ad920327791c06c2cd6713ea98c9'
 }

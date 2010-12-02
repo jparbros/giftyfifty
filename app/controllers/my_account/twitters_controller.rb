@@ -22,7 +22,7 @@ class MyAccount::TwittersController < ApplicationController
   end
   
   def request_token
-    @request_token ||= session[:request_token] ||= client.request_token(:oauth_callback => create_twitter_my_account_socials_url)
+    @request_token ||= session[:request_token] ||= client.request_token(:oauth_callback => create_twitter_my_account_twitter_url)
   end
   
   def access_token

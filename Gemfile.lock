@@ -70,12 +70,18 @@ GEM
       multipart-post (~> 1.0.1)
       rack (>= 1.1.0, < 2)
     fastthread (1.0.7)
+    fbgraph (0.1.6.4.1)
+      hashie
+      json
+      oauth2
+      rest-client
     ffi (0.6.3)
       rake (>= 0.8.7)
     gem_plugin (0.2.3)
     gherkin (2.2.9)
       json (~> 1.4.6)
       term-ansicolor (~> 1.0.5)
+    hashie (0.4.0)
     heroku (1.14.4)
       json_pure (>= 1.2.0, < 1.5.0)
       launchy (~> 0.3.2)
@@ -136,8 +142,6 @@ GEM
       rack-openid (~> 1.2.0)
       ruby-openid-apps-discovery
     oauth (0.4.4)
-    oauth-plugin (0.4.0.pre1)
-      oauth (>= 0.4.4)
     oauth2 (0.1.0)
       faraday (~> 0.5.0)
       multi_json (~> 0.0.4)
@@ -226,6 +230,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   devise
+  fbgraph
   heroku
   hoptoad_notifier
   hpricot
@@ -234,7 +239,6 @@ DEPENDENCIES
   mongrel
   mysql
   oauth
-  oauth-plugin (>= 0.4.0.pre1)
   oauth2
   omniauth
   pickle

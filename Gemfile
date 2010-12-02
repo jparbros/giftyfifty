@@ -14,10 +14,9 @@ gem 'devise'
 gem "oauth"
 gem 'oauth2'
 gem "omniauth"
-gem "oauth-plugin", ">=0.4.0.pre1"
-
 
 gem 'hpricot'
+gem 'fbgraph'
 
 gem 'twitter_oauth'
 
