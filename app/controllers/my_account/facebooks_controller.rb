@@ -18,7 +18,7 @@ class MyAccount::FacebooksController < ApplicationController
   private
   
   def client
-    @client ||= FBGraph::Client.new(:client_id => FACEBOOK_CREDENTIAL['client_id'], :secret_id => FACEBOOK_CREDENTIAL['secret_id'])
+    @client ||= FBGraph::Client.new(FACEBOOK_CREDENTIAL)
   end
   
 end

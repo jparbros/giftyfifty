@@ -23,14 +23,20 @@ class Event < ActiveRecord::Base
   #
   # Constants
   #
-  TWITTER_MESSAGE = "Hey!!, looks my gift to my /OCCASION/ in GiftyFifty.com, /GIFT_URL/"
+  SOCIAL_MESSAGE = "Hey!!, looks my gift to my /OCCASION/ in GiftyFifty.com, /GIFT_URL/"
   
   #
   # Instances Methods
   #
 
   def share_on_twitter(event_url)
-    self.user.twitter_account.client.update(TWITTER_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize))
+    self.user.twitter_account.client.update(SOCIAL_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize))
+  end
+  
+  def share_on_facebook(event_url)
+    client = self.user.facebook_account.client
+    user = client.selection.me.info!
+    client.selection.user(user[:id]).feed.publish!(:message => SOCIAL_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize))
   end
 
 
