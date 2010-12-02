@@ -247,6 +247,3 @@ DEPENDENCIES
   ruby-debug
   shoulda
   twitter_oauth
-
-METADATA
-  version: 1.0.6
