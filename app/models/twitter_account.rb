@@ -7,7 +7,7 @@ class TwitterAccount < OauthAccount
   def client
     @client ||= TwitterOAuth::Client.new(
         TWITTER_CREDENTIALS.merge({
-            :token => self.token, 
+            :token => self.token,
             :secret => self.secret}))
   end
   
