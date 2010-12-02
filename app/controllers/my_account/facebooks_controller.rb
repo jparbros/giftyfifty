@@ -5,7 +5,7 @@ class MyAccount::FacebooksController < ApplicationController
   end
   
   def create_facebook
-    access_token = client.authorization.process_callback(params[:code], :redirect_uri => callback_oauths_url)
+    access_token = client.authorization.process_callback(params[:code], :redirect_uri => create_facebook_my_account_facebook_url)
     current_user.facebook_account = FacebookAccount.new({:token => access_token})
     current_user.save
     redirect_to :action => :show
