@@ -1,6 +1,11 @@
 <% if user_signed_in? %>
-   <%= link_to('My Account',show_profile_path,{:id => 'my-account-link'}) %>
-   <%= link_to('Logout',destroy_user_session_path) %>
+  
+  <% active_event = current_user.active_event
+    unless active_event.blank? %>
+      <%= link_to('My Event',event_path(active_event.last)) %>
+    <% end %>
+  <%= link_to('My Account',show_profile_path,{:id => 'my-account-link'}) %>
+  <%= link_to('Logout',destroy_user_session_path) %>
 <%else%>
   Have an account? <%= link_to('Login','',{:id => 'login-link'}) %>
 <%end%>

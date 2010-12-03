@@ -19,6 +19,11 @@ class Event < ActiveRecord::Base
   # Accessors
   #
   attr_accessor :url
+  
+  #
+  # Scopes
+  #
+  scope :active, where('events.start_at < ? and events.end_at > ?', Time.now,Time.now)
 
   #
   # Callbacks

@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
     valid_password?(password) and self.email == email
   end
   
+  def active_event
+    events.active
+  end
+  
   private
   
   def self.generate_password(length = 10)
