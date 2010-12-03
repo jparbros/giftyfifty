@@ -53,7 +53,18 @@ class Event < ActiveRecord::Base
       SOCIAL_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize)
     end
   end
+  
+  def total_donations
+    self.donations.sum(:total)
+  end
+  
+  def porcentage_donation
+    ((self.total_donations * 100)/self.item.price)
+  end
 
+  def rest_days
+    Time.at(self.end_at - Time.now).day
+  end
 
   #
   # Private Methods

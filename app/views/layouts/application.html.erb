@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag 'ie.css' %>
   <![endif]--> 
   <%= javascript_include_tag 'jquery.min','jquery-ui.min','rails','application' %>
+  <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
 <body>

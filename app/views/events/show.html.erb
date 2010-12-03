@@ -1,4 +1,4 @@
-<div class="event-gift span-24 last">
+<div class="event-gift span-18">
   <div class="span-6">
     <%= image_tag @event.item.image_url, :size => '50%'%>
   </div>
@@ -39,3 +39,27 @@
     </div>
   <% end %>
 </div>
+
+<div class="span-6 last">
+  <div id="donation_bar">
+    <%= @event.porcentage_donation%>% close of your gift.
+    <div id="progressbar"></div>
+    <hr />
+    <p>
+      This celebration ends in:
+      <p id="rest_days">
+        <%= @event.rest_days %> days.
+      </p>
+    </p>
+  </div>
+</div>
+
+<% content_for :scripts do %>
+  <script>
+    $(function() {
+      $( "#progressbar" ).progressbar({
+        value: <%= @event.porcentage_donation %>
+      });
+    });
+  </script>
+<% end %>

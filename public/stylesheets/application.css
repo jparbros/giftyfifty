@@ -128,3 +128,28 @@ body {
   -khtml-opacity: 1;
   opacity: 1;
 }
+
+#donation_bar {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #ffffff;
+  background: #30C5DA;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#donation_bar p {
+  font-size: 18px;
+}
+
+p#rest_days {
+  background: #FFFFFF;
+  color: #000000;
+  margin: 0 20px 10px 20px;
+}
+
+#progressbar {
+  margin:10px;
+}
