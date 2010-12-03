@@ -17,7 +17,7 @@ module EventsHelper
   
   def facebook_link
     if current_user.facebook_account
-      link_to(image_tag('facebook_64.png'), event_facebook_path(@event), :method => :post )
+      link_to(image_tag('facebook_64.png'), event_facebook_path(@event, :message => 'event'), :method => :post )
     else
       link_to(image_tag('facebook_64.png'), new_my_account_facebook_path)
     end
