@@ -53,9 +53,9 @@ class Event < ActiveRecord::Base
   def message(message_type, message_url)
     case message_type
     when 'share'
-      SHARE_MESSAGE.gsub('/GIFT_URL/', event_url)
+      SHARE_MESSAGE.gsub('/GIFT_URL/', message_url)
     when 'event'
-      SOCIAL_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize)
+      SOCIAL_MESSAGE.gsub('/GIFT_URL/', message_url).gsub('/OCCASION/',self.occasion.name.humanize)
     end
   end
   
