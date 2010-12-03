@@ -18,6 +18,8 @@ gem "omniauth"
 gem 'hpricot'
 gem 'fbgraph'
 
+gem 'activemerchant'
+
 gem 'twitter_oauth'
 
 group :test do

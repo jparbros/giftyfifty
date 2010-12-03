@@ -1,13 +1,18 @@
 class Event < ActiveRecord::Base
   
   #
-  # Relations
+  # Associations
   #
+  has_many :donations
   has_one :item
   belongs_to :provider
   belongs_to :occasion
   belongs_to :user
   
+  #
+  # Nested Attributtes
+  #
+
   accepts_nested_attributes_for :occasion
 
   #
@@ -24,24 +29,34 @@ class Event < ActiveRecord::Base
   # Constants
   #
   SOCIAL_MESSAGE = "Hey!!, looks my gift to my /OCCASION/ in GiftyFifty.com, /GIFT_URL/"
+  SHARE_MESSAGE = "I donated to this gift /GIFT_URL/, hurry up and donate you too."
   
   #
   # Instances Methods
   #
 
-  def share_on_twitter(event_url)
-    self.user.twitter_account.client.update(SOCIAL_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize))
+  def share_on_twitter(event_url, message)
+    self.user.twitter_account.client.update(message(message, event_url))
   end
   
-  def share_on_facebook(event_url)
+  def share_on_facebook(event_url, message)
     client = self.user.facebook_account.client
     user = client.selection.me.info!
-    client.selection.user(user[:id]).feed.publish!(:message => SOCIAL_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize))
+    client.selection.user(user[:id]).feed.publish!(:message => message(message, event_url) )
+  end
+  
+  def message(message_type, message_url)
+    case message_type
+    when 'share'
+      SHARE_MESSAGE.gsub('/GIFT_URL/', event_url)
+    when 'event'
+      SOCIAL_MESSAGE.gsub('/GIFT_URL/', event_url).gsub('/OCCASION/',self.occasion.name.humanize)
+    end
   end
 
 
   #
-  # Provate Methods
+  # Private Methods
   #
   private
 

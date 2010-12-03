@@ -1,0 +1,13 @@
+<% form_for @user, :url => donation_validate_path(params[:event_id]) do |form| %>
+  <p>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.submit 'Continue' %>
+  </p>
+<% end %>

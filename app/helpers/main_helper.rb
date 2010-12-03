@@ -23,7 +23,7 @@ module MainHelper
   
   def event_form_path
     if current_user
-      user_events_path(current_user)
+      events_path
     else
       registration_path(@user)
     end

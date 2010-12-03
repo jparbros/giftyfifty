@@ -8,7 +8,7 @@
     <%= content_tag 'h3', number_to_currency((@event.item.price.to_i/100)) %>
   </div>
   <div class="span-24 last">
-    <% form_for [current_user, @event], :method => :put do |form|%>
+    <% form_for @event, :method => :put do |form|%>
       <p>
         <%= form.label 'title' %><br/>
         <%= form.text_field 'title' %>

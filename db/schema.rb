@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101201150136) do
+ActiveRecord::Schema.define(:version => 20101202214003) do
 
   create_table "amazon_shipments", :force => true do |t|
     t.text     "category"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(:version => 20101201150136) do
   end
 
   add_index "consumer_tokens", ["token"], :name => "index_consumer_tokens_on_token", :unique => true
+
+  create_table "donations", :force => true do |t|
+    t.integer  "donation"
+    t.integer  "payment_fees"
+    t.integer  "internal_fees"
+    t.integer  "event_id"
+    t.integer  "total"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.integer  "occasion_id"

@@ -9,7 +9,7 @@ module EventsHelper
   
   def twitter_link
     if current_user.twitter_account
-      link_to(image_tag('twitter_64.png'), user_event_twitter_path(current_user, @event), :method => :post)
+      link_to(image_tag('twitter_64.png'), event_twitter_path(@event, :message => 'event'), :method => :post)
     else
       link_to(image_tag('twitter_64.png'), new_my_account_twitter_path)
     end
@@ -17,9 +17,9 @@ module EventsHelper
   
   def facebook_link
     if current_user.facebook_account
-      link_to(image_tag('facebook_64.png'), user_event_facebook_path(current_user, @event), :method => :post )
+      link_to(image_tag('facebook_64.png'), event_facebook_path(@event), :method => :post )
     else
-    link_to(image_tag('facebook_64.png'), new_my_account_facebook_path)
+      link_to(image_tag('facebook_64.png'), new_my_account_facebook_path)
     end
   end
 end

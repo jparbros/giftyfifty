@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  donation: 1
+  payment_fees: 1
+  internal_fees: 1
+  event_id: 1
+  total: 1
+
+two:
+  donation: 1
+  payment_fees: 1
+  internal_fees: 1
+  event_id: 1
+  total: 1

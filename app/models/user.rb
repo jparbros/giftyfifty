@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   #
   # Associations
   #
+  has_many :donations
   has_many :consumer_tokens
   has_many :events
   has_one :twitter_account, :as => :owner
@@ -46,6 +47,10 @@ class User < ActiveRecord::Base
     when 'facebook'
       self.by_facebook_uid(uid)
     end
+  end
+  
+  def valid_to_donate?(password,email)
+    valid_password?(password) and self.email == email
   end
   
   private

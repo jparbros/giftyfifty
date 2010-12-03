@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.new(:url => params['gift-url'])
     if @event.save
-      redirect_to edit_user_event_path(current_user, @event)
+      redirect_to edit_event_path(@event)
     else
       render :new
     end
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   def update
     @event = current_user.events.find(params[:id])
     if @event.update_attributes(params[:event])
-      redirect_to user_event_path(current_user,@event)
+      redirect_to event_path(@event)
     else
       render :edit
     end

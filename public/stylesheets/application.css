@@ -89,3 +89,42 @@ body {
   color: #5F6062;
   font-size: 22px;
 }
+
+#donation_thanks {
+  color: #FFFFFF;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#donation_thanks p{
+  border: 2px solid #ffffff;
+  background: #30C5DA;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#donation_share {
+  color: #30C5DA;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#donation_share div {
+  background: #000000;
+  border: 2px solid #ffffff;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  filter:alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+
+#donation_share p  {
+  filter:alpha(opacity=100);
+  -moz-opacity:1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
