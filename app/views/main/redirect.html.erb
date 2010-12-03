@@ -1,0 +1,11 @@
+<%= form_tag events_path do%>
+  <%= hidden_field_tag 'gift_url', params['gift_url']%>
+<% end %>
+<% content_for :scripts do %>
+  <script>
+    $(function() {
+      $("form").submit();
+    });
+  </script>
+<% end %>
+<h1>REDIRECTING</h1>

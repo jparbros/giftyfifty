@@ -1,15 +1,19 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :get_user, :get_event_url, :get_recent_event
-
-  def get_recent_event
-    @event = session[:recent_event] if session[:recent_event]
-  end
+  before_filter :get_user, :get_event_url, :redirect_to_new_event
 
   def get_event_url
-    if params['gift-url']
-      session['gift-url'] = params['gift-url']
+    if params[:gift_url] and params[:from_main]
+      session['gift_url'] = params[:gift_url]
+    end
+  end
+  
+  def redirect_to_new_event
+    if session['gift_url'] and current_user
+      gift_url = session['gift_url']
+      session['gift_url'] = nil
+      redirect_to redirect_to_event_path('gift_url' => gift_url)
     end
   end
 

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
   
   def create
-    @event = current_user.events.new(:url => params['gift-url'])
+    @event = current_user.events.new(:url => params['gift_url'])
     if @event.save
       redirect_to edit_event_path(@event)
     else

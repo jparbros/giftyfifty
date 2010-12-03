@@ -16,6 +16,8 @@
         <%= f.password_field :password_confirmation %>
       </p>
     <%end%>
+    <%= hidden_field_tag 'gift_url' %>
+    <%= hidden_field_tag 'from_main','true' %>
 
     <p><%= f.submit button_label(type) %></p>
   <% end %>

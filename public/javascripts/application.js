@@ -11,6 +11,9 @@ var cacheElements = function() {
   buttonSearch = $('input#search-gift');
   startInput = $('input#event_start_at');
   endInput = $('input#event_end_at');
+  giftInput = $('input#gift_url')
+  loginGiftInputs = $('#new_user #gift_url')
+  linksProviders = $('#login-box #providers a')
 };
 
 // Initializing boxes to login and sign in
@@ -25,13 +28,24 @@ var setBoxes = function() {
   });
 };
 
+var getGiftUrl = function(){
+  gift_url = giftInput.attr('value');
+  loginGiftInputs.attr('value',gift_url);
+  linksProviders.each(function(){
+     _href = this.href;
+      this.href = _href + '&gift_url=' + gift_url
+  });
+}
+
 // Declaring the events
 var declaringEvents = function() {
   loginLink.click(function() {
+    getGiftUrl();
     loginBox.dialog('open');
     return false;
   });
   buttonLogin.click(function() {
+    getGiftUrl();
     loginBox.dialog('open');
     return false;
   });

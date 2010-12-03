@@ -36,4 +36,5 @@ Giftyfifty::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/my_account/profile', :to => 'my_account/profile#show', :as => 'show_profile', :via => :get
   match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
+  match '/redirect', :to => 'main#redirect', :as => 'redirect_to_event', :via => :get
 end
