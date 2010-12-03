@@ -6,6 +6,93 @@ body {
   text-align: center;
 }
 
+#header {
+  -moz-border-radius-bottomleft:10px;
+  -moz-border-radius-bottomright:10px;
+  background-color:#3B3B3B;
+  display:block;
+  height:75px;
+}
+
+#logo{
+  overflow:hidden;
+  margin-left:30px;
+  float:left;
+}
+
+#logo img{
+	float:left;
+}
+#logo h1{
+	float:left;
+	font-family:"GeorgiaBoldItalic";
+	font-size:22px;
+	color:#67daef;
+	margin-top:28px;
+	margin-left:5px;
+}
+
+#nav-top{
+	float:right;
+	margin-right:10px;
+	margin-top:27px;
+}
+
+#nav-top ul{
+	list-style-type:none;
+}
+
+#nav-top ul li{
+	float:left;
+	margin:0 15px;
+	display:block;
+}
+
+#nav-top ul li a{
+	color:#FFFFFF;
+	font-family:"GeorgiaBold";
+	font-size:15px;
+	text-decoration:none;
+	/*text-shadow:#000000 2px 2px 5px;*/
+}
+
+#nav-top ul li a:hover{
+	color:#67daef;
+}
+
+#section-content{
+	display:block;
+	background-image:url(../images/content_bg.png);
+	background-repeat:repeat-x;
+	background-color:#61cbd9;
+	width:850px;
+	margin:0 auto;
+	padding:65px 30px 25px 30px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	-moz-border-radius-bottomleft:10px;
+	-moz-border-radius-bottomright:10px;
+	-webkit-border-bottom-left-radius:10px;
+	-webkit-border-bottom-right-radius:10px;	
+}
+
+#section-content #content{
+	display:block;
+	min-height:200px;
+	overflow:hidden;
+}
+
+#section-content #content h2{
+	display:block;
+	overflow:hidden;
+	color:#FFFFFF;
+	font-family:"GeorgiaBoldItalic";
+	text-decoration:none;
+	text-align:center;
+	text-shadow:#c5c5c5 1px 1px 1px;
+}
+
+
 #header #login-header {
   float: right;
 }
@@ -38,7 +125,7 @@ body {
 }
 
 #search-gift input[type=text] {
-  width: 500px;
+  width: 450px;
   height: 40px;
   border: 15px solid #5F6062;
   font-size: 40px;
@@ -152,4 +239,39 @@ p#rest_days {
 
 #progressbar {
   margin:10px;
+}
+
+#footer{
+	font-family:"LucidaGrandeBold";
+	font-size:12px;
+	color:#21acc5;
+	display:block;
+	height:60px;
+	width:880px;
+	margin:7px auto;
+	padding:15px;
+	background-color:#3b3b3b;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+#footer a{
+	color:#21acc5;
+	text-decoration:none;
+}
+
+#footer #nav-footer{
+	overflow:hidden;
+	float:left;
+}
+#footer #nav-footer ul{
+	list-style-type:none;
+}
+#footer #nav-footer li{
+	float:left;
+	margin-right:15px;
+}
+#footer #legal{
+	float:right;
 }

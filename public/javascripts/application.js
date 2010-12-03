@@ -6,7 +6,6 @@ var loginBox, signinBox, loginLink;
 // Caching most used elements of the dom
 var cacheElements = function() {
   loginBox = $('div#login-box');
-  signinBox = $("div#sign-in-box");
   loginLink = $('a#login-link');
   buttonLogin = $('input#go-sign-in');
   buttonSearch = $('input#search-gift');
@@ -20,17 +19,8 @@ var setBoxes = function() {
     resizable: false,
     stack: false,
     autoOpen: false,
-    height: 215,
-    width: 650,
-    modal: true,
-  });
-  
-  signinBox.dialog({
-    resizable: false,
-    stack: false,
-    autoOpen: false,
-    height: 305,
-    width: 650,
+    height: 300,
+    width: 950,
     modal: true,
   });
 };
@@ -38,12 +28,11 @@ var setBoxes = function() {
 // Declaring the events
 var declaringEvents = function() {
   loginLink.click(function() {
-    signinBox.dialog('close');
     loginBox.dialog('open');
     return false;
   });
   buttonLogin.click(function() {
-    signinBox.dialog('open');
+    loginBox.dialog('open');
     return false;
   });
 };

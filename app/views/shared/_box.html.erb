@@ -1,33 +1,22 @@
-<div id="<%= type%>-box" class="new-box span-16">
-  <div id="account" class="span-10">
-    <%= form_for(@user, :url => form_path(type)) do |f| %>
-      <p>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-      </p>
+<div id="account" class="span-9">
+  <%= form_for(@user, :url => form_path(type)) do |f| %>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </p>
 
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </p>
+    
+    <% if type == 'sign-in' %>
       <p>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
       </p>
-      
-      <% if type == 'sign-in' %>
-        <p>
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation %>
-        </p>
-      <%end%>
+    <%end%>
 
-      <p><%= f.submit button_label(type) %></p>
-    <% end %>
-  </div>
-  <div id="providers" class="column span-5 last">
-    <%= link_to(image_tag('facebook_64.png'), '/auth/facebook')%>
-    <%= link_to(image_tag('twitter_64.png'), '/auth/twitter')%>
-  </div>
-  <% if type == 'sign-in' %>
-    <div id="login" class="span-16 last">
-      Already have an account? <%= link_to 'Login','',{:id => 'login-link'}%>
-    </div>
-  <%end%>
+    <p><%= f.submit button_label(type) %></p>
+  <% end %>
 </div>

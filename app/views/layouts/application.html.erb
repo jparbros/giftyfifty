@@ -13,20 +13,40 @@
 <body>
   <div class="container">
     <div id="header" class="header">
-      <div id="login-header" class="span-4 prepend-20 last">
+      <div id="logo">
+        <%= image_tag 'logo.png'%>
+      </div>
+      <div id="nav-top">
         <%= render :partial => 'shared/login_status' %>
       </div>
-      <%= image_tag 'logo.png'%>
     </div>
-    <div id="content" class="content">
-      <%= yield %>
+    <div id="section-content">
+      <div id="content" class="content">
+        <%= yield %>
+      </div>
     </div>
     <div id="footer" class="footer">
-
+      <div id="nav-footer">
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="http://blog.giftyfifty.com">Blogifty</a></li>
+          <li><a href="contact.php">Contact Us</a></li>
+        </ul>
+      </div>
+      <div id="legal">
+        <span>Gifty Fifty &copy; 2010</span>
+        <a href="#">Terms & Privacy</a>
+      </div>
     </div>
   </div>
 
-  <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
-  <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
+  <div id="login-box" class="new-box span-16">
+    <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
+    <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
+    <div id="providers" class="column span-5 last">
+      <%= link_to(image_tag('facebook_64.png'), '/auth/facebook')%>
+      <%= link_to(image_tag('twitter_64.png'), '/auth/twitter')%>
+    </div>
+  </div>
 </body>
 </html>

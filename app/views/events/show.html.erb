@@ -1,8 +1,8 @@
-<div class="event-gift span-18">
+<div class="event-gift span-15">
   <div class="span-6">
     <%= image_tag @event.item.image_url, :size => '50%'%>
   </div>
-  <div class="span-18 last">
+  <div class="span-16 last">
     <%= content_tag 'h1', @event.item.name %>
     <%= content_tag 'h3', 'By ' + @event.provider.name.humanize %>
     <%= content_tag 'h3', number_to_currency((@event.item.price.to_i/100)) %>
