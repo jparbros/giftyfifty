@@ -38,7 +38,7 @@
       <%= facebook_link %>
     </div>
   <% else %>
-    <% link_to 'Donate', new_event_donation_path%>
+    <%= link_to 'Donate', new_event_donation_path(@event)%>
   <% end %>
 </div>
 

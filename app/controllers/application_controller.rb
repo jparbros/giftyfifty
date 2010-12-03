@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_user, :get_event_url, :redirect_to_new_event
 
   def get_event_url
-    if params[:gift_url] and params[:from_main]
+    if params[:gift_url] and params[:from_main] and !params[:gift_url].blank?
       session['gift_url'] = params[:gift_url]
     end
   end

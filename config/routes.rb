@@ -8,12 +8,7 @@ Giftyfifty::Application.routes.draw do
    resources :events, :except => [:index, :delete] do
       resource :twitter, :only => :create
       resource :facebook, :only => :create
-      resources :donations, :only => [:new, :create, :show] do
-        member do
-          get 'confirm'
-          post 'validate'
-        end
-      end
+      resources :donations, :only => [:new, :create, :show]
     end
   
   namespace :my_account do
@@ -37,4 +32,7 @@ Giftyfifty::Application.routes.draw do
   match '/my_account/profile', :to => 'my_account/profile#show', :as => 'show_profile', :via => :get
   match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
   match '/redirect', :to => 'main#redirect', :as => 'redirect_to_event', :via => :get
+  match '/events/:event_id/donations/1/confirm', :to => 'donations#confirm', :as => 'confirm_donation', :via => :get
+  match '/events/:event_id/donations/1/validate', :to => 'donations#validate', :as => 'validate_donation', :via => :post
+  match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
 end

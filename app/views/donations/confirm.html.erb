@@ -1,4 +1,4 @@
-<% form_for @user, :url => donation_validate_path(params[:event_id]) do |form| %>
+<% form_for @user, :url => validate_donation_path(params[:event_id]) do |form| %>
   <p>
     <%= form.label :email %>
     <%= form.text_field :email %>

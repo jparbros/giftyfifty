@@ -1,4 +1,4 @@
-<% form_for @donation, :url => create_donation_path(params[:event_id]) do |form| %>
+<% form_for @donation, :url => event_donations_path(params[:event_id]) do |form| %>
   <p>
     <%= form.label :name %>
     <%= form.text_field :name %>

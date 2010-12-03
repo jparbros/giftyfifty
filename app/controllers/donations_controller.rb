@@ -1,6 +1,6 @@
 class DonationsController < ApplicationController
   before_filter :authenticate_user!
-  #before_filter :valid_user, :except => [:confirm, :validate]
+  before_filter :valid_user, :only => [:new, :create]
   
   def confirm
     @user = User.new
@@ -9,7 +9,7 @@ class DonationsController < ApplicationController
   def validate
     session[:user_email] = params[:user][:email]
     session[:user_password] = params[:user][:password]
-    redirect_to new_donation_path(params[:event_id])
+    redirect_to new_event_donation_path(params[:event_id])
   end
   
   def new
@@ -19,7 +19,7 @@ class DonationsController < ApplicationController
   def create
     @donation = current_user.donations.new params[:donation].merge({:ip => request.env["HTTP_X_FORWARDED_FOR"],:event_id => params[:event_id]})
     if @donation.donate!
-      redirect_to show_donation_path(params[:event_id], @donation)
+      redirect_to event_donation_path(params[:event_id], @donation)
     else
       flash[:notice] = 'The credit card is not valid.'
     end
@@ -34,7 +34,7 @@ class DonationsController < ApplicationController
   
   def valid_user
     unless current_user.valid_to_donate?(session[:user_password],session[:user_email])
-      redirect_to donation_confirm_path
+      redirect_to confirm_donation_path(params[:event_id])
     end
   end
   
