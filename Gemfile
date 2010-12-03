@@ -22,6 +22,9 @@ gem 'activemerchant'
 
 gem 'twitter_oauth'
 
+gem "carrierwave", "~>0.5.0"
+gem "mini_magick"
+
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'

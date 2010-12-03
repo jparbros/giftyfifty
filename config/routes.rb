@@ -17,6 +17,7 @@ Giftyfifty::Application.routes.draw do
     end
   
   namespace :my_account do
+    resource :main
     resource :twitter, :only => [:new, :show] do
       member do
         get 'create_twitter'
@@ -33,4 +34,6 @@ Giftyfifty::Application.routes.draw do
   
   
   match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/my_account/profile', :to => 'my_account/profile#show', :as => 'show_profile', :via => :get
+  match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
 end
