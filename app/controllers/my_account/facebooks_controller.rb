@@ -8,11 +8,7 @@ class MyAccount::FacebooksController < ApplicationController
     access_token = client.authorization.process_callback(params[:code], :redirect_uri => create_facebook_my_account_facebook_url)
     current_user.facebook_account = FacebookAccount.new({:token => access_token})
     current_user.save
-    redirect_to :action => :show
-  end
-  
-  def show
-    render :text => current_user.facebook_account
+    redirect_to show_profile_path
   end
   
   private

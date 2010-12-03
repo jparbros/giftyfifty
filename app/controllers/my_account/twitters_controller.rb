@@ -8,11 +8,7 @@ class MyAccount::TwittersController < ApplicationController
     access_token
     current_user.twitter_account = TwitterAccount.new({:token => access_token.token ,:secret => access_token.secret})
     current_user.save
-    redirect_to :action => :show
-  end
-  
-  def show
-    render :text => current_user.twitter_account
+    redirect_to show_profile_path
   end
   
   private
