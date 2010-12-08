@@ -12,8 +12,7 @@ class Event < ActiveRecord::Base
   #
   # Nested Attributtes
   #
-
-  accepts_nested_attributes_for :occasion
+  accepts_nested_attributes_for :item
 
   #
   # Accessors

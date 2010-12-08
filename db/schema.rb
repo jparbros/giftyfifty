@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101202214003) do
+ActiveRecord::Schema.define(:version => 20101204184219) do
 
   create_table "amazon_shipments", :force => true do |t|
     t.text     "category"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20101202214003) do
     t.text     "description"
     t.datetime "start_at"
     t.datetime "end_at"
+    t.boolean  "manual"
   end
 
   create_table "items", :force => true do |t|

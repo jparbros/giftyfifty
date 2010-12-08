@@ -11,9 +11,12 @@ var cacheElements = function() {
   buttonSearch = $('input#search-gift');
   startInput = $('input#event_start_at');
   endInput = $('input#event_end_at');
-  giftInput = $('input#gift_url')
-  loginGiftInputs = $('#new_user #gift_url')
-  linksProviders = $('#login-box #providers a')
+  giftInput = $('input#gift_url');
+  loginGiftInputs = $('#new_user #gift_url');
+  linksProviders = $('#login-box #providers a');
+  tabsContent = $("#tabs");
+  giftButtonNext = $('#gift-button');
+  eventButtonNext = $('#event-button');
 };
 
 // Initializing boxes to login and sign in
@@ -22,8 +25,8 @@ var setBoxes = function() {
     resizable: false,
     stack: false,
     autoOpen: false,
-    height: 300,
-    width: 950,
+    height: 350,
+    width: 1000,
     modal: true,
   });
 };
@@ -54,6 +57,19 @@ var declaringEvents = function() {
 var setTimePickers = function() {
   startInput.datepicker({ minDate: 0});
   endInput.datepicker({ minDate: +5});
+}
+
+var setTabs = function() {
+  tabsContent.tabs();
+}
+
+var buttonsCreateEvent = function(){
+  giftButtonNext.click(function(){
+    tabsContent.tabs({ selected: 1 });
+  });
+  eventButtonNext.click(function(){
+    tabsContent.tabs({ selected: 2 });
+  });
 }
 
 $(document).ready(function() {

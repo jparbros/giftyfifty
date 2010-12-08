@@ -279,3 +279,7 @@ p#rest_days {
 #footer #legal{
 	float:right;
 }
+
+.hidden {
+  display:none;
+}

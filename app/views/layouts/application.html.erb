@@ -2,11 +2,11 @@
 <html>
 <head>
   <title>Giftyfifty</title>
-  <%= stylesheet_link_tag 'cupertino/jquery-ui.css','print.css','screen.css','application.css' %>
+  <%= stylesheet_link_tag 'cupertino/jquery-ui.css','print.css','screen.css','jgrowl.css','application.css' %>
   <!--[if lt IE 8]>
     <%= stylesheet_link_tag 'ie.css' %>
   <![endif]--> 
-  <%= javascript_include_tag 'jquery.min','jquery-ui.min','rails','application' %>
+  <%= javascript_include_tag 'jquery.min','jquery-ui.min','jgrowl','rails','application' %>
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
@@ -50,3 +50,4 @@
   </div>
 </body>
 </html>
+<%= growl %>

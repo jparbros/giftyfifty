@@ -1,4 +1,5 @@
 <div id="account" class="span-9">
+  <%= render :partial => 'shared/box_title', :locals => {:type => type} %>
   <%= form_for(@user, :url => form_path(type)) do |f| %>
     <p>
       <%= f.label :email %>
