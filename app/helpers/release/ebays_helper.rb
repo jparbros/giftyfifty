@@ -1,0 +1,2 @@
+module Release::EbaysHelper
+end

@@ -1,0 +1,2 @@
+module Release::PaypalsHelper
+end

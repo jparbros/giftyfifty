@@ -25,6 +25,9 @@ gem 'twitter_oauth'
 gem "carrierwave", "~>0.5.0"
 gem "mini_magick"
 
+gem 'ebayapi'
+gem 'xml-mapping','0.8.1'
+
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'

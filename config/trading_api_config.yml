@@ -1,0 +1,20 @@
+development:
+  url: https://api.sandbox.ebay.com/ws/api.dll
+  dev_name: 'b310fc52-65dd-4be0-9665-b15b2d1d59c2'
+  app_name: 'GiftyFif-7df9-47e8-9dec-e261f58c0b77'
+  cert_name: 'cb4d7364-3758-425d-a6a5-e3ea47c56f33'
+  auth_token: 'AgAAAA**AQAAAA**aAAAAA**yQnsTA**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4CoAJiKpAidj6x9nY+seQ**T28BAA**AAMAAA**Bf+BdiWavXmCGAn0qOkLCi2EHERBKcAICfLt5IxaYIX0wVzm+RSQ7CZAREXZuQU5QwTyceY4GP/P7KfVR0wXeu2f/x0BtP2GTmnPvIadx5rwhpaIV2pAaSKkOkMCXYqOXSG2zyFex1ddKTugDeTZAQ/adj5UvrdfQk2hqOmhMSBkHyUnJ/EuI0nXxpzaglzePCF9hvT+ojKH8NaUwEG94FjJyE3XiVxPC1cIbtL9/zCDV0tSf6osfMtu1XWQIqsfHOKl2OapgViJdeXE6hJCawQI0UuYhaRZZIL01Mp0IqK4sYQackTl9OhhqMBsVK2LqhapN4WNjzLYgL2pSorQlorDNz3lw4TML/fH8Ug+c24rO9NdPQFFm5EmOZ7lrco7vijUh9zFGk0fxrkRi3lJcwZiHwmcW7phf0ma46IuTbVSL/6x93zjX2argJgugpswJHLJ3fdQ48nokQHKDtU6FiizfYEzKLQ19ZnBsBFkz9b1iA1qyrI+0/Uugd3lRPT0y0y/EAGRKXIkPQZPPDoGu5qYjiJtk/L8zfCLjnJ4qS4BpMtcbj/cWE59tKE+Xb6qIbEqKtGWBOZQuhdSZyaP/cZ/VqrzwoFt5/espuVFWHlujzDvNGbCyQ1zVp6b1K7CvdkVbM5NyDEV/UGx+h09czfHQuaLnw2sJNYS0aO+UVULhZajx14Fz9rvddiX6tIrjdscw8sZtTRCMcF9wiFk6JwbR/yFfwV4MJU+33zPprsq+befHvTd8vq0MuId454D'
+  
+test:
+  url: https://api.ebay.com/ws/api.dll
+  dev_name: your-dev-name
+  app_name: your-app-name
+  cert_name: your-app-cert-name
+  auth_token: your-auth-token
+  
+production:
+  url: https://api.ebay.com/ws/api.dll
+  dev_name: your-dev-name
+  app_name: your-app-name
+  cert_name: your-app-cert-name
+  auth_token: your-auth-token

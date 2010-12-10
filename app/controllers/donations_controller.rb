@@ -21,7 +21,8 @@ class DonationsController < ApplicationController
     if @donation.donate!
       redirect_to event_donation_path(params[:event_id], @donation)
     else
-      flash[:notice] = 'The credit card is not valid.'
+      growl_message 'The credit card is not valid.'
+      redirect_to new_event_donation_path
     end
   end
   
