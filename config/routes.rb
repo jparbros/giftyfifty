@@ -35,4 +35,5 @@ Giftyfifty::Application.routes.draw do
   match '/events/:event_id/donations/1/confirm', :to => 'donations#confirm', :as => 'confirm_donation', :via => :get
   match '/events/:event_id/donations/1/validate', :to => 'donations#validate', :as => 'validate_donation', :via => :post
   match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
+  match '/blank', :to => 'main#blank'
 end
