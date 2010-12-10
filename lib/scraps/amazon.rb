@@ -68,7 +68,7 @@ module Scrap
      end
      
      def kindle_asin
-        @url.split('/').select {|t| t.size == 10}.first
+        @url.to_s.split('/').select {|t| t.size == 10}.first
      end
   end
 end
