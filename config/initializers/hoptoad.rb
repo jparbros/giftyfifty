@@ -1,3 +1,4 @@
 HoptoadNotifier.configure do |config|
-  config.api_key = '3a96664875cee12c88082f335facbf54'
+  config.api_key = 'ed900fd0370bc07dfa9a6baef310448a'
+  config.js_notifier = true
 end
