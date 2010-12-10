@@ -39,6 +39,12 @@ GEM
     braintree (2.6.2)
       builder
     builder (2.1.2)
+    capistrano (2.5.19)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.0.0)
     capybara (0.4.0)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
@@ -97,6 +103,7 @@ GEM
       json_pure (>= 1.2.0, < 1.5.0)
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
+    highline (1.6.1)
     hoptoad_notifier (2.3.12)
       activesupport
       builder
@@ -107,6 +114,7 @@ GEM
       thor (~> 0.14.4)
     json (1.4.6)
     json_pure (1.4.6)
+    kgio (2.0.0)
     launchy (0.3.7)
       configuration (>= 0.0.5)
       rake (>= 0.8.1)
@@ -131,6 +139,13 @@ GEM
     multipart-post (1.0.1)
     mysql (2.8.1)
     net-ldap (0.1.1)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.0.23)
+    net-ssh-gateway (1.0.1)
+      net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
     oa-basic (0.1.6)
       multi_json (~> 0.0.2)
@@ -231,6 +246,9 @@ GEM
       mime-types (>= 1.16)
       oauth (>= 0.4.1)
     tzinfo (0.3.23)
+    unicorn (3.1.0)
+      kgio (~> 2.0.0)
+      rack
     warden (0.10.7)
       rack (>= 1.0.0)
     xml-mapping (0.8.1)
@@ -243,6 +261,7 @@ PLATFORMS
 
 DEPENDENCIES
   activemerchant
+  capistrano
   capybara
   carrierwave (~> 0.5.0)
   cucumber-rails
@@ -267,4 +286,5 @@ DEPENDENCIES
   ruby-debug
   shoulda
   twitter_oauth
+  unicorn
   xml-mapping (= 0.8.1)

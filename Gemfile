@@ -28,6 +28,11 @@ gem "mini_magick"
 gem 'ebayapi'
 gem 'xml-mapping','0.8.1'
 
+group :production do
+  gem 'unicorn'
+  gem 'capistrano'
+end
+
 group :test do
   gem 'cucumber-rails'
   gem 'capybara'
