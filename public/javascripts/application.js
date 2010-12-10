@@ -36,7 +36,7 @@ var getGiftUrl = function(){
   loginGiftInputs.attr('value',gift_url);
   linksProviders.each(function(){
      _href = this.href;
-      this.href = _href + '&gift_url=' + gift_url
+      this.href = _href + '?gift_url=' + gift_url
   });
 }
 
