@@ -157,12 +157,12 @@ body {
 }
 
 .ui-dialog {
-  background: url("images/ui-bg_highlight-hard_100_f2f5f7_1x100.png") repeat-x scroll 50% top #F2F5F7;
+  background: url("cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png") repeat-x scroll 50% top #F2F5F7;
 }
 
 .ui-dialog-titlebar-close {
   border: 1px solid #74b2e2;
-  background: #e4f1fb url(images/ui-bg_glass_100_e4f1fb_1x400.png) 50% 50% repeat-x;
+  background: #e4f1fb url('cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png') 50% 50% repeat-x;
   font-weight: bold;
   color: #0070a3;
 }
