@@ -20,7 +20,7 @@ class Donation < ActiveRecord::Base
   include ActiveMerchant::Billing
   include Gifty::Cc
   
-  Base.mode = (Rails.env.production? ? :production : :test)
+  Base.mode = :test #(Rails.env.production? ? :production : :test)
   
   def donate!
     cc = CreditCard.new(formated_params)
