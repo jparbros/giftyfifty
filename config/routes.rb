@@ -37,4 +37,5 @@ Giftyfifty::Application.routes.draw do
   match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
   match '/blank', :to => 'main#blank'
   match '/users', :to => 'devise/registrations#update', :via => :put
+  match '/:user_name', :to => 'my_account/profile#show'
 end
