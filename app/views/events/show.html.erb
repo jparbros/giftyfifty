@@ -1,67 +1,69 @@
-<div class="event-gift span-15">
-  <div class="span-6">
-    <%= image_tag @event.item.image_url, :size => '50%'%>
-  </div>
-  <div class="span-16 last">
-    <%= content_tag 'h1', @event.item.name %>
-    <%= content_tag 'h3', 'By ' + @event.provider.name.humanize %>
-    <%= content_tag 'h3', number_to_currency((@event.item.price.to_i/100)) %>
-  </div>
-  <div class="span-24 last">
-    <p>
-      <%= label_tag 'title:' %><br/>
-      <%= @event.title %>
-    </p>
-  
-    <p>
-      <%= label_tag 'description:' %><br/>
-      <%= @event.description %>
-    </p>
-  
-    <p>
-      <%= label_tag 'start:' %>
-      <%= @event.start_at %>
-    
-      <%= label_tag 'end:' %>
-      <%= @event.end_at %>
-    </p>
-  
-    <p>
-      <%= label_tag 'event:' %><br/>
-      <%=  @event.occasion.name.humanize if @event.occasion %>
-    </p>  
-  </div>
-  <% if is_owner? %>
-    <div class="span-24">
-      <%= content_tag 'h1', 'Share Your Gift'%>
-      <%= twitter_link %>
-      <%= facebook_link %>
+<div class="gift-profile">
+  <div id="col-1">
+    <div id="gift-header">
+      <img src="/images/profile-pic.png" width="67" /> 
+      <h1>German's <%=  @event.occasion.name.humanize if @event.occasion %> Gift</h1>
     </div>
-  <% else %>
-    <%= link_to 'Donate', new_event_donation_path(@event)%>
-  <% end %>
-</div>
-
-<div class="span-6 last">
-  <div id="donation_bar">
-    <%= @event.porcentage_donation%>% close of your gift.
-    <div id="progressbar"></div>
-    <hr />
-    <p>
-      This celebration ends in:
-      <p id="rest_days">
-        <%= @event.rest_days %> days.
-      </p>
-    </p>
+    <div id="gift">
+      <div class="gift-image">
+        <%= image_tag @event.item.image_url%>
+      </div>
+      <div id="gift-description">
+        <h2 class="gift-title"><%= @event.item.name %></h2>
+        <p class="gift-price"><%= number_to_currency((@event.item.price.to_i/100)) %></p>
+        <ul class="gift-details">
+          <li class="gift-categories">Categories: <span>Electronics</span></li>
+          <li class="gift-powered">Powered by: <span><%= @event.provider.name.humanize %></span></li>
+        </ul>
+        <div class="gift-description">
+          <h3><%= @event.title %></h3>
+          <p><%= @event.description %></p>
+        </div>
+        <% unless is_owner? %>
+          <div class="gift-donate">
+            <%= link_to 'Donate', new_event_donation_path(@event), {:class => "submit"}%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div id="facebook-connect">
+      <h3>Facebook Comments:</h3>
+    </div>
   </div>
-</div>
+  <div id="col-2" class="aside">
+    <div class="first-container aside-container">
+      <p class="title"><%= @event.porcentage_donation %>% closer to your gift</p>
+      <div class="info">
+        <div class="advance">
+          <div class="stripes"></div>
+        </div>
+      </div>
+      <div class="ends-on">
+        <p class="title">This celebration ends in:</p>
+        <div class="info"><%= @event.rest_days %> days</div>
+      </div>
+    </div>
+    <div class="aside-container">
+      <p class="title">Gift Donors</p>
+      <p>There are no donors yet</p>
+      <% if is_owner? %>
+        <div class="share-on">
+          <p class="title">
+            Tell your friends! <span>Share on</span>
+          </p>
+            <%= twitter_link %>
+            <%= facebook_link %>
+        </div>
+      <%end%>
+      </div>
+    </div>
+  </div>
 
-<% content_for :scripts do %>
+
+  <% content_for :scripts do %>
   <script>
-    $(function() {
-      $( "#progressbar" ).progressbar({
-        value: <%= @event.porcentage_donation %>
-      });
-    });
+  $(function() {
+    $('.stripes').width('<%= @event.porcentage_donation %>%')
+  });
   </script>
-<% end %>
+  <% end %>

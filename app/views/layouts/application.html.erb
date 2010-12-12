@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Giftyfifty</title>
-  <%= stylesheet_link_tag 'cupertino/jquery-ui.css','print.css','screen.css','jgrowl.css','application.css' %>
+  <title>Gifty Fifty</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <%= stylesheet_link_tag 'giftyfifty/jquery-ui.css','jgrowl.css','default.css','fonts/fonts.css' %>
   <!--[if lt IE 8]>
     <%= stylesheet_link_tag 'ie.css' %>
   <![endif]--> 
@@ -10,44 +11,43 @@
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
-<body>
-  <div class="container">
-    <div id="header" class="header">
-      <div id="logo">
-        <%= image_tag 'logo.png'%>
-      </div>
-      <div id="nav-top">
-        <%= render :partial => 'shared/login_status' %>
-      </div>
-    </div>
-    <div id="section-content">
-      <div id="content" class="content">
-        <%= yield %>
-      </div>
-    </div>
-    <div id="footer" class="footer">
-      <div id="nav-footer">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="http://blog.giftyfifty.com">Blogifty</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
-      <div id="legal">
-        <span>Gifty Fifty &copy; 2010</span>
-        <a href="#">Terms & Privacy</a>
-      </div>
-    </div>
-  </div>
 
-  <div id="login-box" class="new-box span-16">
-    <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
-    <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
-    <div id="providers" class="column span-5 last">
-      <%= link_to(image_tag('facebook_64.png'), '/auth/facebook')%>
-      <%= link_to(image_tag('twitter_64.png'), '/auth/twitter')%>
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <%= link_to(image_tag('logo.png'), root_path) %>
+      <%= render :partial => 'shared/login_status'%>
+    </div>
+    <div id="content">
+      <%= yield %>
+      <div class="clearBoth"></div>
+    </div>
+    <div id="footer">
+      <ul id="footer-contact">
+        <li><a href="about"><%= t(:about_gifty_footer)%></a></li>
+        <li><a href="blogifty">Blogifty</a></li>
+        <li><a href="team"><%= t(:team_gifty_footer)%></a></li>
+        <li><a href="jobs"><%= t(:jobs_support_footer)%></a></li>
+      </ul>
+      <ul id="footer-legal">
+        <li>Gifty Fifty &copy; 2010</li>
+        <li><a href="terms"><%= t(:terms_footer)%></a></li>
+        <li><a href="privacy"><%= t(:privacy_footer)%></a></li>
+        <li><a href="contact"><%= t(:contact_footer)%></a></li>
+      </ul>
     </div>
   </div>
+</body>
+</html>
+
+<div id="login-box" class="new-box span-16">
+  <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
+  <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
+  <div id="providers" class="column span-5 last">
+    <%= link_to(image_tag('facebook_64.png'), '/auth/facebook')%>
+    <%= link_to(image_tag('twitter_64.png'), '/auth/twitter')%>
+  </div>
+</div>
 </body>
 </html>
 <%= growl %>

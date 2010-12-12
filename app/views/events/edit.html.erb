@@ -1,41 +1,53 @@
-<div class="event-gift span-24 last">
-  <div class="span-6">
-    <%= image_tag @event.item.image_url %>
-  </div>
-  <div class="span-18 last">
-    <%= content_tag 'h1', @event.item.name %>
-    <%= content_tag 'h3', 'By ' + @event.provider.name.humanize %>
-    <%= content_tag 'h3', number_to_currency((@event.item.price.to_i/100)) %>
-  </div>
-  <div class="span-24 last">
-    <% form_for @event, :method => :put do |form|%>
-      <p>
-        <%= form.label 'title' %><br/>
-        <%= form.text_field 'title' %>
-      </p>
-    
-      <p>
-        <%= form.label 'description' %><br/>
-        <%= form.text_area :description %>
-      </p>
-    
-      <p>
-        <%= form.label 'start' %>
-        <%= form.text_field 'start_at' %>
-      
-        <%= form.label 'end' %>
-        <%= form.text_field 'end_at' %>
-      </p>
-    
-      <p>
-        <%= form.label 'event' %><br/>
-        <%= form.select 'occasion_id', options_for_select(@occasions) %>
-      </p>
-    
-      <p>
-        <%= submit_tag 'Save' %>
-      </p>
+<div class="edit">
+  <div id="col-1">
+    <div id="gift-header">
+      <h1>Edit your Gift</h1>
+    </div>
+    <div id="gift">
+      <div class="gift-image">
+        <%= image_tag @event.item.image_url %>
+      </div>
+      <div id="gift-description">
+        <h2 class="gift-title"><%= @event.item.name %></h2>
+        <p class="gift-price"><%= number_to_currency((@event.item.price.to_i/100)) %></p>
+        <ul class="gift-details">
+          <li class="gift-categories">Categories: <span>Electronics</span></li>
+          <li class="gift-powered">Powered by: <span><%= @event.provider.name.humanize %></span></li>
+        </ul>
+      </div>
+    </div>
+    <% form_for @event, :method => :put, :html => {:id => 'gift-form'} do |form|%>
+      <div id="occasion">
+        <label for="gift-occasion">Occasion</label><br  />
+        <%= form.select 'occasion_id', options_for_select(@occasions), :html => {:id =>'gift-occasion'} %>
+      </div>
+      <div id="title">
+        <label for="gift-title">Title</label><br />
+        <%= form.text_field 'title', :html => {:id => 'gift-title'} %>
+      </div>
+      <div id="description">
+        <label for="gift-description">Description</label><br />
+        <%= form.text_area :description, :id => 'gift-description' %>
+      </div>
+      <div id="dates">
+        <div id="begin">
+          <label for="gift-begin">Begin</label><br />
+          <%= form.text_field 'start_at' %>
+        </div>
+        <div id="end">
+          <label for="gift-end">End</label><br />
+          <%= form.text_field 'end_at' %>
+        </div>
+      </div>
+      <input type="submit" value="Save" id="save" class="submit"/>
+      <div class="clearBoth"></div>
     <% end %>
   </div>
+  <div id="col-2" class="aside">
+    <div class="aside-container">
+      <p class="title">Edit your gift</p>
+      <p>Some descriptive text here</p>
+    </div>
+  </div>
+  <div class="clearBoth"></div>
 </div>
-

@@ -1,11 +1,13 @@
-<% if user_signed_in? %>
-  
-  <% active_event = current_user.active_event
-    unless active_event.blank? %>
-      <%= link_to('My Event',event_path(active_event.last)) %>
-    <% end %>
-  <%= link_to('My Account',show_profile_path,{:id => 'my-account-link'}) %>
-  <%= link_to('Logout',destroy_user_session_path) %>
-<%else%>
-  Have an account? <%= link_to('Login','',{:id => 'login-link'}) %>
-<%end%>
+<ul id="login">
+  <% if user_signed_in? %>
+
+    <% active_event = current_user.active_event
+      unless active_event.blank? %>
+        <li><%= link_to(t(:my_event),event_path(active_event.last)) %></li>
+      <% end %>
+    <li><%= link_to(t(:my_account),show_profile_path,{:id => 'my-account-link'}) %></li>
+    <li><%= link_to(t(:logout),destroy_user_session_path) %></li>
+  <%else%>
+    <li><%= t(:have_account)%> <%= link_to(t(:login),'',{:id => 'login-link'}) %></li>
+  <%end%>
+</ul>

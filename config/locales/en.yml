@@ -2,4 +2,22 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  my_event: "My Event"
+  my_account: 'My Account'
+  logout: 'Logout'
+  login: 'Login'
+  have_account: 'Have an account?'
+  about_gifty_footer: 'About Gifty Fifty'
+  team_gifty_footer: 'Team'
+  jobs_support_footer: 'Jobs Support'
+  terms_footer: 'Terms'
+  privacy_footer: 'Privacy'
+  contact_footer: 'Contact'
+  home_choose_gift: 'Choose your gift'
+  home_spread_world: 'Spread the Word'
+  home_get_it: 'Get it!'
+  home_what_is: 'What is Gifty Fifty?'
+  home_how_works: 'How works Gifty Fifty?'
+  home_wath_here: 'Watch here'
+  home_friend_us: 'Friend us'
+  home_paste_here: 'Paste the URL of your Gift'

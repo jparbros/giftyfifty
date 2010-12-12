@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :get_user, :get_event_url, :redirect_to_new_event, :initialize_growl
+  before_filter :get_user, :get_event_url, :redirect_to_new_event, :initialize_growl, :locales
 
   private
   
@@ -39,6 +39,10 @@ class ApplicationController < ActionController::Base
       session[:growl] = {}
       session[:growl][:active] = false
     end
+  end
+  
+  def locales
+    I18n.locale = session[:locale] || 'en'
   end
   
 end

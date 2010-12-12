@@ -1,13 +1,45 @@
-<%= form_tag event_form_path do %>
-<div id="search-gift" class="search-gift">
-  <div id="search-gift-label" class="column prepend-1">
-    I Want
+<div class="home">
+  <div id="top">
+    <div id="busqueda">
+      <h1>Gift URL</h1>
+      <%= form_tag event_form_path do %>
+        <div id="gift-url">
+           <%= text_field_tag 'gift_url', t(:home_paste_here)%>  
+        </div>
+        <input id="<%= (current_user)? 'search' : 'go-sign-in'%>" type="image" src="images/lupa.png" />
+      <%end%>
+    </div>
+    <div id="steps">
+      <ol>
+        <li id="step1">
+          <h3><%= t(:home_choose_gift)%></h3>
+        </li>
+        <li id="step2">
+          <h3><%= t(:home_spread_world)%></h3>
+        </li>
+        <li id="step3">
+          <h3><%= t(:home_get_it)%></h3>
+        </li>
+      </ol>
+    </div>
+    <div class="clearBoth"></div>
   </div>
-  <div id="search-gift-input" class="column">
-    <%= text_field_tag 'gift_url'%> 
-  </div>
-  <div id="search-gift-submit" class="column">
-    <%= submit_search %>
+  <div id="bottom">
+    <div id="vid">
+      <div id="video">
+      </div>
+      <div id="video-description">
+        <p><%= t(:home_what_is)%></p>
+        <p><%= t(:home_how_works)%></p>
+        <a href="watch"><%= t(:home_wath_here)%></a>
+      </div>
+    </div>
+    <div id="friends">
+      <span><%= t(:home_friend_us)%></span>
+      <ul>
+        <li><a id="facebook" href="http://www.facebook.com/giftyfifty"><span>Facebook</span></a></li>
+        <li><a id="twitter" href="http://www.twitter.com/giftyfifty"><span>Twitter</span></a></li>
+      </ul>
+    </div>
   </div>
 </div>
-<% end %>

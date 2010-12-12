@@ -1,0 +1,23 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  my_event: "Mi Evento"
+  my_account: 'Mi Cuenta'
+  logout: 'Logout'
+  login: 'Login'
+  have_account: '¿Tienes una cuenta?'
+  about_gifty_footer: 'Sobre Gifty Fifty'
+  team_gifty_footer: 'Equipo'
+  jobs_support_footer: 'Empleo'
+  terms_footer: 'Terminos'
+  privacy_footer: 'Privacidad'
+  contact_footer: 'Contacto'
+  home_choose_gift: 'Choose your gift'
+  home_spread_world: 'Spread the Word'
+  home_get_it: 'Get it!'
+  home_what_is: 'What is Gifty Fifty?'
+  home_how_works: 'How works Gifty Fifty?'
+  home_wath_here: 'Watch here'
+  home_friend_us: 'Friend us'
+  home_paste_here: 'Paste the URL of your Gift'

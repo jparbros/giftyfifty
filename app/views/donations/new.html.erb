@@ -1,25 +1,32 @@
-<% form_for @donation, :url => event_donations_path(params[:event_id]) do |form| %>
-  <p>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </p>
-  <p>
-    <%= form.label :credit_card %>
-    <%= form.text_field :credit_card %>
-  </p>
-  <p>
-    <%= form.label :expiration_date %>
-    <%= form.text_field :expiration_date %>
-  </p>
-  <p>
-    <%= form.label :verification_value %>
-    <%= form.text_field :verification_value %>
-  </p>
-  <p>
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
-  </p>
-  <p>
-    <%= form.submit 'Continue' %>
-  </p>
-<%end%>
+<div class="confirm-donation">
+  <div id="col-1">
+    <% form_for @donation, :url => event_donations_path(params[:event_id]) do |form| %>
+      <div id="gift-header">
+        <h1>Donation</h1>
+      </div>
+      <p>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </p>
+      <p>
+        <%= form.label :credit_card %>
+        <%= form.text_field :credit_card %>
+      </p>
+      <p>
+        <%= form.label :expiration_date %>
+        <%= form.text_field :expiration_date %>
+      </p>
+      <p>
+        <%= form.label :verification_value %>
+        <%= form.text_field :verification_value %>
+      </p>
+      <p>
+        <%= form.label :amount %>
+        <%= form.text_field :amount %>
+      </p>
+      <p>
+        <%= form.submit 'Continue', :id => 'save' %>
+      </p>
+    <%end%>
+  </div>
+</div>

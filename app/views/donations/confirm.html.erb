@@ -1,13 +1,20 @@
-<% form_for @user, :url => validate_donation_path(params[:event_id]) do |form| %>
-  <p>
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </p>
-  <p>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </p>
-  <p>
-    <%= form.submit 'Continue' %>
-  </p>
-<% end %>
+<div class="confirm-donation">
+  <div id="col-1">
+    <% form_for @user, :url => validate_donation_path(params[:event_id]) do |form| %>
+      <div id="gift-header">
+        <h1>Confirm Donation</h1>
+      </div>
+      <p>
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </p>
+      <p>
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </p>
+      <p>
+        <%= form.submit 'Continue', :id => 'save' %>
+      </p>
+    <% end %>
+  </div>
+</div>
