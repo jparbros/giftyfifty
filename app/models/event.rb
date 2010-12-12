@@ -63,7 +63,11 @@ class Event < ActiveRecord::Base
   end
   
   def porcentage_donation
-    ((self.total_donations * 100)/self.item.price)
+    if self.total_donations > 0
+      ((self.total_donations * 100)/self.item.price)
+    else
+      0
+    end
   end
 
   def rest_days
