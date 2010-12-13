@@ -103,6 +103,7 @@ class Event < ActiveRecord::Base
       :item_id => @item_info.asin,
       :purchase_url => self.url.to_s,
       :image_url => @item_info.image,
+      :category => @item_info.category,
       :event => self)
     item.save
     item

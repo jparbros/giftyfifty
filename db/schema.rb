@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101204184219) do
+ActiveRecord::Schema.define(:version => 20101212215129) do
 
   create_table "amazon_shipments", :force => true do |t|
     t.text     "category"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20101204184219) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
+    t.string   "category"
   end
 
   create_table "locations", :force => true do |t|

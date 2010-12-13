@@ -246,37 +246,36 @@ div.login-box .inline{
   -webkit-border-bottom-right-radius:10px;
 }
 #content div.home #top #busqueda{
-  position:relative;
-  margin:60px 65px;
+  margin:60px auto;
+  width: 790px;
 }
-#content div.home #top #busqueda h1{
+#content div.home #top #busqueda span{
   font-family: "GeorgiaBoldItalic";
   font-size:25px;
   color:#4E4E4E;
-  position:absolute;
-  top:20px;
+  float: left;
+  margin:15px 10px;
 }
 #content div.home #top #busqueda #gift-url{
   width:595px;
   height:65px;
   background:url(../images/caja_busqueda_prin.png) no-repeat;
-  position:absolute;
-  top:0;
-  left:120px;
+  float: left;
+}
+#content div.home #top #busqueda div#form {
+  float: left;
 }
 #content div.home #top #busqueda #gift-url input{
   color:#CECECE;
   font-size:20px;
-  left:14px;
   padding:10px 15px;
-  position:absolute;
-  top:9px;
   width:535px;
+  margin: 9px 0 0 13px;
+  float: left;
 }
 #content div.home #top #busqueda #search{
-  position:absolute;
-  top:15px;
-  left:715px;
+  float: left;
+  margin:15px 10px;
 }
 
 #content div.home #top #steps{
