@@ -1,7 +1,7 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
-var loginBox, signinBox, loginLink;
+var loginBox, signinBox, loginLink, giftUrlText;
 
 // Caching most used elements of the dom
 var cacheElements = function() {
@@ -17,6 +17,7 @@ var cacheElements = function() {
   tabsContent = $("#tabs");
   giftButtonNext = $('#gift-button');
   eventButtonNext = $('#event-button');
+  giftUrlText = giftInput.attr('value');
 };
 
 // Initializing boxes to login and sign in
@@ -30,6 +31,15 @@ var setBoxes = function() {
     modal: true,
   });
 };
+
+var giftInputChangeText = function() {
+  giftInput.focusin(function(){
+    $(this).attr('value','')
+  });
+  giftInput.focusout(function(){
+    $(this).attr('value',giftUrlText)
+  });
+}
 
 var getGiftUrl = function(){
   gift_url = giftInput.attr('value');
@@ -77,4 +87,5 @@ $(document).ready(function() {
   setBoxes();
   declaringEvents();
   setTimePickers();
+  giftInputChangeText();
 });
