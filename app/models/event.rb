@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   #
   has_many :donations
   has_one :item
+  has_one :release
   belongs_to :provider
   belongs_to :occasion
   belongs_to :user
@@ -52,10 +53,18 @@ class Event < ActiveRecord::Base
   def message(message_type, message_url)
     case message_type
     when 'share'
-      SHARE_MESSAGE.gsub('/GIFT_URL/', message_url)
+      self.share_message(message_url)
     when 'event'
-      SOCIAL_MESSAGE.gsub('/GIFT_URL/', message_url).gsub('/OCCASION/',self.occasion.name.humanize)
+      self.social_message(message_url)
     end
+  end
+  
+  def share_message(message_url)
+    SHARE_MESSAGE.gsub('/GIFT_URL/', message_url)
+  end
+  
+  def social_message(message_url)
+    SOCIAL_MESSAGE.gsub('/GIFT_URL/', message_url).gsub('/OCCASION/',self.occasion.name.humanize)
   end
   
   def total_donations

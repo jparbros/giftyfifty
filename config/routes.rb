@@ -9,6 +9,9 @@ Giftyfifty::Application.routes.draw do
       resource :twitter, :only => :create
       resource :facebook, :only => :create
       resources :donations, :only => [:new, :create, :show]
+      namespace :release do
+        resource :paypal, :only => :create
+      end
     end
   
   namespace :my_account do

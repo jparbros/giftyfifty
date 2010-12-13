@@ -2,7 +2,7 @@
   <div id="col-1">
     <div id="gift-header">
       <img src="/images/profile-pic.png" width="67" /> 
-      <h1>German's <%=  @event.occasion.name.humanize if @event.occasion %> Gift</h1>
+      <h1><% current_user.name%>'s <%=  @event.occasion.name.humanize if @event.occasion %> Gift</h1>
     </div>
     <div id="gift">
       <div class="gift-image">
@@ -12,7 +12,7 @@
         <h2 class="gift-title"><%= @event.item.name %></h2>
         <p class="gift-price"><%= number_to_currency((@event.item.price.to_i/100)) %></p>
         <ul class="gift-details">
-          <li class="gift-categories">Categories: <span>Electronics</span></li>
+          <li class="gift-categories">Categories: <span><%= @event.item.category%></span></li>
           <li class="gift-powered">Powered by: <span><%= @event.provider.name.humanize %></span></li>
         </ul>
         <div class="gift-description">
