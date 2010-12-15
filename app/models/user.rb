@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :address, :name, :username, :gender, :birthday, :address_attributes
   
   #
   # Associations
@@ -15,6 +15,12 @@ class User < ActiveRecord::Base
   has_many :events
   has_one :twitter_account, :as => :owner
   has_one :facebook_account, :as => :owner
+  has_one :address
+  
+  #
+  # Nested Attributtes
+  #
+  accepts_nested_attributes_for :address
   
   #
   # Scopes
@@ -47,6 +53,32 @@ class User < ActiveRecord::Base
     when 'facebook'
       self.by_facebook_uid(uid)
     end
+  end
+  
+  def password_required? 
+    new_record? 
+  end
+  
+  def update_with_password(params={})
+    current_password = params.delete(:current_password)
+    
+    if params[:password].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation) if params[:password_confirmation].blank?
+    end
+    
+    current_password.blank?
+
+    result = if valid_password?(current_password) or current_password.blank?
+      update_attributes(params)
+    else
+      self.errors.add(:current_password, current_password.blank? ? :blank : :invalid)
+      self.attributes = params
+      false
+    end
+
+    clean_up_passwords
+    result
   end
   
   def valid_to_donate?(password,email)

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101213092144) do
+ActiveRecord::Schema.define(:version => 20101214144645) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "country"
+    t.string   "state"
+    t.string   "city"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "zip_code"
+    t.boolean  "pobox"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "amazon_shipments", :force => true do |t|
     t.text     "category"
@@ -127,6 +140,10 @@ ActiveRecord::Schema.define(:version => 20101213092144) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.date     "birthday"
+    t.integer  "location_id"
+    t.string   "gender"
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

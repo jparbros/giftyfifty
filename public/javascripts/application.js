@@ -37,7 +37,9 @@ var giftInputChangeText = function() {
     $(this).attr('value','')
   });
   giftInput.focusout(function(){
-    $(this).attr('value',giftUrlText)
+    if($(this).attr('value') == '') {
+      $(this).attr('value',giftUrlText)
+    }
   });
 }
 

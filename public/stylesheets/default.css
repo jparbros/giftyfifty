@@ -455,6 +455,96 @@ input#save{
 }
 
 /*==================================
+  User Edit Settings
+==================================*/
+
+.edit-settings #col-1 {
+  width: 430px !important;
+}
+
+.edit-settings #col-2 {
+  float: left;
+  width: 380px !important;
+}
+
+.edit-settings h1 {
+    padding:7px 10px;
+    background-color:#DFF3F7;
+    color:#23B8D1;
+    width:260px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    font-family:"GeorgiaBoldItalic";
+    font-size:24px;
+}
+
+.edit-settings h2 {
+  color: #23B8D1;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.edit-settings form input[type=text], .edit-settings form input[type=password], .edit-settings form select {
+  padding:5px;
+  font-size:14px;
+  color:#6B6B6B;
+  border:#C2C2C2 3px solid;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  width: 250px;
+}
+
+.edit-settings form p {
+  margin: 20px 5px;
+}
+
+.edit-settings form label, .edit-settings form div.field_with_errors label {
+  color:#3B3B3B;
+  font-size: 12px;
+  display: inline-block;
+  width: 80px;
+}
+
+.edit-settings form div.field_with_errors input {
+  border: 1px solid red;
+}
+
+.edit-settings form div.field_with_errors {
+  float:left;
+}
+
+.edit-settings input[type=submit] {
+  background-color:#4CD3EC;
+  border:3px solid #28CAE8;
+  color:#FFFFFF;
+  float:right;
+  font-family:"GeorgiaBoldItalic";
+  font-size:17px;
+  margin:10px 0 0;
+  padding:3px 20px;
+  width:100px;
+}
+
+.edit-settings a {
+  color: #4CD3EC;
+  text-decoration: none;
+}
+
+.edit-settings form label#pobox {
+  width: 300px;
+}
+
+.edit-settings form #bottom label {
+  width: 155px;
+}
+
+.edit-settings #top, .edit-settings #bottom {
+  border-bottom: 1px #3B3B3B dotted;
+}
+
+/*==================================
   User Gift Profile Page
 ==================================*/
 
