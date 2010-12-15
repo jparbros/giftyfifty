@@ -2,7 +2,7 @@
   <div id="col-1">
     <div id="gift-header">
       <img src="/images/profile-pic.png" width="67" /> 
-      <h1><% current_user.name%>'s <%=  @event.occasion.name.humanize if @event.occasion %> Gift</h1>
+      <h1><% @event.user.name %>'s <%=  @event.occasion.name.humanize if @event.occasion %> Gift</h1>
     </div>
     <div id="gift">
       <div class="gift-image">
