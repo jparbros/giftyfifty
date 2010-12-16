@@ -29,7 +29,7 @@ gem 'ebayapi'
 gem 'xml-mapping','0.8.1'
 gem 'carmen'
 
-gem 'rmagick'
+gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
