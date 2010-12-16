@@ -18,6 +18,7 @@ var cacheElements = function() {
   giftButtonNext = $('#gift-button');
   eventButtonNext = $('#event-button');
   giftUrlText = giftInput.attr('value');
+  birthdayInput = $('#user_birthday');
 };
 
 // Initializing boxes to login and sign in
@@ -94,8 +95,14 @@ var declaringEvents = function() {
 };
 
 var setTimePickers = function() {
-  startInput.datepicker({ minDate: 0});
-  endInput.datepicker({ minDate: +5});
+  startInput.datepicker({ minDate: 0,onSelect: function( selectedDate ) {
+    var option = this.id == "event_start_at" ? "minDate" : "maxDate",
+    instance = $( this ).data( "datepicker" );
+    date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings );
+    endInput.not( this ).datepicker( "option", option, date );
+    }});
+  endInput.datepicker({changeMonth: true});
+  birthdayInput.datepicker({changeMonth: true,changeYear: true, minDate : new Date(1900, 1 - 1, 1)});
 }
 
 var setTabs = function() {

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :address, :name, :username, :gender, :birthday, :address_attributes
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :address, :name, :username, :gender, :birthday, :address_attributes, :avatar, :avatar_cache
   
   #
   # Uploader
@@ -92,6 +92,14 @@ class User < ActiveRecord::Base
   
   def active_event
     events.active
+  end
+  
+  def menu_image
+    self.avatar.menu.url if self.avatar
+  end
+  
+  def thumb_image
+    self.avatar.thumb.url if self.avatar
   end
   
   private

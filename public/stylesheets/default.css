@@ -37,13 +37,20 @@ body{
   float: right;
   margin: 85px 20px 0 0;
   color: #23B8D1;
-  padding: 10px;
+  padding: 15px 10px 10px;
 }
 
 #login #menu_toggle {
   background: url(../images/arrow-dropdown.png) no-repeat right;
   padding: 0 20px 0 0;
   cursor: pointer;
+}
+
+#login #menu_toggle img {
+  border: 3px solid #23B8D1;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  margin:-10px 0;
 }
 
 #login #menu_content {

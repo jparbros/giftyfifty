@@ -7,7 +7,7 @@
         <h2>Personal Info</h2>
         <p>
           <%= f.label :avatar %>
-          <%= image_tag(current_user.avatar_url) if current_user.avatar? %>
+          <%= image_tag(current_user.thumb_image) if current_user.avatar? %>
           <%= f.file_field :avatar %>
           <%= f.hidden_field :avatar_cache %>
         </p>
@@ -28,7 +28,7 @@
 
         <p>
           <%= f.label :gender %>
-          <%= f.text_field :gender %>
+          <%= f.select :gender, options_for_select([['Male','male'],['Female','female']]) %>
         </p>
 
         <p>
