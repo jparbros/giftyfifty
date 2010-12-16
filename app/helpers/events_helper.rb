@@ -11,7 +11,7 @@ module EventsHelper
     if current_user.twitter_account
       link_to(image_tag('share-twitter.png'), event_twitter_path(@event, :message => 'event'), :method => :post)
     else
-      link_to(image_tag('connect_twitter.png') + 'Link your account', new_my_account_twitter_path)
+      link_to(image_tag('connect_twitter.png'), new_my_account_twitter_path)
     end
   end
   
