@@ -15,7 +15,11 @@ class EventsController < ApplicationController
         @event = current_user.events.new(:url => params['gift_url'])
       end
       if @event.save
-        redirect_to edit_event_path(@event)
+        if @event.manual 
+          redirect_to event_path(@event)
+        else
+          redirect_to edit_event_path(@event)
+        end
       end
     rescue
       growl_message 'The url is not valid.<br/> Please enter a url from any product of amazon or ebay.'

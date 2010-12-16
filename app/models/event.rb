@@ -119,10 +119,12 @@ class Event < ActiveRecord::Base
   end
   
   def create_event
-    parse_url
-    self.provider = Provider.find_by_name(@provider.to_s)
-    self.save
-    scrap_store
+    unless self.manual
+      parse_url
+      self.provider = Provider.find_by_name(@provider.to_s)
+      self.save
+      scrap_store
+    end
   end
   
 end

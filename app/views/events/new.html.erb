@@ -7,7 +7,7 @@
         <li><a href="#tabs-3">Image</a></li>
       </ul>
       <div id="tabs-1">
-        <%= form.fields_for [@event.item] do |item_form| %>
+        <%= form.fields_for [@event.item], :html => {:multipart => true} do |item_form| %>
           <p>
             <%= item_form.label :name %>
             <%= text_field_tag 'event[item_attributes][name]' %>
@@ -57,6 +57,16 @@
         <div class="clearBoth"></div>
       </div>
       <div id="tabs-3">
+        <p>
+          <label>Gift Image</label>
+          <%= file_field_tag 'event[item_attributes][image_uploaded]' %>
+          <%= hidden_field_tag 'event[item_attributes][image_uploaded_cache]' %>
+        </p>
+        Or
+        <p>
+          <label>Image Url</label>
+          <%= text_field_tag 'event[item_attributes][remote_image_uploaded_url]' %>
+        </p>
         <%= form.submit 'Create'%>
         <div class="clearBoth"></div>
       </div>
