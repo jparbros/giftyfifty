@@ -1,57 +1,68 @@
-<%= form_for [@event] do |form| %>
-  <div id="tabs">
-    <ul>
-      <li><a href="#tabs-1">Gift Information</a></li>
-      <li><a href="#tabs-2">Event Information</a></li>
-      <li><a href="#tabs-3">Image</a></li>
-    </ul>
-    <div id="tabs-1">
-      <%= form.fields_for [@event.item] do |item_form| %>
-        <p>
-          <%= item_form.label :name %>
-          <%= text_field_tag 'event[item_attributes][name]' %>
+<div id="event-new">
+  <%= form_for [@event] do |form| %>
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Gift Information</a></li>
+        <li><a href="#tabs-2">Event Information</a></li>
+        <li><a href="#tabs-3">Image</a></li>
+      </ul>
+      <div id="tabs-1">
+        <%= form.fields_for [@event.item] do |item_form| %>
+          <p>
+            <%= item_form.label :name %>
+            <%= text_field_tag 'event[item_attributes][name]' %>
+          </p>
+          <p>
+            <%= item_form.label :price %>
+            <%= text_field_tag 'event[item_attributes][price]' %>
+          </p>
+          <p>
+            <%= item_form.label :url %>
+            <%= text_field_tag 'event[item_attributes][purchase_url]' %>
+          </p>
+        <% end %>
+        <%= tag('input', {:type => 'button', :value => 'Next >>', :id => 'gift-button'})%>
+        <div class="clearBoth"></div>
+      </div>
+      <div id="tabs-2">
+        <div class="left">
+          <div class="left">
+            <%= form.label 'occasion' %><br />
+            <%= form.select :occasion_id, options_for_select(@occasions) %>
+          </div>
+          <div class="title">
+            <%= form.label :title %><br />
+            <%= form.text_field :title %>
+          </div>
+        </div>
+        <div class="description_dates">
+          <div class="left">
+            <%= form.label :description %> <br/>
+            <%= form.text_area :description %>
+          </div>
+          <div class="dates">
+            <%= form.label :start %> <br />
+            <%= form.text_field :start_at %>
+            <br /><br />
+            <%= form.label :end %><br />
+            <%= form.text_field :end_at %>
+          </div>
+        </div>
+        <p class="hidden">
+          <%= form.check_box :manual, {:checked => true} %>
         </p>
-        <p>
-          <%= item_form.label :price %>
-          <%= text_field_tag 'event[item_attributes][price]' %>
+        <p class="button">
+          <%= tag('input', {:type => 'button', :value => 'Next >>', :id => 'event-button'})%>
         </p>
-        <p>
-          <%= item_form.label :url %>
-          <%= text_field_tag 'event[item_attributes][purchase_url]' %>
-        </p>
-      <% end %>
-      <%= tag('input', {:type => 'button', :value => 'Next >>', :id => 'gift-button'})%>
+        <div class="clearBoth"></div>
+      </div>
+      <div id="tabs-3">
+        <%= form.submit 'Create'%>
+        <div class="clearBoth"></div>
+      </div>
     </div>
-    <div id="tabs-2">
-      <p>
-        <%= form.label :title %>
-        <%= form.text_field :title %>
-      </p>
-      <p>
-        <%= form.label :description %> <br/>
-        <%= form.text_area :description %>
-      </p>
-      <p>
-        <%= form.label :start %>
-        <%= form.text_field :start_at %>
-        
-        <%= form.label :end %>
-        <%= form.text_field :end_at %>
-      </p>
-      <p>
-        <%= form.label 'event' %>
-        <%= form.select :occasion_id, options_for_select(@occasions) %>
-      </p>
-      <p class="hidden">
-        <%= form.check_box :manual, {:checked => true} %>
-      </p>
-      <%= tag('input', {:type => 'button', :value => 'Next >>', :id => 'event-button'})%>
-    </div>
-    <div id="tabs-3">
-      <%= form.submit 'Create'%>
-    </div>
-  </div>
-<%end%>
+  <%end%>
+</div>
 
 <% content_for :scripts do %>
   <script>

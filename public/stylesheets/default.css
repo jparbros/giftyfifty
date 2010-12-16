@@ -39,7 +39,12 @@ body{
   color: #23B8D1;
   padding: 15px 10px 10px;
 }
-
+.left {
+  float: left;
+}
+.hidden {
+  display: none;
+}
 #login #menu_toggle {
   background: url(../images/arrow-dropdown.png) no-repeat right;
   padding: 0 20px 0 0;
@@ -351,6 +356,68 @@ body.home #footer{
 #sign-up a, #sign-in a {
   color: #4CD3EC;
   text-decoration: none;
+}
+
+/*==================================
+  New Event
+==================================*/
+#event-new form p {
+  margin: 20px 5px;
+  width:100%;
+}
+
+#event-new form textarea {
+  height:125px !important;
+  width:370px !important;
+}
+
+#event-new form #event_start_at, #event-new form #event_end_at {
+  width:105px;
+}
+
+#event-new form label {
+  color:#3B3B3B;
+  display:inline-block;
+  font-size:12px;
+  width:80px;
+}
+
+#event-new div.dates {
+  float: left;
+  margin: 0 0 0 40px;
+}
+
+#event-new div.description_dates {
+  float: left;
+  margin: 20px 0 0 0;
+  width: 100%;
+}
+
+#event-new div.title {
+  float: left;
+  margin: 0 0 0 40px;
+}
+
+#event-new form input, #event-new form textarea, #event-new form select{
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border:3px solid #C2C2C2;
+  color:#6B6B6B;
+  font-size:14px;
+  padding:5px;
+  width:250px;
+}
+
+#event-new form input[type=submit], #event-new form input[type=button] {
+  background-color:#4CD3EC;
+  border:3px solid #28CAE8;
+  color:#FFFFFF;
+  float:right;
+  font-family:"GeorgiaBoldItalic";
+  font-size:17px;
+  margin:10px 0 0;
+  padding:3px 20px;
+  width:100px;
 }
 
 /*==================================
