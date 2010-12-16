@@ -5,7 +5,7 @@ var loginBox, signinBox, loginLink, giftUrlText;
 
 // Caching most used elements of the dom
 var cacheElements = function() {
-  loginBox = $('div#login-box');
+  loginSigninBox = $('div#login-signin-box');
   loginLink = $('a#login-link');
   buttonLogin = $('input#go-sign-in');
   buttonSearch = $('input#search-gift');
@@ -23,7 +23,7 @@ var cacheElements = function() {
 
 // Initializing boxes to login and sign in
 var setBoxes = function() {
-  loginBox.dialog({
+  loginSigninBox.dialog({
     resizable: false,
     stack: false,
     autoOpen: false,
@@ -84,12 +84,12 @@ var getGiftUrl = function(){
 var declaringEvents = function() {
   loginLink.click(function() {
     getGiftUrl();
-    loginBox.dialog('open');
+    loginSigninBox.dialog('open');
     return false;
   });
   buttonLogin.click(function() {
     getGiftUrl();
-    loginBox.dialog('open');
+    loginSigninBox.dialog('open');
     return false;
   });
 };

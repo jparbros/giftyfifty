@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag 'ie.css' %>
   <![endif]--> 
   <%= javascript_include_tag 'jquery.min','jquery-ui.min','jgrowl','rails','jquery-combobox','application' %>
-  <%= javascript_include_tag 'http://connect.facebook.net/en_US/all.js' %>
+  <%#= javascript_include_tag 'http://connect.facebook.net/en_US/all.js' %>
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
@@ -42,7 +42,7 @@
 </body>
 </html>
 
-<div id="login-box" class="new-box span-16">
+<div id="login-signin-box" class="new-box span-16">
   <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
   <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
   <div id="providers" class="column span-5 last">
