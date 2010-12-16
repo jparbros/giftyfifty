@@ -80,7 +80,7 @@ class Event < ActiveRecord::Base
   end
 
   def rest_days
-    Time.at(self.end_at - Time.now).day if self.end_at
+    (self.end_at)? (self.end_at - Time.now.to_date).to_i : 0
   end
 
   #
