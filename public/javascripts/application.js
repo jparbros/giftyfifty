@@ -43,6 +43,33 @@ var giftInputChangeText = function() {
   });
 }
 
+var menuElements = function() {
+  menuToggle = $('div#login div#menu_toggle');
+  menuContent = $('div#login div#menu_content');
+  menuElements = $('div#login div#menu_elements');
+  loginBox = $('div#login');
+  
+}
+
+var menuStyle = function() {
+  width = menuToggle.width() + 20;
+  menuElements.width(width)
+  menuContent.width(width+20);
+  if(menuContent.css('display') == 'block'){
+    loginBox.css('background-color','')
+  } else {
+    loginBox.css('background','#292929') 
+  }
+}
+
+var menuFunctionality = function() {
+  menuElements();
+  menuToggle.click(function(){
+    menuStyle();
+    menuContent.toggle();
+  });
+}
+
 var getGiftUrl = function(){
   gift_url = giftInput.attr('value');
   loginGiftInputs.attr('value',gift_url);
@@ -90,4 +117,5 @@ $(document).ready(function() {
   declaringEvents();
   setTimePickers();
   giftInputChangeText();
+  menuFunctionality();
 });

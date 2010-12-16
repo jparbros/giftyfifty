@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :address, :name, :username, :gender, :birthday, :address_attributes
   
   #
+  # Uploader
+  #
+  mount_uploader :avatar, AvatarUploader
+  
+  #
   # Associations
   #
   has_many :donations

@@ -29,6 +29,8 @@ gem 'ebayapi'
 gem 'xml-mapping','0.8.1'
 gem 'carmen'
 
+gem 'rmagick'
+
 group :production do
   gem 'unicorn'
   gem 'capistrano'

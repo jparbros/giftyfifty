@@ -1,13 +1,20 @@
-<ul id="login">
+<div id="login">
   <% if user_signed_in? %>
-
-    <% active_event = current_user.active_event
-      unless active_event.blank? %>
-        <li><%= link_to(t(:my_event),event_path(active_event.last)) %></li>
-      <% end %>
-    <li><%= link_to(t(:my_account),show_profile_path,{:id => 'my-account-link'}) %></li>
-    <li><%= link_to(t(:logout),destroy_user_session_path) %></li>
+    <div id="menu_toggle">
+      Welcome <%= current_user.name %>
+    </div>
+    <div id="menu_content">
+      <div id="menu_elements">
+        <p><%= link_to(t(:my_account), edit_user_registration_path,{:id => 'my-account-link'}) %></p>
+        <% active_event = current_user.active_event
+        unless active_event.blank? %>
+          <p><%= link_to(t(:my_event),event_path(active_event.last)) %></p>
+        <% end %>
+        <p><%= link_to(t(:logout),destroy_user_session_path) %></p>
+      </div>
+    </div>
   <%else%>
+    
     <li><%= t(:have_account)%> <%= link_to(t(:login),'',{:id => 'login-link'}) %></li>
   <%end%>
-</ul>
+</div>
