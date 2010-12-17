@@ -12,8 +12,12 @@
         <h2 class="gift-title"><%= @event.item.name %></h2>
         <p class="gift-price"><%= number_to_currency((@event.item.price.to_i/100)) %></p>
         <ul class="gift-details">
-          <li class="gift-categories">Categories: <span><%= @event.item.category%></span></li>
-          <li class="gift-powered">Powered by: <span><%= @event.provider.name.humanize %></span></li>
+          <% if @event.item %>
+            <li class="gift-categories">Categories: <span><%= @event.item.category%></span></li>
+          <% end %>
+          <% if @event.provider %>
+            <li class="gift-powered">Powered by: <span><%= @event.provider.name.humanize %></span></li>
+          <% end %>
         </ul>
         <div class="gift-description">
           <h3><%= @event.title %></h3>
