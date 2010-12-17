@@ -1,7 +1,7 @@
 <div class="gift-profile">
   <div id="col-1">
     <div id="gift-header">
-      <%= image_tag @event.user.thumb_image if @event.user.avatar %> 
+      <%= image_tag @event.user.thumb_image if @event.user.thumb_image %> 
       <h1><% @event.user.name %>'s <%=  @event.occasion.name.humanize if @event.occasion %> Gift</h1>
     </div>
     <div id="gift">
