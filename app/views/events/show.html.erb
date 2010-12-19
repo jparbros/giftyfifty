@@ -68,21 +68,10 @@
 
   <% content_for :scripts do %>
   <script>
-  $(function() {
-    $('.stripes').width('<%= @event.porcentage_donation %>%')
-  });
-  </script>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({appId: '175826409094308', status: true, cookie: true,
-               xfbml: true});
-    };
-    (function() {
-      var e = document.createElement('script'); e.async = true;
-      e.src = document.location.protocol +
-        '//connect.facebook.net/en_US/all.js';
-      document.getElementById('fb-root').appendChild(e);
-    }());
+    $(function() {
+      $('.stripes').width('<%= @event.porcentage_donation %>%');
+      loadFacebook();
+    });
   </script>
   
   <% end %>
