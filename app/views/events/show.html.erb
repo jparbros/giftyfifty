@@ -10,7 +10,7 @@
       </div>
       <div id="gift-description">
         <h2 class="gift-title"><%= @event.item.name %></h2>
-        <p class="gift-price"><%= number_to_currency((@event.item.price.to_i/100)) %></p>
+        <p class="gift-price"><%= number_to_currency((@event.item.formated_price)) %></p>
         <ul class="gift-details">
           <% if @event.item %>
             <li class="gift-categories">Categories: <span><%= @event.item.category%></span></li>
@@ -72,4 +72,17 @@
     $('.stripes').width('<%= @event.porcentage_donation %>%')
   });
   </script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({appId: '175826409094308', status: true, cookie: true,
+               xfbml: true});
+    };
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol +
+        '//connect.facebook.net/en_US/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+  </script>
+  
   <% end %>

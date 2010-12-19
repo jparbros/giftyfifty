@@ -6,4 +6,8 @@ class Item < ActiveRecord::Base
   def image
     self.image_url ? self.image_url : self.image_uploaded.url
   end
+  
+  def formated_price
+    self.price.to_i/100
+  end
 end

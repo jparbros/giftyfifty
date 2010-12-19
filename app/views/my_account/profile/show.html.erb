@@ -1,35 +1,21 @@
-<% form_for current_user, :url => user_registration_path, :method => :put do |form| %>
-  <p>
-    <%= form.label :email%>
-    <%= form.text_field :email%>
-  </p>
-  <p>
-    <%= form.label :name%>
-    <%= form.text_field :name%>
-  </p>
-  <p>
-    <%= form.label :password%>
-    <%= form.text_field :password%>
-  </p>
-  <p>
-    <%= form.label :password_confirmation%>
-    <%= form.text_field :password_confirmation%>
-  </p>
-  <p>
-    <%= form.submit 'Save'%>
-  </p>
-  <p>
-    <% if current_user.twitter_account %>
-      You already have linked your twitter Account.
-    <% else %>
-        <%= link_to(image_tag('twitter_64.png'), new_my_account_twitter_path) %>
-    <% end %> 
-  </p>
-  <p>
-    <% if current_user.facebook_account %>
-      You already have linked your facebook Account.
-    <% else %>
-      <%= link_to(image_tag('facebook_64.png'), new_my_account_facebook_path) %>
-    <%end%> 
-  </p>
-<%end%>
+<div id="my_profile">
+  <div id="col-1">
+    <h1>My Profile</h1>
+    <p class="profile">
+      <%= image_tag current_user.thumb_image if current_user.thumb_image %>
+        <%= current_user.name %><br />
+        <span class="age"><%= current_user.age %> yeras old</span>
+    </p>
+    <h1>My Gifts</h1>
+    <% current_user.events.each do |event| %>
+      <%= render :partial => 'event', :locals => {:event => event} %>
+    <%end%>
+    <hr />
+    <h1 class="donations">My Donations</h1>
+    <% current_user.donations.each do |donation| %>
+      <%= render :partial => 'event', :locals => {:donation => donation} %>
+    <%end%>
+  </div>
+  <div id="col-2" class="aside">
+  </div>
+</div>

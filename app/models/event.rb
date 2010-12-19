@@ -124,6 +124,9 @@ class Event < ActiveRecord::Base
       self.provider = Provider.find_by_name(@provider.to_s)
       self.save
       scrap_store
+    else
+      self.item.price = self.item.price * 100
+      self.item.save
     end
   end
   

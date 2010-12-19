@@ -102,6 +102,12 @@ class User < ActiveRecord::Base
     self.avatar.thumb.url if self.avatar
   end
   
+  def age
+    today = Time.now
+    bday = self.birthday
+    (today.year - bday.year) - (today.yday < bday.yday ? 1 : 0)
+  end
+  
   private
   
   def self.generate_password(length = 10)

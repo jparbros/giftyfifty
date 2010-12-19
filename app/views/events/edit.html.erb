@@ -9,7 +9,7 @@
       </div>
       <div id="gift-description">
         <h2 class="gift-title"><%= @event.item.name %></h2>
-        <p class="gift-price"><%= number_to_currency((@event.item.price.to_i/100)) %></p>
+        <p class="gift-price"><%= number_to_currency((@event.item.formated_price)) %></p>
         <ul class="gift-details">
           <% if @event.item.category %>
             <li class="gift-categories">Categories: <span><%= @event.item.category %></span></li>

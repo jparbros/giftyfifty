@@ -104,37 +104,40 @@ body{
 #content{
   width:910px;
   margin:0 auto;
+  background: #00CBEB;
+  border:3px #0FBBDA solid;
+  -moz-border-radius: 0 0 10px 10px;
+  -webkit-border-radius:0 0 10px 10px;
 }
 
-#footer{
-  background-color:#3b3b3b;
+#footer-links {
+  width:910px;
   font-size:12px;
   text-shadow:#8f8f8f 1px 1px 1px;
   overflow:hidden;
-  height:85px;
   padding-top:12px;
-  margin-top:30px;
+  margin:10px auto 0 auto;
 }
 
-#footer ul{
+#footer-links ul{
   list-style-type:none;
 }
-#footer ul li{
+#footer-links ul li{
   float:left;
   color:#FFF;
   padding:0 10px;
 }
-#footer ul li a{
+#footer-links ul li a{
   color:#FFF;
   text-decoration:none;
 }
-#footer ul li a:hover{
+#footer-links ul li a:hover{
   color:#000;
 }
-#footer #footer-contact{
+#footer-links #footer-contact{
   float:left;
 }
-#footer #footer-legal{
+#footer-links #footer-legal{
   float:right;
 }
 
@@ -156,38 +159,31 @@ div#login-signin-box div#account {
   Home
 ==================================*/
 
-#content div.home #top{
-  background-image:url(../images/content_top_bg.jpg);
-  background-repeat:repeat-x;
-  border:3px #0FBBDA solid;
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-  -moz-border-radius-bottomleft:10px;
-  -moz-border-radius-bottomright:10px;
-  -webkit-border-bottom-left-radius:10px;
-  -webkit-border-bottom-right-radius:10px;
+#content div.home .lens{
+  margin: -30px 183px 0;
 }
-#content div.home #top #busqueda{
+
+#content div.home #busqueda{
   margin:60px auto;
   width: 790px;
 }
-#content div.home #top #busqueda span{
+#content div.home #busqueda span{
   font-family: "GeorgiaBoldItalic";
   font-size:25px;
   color:#4E4E4E;
   float: left;
   margin:15px 10px;
 }
-#content div.home #top #busqueda #gift-url{
+#content div.home #busqueda #gift-url{
   width:595px;
   height:65px;
   background:url(../images/caja_busqueda_prin.png) no-repeat;
   float: left;
 }
-#content div.home #top #busqueda div#form {
+#content div.home #busqueda div#form {
   float: left;
 }
-#content div.home #top #busqueda #gift-url input{
+#content div.home #busqueda #gift-url input{
   color:#CECECE;
   font-size:20px;
   padding:10px 15px;
@@ -195,47 +191,39 @@ div#login-signin-box div#account {
   margin: 9px 0 0 13px;
   float: left;
 }
-#content div.home #top #busqueda #search{
+#content div.home #busqueda #search{
   float: left;
   margin:15px 10px;
 }
 
-#content div.home #top #steps{
-  margin:150px auto 0;
-  width:650px;
-}
-
-#content div.home #top #steps ol{
+#content div.home ul{
   list-style-type:none;
+  margin: 0 0 0 45px;
 }
   
 
-#content div.home #top #steps ol li{
+#content div.home ul li{
   display:block;
   float:left;
-  margin-right:20px;
-  padding-left:45px;
-  padding-top:10px;
   font-size:16px;
   color:#FFFFFF;
-  height:36px;
 }
-#content div.home #top #steps ol li h3{
+#content div.home ul li h3{
   font-family: "GeorgiaBoldItalic";
 }
-#content div.home #top #steps ol li#step1{
-  background-image:url(../images/step1.png);
-  background-repeat:no-repeat;
+
+#content div.home li#step2 img {
+  margin: -18px 0 0 0;
 }
-#content div.home #top #steps ol li#step2{
-  background-image:url(../images/step2.png);
-  background-repeat:no-repeat;
+
+#content div.home li#step3 img {
+  margin: -48px 0 0 0;
 }
-#content div.home #top #steps ol li#step3{
-  background-image:url(../images/step3.png);
-  background-repeat:no-repeat;
-}
-#content div.home #bottom{
+/*==================================
+  Footer
+==================================*/
+
+#footer{
   background-color:#3B3B3B;
   border:3px solid #707070;
   margin:10px 0 0;
@@ -245,31 +233,31 @@ div#login-signin-box div#account {
   padding:10px 17px;
   overflow:hidden;
 }
-#content div.home #bottom #vid{
+#footer #vid{
   font-size:14px;
   color:#FFF;
 }
-#content div.home #bottom #vid #video{
+#footer #vid #video{
   width:208px;
   height:117px;
   background-color:#000;
   float:left;
 }
-#content div.home #bottom #vid #video-description{
+#footer #vid #video-description{
   float:left;
   margin:15px 25px;
 }
-#content div.home #bottom #vid #video-description a{
+#footer #vid #video-description a{
   color:#26C3E0;
   text-decoration:none;
 }
-#content div.home #bottom #friends{
+#footer #friends{
   display:block;
   float:right;
   overflow:hidden;
   margin-top:45px;
 }
-#content div.home #bottom #friends span{
+#footer #friends span{
   font-family:"GeorgiaBoldItalic";
   font-size:16px;
   color:#FFFFFF;
@@ -277,32 +265,133 @@ div#login-signin-box div#account {
   padding-top:10px;
   padding-right:7px;
 }
-#content div.home #bottom #friends ul{
+#footer #friends ul{
   list-style-type:none;
   float:left;
 }
-#content div.home #bottom #friends ul li{
+#footer #friends ul li{
   float:left;
 }
-#content div.home #bottom #friends ul li a{
+#footer #friends ul li a{
   display:block;
   width:46px;
   height:45px;
 }
-#content div.home #bottom #friends ul li a#twitter{
+#footer #friends ul li a#twitter{
   background-image:url(../images/twitter.png);
   background-repeat:no-repeat;
 }
-#content div.home #bottom #friends ul li a#facebook{
+#footer #friends ul li a#facebook{
   background-image:url(../images/facebook.png);
   background-repeat:no-repeat;
 }
-#content div.home #bottom #friends ul li a span{
+#footer #friends ul li a span{
   display:none;
 }
-body.home #footer{
-  background:none;
+
+
+
+/*==================================
+  My Profile
+==================================*/
+
+#my_profile h1 {
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  background-color:#DFF3F7;
+  color:#23B8D1;
+  font-family:"GeorgiaBoldItalic";
+  font-size:24px;
+  padding:7px 10px;
+  width:260px;
+  float: left;
 }
+
+#my_profile .profile {
+  border: 1px dotted ;
+  padding: 10px;
+  font-size:24px;
+  margin: 20px 0;
+  float: left;
+  width: 100%;
+}
+
+#my_profile .profile img {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+#my_profile .profile .age {
+  font-size:18px;
+}
+
+#my_profile div.gift {
+  margin: 20px 0;
+  float: left;
+}
+
+#my_profile div.gift img {
+  max-width:85px;
+  float: left;
+  margin: 0 auto 10px auto;
+}
+
+#my_profile div.gift span.price {
+  color:#23B8D1;
+}
+
+
+#my_profile div.gift ul {
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  background-color:#DFF3F7;
+  overflow:hidden;
+  line-height:18px;
+  list-style-type:none;
+  margin: 10px 0;
+}
+
+#my_profile div.gift ul li {
+  float:left;
+  font-size:12px;
+  padding:0 5px;
+}
+
+#my_profile div.gift div.gift-info {
+  width: 450px;
+  float:left;
+  margin: 0 0 0 10px;
+}
+
+#my_profile div.gift li span {
+  color:#23B8D1;
+  text-decoration:none;
+}
+
+#my_profile div.gift .advance{
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  background-color:#FFFFFF;
+  border:4px solid #D5D4D2;
+  height:20px;
+  padding:5px;
+  width:180px;
+  margin: 10px 0 0 0;
+} 
+
+#my_profile div.gift .stripes {
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  background:url("../images/stripes.png") repeat-x scroll 0 0 transparent;
+  display:block;
+  height:20px;
+}
+
+#my_profile div.gift .porcentage_gift {
+  color: #187D8E;
+  font-size: 14px;
+}
+
 
 /*==================================
   Sign-in, Sign-up pages
@@ -437,12 +526,7 @@ body.home #footer{
 #login li.welcome-name{
   color:#23B8D1;
 }
-#content{
-  background:#f5f5f5 url(../images/content_bg.jpg) repeat-x;
-  padding:45px;
-  width:820px;
-  overflow:hidden;
-}
+
 #content #col-1{
   width:545px;
   float:left;
@@ -873,213 +957,4 @@ input#save{
 
 #content div.gift-profile .aside-container .share-on img{
    margin: 7px auto;
-}
-
-/*==================================
-  Public Gift Profile Page
-==================================*/
-body.public-gift-profile #content #col-1 #gift-header{
-  width:525px;
-  overflow:hidden;
-}
-body.public-gift-profile #content #col-1 #gift-header img{
-  float:left;
-  border:#23B8D1 3px solid;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-}
-body.public-gift-profile #content #col-1 h1{
-  width:525px;
-  padding:20px 0 0 90px;
-}
-
-body.public-gift-profile #content #col-1 #gift {
-  border:none;
-}
-body.public-gift-profile #content #col-1 #gift .gift-title, body.public-gift-profile #content #col-1 #gift .gift-price {
-  font-size:16px;
-  float:left;
-}
-body.public-gift-profile #content #col-1 #gift .gift-price{
-  margin-left:10px;
-  line-height:normal;
-}
-body.public-gift-profile #content #col-1 #gift .gift-details{
-  background-color:#DFF3F7;
-  overflow:hidden;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  clear:both;
-}
-body.public-gift-profile #content #col-1 #gift .gift-details li{
-  font-size:12px;
-  padding:0 5px;
-  float:left;
-}
-body.public-gift-profile #content #col-1 #gift .gift-description{
-  font-size:17px;
-  color:#23B8D1;
-  margin-top:35px;
-}
-body.public-gift-profile #content #col-1 #gift .gift-description p{
-  font-size:13px;
-  line-height:20px;
-  color:#6B6B6B;
-}
-body.public-gift-profile #content #col-1 #gift .gift-donate{
-  margin-top:25px;
-  width:350px;
-  color:#6B6B6B;
-}
-body.public-gift-profile #content #col-1 #gift .gift-donate span{
-  font-size:17px;
-}
-body.public-gift-profile #content #col-1 #gift .gift-donate input{
-  padding:5px;
-  font-size:14px;
-  color:#6B6B6B;
-  border:#C2C2C2 3px solid;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-}
-body.public-gift-profile #content #col-1 #gift .gift-donate input{
-  padding:5px;
-  font-size:14px;
-  color:#6B6B6B;
-  border:#C2C2C2 3px solid;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-}
-body.public-gift-profile #content #col-1 #gift .gift-donate a.submit{
-  color:#FFF;
-  font-family:"GeorgiaBoldItalic";
-  font-size:17px;
-  padding:3px 0;
-  background-color:#4CD3EC;
-  border:#28CAE8 3px solid;
-  width:95px;
-}
-body.public-gift-profile #content .aside-container, body.public-gift-profile #content .aside-banner{
-  margin:20px 0 0 50px;
-}
-body.public-gift-profile #content .first-container{
-  margin:0 0 0 50px;
-  border:#AFECF7 3px solid;
-  background-color:#69D9ED;
-}
-body.public-gift-profile #content .aside-container a{
-   color: #23B8D1;
-    display: block;
-    font-size: 13px;
-    margin-right: 1px;
-    margin-top: 7px;
-    text-decoration: none;
-}
-body.public-gift-profile #content .aside-container .ends-on{
-  margin-top:15px;
-  padding-top:15px;
-  border-top:#187D8E 1px dashed;
-}
-body.public-gift-profile #content .aside-container .share-on{
-  margin-top:15px;
-  padding-top:15px;
-  border-top:#9B9B9B 1px dashed;
-}
-body.public-gift-profile #content .aside-container p.title{
-  font-size:14px;
-  color:#187D8E;
-}
-body.public-gift-profile #content .aside-container p.title span{
-  color:#FFF;
-}
-body.public-gift-profile #content .aside-container div.info{
-  background-color:#FFF;
-  color:#23B8D1;
-  border:#D5D4D2 4px solid;
-  width:180px;
-  height:20px;
-  padding:5px;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  -moz-box-shadow: 4px 4px 5px #56B1C1;
-  -webkit-box-shadow: 4px 4px 5px #56B1C1;
-  box-shadow: 4px 4px 5px #56B1C1;
-}
-body.public-gift-profile #content .aside-container div.advance{
-  width:100%;
-  overflow:hidden;
-}
-body.public-gift-profile #content .aside-container div.stripes{
-  background:url(../images/stripes.png) repeat-x;
-  display: block;
-    height: 20px;
-    width: 100%;
-}
-body.public-gift-profile #content .aside-container .share-on a{
-  display: block;
-    margin: 7px auto;
-    overflow: hidden;
-    width: 122px;
-}
-body.public-gift-profile #content .aside-container a{
-   color: #23B8D1;
-    display: block;
-    float: right;
-    font-size: 13px;
-    margin-right: 1px;
-    margin-top: 7px;
-    text-decoration: none;
-}
-body.public-gift-profile #content .aside-container .donors{
-  list-style-type:none;
-  overflow:hidden;
-}
-body.public-gift-profile #content .aside-container .donors li{
-  float:left;
-  margin:2px;
-}
-body.public-gift-profile #content .aside-container .donors li a{
-  display:block;
-}
-body.public-gift-profile #content .aside-container .donors li a img{
-  border: 3px solid #23B8D1;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
-  -moz-box-shadow: 3px 3px 4px #333;
-  -webkit-box-shadow: 3px 3px 4px #333;
-  box-shadow: 3px 3px 4px #333;
-}
-
-/*==================================
-  Donation & Confirm Donation
-==================================*/
-body.donation #content #col-1, #content div.confirm-donation  #col-1{
-  float:none;
-  width:auto;
-}
-body.donation form, div.confirm-donation form{
-  width:260px;
-  margin:0 auto;
-}
-body.donation form label, div.confirm-donation form label{
-  color:#3B3B3B;
-  display:block;
-  font-size:14px;
-  margin:15px 0 5px;
-}
-body.donation form input, div.confirm-donation form input{
-  color:#C2C2C2;
-  border:#C2C2C2 3px solid;
-  font-size:15px;
-  padding:7px;
-  width:256px;
-  border-radius:5px;
-  -moz-border-radius:5px;
-  -webkit-border-radius:5px;
 }

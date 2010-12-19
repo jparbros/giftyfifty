@@ -1,47 +1,33 @@
 <div class="home">
-  <div id="top">
-    <div id="busqueda">
-      <span>Gift URL</span>
-      <div id="form">
-        <%= form_tag event_form_path do %>
-          <div id="gift-url">
-             <%= text_field_tag 'gift_url', t(:home_paste_here)%>  
-          </div>
-          <input id="<%= (current_user)? 'search' : 'go-sign-in'%>" type="image" src="images/lupa.png" />
-        <%end%>
-      </div>
-    </div>
-    <div id="steps">
-      <ol>
-        <li id="step1">
-          <h3><%= t(:home_choose_gift)%></h3>
-        </li>
-        <li id="step2">
-          <h3><%= t(:home_spread_world)%></h3>
-        </li>
-        <li id="step3">
-          <h3><%= t(:home_get_it)%></h3>
-        </li>
-      </ol>
-    </div>
-    <div class="clearBoth"></div>
-  </div>
-  <div id="bottom">
-    <div id="vid">
-      <div id="video">
-      </div>
-      <div id="video-description">
-        <p><%= t(:home_what_is)%></p>
-        <p><%= t(:home_how_works)%></p>
-        <a href="watch"><%= t(:home_wath_here)%></a>
-      </div>
-    </div>
-    <div id="friends">
-      <span><%= t(:home_friend_us)%></span>
-      <ul>
-        <li><a id="facebook" href="http://www.facebook.com/giftyfifty" target="blank"><span>Facebook</span></a></li>
-        <li><a id="twitter" href="http://www.twitter.com/giftyfifty" target="blank"><span>Twitter</span></a></li>
-      </ul>
+  <div id="busqueda">
+    <span>Gift URL</span>
+    <div id="form">
+      <%= form_tag event_form_path do %>
+        <div id="gift-url">
+           <%= text_field_tag 'gift_url', t(:home_paste_here)%>  
+        </div>
+        <input id="<%= (current_user)? 'search' : 'go-sign-in'%>" type="image" src="images/lupa.png" />
+      <%end%>
     </div>
   </div>
+  <%= image_tag 'lens.png', :class => 'lens'%>
+  <ul>
+    <li id="step1">
+      <%= image_tag 'gift_home.png'%>
+      <h3><%= t(:home_choose_gift)%></h3>
+    </li>
+    <li id="step2">
+      <%= image_tag 'megaphone_home.png'%>
+      <h3><%= t(:home_spread_world)%></h3>
+    </li>
+    <li id="step3">
+      <%= image_tag 'machine_home.png'%>
+      <h3><%= t(:home_get_it)%></h3>
+    </li>
+  </ul>
+  <div class="clearBoth"></div>
+</div>
+
+<div id="bottom">
+  
 </div>
