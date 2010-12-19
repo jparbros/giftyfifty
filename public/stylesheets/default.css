@@ -102,12 +102,23 @@ body{
 }
 
 #content{
-  width:910px;
   margin:0 auto;
-  background: #00CBEB;
-  border:3px #0FBBDA solid;
+  background:#f5f5f5 url(../images/content_bg.jpg) repeat-x;
+  padding:45px;
+  width:820px;
   -moz-border-radius: 0 0 10px 10px;
   -webkit-border-radius:0 0 10px 10px;
+  padding: 45px;
+}
+
+#footer {
+  background-color:#3b3b3b;
+  height:85px;
+  font-size:12px;
+  text-shadow:#8f8f8f 1px 1px 1px;
+  overflow:hidden;
+  padding-top:12px;
+  margin:10px auto 0 auto;
 }
 
 #footer-links {
@@ -119,26 +130,28 @@ body{
   margin:10px auto 0 auto;
 }
 
-#footer-links ul{
+#footer-links ul, #footer ul{
   list-style-type:none;
 }
-#footer-links ul li{
+#footer-links ul li, #footer ul li{
   float:left;
   color:#FFF;
   padding:0 10px;
 }
-#footer-links ul li a{
+#footer-links ul li a, #footer ul li a{
   color:#FFF;
   text-decoration:none;
 }
-#footer-links ul li a:hover{
+#footer-links ul li a:hover, #footer ul li a:hover{
   color:#000;
 }
-#footer-links #footer-contact{
+#footer-links #footer-contact, #footer #footer-contact{
   float:left;
+  margin: -10px 0 0;
 }
-#footer-links #footer-legal{
+#footer-links #footer-legal, #footer #footer-legal{
   float:right;
+  margin: -10px 0 0;
 }
 
 .clearBoth {
@@ -158,9 +171,15 @@ div#login-signin-box div#account {
 /*==================================
   Home
 ==================================*/
+#content div.home {
+  background: #00CBEB;
+  border:3px #0FBBDA solid;
+  margin: -45px;
+  float: left;
+}
 
 #content div.home .lens{
-  margin: -30px 183px 0;
+ margin:-30px 0 20px 183px;
 }
 
 #content div.home #busqueda{
@@ -198,7 +217,8 @@ div#login-signin-box div#account {
 
 #content div.home ul{
   list-style-type:none;
-  margin: 0 0 0 45px;
+  margin: 0 0 30px 45px;
+  float: left;
 }
   
 
@@ -216,6 +236,10 @@ div#login-signin-box div#account {
   margin: -18px 0 0 0;
 }
 
+#content div.home li h3 {
+  margin: -18px 0 0 0;
+}
+
 #content div.home li#step3 img {
   margin: -48px 0 0 0;
 }
@@ -223,7 +247,7 @@ div#login-signin-box div#account {
   Footer
 ==================================*/
 
-#footer{
+#footer-home{
   background-color:#3B3B3B;
   border:3px solid #707070;
   margin:10px 0 0;
@@ -233,31 +257,31 @@ div#login-signin-box div#account {
   padding:10px 17px;
   overflow:hidden;
 }
-#footer #vid{
+#footer-home #vid{
   font-size:14px;
   color:#FFF;
 }
-#footer #vid #video{
+#footer-home #vid #video{
   width:208px;
   height:117px;
   background-color:#000;
   float:left;
 }
-#footer #vid #video-description{
+#footer-home #vid #video-description{
   float:left;
   margin:15px 25px;
 }
-#footer #vid #video-description a{
+#footer-home #vid #video-description a{
   color:#26C3E0;
   text-decoration:none;
 }
-#footer #friends{
+#footer-home #friends{
   display:block;
   float:right;
   overflow:hidden;
   margin-top:45px;
 }
-#footer #friends span{
+#footer-home #friends span{
   font-family:"GeorgiaBoldItalic";
   font-size:16px;
   color:#FFFFFF;
@@ -265,27 +289,27 @@ div#login-signin-box div#account {
   padding-top:10px;
   padding-right:7px;
 }
-#footer #friends ul{
+#footer-home #friends ul{
   list-style-type:none;
   float:left;
 }
-#footer #friends ul li{
+#footer-home #friends ul li{
   float:left;
 }
-#footer #friends ul li a{
+#footer-home #friends ul li a{
   display:block;
   width:46px;
   height:45px;
 }
-#footer #friends ul li a#twitter{
+#footer-home #friends ul li a#twitter{
   background-image:url(../images/twitter.png);
   background-repeat:no-repeat;
 }
-#footer #friends ul li a#facebook{
+#footer-home #friends ul li a#facebook{
   background-image:url(../images/facebook.png);
   background-repeat:no-repeat;
 }
-#footer #friends ul li a span{
+#footer-home #friends ul li a span{
   display:none;
 }
 
@@ -390,6 +414,10 @@ div#login-signin-box div#account {
 #my_profile div.gift .porcentage_gift {
   color: #187D8E;
   font-size: 14px;
+}
+
+#my_profile p.donation {
+  float: left;
 }
 
 

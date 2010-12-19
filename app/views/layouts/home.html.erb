@@ -22,24 +22,40 @@
       <%= yield %>
       <div class="clearBoth"></div>
     </div>
-  </div>
-  <div id="footer">
-    <div id="footer-links">
-      <ul id="footer-contact">
-        <li><a href="about"><%= t(:about_gifty_footer)%></a></li>
-        <li><a href="blogifty">Blogifty</a></li>
-        <li><a href="team"><%= t(:team_gifty_footer)%></a></li>
-        <li><a href="jobs"><%= t(:jobs_support_footer)%></a></li>
-      </ul>
-      <ul id="footer-legal">
-        <li>Gifty Fifty &copy; 2010</li>
-        <li><a href="terms"><%= t(:terms_footer)%></a></li>
-        <li><a href="privacy"><%= t(:privacy_footer)%></a></li>
-        <li><a href="contact"><%= t(:contact_footer)%></a></li>
-      </ul>
+    <div id="footer-home">
+      <div id="vid">
+        <div id="video">
+        </div>
+        <div id="video-description">
+          <p><%= t(:home_what_is)%></p>
+          <p><%= t(:home_how_works)%></p>
+          <a href="watch"><%= t(:home_wath_here)%></a>
+        </div>
+      </div>
+      <div id="friends">
+        <span><%= t(:home_friend_us)%></span>
+        <ul>
+          <li><a id="facebook" href="http://www.facebook.com/giftyfifty" target="blank"><span>Facebook</span></a></li>
+          <li><a id="twitter" href="http://www.twitter.com/giftyfifty" target="blank"><span>Twitter</span></a></li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div id="fb-root"></div>
+  <div id="footer-links">
+    <ul id="footer-contact">
+      <li><a href="about"><%= t(:about_gifty_footer)%></a></li>
+      <li><a href="blogifty">Blogifty</a></li>
+      <li><a href="team"><%= t(:team_gifty_footer)%></a></li>
+      <li><a href="jobs"><%= t(:jobs_support_footer)%></a></li>
+    </ul>
+    <ul id="footer-legal">
+      <li>Gifty Fifty &copy; 2010</li>
+      <li><a href="terms"><%= t(:terms_footer)%></a></li>
+      <li><a href="privacy"><%= t(:privacy_footer)%></a></li>
+      <li><a href="contact"><%= t(:contact_footer)%></a></li>
+    </ul>
+  </div>
+<div id="fb-root"></div>
 </body>
 </html>
 

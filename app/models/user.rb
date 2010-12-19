@@ -32,6 +32,12 @@ class User < ActiveRecord::Base
   #
   scope :by_facebook_uid, lambda {|uid| joins(:facebook_account).where('oauth_accounts.uid' => uid) }
   scope :by_twitter_uid, lambda {|uid| joins(:twitter_account).where('oauth_accounts.uid' => uid) }
+  
+  #
+  # Callbacks
+  #
+  
+  after_create :create_address
 
   def self.create_by_provider(provider_info,provider)
     password = generate_password
@@ -58,6 +64,11 @@ class User < ActiveRecord::Base
     when 'facebook'
       self.by_facebook_uid(uid)
     end
+  end
+  
+  def create_address
+    address = self.build_address
+    address.save
   end
   
   def password_required? 

@@ -36,6 +36,10 @@ class Donation < ActiveRecord::Base
     end
   end
   
+  def donation_amount
+    (self.total/100.00).to_f
+  end
+  
   private
   def gateway
     @gateway ||= PaypalGateway.new(

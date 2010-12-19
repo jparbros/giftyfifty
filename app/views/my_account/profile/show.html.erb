@@ -13,7 +13,7 @@
     <hr />
     <h1 class="donations">My Donations</h1>
     <% current_user.donations.each do |donation| %>
-      <%= render :partial => 'event', :locals => {:donation => donation} %>
+      <%= render :partial => 'donation', :locals => {:donation => donation} %>
     <%end%>
   </div>
   <div id="col-2" class="aside">
