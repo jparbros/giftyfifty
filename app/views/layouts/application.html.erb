@@ -10,6 +10,30 @@
   <%= javascript_include_tag 'jquery.min','jquery-ui.min','jgrowl','rails','jquery-combobox','application' %>
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
+  <%= javascript_tag do %>
+    var uservoiceOptions = {
+      /* required */
+      key: 'giftyfifty',
+      host: 'giftyfifty.uservoice.com', 
+      forum: '92345',
+      showTab: true,  
+      /* optional */
+      alignment: 'left',
+      background_color:'#4CD3EC', 
+      text_color: 'white',
+      hover_color: '#28CAE8',
+      lang: 'en'
+    };
+
+    function _loadUserVoice() {
+      var s = document.createElement('script');
+      s.setAttribute('type', 'text/javascript');
+      s.setAttribute('src', ("https:" == document.location.protocol ? "https://" : "http://") + "cdn.uservoice.com/javascripts/widgets/tab.js");
+      document.getElementsByTagName('head')[0].appendChild(s);
+    }
+    _loadSuper = window.onload;
+    window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+  <%end%>
 </head>
 
 <body>
