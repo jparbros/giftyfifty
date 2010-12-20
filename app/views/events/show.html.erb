@@ -6,7 +6,7 @@
     </div>
     <div id="gift">
       <div class="gift-image">
-        <%= image_tag @event.item.image %>
+        <%= link_to(image_tag(@event.item.image), @event.item.purchase_url, {:target => 'blank'}) %>
       </div>
       <div id="gift-description">
         <h2 class="gift-title"><%= @event.item.name %></h2>
