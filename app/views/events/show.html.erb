@@ -23,11 +23,17 @@
           <h3><%= @event.title %></h3>
           <p><%= @event.description %></p>
         </div>
-        <% unless is_owner? %>
+        <% unless is_owner? and @event.open %>
           <div class="gift-donate">
             <%= link_to 'Donate', new_event_donation_path(@event), {:class => "submit"}%>
           </div>
         <% end %>
+        <% if is_owner? and @event.open %>
+          <div class="gift-donate">
+            <%= link_to 'Edit', edit_event_path(@event), {:class => "submit"}%>
+            <%= link_to 'Release','', {:class => "submit", :id => 'release-gift'}%>
+          </div>
+        <%end%>
       </div>
     </div>
     
@@ -66,15 +72,22 @@
   </div>
   
   <div id="share-facebook" title="Facebook Message">
-    <%form_tag event_facebook_path(@event) do %>
+    <%= form_tag event_facebook_path(@event) do %>
       <%= text_area_tag 'facebook_message', @event.message('event', event_url(@event))  %>
       
     <%end%>
   </div>
   <div id="share-twitter" title="Twitter Message">
-    <%form_tag event_twitter_path(@event) do %>
+    <%= form_tag event_twitter_path(@event) do %>
       <%= text_area_tag 'twitter_message', @event.message('event', event_url(@event))  %>
       <%= submit_tag 'Share', :class => 'submit'%>
+    <%end%>
+  </div>
+  <div id="release-box" title="Release Your Gift">
+    <%= form_for @event.build_release, :url => event_release_paypal_path(@event) do |form|%>
+      <%= form.label 'Paypal email' %>
+      <%= form.text_field :email %>
+      <%= submit_tag 'Release', :class => 'submit'%>
     <%end%>
   </div>
 
@@ -88,6 +101,7 @@
       loadShareObjects();
       dialogShareBoxes();
       countCharacters();
+      releaseBox();
     });
   </script>
   <% end %>

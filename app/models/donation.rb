@@ -24,7 +24,7 @@ class Donation < ActiveRecord::Base
   
   def donate!
     cc = CreditCard.new(formated_params)
-    if cc.valid?
+    if cc.valid? and self.event.open
       result = gateway.purchase(self.donation, cc, {:ip => self.ip})
       if result.success?
         self.save

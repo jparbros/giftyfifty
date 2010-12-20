@@ -174,6 +174,23 @@ var countCharacters = function() {
   });
 };
 
+var releaseBox = function() {
+  release = $('div#release-box');
+  releaseButton = $('a#release-gift');
+  release.dialog({
+    resizable: false,
+    stack: false,
+    autoOpen: false,
+    height: 150,
+    width: 450,
+    modal: true,
+  });
+  releaseButton.click(function(){
+    release.dialog('open');
+    return false;
+  });
+}
+
 $(document).ready(function() {
   cacheElements();
   setBoxes();
