@@ -4,7 +4,7 @@
     <p class="profile">
       <%= image_tag current_user.thumb_image if current_user.thumb_image %>
         <%= current_user.name %><br />
-        <span class="age"><%= current_user.age %> yeras old</span>
+        <span class="age"><%= current_user.age %> years old</span>
     </p>
     <h1>My Gifts</h1>
     <% current_user.events.each do |event| %>

@@ -114,9 +114,11 @@ class User < ActiveRecord::Base
   end
   
   def age
-    today = Time.now
-    bday = self.birthday
-    (today.year - bday.year) - (today.yday < bday.yday ? 1 : 0)
+    if self.birthday
+      today = Time.now
+      bday = self.birthday
+      (today.year - bday.year) - (today.yday < bday.yday ? 1 : 0)
+    end
   end
   
   private
