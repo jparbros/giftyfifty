@@ -5,10 +5,16 @@ class MyAccount::FacebooksController < ApplicationController
   end
   
   def create_facebook
-    access_token = client.authorization.process_callback(params[:code], :redirect_uri => create_facebook_my_account_facebook_url)
-    current_user.facebook_account = FacebookAccount.new({:token => access_token})
-    current_user.save
-    redirect_to show_profile_path
+    begin
+      access_token = client.authorization.process_callback(params[:code], :redirect_uri => create_facebook_my_account_facebook_url)
+      current_user.facebook_account = FacebookAccount.new({:token => access_token})
+      current_user.save
+      message_output = 'Your facebook account was linked successfully.'
+    rescue Exception => e
+      message_output = 'There was a problem linking your facebook account.'
+    end
+    growl_message message_output
+    redirect_to request.referrer
   end
   
   private

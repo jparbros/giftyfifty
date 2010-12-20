@@ -5,10 +5,16 @@ class MyAccount::TwittersController < ApplicationController
   end
   
   def create_twitter
-    access_token
-    current_user.twitter_account = TwitterAccount.new({:token => access_token.token ,:secret => access_token.secret})
-    current_user.save
-    redirect_to show_profile_path
+    begin
+      access_token
+      current_user.twitter_account = TwitterAccount.new({:token => access_token.token ,:secret => access_token.secret})
+      current_user.save
+      message_output = 'Your twitter account was linked successfully.'
+    rescue Exception => e
+      message_output = 'There was a problem linking your twitter account.'
+    end
+    growl_message message_output 
+    redirect_to request.referrer
   end
   
   private

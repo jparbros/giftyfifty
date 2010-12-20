@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
   
   def redirect_to_new_event
-    if session['gift_url'] and current_user
+    if session['gift_url'] and current_user and session['gift_url'] != 'Paste the URL of your Gift'
       gift_url = session['gift_url']
       session['gift_url'] = nil
       redirect_to redirect_to_event_path('gift_url' => gift_url)
