@@ -10,7 +10,7 @@ module Scrap
     end
     
     def price
-      (@hp.search "tr>td>b.priceLarge").inner_text.gsub('$','').to_f
+      (@hp.search "tr>td>b.priceLarge").inner_text.gsub('$','').gsub(',','').to_f
     end
     
     def image

@@ -9,7 +9,7 @@ module Scrap
     end
     
     def price
-      (@hp.search ".vi-is1-solid.vi-is1-tbll>span").inner_text.gsub(/^.*\$/,'').to_f
+      (@hp.search ".vi-is1-solid.vi-is1-tbll>span").inner_text.gsub(/^.*\$/,'').gsub('$','').gsub(',','').to_f
     end
     
     def image
