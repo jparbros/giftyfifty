@@ -40,14 +40,14 @@ class Event < ActiveRecord::Base
   # Instances Methods
   #
 
-  def share_on_twitter(event_url, message)
-    self.user.twitter_account.client.update(message(message, event_url))
+  def share_on_twitter(twitter_message)
+    self.user.twitter_account.client.update(twitter_message)
   end
   
-  def share_on_facebook(event_url, message)
+  def share_on_facebook(facebook_message)
     client = self.user.facebook_account.client
     user = client.selection.me.info!
-    client.selection.user(user[:id]).feed.publish!(:message => message(message, event_url) )
+    client.selection.user(user[:id]).feed.publish!(:message => facebook_message)
   end
   
   def message(message_type, message_url)

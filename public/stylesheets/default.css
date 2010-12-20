@@ -672,6 +672,8 @@ div.edit #footer, body.public-gift-profile #footer{
   margin-top:25px;
 }
 
+
+
 /*==================================
   Edit Page
 ==================================*/
@@ -985,4 +987,21 @@ input#save{
 
 #content div.gift-profile .aside-container .share-on img{
    margin: 7px auto;
+}
+
+#share-facebook textarea, #share-twitter textarea {
+  width: 300px !important;
+  height: 200px !important;
+}
+
+#share-facebook input[type=submit], #share-twitter input[type=submit]{
+  background-color:#4CD3EC;
+  border:3px solid #28CAE8;
+  color:#FFFFFF;
+  float:right;
+  font-family:"GeorgiaBoldItalic";
+  font-size:17px;
+  margin:10px 0 0;
+  padding:3px 20px;
+  width:100px;
 }

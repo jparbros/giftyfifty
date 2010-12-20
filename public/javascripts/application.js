@@ -131,6 +131,49 @@ var buttonsCreateEvent = function(){
   });
 }
 
+var loadShareObjects = function() {
+  twitterBox = $('div#share-twitter');
+  facebookBox = $('div#share-facebook');
+  twitterButton = $('div.share-on a#twitter-share-link');
+  facebookButton = $('div.share-on a#facebook-share-link');
+  twitterTextarea = $('div#share-twitter textarea');
+  twitterCounter = $('div.ui-dialog span#twitter_counter');
+}
+
+var dialogShareBoxes = function() {
+  twitterBox.dialog({
+    resizable: false,
+    stack: false,
+    autoOpen: false,
+    height: 350,
+    width: 350,
+    modal: true,
+  });
+  facebookBox.dialog({
+    resizable: false,
+    stack: false,
+    autoOpen: false,
+    height: 350,
+    width: 350,
+    modal: true,
+  });
+  twitterButton.click(function(){
+    twitterBox.dialog('open');
+    return false;
+  });
+  facebookButton.click(function(){
+    facebookBox.dialog('open');
+    return false;
+  });
+}
+
+var countCharacters = function() {
+  twitterTextarea.counter({
+    count: 'down', 
+    goal: 140
+  });
+};
+
 $(document).ready(function() {
   cacheElements();
   setBoxes();
