@@ -71,7 +71,7 @@ body{
   margin:0 0 10px 10px;
 }
 
-#login #menu_content #menu_elements p a {
+#login #menu_content #menu_elements a {
   color: #23B8D1;
   font-size: 14px;
   text-decoration: none;
@@ -401,6 +401,7 @@ div#login-signin-box div#account {
   padding:5px;
   width:180px;
   margin: 10px 0 0 0;
+  overflow:hidden;
 } 
 
 #my_profile div.gift .stripes {
@@ -648,6 +649,7 @@ div#login-signin-box div#account {
 }
 #content .aside{
   float:left;
+  width:200px;
 }
 #content .aside-container{
   width:195px;
@@ -658,7 +660,13 @@ div#login-signin-box div#account {
   border-radius:5px;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
+  float: left;
 }
+
+#content .aside-container h3{
+  
+}
+
 #content p{
   font-size:14px;
   color:#959595;
@@ -938,6 +946,20 @@ input#save{
     margin-top: 7px;
     text-decoration: none;
 }
+
+#content .aside-container .connect_class {
+  margin: 10px 0;
+  float: left;
+}
+
+#content .aside-container .connected_class {
+  opacity : 0.4;
+  filter: alpha(opacity=40); // msie
+  background-color: #000;
+  margin: 10px 0;
+  float: left;
+}
+
 #content div.gift-profile .aside-container .ends-on{
   margin-top:15px;
   padding-top:15px;
@@ -952,6 +974,12 @@ input#save{
   font-size:14px;
   color:#187D8E;
 }
+
+#content .aside-container h3{
+  font-size:14px;
+  color:#187D8E;
+}
+
 #content div.gift-profile .aside-container p.title span{
   color:#FFF;
 }

@@ -5,12 +5,13 @@
     </div>
     <div id="menu_content">
       <div id="menu_elements">
-        <p><%= link_to(t(:my_account), edit_user_registration_path,{:id => 'my-account-link'}) %></p>
+        <%= link_to(content_tag('p', t(:my_profile)), show_profile_path) %>
+        <%= link_to(content_tag('p', t(:my_settings)), edit_user_registration_path,{:id => 'my-account-link'}) %>
         <% active_event = current_user.active_event
         unless active_event.blank? %>
-          <p><%= link_to(t(:my_event),event_path(active_event.last)) %></p>
+          <%= link_to(content_tag('p', t(:my_event)),event_path(active_event.last)) %>
         <% end %>
-        <p><%= link_to(t(:logout),destroy_user_session_path) %></p>
+        <%= link_to(content_tag('p', t(:logout)),destroy_user_session_path) %>
       </div>
     </div>
   <%else%>

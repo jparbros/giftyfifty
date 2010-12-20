@@ -1,2 +1,0 @@
-module MyAccount::SocialHelper
-end

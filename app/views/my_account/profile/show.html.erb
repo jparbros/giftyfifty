@@ -4,7 +4,9 @@
     <p class="profile">
       <%= image_tag current_user.thumb_image if current_user.thumb_image %>
         <%= current_user.name %><br />
-        <span class="age"><%= current_user.age %> years old</span>
+        <% if current_user.birthday %>
+          <span class="age"><%= current_user.age %> years old</span>
+        <% end %>
     </p>
     <h1>My Gifts</h1>
     <% current_user.events.each do |event| %>
@@ -17,5 +19,10 @@
     <%end%>
   </div>
   <div id="col-2" class="aside">
+    <div class="aside-container">
+      <h3>Connect your gifts and friends</h3>
+      <%= add_twitter %>
+      <%= add_facebook %>
+    </div>
   </div>
 </div>

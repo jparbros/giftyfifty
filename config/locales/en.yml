@@ -3,7 +3,8 @@
 
 en:
   my_event: "My Event"
-  my_account: 'My Account'
+  my_settings: 'Edit Settings'
+  my_profile: 'My Account'
   logout: 'Logout'
   login: 'Login'
   have_account: 'Have an account?'
