@@ -27,7 +27,7 @@ var setBoxes = function() {
     resizable: false,
     stack: false,
     autoOpen: false,
-    height: 350,
+    height: 400,
     width: 1000,
     modal: true,
   });

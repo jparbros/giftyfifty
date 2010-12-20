@@ -88,6 +88,7 @@ body{
 
 #login li{
   float:left;
+  list-style: none;
 }
 
 #login li a{
@@ -426,7 +427,7 @@ div#login-signin-box div#account {
   Sign-in, Sign-up pages
 ==================================*/
 
-#sign-up h1, #sign-in h1 {
+#sign-up h1, #sign-in h1, #account h1{
   -moz-border-radius:5px 5px 5px 5px;
   background-color:#DFF3F7;
   color:#23B8D1;
@@ -436,15 +437,38 @@ div#login-signin-box div#account {
   width:260px;
 }
 
-#sign-up form label, #sign-in form label {
+#account h2, #providers h2 {
+  color:#23B8D1;
+  font-size:18px;
+}
+
+#login-signin-box #providers img {
+  float:left;
+}
+
+#login-signin-box #providers #provider_facebook, #login-signin-box #providers #provider_twitter {
+  height: 80px;
+}
+
+#login-signin-box #providers #provider_facebook {
+  margin: 80px 0 20px 0;
+}
+
+#sign-up form label, #sign-in form label, #account form label{
   color:#3B3B3B;
   display:inline-block;
   font-size:12px;
   width:100px;
 }
 
+
+#account form label{ 
+  width: 200px;
+}
+
 #sign-up form input[type=text], #sign-up form input[type=password],
-#sign-in form input[type=text], #sign-in form input[type=password] {
+#sign-in form input[type=text], #sign-in form input[type=password], 
+#account form input[type=text], #account form input[type=password] {
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
   border:3px solid #C2C2C2;
@@ -455,7 +479,8 @@ div#login-signin-box div#account {
 }
 
 #sign-up form input[type=submit],
-#sign-in form input[type=submit] {
+#sign-in form input[type=submit],
+#account form input[type=submit] {
   background-color:#4CD3EC;
   border:3px solid #28CAE8;
   color:#FFFFFF;
@@ -467,11 +492,11 @@ div#login-signin-box div#account {
   width:100px;
 }
 
-#sign-up form p, #sign-in form p {
+#sign-up form p, #sign-in form p, #account form p {
   margin: 20px 5px;
 }
 
-#sign-up a, #sign-in a {
+#sign-up a, #sign-in a, #account a {
   color: #4CD3EC;
   text-decoration: none;
 }

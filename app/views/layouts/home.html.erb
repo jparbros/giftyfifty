@@ -44,14 +44,13 @@
   <div id="footer-links">
     <ul id="footer-contact">
       <li><a href="about"><%= t(:about_gifty_footer)%></a></li>
-      <li><a href="blogifty">Blogifty</a></li>
+      <li><a href="http://blog.giftyfifty.com/">Blogifty</a></li>
       <li><a href="team"><%= t(:team_gifty_footer)%></a></li>
       <li><a href="jobs"><%= t(:jobs_support_footer)%></a></li>
     </ul>
     <ul id="footer-legal">
       <li>Gifty Fifty &copy; 2010</li>
       <li><a href="terms"><%= t(:terms_footer)%></a></li>
-      <li><a href="privacy"><%= t(:privacy_footer)%></a></li>
       <li><a href="contact"><%= t(:contact_footer)%></a></li>
     </ul>
   </div>
@@ -63,8 +62,20 @@
   <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
   <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
   <div id="providers" class="column span-5 last">
-    <%= link_to(image_tag('facebook_64.png'), '/auth/facebook')%>
-    <%= link_to(image_tag('twitter_64.png'), '/auth/twitter')%>
+    <div id="provider_facebook">
+      <a href="/auth/facebook">
+        <%= image_tag('facebook_64.png')%>
+        <h2>Login with</h2>
+        Facebook
+      </a>
+    </div>
+    <div id="provider_twitter">
+      <a href="/auth/twitter">
+        <%= image_tag('twitter_64.png') %>
+        <h2>Login with</h2>
+        Twitter
+      </a>
+    </div>
   </div>
 </div>
 </body>
