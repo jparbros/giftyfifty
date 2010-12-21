@@ -64,7 +64,7 @@ class Event < ActiveRecord::Base
   end
   
   def social_message(message_url)
-    SOCIAL_MESSAGE.gsub('/GIFT_URL/', message_url).gsub('/OCCASION/',self.occasion.name.humanize)
+    SOCIAL_MESSAGE.gsub('/GIFT_URL/', message_url).gsub('/OCCASION/',(self.occasion)? self.occasion.name.humanize : '' )
   end
   
   def total_donations
