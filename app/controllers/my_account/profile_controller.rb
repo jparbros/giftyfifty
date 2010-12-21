@@ -9,7 +9,12 @@ class MyAccount::ProfileController < ApplicationController
     user = User.find_by_username(params[:user_name])
     if user
       event = user.events.active.last
-      redirect_to event_path(event)
+      event = user.events.last if event.nil?
+      if event
+        redirect_to event_path(event)
+      else
+        redirect_to :root
+      end
     else
       redirect_to :root
     end
