@@ -34,6 +34,7 @@ gem 'mini_magick'
 group :production do
   gem 'unicorn'
   gem 'capistrano'
+  gem 'memcache'
 end
 
 group :test do
