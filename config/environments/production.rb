@@ -29,10 +29,11 @@ Giftyfifty::Application.configure do
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = ['http://asset1.giftyfifty.com/','http://asset2.giftyfifty.com/','http://asset3.giftyfifty.com/']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
