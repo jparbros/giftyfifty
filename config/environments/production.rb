@@ -25,7 +25,7 @@ Giftyfifty::Application.configure do
   # config.logger = SyslogLogger.new
 
   # Use a different cache store in production
-  config.cache_store = :mem_cache_store, Memcached::Rails.new
+  config.cache_store = :mem_cache_store, '127.0.0.1:11211' #Memcached::Rails.new
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
