@@ -1,0 +1,7 @@
+javascripts/jquery.min.js
+javascripts/jquery-ui.min.js
+javascripts/jgrowl.js
+javascripts/jquery-combobox.js
+javascripts/jquery.counter.js
+javascripts/rails.js
+javascripts/application.js
