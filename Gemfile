@@ -35,6 +35,7 @@ group :production do
   gem 'unicorn'
   gem 'capistrano'
   gem 'memcache'
+  gem 'memcache-client'
 end
 
 group :test do
