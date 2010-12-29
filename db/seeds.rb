@@ -17,11 +17,12 @@ Occasion.delete_all
 Occasion.create([
         {:name => 'birthday'},
         {:name => 'wedding'},
-        {:name => 'mothers day'},
-        {:name => 'baptism'},
-        {:name => 'first communion'},
         {:name => 'christmas'},
-        {:name => 'baby shower'}])
+        {:name => 'just because'},
+        {:name => 'Anniversary'},
+        {:name => 'bridal shower'},
+        {:name => 'baby shower'},
+        {:name => 'other'}])
   
 Location.delete_all      
 Location.create([
