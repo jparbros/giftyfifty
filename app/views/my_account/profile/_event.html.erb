@@ -10,9 +10,14 @@
         <li>Powered by: <span><%= event.provider.name.humanize %></span></li>
       <% end %>
     </ul>
-    <span class="porcentage_gift"><%= event.porcentage_donation %>% closer to your gift</span>
-    <div class="advance">
-      <div class="stripes" style="width:<%= event.porcentage_donation%>%"></div>
+    <div class="gift_donations">
+      <span class="porcentage_gift"><%= event.porcentage_donation %>% closer to your gift</span>
+      <div class="advance">
+        <div class="stripes" style="width:<%= event.porcentage_donation%>%"></div>
+      </div>
+    </div>
+    <div class="view_button">
+      <%= link_to 'View Event', event_path(event), {:class => "submit"}%>
     </div>
   </div>
 </div>

@@ -388,6 +388,14 @@ div#login-signin-box div#account {
   margin: 0 0 0 10px;
 }
 
+.gift-info .view_button, .gift-info .gift_donations {
+  float:left;
+}
+
+.gift-info .view_button {
+  margin: 35px 0 0 15px;
+}
+
 #my_profile div.gift li span {
   color:#23B8D1;
   text-decoration:none;
@@ -942,7 +950,7 @@ input#save{
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
 }
-#content div.gift-profile #col-1 #gift .gift-donate a.submit{
+#content div.gift-profile #col-1 #gift .gift-donate a.submit, a.submit {
   color:#FFF;
   font-family:"GeorgiaBoldItalic";
   font-size:17px;
@@ -955,6 +963,7 @@ input#save{
   padding: 5px 10px;
   text-decoration: none;
 }
+
 #content div.gift-profile .aside-container, #content div.gift-profile .aside-banner{
   margin:20px 0 0 50px;
 }
