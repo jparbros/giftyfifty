@@ -12,11 +12,21 @@
     <% current_user.events.each do |event| %>
       <%= render :partial => 'event', :locals => {:event => event} %>
     <%end%>
+    <% if current_user.events.blank? %>
+      <div class="gift">
+        You haven't submit gift yet.
+      </div>
+    <% end %>
     <hr />
     <h1 class="donations">My Donations</h1>
     <% current_user.donations.each do |donation| %>
       <%= render :partial => 'donation', :locals => {:donation => donation} %>
     <%end%>
+    <% if current_user.donations.blank? %>
+      <p class="donation">
+        You haven't made donations yet.
+      </p>
+    <% end %>
   </div>
   <div id="col-2" class="aside">
     <div class="aside-container">
