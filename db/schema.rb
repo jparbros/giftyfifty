@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101220095257) do
+ActiveRecord::Schema.define(:version => 20101229085533) do
 
   create_table "addresses", :force => true do |t|
     t.string   "country"
@@ -127,8 +127,6 @@ ActiveRecord::Schema.define(:version => 20101220095257) do
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
-    t.string   "name"
-    t.string   "password"
     t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
     t.string   "password_salt",                       :default => "", :null => false
     t.string   "reset_password_token"
@@ -147,6 +145,8 @@ ActiveRecord::Schema.define(:version => 20101220095257) do
     t.string   "gender"
     t.string   "username"
     t.string   "avatar"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

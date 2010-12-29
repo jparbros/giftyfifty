@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :address, :name, :username, :gender, :birthday, :address_attributes, :avatar, :avatar_cache
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :address, :first_name, :last_name, :username, :gender, :birthday, :address_attributes, :avatar, :avatar_cache
   
   #
   # Uploader
@@ -69,6 +69,10 @@ class User < ActiveRecord::Base
   def create_address
     address = self.build_address
     address.save
+  end
+  
+  def name
+    self.first_name.to_s + ' ' + self.last_name.to_s
   end
   
   def password_required? 
