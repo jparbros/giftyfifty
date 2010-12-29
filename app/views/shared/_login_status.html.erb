@@ -1,7 +1,12 @@
 <div id="login">
   <% if user_signed_in? %>
     <div id="menu_toggle">
-      <%= image_tag(current_user.menu_image) if current_user.menu_image %> Welcome <%= current_user.name if current_user.name%>
+      <%= image_tag(current_user.menu_image) if current_user.menu_image %> 
+      <% unless current_user.name.blank? %>
+        <%= current_user.name if current_user.name%>
+      <% else %>
+        Welcome 
+      <% end %>
     </div>
     <div id="menu_content">
       <div id="menu_elements">
