@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101229085533) do
+ActiveRecord::Schema.define(:version => 20101230082352) do
 
   create_table "addresses", :force => true do |t|
     t.string   "country"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20101229085533) do
     t.date     "end_at"
     t.boolean  "manual"
     t.boolean  "open",        :default => true
+    t.string   "identifier"
   end
 
   create_table "items", :force => true do |t|

@@ -40,7 +40,7 @@ Giftyfifty::Application.routes.draw do
   match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
   match '/blank', :to => 'main#blank'
   match '/users', :to => 'devise/registrations#update', :via => :put
-  match '/:user_name', :to => 'my_account/profile#search'
+  match '/:user_name', :to => 'my_account/profile#search', :as => 'personal_urls'
   match '/events/:event_id/twitter', :to => 'twitters#create'
   match '/events/:event_id/facebook', :to => 'facebooks#create'
   match '/locale/:locale', :to => 'main#set_locale', :as => 'set_locale'

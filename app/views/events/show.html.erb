@@ -59,13 +59,19 @@
     <div class="aside-container">
       <p class="title">Gift Donors</p>
       <p>There are no donors yet</p>
+    </div>
+    <div class="aside-container">
       <% if is_owner? %>
         <div class="share-on">
           <p class="title">
-            Tell your friends! <span>Share on</span>
+            Invite and tell your friends to donate on
           </p>
             <%= twitter_link %>
             <%= facebook_link %>
+            <p class="title">
+              Your Link
+            </p>
+            <%= text_field_tag 'event_url', personal_urls_url(@event.identifier)%>
         </div>
       <%end%>
       </div>

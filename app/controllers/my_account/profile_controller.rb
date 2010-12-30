@@ -16,7 +16,12 @@ class MyAccount::ProfileController < ApplicationController
         redirect_to :root
       end
     else
-      redirect_to :root
+      event = Event.find_by_identifier(params[:user_name])
+      if event
+        redirect_to event_path(event)
+      else
+        redirect_to :root
+      end
     end
   end
 end

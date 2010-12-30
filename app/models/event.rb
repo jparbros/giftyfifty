@@ -28,7 +28,7 @@ class Event < ActiveRecord::Base
   #
   # Callbacks
   #
-  after_create :create_event
+  after_create :create_event, :create_url
   
   #
   # Constants
@@ -128,6 +128,22 @@ class Event < ActiveRecord::Base
       self.item.price = self.item.price * 100
       self.item.save
     end
+  end
+  
+  def create_url
+    new_url = generate_url
+    until Event.find_by_identifier(new_url).nil?
+      new_url = generate_url
+    end
+    self.identifier = new_url
+    self.save
+  end
+  
+  def generate_url(length = 6)
+    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + %w{$ | !}
+    code = ""
+    1.upto(length) { |i| code << chars[rand(chars.size-1)] }
+    code
   end
   
 end
