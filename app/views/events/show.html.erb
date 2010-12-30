@@ -68,6 +68,7 @@
           </p>
             <%= twitter_link %>
             <%= facebook_link %>
+            <%=  link_to(image_tag('share-mail.png'), '', :id => 'email-share-link') %>
             <p class="title">
               Your Link
             </p>
@@ -90,6 +91,16 @@
       <%= submit_tag 'Share', :class => 'submit'%>
     <%end%>
   </div>
+  <div id="share-email" title="Email Invitation">
+    <%= form_tag event_invitation_path(@event) do %>
+      <%= text_field_tag 'add_email' %>
+      <%= link_to 'Add','', {:class => "submit", :id => 'add-new-email'}%>
+      <div id="all_emails">
+        Send Invitation to:
+      </div>
+      <%= submit_tag 'Share', :class => 'submit'%>
+    <%end%>
+  </div>
   <div id="release-box" title="Release Your Gift">
     <%= form_for @event.build_release, :url => event_release_paypal_path(@event) do |form|%>
       <%= form.label 'Paypal email' %>
@@ -109,6 +120,7 @@
       dialogShareBoxes();
       countCharacters();
       releaseBox();
+      emailSharing();
     });
   </script>
   <% end %>

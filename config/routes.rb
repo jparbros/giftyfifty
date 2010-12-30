@@ -8,6 +8,7 @@ Giftyfifty::Application.routes.draw do
    resources :events, :except => [:index, :delete] do
       resource :twitter, :only => :create
       resource :facebook, :only => :create
+      resource :invitation, :only => :create
       resources :donations, :only => [:new, :create, :show]
       namespace :release do
         resource :paypal, :only => :create

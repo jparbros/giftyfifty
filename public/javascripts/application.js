@@ -134,8 +134,10 @@ var buttonsCreateEvent = function(){
 var loadShareObjects = function() {
   twitterBox = $('div#share-twitter');
   facebookBox = $('div#share-facebook');
+  emailBox = $('div#share-email');
   twitterButton = $('div.share-on a#twitter-share-link');
   facebookButton = $('div.share-on a#facebook-share-link');
+  emailButton = $('div.share-on a#email-share-link');
   twitterTextarea = $('div#share-twitter textarea');
   twitterCounter = $('div.ui-dialog span#twitter_counter');
 }
@@ -157,6 +159,14 @@ var dialogShareBoxes = function() {
     width: 350,
     modal: true,
   });
+  emailBox.dialog({
+    resizable: false,
+    stack: false,
+    autoOpen: false,
+    height: 350,
+    width: 350,
+    modal: true,
+  });
   twitterButton.click(function(){
     twitterBox.dialog('open');
     return false;
@@ -165,7 +175,34 @@ var dialogShareBoxes = function() {
     facebookBox.dialog('open');
     return false;
   });
+  emailButton.click(function(){
+    emailBox.dialog('open');
+    return false;
+  });
 }
+
+var emailSharing = function() {
+  addEmail = $('div.ui-dialog #add-new-email');
+  emailsBox = $('div.ui-dialog #all_emails');
+  emailInput = $('div.ui-dialog #add_email');
+  addEmail.click(function(){
+    createEmail(emailInput.attr('value'));
+    return false;
+  });
+};
+
+var createEmail = function(email_text) {
+  new_box = $('<div>'+ email_text +'</div>');
+  new_box.appendTo(emailsBox);
+  $('<input type="hidden" />').attr('name', 'emails[]').attr('value',email_text).appendTo(new_box);
+  close_button = $('<span>X</span>');
+  close_button.appendTo(new_box);
+  close_button.css({'cursor':'pointer'});
+  emailInput.attr('value','');
+  close_button.click(function(){
+    $(this).parent().remove();
+  });
+};
 
 var countCharacters = function() {
   twitterTextarea.counter({
