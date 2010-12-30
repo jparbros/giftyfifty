@@ -1,5 +1,5 @@
 <div class="gift">
-  <%= image_tag event.item.image %>
+  <%= link_to(image_tag(event.item.image), event.item.purchase_url, {:target => 'blank'}) %>
   <div class="gift-info">
     <%= event.item.name %> <span class="price"><%= number_to_currency((event.item.formated_price)) %></span>
     <ul>
@@ -7,7 +7,7 @@
         <li>Categories: <span><%= event.item.category%></span></li>
       <% end %>
       <% if event.provider %>
-        <li>Powered by: <span><%= event.provider.name.humanize %></span></li>
+        <li>Powered by: <span><%= link_to(event.provider.name.humanize, event.provider.url, {:target => 'blank'}) %></span></li>
       <% end %>
     </ul>
     <div class="gift_donations">
