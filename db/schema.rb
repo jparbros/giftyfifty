@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230082352) do
+ActiveRecord::Schema.define(:version => 20101230111555) do
 
   create_table "addresses", :force => true do |t|
     t.string   "country"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20101230082352) do
     t.string   "image_url"
     t.string   "category"
     t.string   "image_uploaded"
+    t.integer  "shipping_cost"
   end
 
   create_table "locations", :force => true do |t|

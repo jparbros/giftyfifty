@@ -102,7 +102,6 @@ class Event < ActiveRecord::Base
     self.url = URI.parse(self.url)
     @provider = :amazon if self.url.host.include? 'amazon'
     @provider = :ebay if self.url.host.include? 'ebay'
-    puts @provider
   end
   
   def create_item
@@ -113,9 +112,37 @@ class Event < ActiveRecord::Base
       :purchase_url => self.url.to_s,
       :image_url => @item_info.image,
       :category => @item_info.category,
+      :shipping_cost => calculate_shipping,
       :event => self)
     item.save
     item
+  end
+  
+  def get_category
+    case @item_info.category
+    when 'Computer & Accessories'
+      'Computers'
+    else
+      @item_info.category
+    end
+  end
+  
+  def calculate_shipping
+    case @provider.name
+    when 'amazon'
+      amazon_shipment = AmazonShipment.find_by_category(get_category)
+      if amazon_shipment
+        if amazon_shipment.per_pound
+          (amazon_shipment.per_shipment + (amazon_shipment.per_item * @item_info.weight))
+        else
+          (amazon_shipment.per_shipment + amazon_shipment.per_item)
+        end
+      else
+        0
+      end
+    when 'ebay'
+      @item_info.shipping.gsub('$','').to_f * 100
+    end
   end
   
   def create_event
