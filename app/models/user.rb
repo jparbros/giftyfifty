@@ -110,11 +110,19 @@ class User < ActiveRecord::Base
   end
   
   def menu_image
-    self.avatar.menu.url if self.avatar
+    if self.avatar
+      self.avatar.menu.url
+    else
+      'avatar-50.jpg'
+    end
   end
   
   def thumb_image
-    self.avatar.thumb.url if self.avatar
+    if self.avatar
+      self.avatar.thumb.url
+    else
+      'avatar-30.jpg'
+    end
   end
   
   def age
