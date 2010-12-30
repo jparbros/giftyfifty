@@ -7,6 +7,7 @@ class UserMailer < ActionMailer::Base
   end
   
   def test
-    mail(:to => 'jparbros@hotmail.cp,', :subject => "Welcome to GiftyFifty!")
+    mail(:to => 'jparbros@hotmail.com', :subject => "Welcome to GiftyFifty!")
+    headers('Content-Type' => 'text/html') 
   end
 end
