@@ -97,3 +97,12 @@
   <% end %>
   
 </div>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag 'jquery.counter'%>
+<script>
+  $(function() {
+    validateUserEditForm();
+  });
+</script>
+<% end %>

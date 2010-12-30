@@ -158,6 +158,11 @@ body{
 .clearBoth {
   clear: both;
 }
+
+label.error {
+  width: 100% !important;
+  color: red !important;
+}
 /*==================================
   Login modal box
 ==================================*/

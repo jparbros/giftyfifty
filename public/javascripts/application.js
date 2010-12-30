@@ -191,6 +191,23 @@ var releaseBox = function() {
   });
 }
 
+var validateUserEditForm = function() {
+  $('#user_edit').validate({
+      rules: {
+          'user[first_name]': 'required',
+          'user[last_name]': 'required',
+          'user[birthday]': 'required',
+          'user[username]': 'required'
+      },
+      messages: {
+          'user[first_name]': 'The first name is required.',
+          'user[last_name]': 'The last name is required.',
+          'user[birthday]': 'The birthday is required.',
+          'user[username]': 'The username is required.'
+      }
+  });
+}
+
 $(document).ready(function() {
   cacheElements();
   setBoxes();
