@@ -191,9 +191,10 @@ div#login-signin-box div#account {
   Home
 ==================================*/
 .home {
-  background: url('../images/content_bg.png') repeat-x #00CBEB !important;
+  background: url('../images/content_bg.png') repeat-x #21A9C2 !important;
   border:3px #0FBBDA solid;
   margin-top: -5px;
+  min-height: 315px;
 }
 
 .steps {
@@ -202,7 +203,7 @@ div#login-signin-box div#account {
 }
 
 div.home .lens{
- margin:-30px 0 0px 93px;
+ margin: -160px 0 0px 93px;
 }
 
 div.home #busqueda{
@@ -221,6 +222,7 @@ div.home #busqueda span{
 div.home #busqueda div#form {
   float: left;
 }
+
 div.home #busqueda input[type=text]{
   color:#CECECE;
   font-size:20px;
@@ -230,6 +232,9 @@ div.home #busqueda input[type=text]{
   border: 5px solid #67E5FB;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  -moz-box-shadow: 0 5px 10px #56B1C1;
+  -webkit-box-shadow: 0 5px 10px #56B1C1;
+  box-shadow: 0 5px 10px #56B1C1;
 }
 
 div.home #busqueda .search-submit {
@@ -242,6 +247,24 @@ div.home #busqueda .search-submit {
 div.home #busqueda #search{
   float: left;
   margin:15px 10px;
+}
+
+div.home span.copy, div.home span.paste {
+  font-family: Georgia;
+  font-size: 20px;
+  font-weight: bold italic;
+  color: #FFFFFF;
+  display: block;
+}
+
+div.home span.copy {
+  margin: 80px 0 0 0;
+  text-align:center;
+  width:160px;
+}
+
+div.home span.paste {
+  margin:-200px 0 0 600px;
 }
 
 div.home ul{
