@@ -1,14 +1,10 @@
 <div id="content" class="home">
   <div id="busqueda">
-    <span>Gift URL</span>
-    <div id="form">
-      <%= form_tag event_form_path do %>
-        <div id="gift-url">
-          <%= text_field_tag 'gift_url', t(:home_paste_here)%>  
-        </div>
-        <input id="<%= (current_user)? 'search' : 'go-sign-in'%>" type="image" src="images/lupa.png" />
-      <%end%>
-    </div>
+    <span>What gift do you want?</span>
+    <%= form_tag event_form_path do %>
+      <%= text_field_tag 'gift_url', t(:home_paste_here)%>  
+      <input id="<%= (current_user)? 'search' : 'go-sign-in'%>" type="submit" value="GO" class="search-submit" />
+    <%end%>
   </div>
   <%= image_tag 'lens.png', :class => 'lens'%>
 </div>

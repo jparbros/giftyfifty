@@ -195,36 +195,42 @@ div#login-signin-box div#account {
 }
 
 div.home .lens{
- margin:-30px 0 20px 183px;
+ margin:-30px 0 0px 93px;
 }
 
 div.home #busqueda{
-  margin: 0px auto;
-  width: 790px;
+  margin: -35px auto 0 auto;
+  width: 650px;
 }
 div.home #busqueda span{
-  font-family: "GeorgiaBoldItalic";
-  font-size:25px;
-  color:#4E4E4E;
+  font-family: Lucida Grande;
+  font-size: 19px;
+  font-weight: bold;
+  color:#FFFFFF;
   float: left;
-  margin:15px 10px;
+  margin:15px 0 0 10px;
 }
-div.home #busqueda #gift-url{
-  width:595px;
-  height:65px;
-  background:url(../images/caja_busqueda_prin.png) no-repeat;
-  float: left;
-}
+
 div.home #busqueda div#form {
   float: left;
 }
-div.home #busqueda #gift-url input{
+div.home #busqueda input[type=text]{
   color:#CECECE;
   font-size:20px;
   padding:10px 15px;
   width:535px;
   margin: 9px 0 0 13px;
-  float: left;
+  border: 3px solid #0FBBDA;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+div.home #busqueda .search-submit {
+  font-family: Lucida Grande;
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: bold;
+  background: none;
 }
 div.home #busqueda #search{
   float: left;
