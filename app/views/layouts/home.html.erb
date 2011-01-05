@@ -57,17 +57,19 @@
     <%= yield %>
   </div>
   <div id="footer-links">
-    <ul id="footer-contact">
+    <ul class="footer-contact">
       <li><a href="about"><%= t(:about_gifty_footer)%></a></li>
       <li><a href="http://blog.giftyfifty.com/">Blogifty</a></li>
       <li><a href="team"><%= t(:team_gifty_footer)%></a></li>
       <li><a href="jobs"><%= t(:jobs_support_footer)%></a></li>
     </ul>
-    <ul id="footer-legal">
+    <ul class="footer-legal">
       <li>Gifty Fifty &copy; 2010</li>
       <li><a href="terms"><%= t(:terms_footer)%></a></li>
+      <li><a href="terms"><%= t(:pravicy_footer)%></a></li>
       <li><a href="contact"><%= t(:contact_footer)%></a></li>
-      <li></li><li></li><li></li>
+    </ul>
+    <ul class="footer-friends">
       <li><%= t(:home_friend_us)%></li>
       <li><a id="facebook" href="http://www.facebook.com/giftyfifty" target="blank"><%= image_tag 'facebook.png'%></a></li>
       <li><a id="twitter" href="http://www.twitter.com/giftyfifty" target="blank"><%= image_tag 'twitter.png'%></a></li>

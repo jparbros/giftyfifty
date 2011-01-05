@@ -133,6 +133,13 @@ body{
 #footer-links ul, #footer ul{
   list-style-type:none;
 }
+#footer-links ul {
+  float:left;
+  margin: 0 0 0 0;
+}
+#footer-links ul img{
+  margin: -5px 0 0 0;
+}
 #footer-links ul li, #footer ul li{
   float:left;
   color:#FFF;
@@ -145,13 +152,18 @@ body{
 #footer-links ul li a:hover, #footer ul li a:hover{
   color:#000;
 }
-#footer-links #footer-contact, #footer #footer-contact{
-  float:left;
-  margin: -10px 0 0;
+
+#footer #footer-contact{
+  float:left; 
 }
-#footer-links #footer-legal, #footer #footer-legal{
+
+#footer #footer-legal{
   float:right;
-  margin: -10px 0 0;
+  margin: 0 0 0;
+}
+
+#footer-links .footer-legal, #footer-links .footer-contact{
+  margin: 0 35px 0 0;
 }
 
 .clearBoth {
