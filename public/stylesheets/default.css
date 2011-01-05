@@ -247,10 +247,6 @@ div.home #busqueda .search-submit {
   font-weight: bold;
   background: none;
 }
-div.home #busqueda #search{
-  float: left;
-  margin:15px 10px;
-}
 
 div.home span.copy, div.home span.paste {
   font-family: Georgia;
