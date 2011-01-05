@@ -8,7 +8,8 @@
   margin:0;
   padding:0;
   border:none;
-  font-family:"LucidaGrandeBold";
+  font-family: Lucida Grande;
+  font-weight: Bold;
 }
 
 /*==================================
@@ -163,7 +164,7 @@ body{
 }
 
 #footer-links .footer-legal, #footer-links .footer-contact{
-  margin: 0 35px 0 0;
+  margin: 0 30px 0 0;
 }
 
 .clearBoth {
@@ -298,7 +299,7 @@ ul.ilustrations li img.step3 {
 
 ul.ilustrations li h3 {
   color: #00CBEB;
-  font: italic bold 22px Georgia
+  font: italic bold 22px Georgia;
 }
 
 ul.explination {
