@@ -8,7 +8,7 @@ class Item < ActiveRecord::Base
   end
   
   def formated_price
-    ((self.price + self.shipping_cost)/100)
+    (((self.price || 0) + (self.shipping_cost || 0))/100)
   end
   
 end
