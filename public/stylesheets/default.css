@@ -29,10 +29,13 @@ body{
   position:relative;
   background-image:url(../images/home_header.png);
 }
-#logo{
-  position:absolute;
-  top:35px;
-  left:10px;
+#header .label-beta {
+  float:left;
+  margin:120px 0 0 -30px;
+}
+#header .logo {
+  float:left;
+  margin:20px 0 0 -30px;
 }
 #login{
   float: right;
