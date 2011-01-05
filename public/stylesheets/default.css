@@ -177,38 +177,36 @@ div#login-signin-box div#account {
 /*==================================
   Home
 ==================================*/
-#content div.home {
-  background: #00CBEB;
+.home {
+  background: #00CBEB !important;
   border:3px #0FBBDA solid;
-  margin: -45px;
-  float: left;
 }
 
-#content div.home .lens{
+div.home .lens{
  margin:-30px 0 20px 183px;
 }
 
-#content div.home #busqueda{
+div.home #busqueda{
   margin:60px auto;
   width: 790px;
 }
-#content div.home #busqueda span{
+div.home #busqueda span{
   font-family: "GeorgiaBoldItalic";
   font-size:25px;
   color:#4E4E4E;
   float: left;
   margin:15px 10px;
 }
-#content div.home #busqueda #gift-url{
+div.home #busqueda #gift-url{
   width:595px;
   height:65px;
   background:url(../images/caja_busqueda_prin.png) no-repeat;
   float: left;
 }
-#content div.home #busqueda div#form {
+div.home #busqueda div#form {
   float: left;
 }
-#content div.home #busqueda #gift-url input{
+div.home #busqueda #gift-url input{
   color:#CECECE;
   font-size:20px;
   padding:10px 15px;
@@ -216,44 +214,44 @@ div#login-signin-box div#account {
   margin: 9px 0 0 13px;
   float: left;
 }
-#content div.home #busqueda #search{
+div.home #busqueda #search{
   float: left;
   margin:15px 10px;
 }
 
-#content div.home ul{
+div.home ul{
   list-style-type:none;
   margin: 0 0 30px 45px;
   float: left;
 }
   
 
-#content div.home ul li{
+div.home ul li{
   display:block;
   float:left;
   font-size:16px;
   color:#FFFFFF;
 }
-#content div.home ul li h3{
+div.home ul li h3{
   font-family: "GeorgiaBoldItalic";
 }
 
-#content div.home li#step2 img {
+div.home li#step2 img {
   margin: -18px 0 0 0;
 }
 
-#content div.home li h3 {
+div.home li h3 {
   margin: -18px 0 0 0;
 }
 
-#content div.home li#step3 img {
+div.home li#step3 img {
   margin: -48px 0 0 0;
 }
 /*==================================
   Footer
 ==================================*/
 
-#footer-home{
+ul.ilustrations{
   background-color:#3B3B3B;
   border:3px solid #707070;
   margin:10px 0 0;
@@ -262,65 +260,58 @@ div#login-signin-box div#account {
   -webkit-border-radius:10px;
   padding:10px 17px;
   overflow:hidden;
-}
-#footer-home #vid{
-  font-size:14px;
-  color:#FFF;
-}
-#footer-home #vid #video{
-  width:208px;
-  height:117px;
-  background-color:#000;
-  float:left;
-}
-#footer-home #vid #video-description{
-  float:left;
-  margin:15px 25px;
-}
-#footer-home #vid #video-description a{
-  color:#26C3E0;
-  text-decoration:none;
-}
-#footer-home #friends{
-  display:block;
-  float:right;
-  overflow:hidden;
-  margin-top:45px;
-}
-#footer-home #friends span{
-  font-family:"GeorgiaBoldItalic";
-  font-size:16px;
-  color:#FFFFFF;
-  float:left;
-  padding-top:10px;
-  padding-right:7px;
-}
-#footer-home #friends ul{
   list-style-type:none;
+}
+
+ul.ilustrations li{
+  background: url('../images/label.png') no-repeat;
   float:left;
+  width: 240px;
+  min-height: 140px;
+  margin:0 25px 0 25px;
+  color: #ffffff;
+  font: bold 14px Lucida Grande;
 }
-#footer-home #friends ul li{
+
+ul.ilustrations li img.step1 {
+  margin: 10px 0 0 40px;
+}
+
+ul.ilustrations li img.step2 {
+  margin: 5px 0 20px 60px;
+}
+
+ul.ilustrations li img.step3 {
+  margin: 10px 0 15px 60px;
+}
+
+ul.ilustrations li h3 {
+  color: #00CBEB;
+  font: italic bold 22px Georgia
+}
+
+ul.explination {
+  margin:10px 0 0;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  padding:10px 17px;
+  overflow:hidden;
+  list-style-type:none;
+}
+
+ul.explination li{
   float:left;
-}
-#footer-home #friends ul li a{
-  display:block;
-  width:46px;
-  height:45px;
-}
-#footer-home #friends ul li a#twitter{
-  background-image:url(../images/twitter.png);
-  background-repeat:no-repeat;
-}
-#footer-home #friends ul li a#facebook{
-  background-image:url(../images/facebook.png);
-  background-repeat:no-repeat;
-}
-#footer-home #friends ul li a span{
-  display:none;
+  width: 240px;
+  margin:0 25px 0 25px;
+  color: #ffffff;
+  font: bold 14px Lucida Grande;
 }
 
-
-
+ul.explination li h3 {
+  color: #3b3b3b;
+  font: italic bold 22px Georgia
+}
 /*==================================
   My Profile
 ==================================*/
