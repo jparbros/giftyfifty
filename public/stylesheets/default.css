@@ -190,7 +190,12 @@ div#login-signin-box div#account {
   Home
 ==================================*/
 .home {
-  background: #00CBEB !important;
+  background: url('../images/content_bg.png') repeat-x #00CBEB !important;
+  border:3px #0FBBDA solid;
+}
+
+.steps {
+  background: url('../images/steps_bg.png') #00CBEB !important;
   border:3px #0FBBDA solid;
 }
 
@@ -220,7 +225,7 @@ div.home #busqueda input[type=text]{
   padding:10px 15px;
   width:535px;
   margin: 9px 0 0 13px;
-  border: 3px solid #0FBBDA;
+  border: 5px solid #67E5FB;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
 }
