@@ -113,7 +113,7 @@ class User < ActiveRecord::Base
     if self.avatar.menu.url
       self.avatar.menu.url
     else
-      'avatar-50.jpg'
+      'avatar-30.jpg'
     end
   end
   
@@ -121,7 +121,7 @@ class User < ActiveRecord::Base
     if self.avatar.thumb.url
       self.avatar.thumb.url
     else
-      'avatar-30.jpg'
+      'avatar-50.jpg'
     end
   end
   
