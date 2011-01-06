@@ -1,4 +1,6 @@
-<%= label_tag :state %>
+<label>
+  *State
+</label>
 <%
 begin
   states = Carmen.states(@country || current_user.address.country || 'US') 
