@@ -46,9 +46,8 @@
           <%= f_address.label :country %>
           <%= f_address.select :country, options_for_select(Carmen.countries, current_user.address.country || 'US')%>
         </p>
-        <p>
-          <%= f_address.label :state %>
-          <%= f_address.select :state, options_for_select(Carmen.states(current_user.address.country || 'US'), current_user.address.state) %>
+        <p id="user_edit_states">
+          <%= render :partial => 'states', :locals => {:f_address => f_address }%>
         </p>
         <p>
           <%= f_address.label :city %>
@@ -103,6 +102,7 @@
 <script>
   $(function() {
     validateUserEditForm();
+    remoteStatesFunction('<%= profile_states_path %>');
   });
 </script>
 <% end %>

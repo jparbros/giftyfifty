@@ -1,0 +1,13 @@
+<%= label_tag :state %>
+<%
+begin
+  states = Carmen.states(@country || current_user.address.country || 'US') 
+%>
+  <%= select_tag 'user[address_attributes][state]', options_for_select(states, current_user.address.state) %>
+<%
+rescue
+%>
+  <%= text_field_tag 'user[address_attributes][state]', current_user.address.state %>
+<%
+end
+%>

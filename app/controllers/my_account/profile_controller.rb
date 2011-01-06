@@ -24,4 +24,9 @@ class MyAccount::ProfileController < ApplicationController
       end
     end
   end
+  
+  def states
+    @country = params[:country]
+    render :partial => 'devise/registrations/states'
+  end
 end

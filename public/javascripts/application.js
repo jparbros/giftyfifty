@@ -245,6 +245,18 @@ var validateUserEditForm = function() {
   });
 }
 
+var remoteStatesFunction = function(action_url) {
+  $('#user_address_attributes_country').change(function(){
+    $.ajax({
+      url: action_url,
+      data: "country=" + $('#user_address_attributes_country').attr('value'),
+      success: function(data) {
+        $('#user_edit_states').html(data);
+      }
+    });
+  })
+}
+
 $(document).ready(function() {
   cacheElements();
   setBoxes();
