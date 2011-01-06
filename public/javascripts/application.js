@@ -115,7 +115,7 @@ var setTimePickers = function() {
     endInput.not( this ).datepicker( "option", option, date );
     }});
   endInput.datepicker({changeMonth: true});
-  birthdayInput.datepicker({changeMonth: true,changeYear: true, minDate : new Date(1900, 1 - 1, 1)});
+  birthdayInput.datepicker({changeMonth: true,changeYear: true, yearRange : '1970:2011'});
 }
 
 var setTabs = function() {

@@ -54,7 +54,7 @@
         <h2>Shipping Info</h2>
         <p>
           <label>
-            *Country'
+            *Country
           </label>
           <%= f_address.select :country, options_for_select(Carmen.countries, current_user.address.country || 'US')%>
         </p>
