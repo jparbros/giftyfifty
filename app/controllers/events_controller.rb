@@ -9,17 +9,22 @@ class EventsController < ApplicationController
   
   def create
     begin
-      if params[:event]
-        @event = current_user.events.new(params[:event])
-      else
-        @event = current_user.events.new(:url => params['gift_url'])
-      end
-      if @event.save
-        if @event.manual 
-          redirect_to event_path(@event)
+      if current_user.active_event.blank?
+        if params[:event]
+          @event = current_user.events.new(params[:event])
         else
-          redirect_to edit_event_path(@event)
+          @event = current_user.events.new(:url => params['gift_url'])
         end
+        if @event.save
+          if @event.manual 
+            redirect_to event_path(@event)
+          else
+            redirect_to edit_event_path(@event)
+          end
+        end
+      else
+        growl_message 'You have an event active. Not is possible create another until the actual event finish.'
+        redirect_to :root
       end
     rescue
       growl_message 'The url is not valid.<br/> Please enter a url from any product of amazon or ebay.'
