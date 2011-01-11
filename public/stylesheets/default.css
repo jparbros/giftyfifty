@@ -744,7 +744,7 @@ ul.explination li h3 {
 }
 
 #content .aside-container h3{
-  
+  margin: 0 0 10px 0;
 }
 
 #content p{
@@ -760,7 +760,9 @@ div.edit #footer, body.public-gift-profile #footer{
   margin-top:25px;
 }
 
-
+#content .aside-container a{
+  margin: 40px 0pt 20px 45px;
+}
 
 /*==================================
   Edit Page
