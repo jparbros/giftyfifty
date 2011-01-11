@@ -1,3 +1,4 @@
+<% form_for @event, :method => :put, :html => {:id => 'gift-form'} do |form|%>
 <div class="edit">
   <div id="col-1">
     <div id="gift-header">
@@ -9,7 +10,13 @@
       </div>
       <div id="gift-description">
         <h2 class="gift-title"><%= @event.item.name %></h2>
-        <p class="gift-price"><%= number_to_currency((@event.item.formated_price)) %></p>
+        <p class="gift-price">
+          <% if @event.item == 0 || @event.item.nil? || @event.item.blank? %>
+            <%= text_field_tag 'event[item_attributes][price]' %>
+          <% else %>
+            <%= number_to_currency((@event.item.formated_price)) %>
+          <% end %>
+        </p>
         <ul class="gift-details">
           <% if @event.item.category %>
             <li class="gift-categories">Categories: <span><%= @event.item.category %></span></li>
@@ -20,7 +27,6 @@
         </ul>
       </div>
     </div>
-    <% form_for @event, :method => :put, :html => {:id => 'gift-form'} do |form|%>
       <div id="occasion">
         <label for="gift-occasion">Occasion</label><br  />
         <%= form.select 'occasion_id', options_for_select(@occasions), :html => {:id =>'gift-occasion'} %>
