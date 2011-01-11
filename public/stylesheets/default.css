@@ -656,6 +656,9 @@ ul.explination li h3 {
   padding:20px;
   overflow:hidden;
 }
+.gift a.view_event {
+  color: #23B8D1;
+}
 #content #col-1 #gift .gift-image{
   float:left;
   margin-right:10px;
