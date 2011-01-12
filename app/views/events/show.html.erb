@@ -10,7 +10,7 @@
       </div>
       <div id="gift-description">
         <h2 class="gift-title"><%= @event.item.name %></h2>
-        <p class="gift-price"><%= number_to_currency((@event.item.formated_price)) %></p>
+        <p class="gift-price"><%= number_to_currency((@event.item.formated_price)) %> <span style="font-size:10px">Shipping Cost <%= number_to_currency((@event.item.formated_shipping_cost)) %></span></p>
         <ul class="gift-details">
           <% if @event.item %>
             <li class="gift-categories">Categories: <span><%= @event.item.category%></span></li>

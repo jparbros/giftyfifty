@@ -11,4 +11,8 @@ class Item < ActiveRecord::Base
     (((self.price || 0) + (self.shipping_cost || 0))/100)
   end
   
+  def formated_shipping_cost
+    ((self.shipping_cost || 0)/100)
+  end
+  
 end
