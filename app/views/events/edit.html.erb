@@ -61,3 +61,12 @@
   </div>
   <div class="clearBoth"></div>
 </div>
+
+<% content_for :scripts do %>
+<%= javascript_include_tag 'jquery.counter'%>
+<script>
+  $(function() {
+    validateEventEditForm();
+  });
+</script>
+<% end %>

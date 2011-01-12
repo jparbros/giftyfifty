@@ -245,6 +245,21 @@ var validateUserEditForm = function() {
   });
 }
 
+var validateEventEditForm = function() {
+  $('#user_edit').validate({
+      rules: {
+          'event[title]': 'required',
+          'event[start_at]': 'required',
+          'event[end_at]': 'required'
+      },
+      messages: {
+          'event[title]': 'The title is required.',
+          'event[start_at]': 'The start date is required.',
+          'event[end_at]': 'The end date is required.',
+      }
+  });
+}
+
 var remoteStatesFunction = function(action_url) {
   $('#user_address_attributes_country').change(function(){
     $.ajax({
