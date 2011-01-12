@@ -133,6 +133,10 @@ class User < ActiveRecord::Base
     end
   end
   
+  def profile_copleted?
+    !first_name.nil? && !last_name.nil? && !birthday.nil? && !username.nil? && !email.nil? && address.completed? && !first_name.blank? && !last_name.blank? && !birthday.blank? && !username.blank? && !email.blank?
+  end
+  
   private
   
   def self.generate_password(length = 10)

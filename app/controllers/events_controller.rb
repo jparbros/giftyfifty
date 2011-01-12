@@ -44,7 +44,11 @@ class EventsController < ApplicationController
   def update
     @event = current_user.events.find(params[:id])
     if @event.update_attributes(params[:event])
-      redirect_to event_path(@event)
+      if current_user.profile_copleted?
+        redirect_to event_path(@event)
+      else
+        edit_user_registration_path(current_user)
+      end
     else
       render :edit
     end
