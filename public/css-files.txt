@@ -1,4 +1,5 @@
 stylesheets/default.css
 stylesheets/jgrowl.css
 stylesheets/jquery-ui.css
+stylesheets/jquery.fancybox.css
 stylesheets/fonts.css

@@ -5,8 +5,8 @@ var loginBox, signinBox, loginLink, giftUrlText;
 
 // Caching most used elements of the dom
 var cacheElements = function() {
-  loginSigninBox = $('div#login-signin-box');
   loginLink = $('a#login-link');
+  siginLink = $('a#sigin-link');
   buttonLogin = $('input#go-sign-in');
   buttonSearch = $('input#search-gift');
   startInput = $('input#event_start_at');
@@ -23,13 +23,14 @@ var cacheElements = function() {
 
 // Initializing boxes to login and sign in
 var setBoxes = function() {
-  loginSigninBox.dialog({
-    resizable: false,
-    stack: false,
-    autoOpen: false,
-    height: 400,
-    width: 1000,
-    modal: true,
+  loginLink.fancybox({
+    'titlePosition' : 'inside',
+    'transitionIn' : 'none',
+    'transitionOut' : 'none',
+    'width' : '1100',
+    'height' : '350',
+    'autoScale' : false,
+    'autoDimensions' : false
   });
 };
 
@@ -92,20 +93,6 @@ var getGiftUrl = function(){
       this.href = _href + '?gift_url=' + gift_url
   });
 }
-
-// Declaring the events
-var declaringEvents = function() {
-  loginLink.click(function() {
-    getGiftUrl();
-    loginSigninBox.dialog('open');
-    return false;
-  });
-  buttonLogin.click(function() {
-    getGiftUrl();
-    loginSigninBox.dialog('open');
-    return false;
-  });
-};
 
 var setTimePickers = function() {
   startInput.datepicker({ minDate: 0,onSelect: function( selectedDate ) {
@@ -275,7 +262,6 @@ var remoteStatesFunction = function(action_url) {
 $(document).ready(function() {
   cacheElements();
   setBoxes();
-  declaringEvents();
   setTimePickers();
   giftInputChangeText();
   menuFunctionality();

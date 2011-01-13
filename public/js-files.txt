@@ -4,5 +4,7 @@ javascripts/jgrowl.js
 javascripts/jquery-combobox.js
 javascripts/jquery.counter.js
 javascripts/jquery.validate.js
+javascripts/jquery.fancybox.pack.js
+javascripts/jquery.mousewheel.pack.js
 javascripts/rails.js
 javascripts/application.js

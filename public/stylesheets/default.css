@@ -182,12 +182,48 @@ label.error {
 /*==================================
   Login modal box
 ==================================*/
+div#login-signin-box h1 {
+  font-size:24px;
+  color: #fff;
+  background: none;
+  text-align: right;
+}
+
+div#login-signin-box h2 {
+  font-size:18px;
+  color: #fff;
+  background: none;
+  text-align: center;
+  margin: 10px;
+}
+
+div#login-signin-box p {
+  margin: 10px 10px 0 10px !important;
+}
+
+div#login-signin-box div.login {
+  margin-top: 50px !important;
+}
 
 div#login-signin-box div#account {
-  width: 350px;
+  margin:0 100px 0 0;
+}
+
+div#login-signin-box div#account, div#login-signin-box div#providers {
+  width: 290px;
   float: left;
   padding: 0 10px 0 0;
   margin-right: 1px #4E4E4E solid;
+}
+
+div#login-signin-box div.login {
+  background: url('../images/login_bg.png') no-repeat;
+  min-height: 230px;
+}
+
+div#login-signin-box div.sign-in {
+  background: url('../images/login_big_bg.png') no-repeat;
+  min-height: 334px;
 }
 
 /*==================================
@@ -494,6 +530,10 @@ ul.explination li h3 {
   font-size:18px;
 }
 
+#login-signin-box {
+  background: transparent;
+}
+
 #login-signin-box #providers img {
   float:left;
 }
@@ -503,7 +543,11 @@ ul.explination li h3 {
 }
 
 #login-signin-box #providers #provider_facebook {
-  margin: 80px 0 20px 0;
+  margin:40px 58px 20px;
+}
+
+#login-signin-box #providers #provider_twitter {
+  margin:0px 58px 20px;
 }
 
 #sign-up form label, #sign-in form label, #account form label{
