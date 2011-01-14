@@ -79,26 +79,34 @@
 </body>
 </html>
 
-<div id="login-signin-box" class="new-box span-16">
-  <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
-  <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
-  <div id="providers" class="column span-5 last">
-    <div id="provider_facebook">
-      <a href="/auth/facebook">
-        <%= image_tag('facebook_64.png')%>
-        <h2>Login with</h2>
-        Facebook
-      </a>
-    </div>
-    <div id="provider_twitter">
-      <a href="/auth/twitter">
-        <%= image_tag('twitter_64.png') %>
-        <h2>Login with</h2>
-        Twitter
-      </a>
+<div style="display:none" id="fancybox-content">
+  <div id="login-signin-box">
+    <%= render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?%>
+    <%= render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?%>
+    <div id="providers" class="login">
+      <h1>Social Log In</h1>
+      <span class="sign-in-text">It's faster use your social accounts.</span>
+      <div id="provider_facebook">
+        <a href="/auth/facebook">
+          <%= image_tag('facebook_64.png')%>
+          <h3>Login with</h3>
+          Facebook
+        </a>
+      </div>
+      <div id="provider_twitter">
+        <a href="/auth/twitter">
+          <%= image_tag('twitter_64.png') %>
+          <h3>Login with</h3>
+          Twitter
+        </a>
+      </div>
+      <span class="sign-in-text">Privacy: We don’t share any of your Gifty</span>
+      <span class="sign-in-text">Fifty data with Facebook or Twitter.</span>
     </div>
   </div>
 </div>
+
+
 </body>
 </html>
 <%= growl %>

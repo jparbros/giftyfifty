@@ -23,14 +23,30 @@ var cacheElements = function() {
 
 // Initializing boxes to login and sign in
 var setBoxes = function() {
-  loginLink.fancybox({
+  siginLink.click(function(){
+    mainLoginBox();
+    return false;
+  });
+  loginLink.click(function(){
+    mainLoginBox();
+    return false;
+  });
+  buttonLogin.click(function(){
+    mainLoginBox();
+    return false;
+  });
+};
+
+var mainLoginBox = function() {
+  $.fancybox({
     'titlePosition' : 'inside',
     'transitionIn' : 'none',
     'transitionOut' : 'none',
     'width' : '1100',
     'height' : '350',
     'autoScale' : false,
-    'autoDimensions' : false
+    'autoDimensions' : false,
+    'content': $('#fancybox-content').html(),
   });
 };
 
@@ -233,7 +249,7 @@ var validateUserEditForm = function() {
 }
 
 var validateEventEditForm = function() {
-  $('#user_edit').validate({
+  $('#gift-form').validate({
       rules: {
           'event[title]': 'required',
           'event[start_at]': 'required',

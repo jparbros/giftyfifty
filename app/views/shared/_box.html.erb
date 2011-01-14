@@ -1,6 +1,12 @@
 <div id="account" class="<%= type %>">
   <%= render :partial => 'shared/box_title', :locals => {:type => type} %>
   <%= form_for(@user, :url => form_path(type)) do |f| %>
+    <% if type == 'sign-in' %>
+      <p>
+        <%= f.label :name %>
+        <%= f.password_field :first_name %>
+      </p>
+    <%end%>
     <p>
       <%= f.label :email %>
       <%= f.text_field :email %>
@@ -17,9 +23,14 @@
         <%= f.password_field :password_confirmation %>
       </p>
     <%end%>
+    <% if type == 'login' %>
+      <%= link_to "Forgot your password?", new_user_password_path %>
+    <% end %>
     <%= hidden_field_tag 'gift_url' %>
     <%= hidden_field_tag 'from_main','true' %>
-
+    <% if type == 'sign-in' %>
+      <span class="sign-in-text">By signing up, you agree to our terms of use.</span>
+    <%end%>
     <p><%= f.submit button_label(type) %></p>
   <% end %>
 </div>

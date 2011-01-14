@@ -198,7 +198,13 @@ div#login-signin-box h2 {
 }
 
 div#login-signin-box p {
-  margin: 10px 10px 0 10px !important;
+  margin: 5px 5px 0 5px !important;
+}
+
+span.sign-in-text {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 10px;
 }
 
 div#login-signin-box div.login {
@@ -226,6 +232,9 @@ div#login-signin-box div.sign-in {
   min-height: 334px;
 }
 
+div#login-signin-box input[type=text] {
+  height: 15px;
+}
 /*==================================
   Home
 ==================================*/
@@ -316,7 +325,8 @@ div.home ul li{
   color:#FFFFFF;
 }
 div.home ul li h3{
-  font-family: "GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
 }
 
 div.home li#step2 img {
@@ -404,7 +414,8 @@ ul.explination li h3 {
   -webkit-border-radius:5px;
   background-color:#DFF3F7;
   color:#23B8D1;
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:24px;
   padding:7px 10px;
   width:260px;
@@ -515,11 +526,12 @@ ul.explination li h3 {
   Sign-in, Sign-up pages
 ==================================*/
 
-#sign-up h1, #sign-in h1, #account h1{
+#sign-up h1, #sign-in h1, #account h1, #providers h1{
   -moz-border-radius:5px 5px 5px 5px;
   background-color:#DFF3F7;
   color:#23B8D1;
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:24px;
   padding:7px 10px;
   width:260px;
@@ -536,18 +548,19 @@ ul.explination li h3 {
 
 #login-signin-box #providers img {
   float:left;
+  width: 25%;
 }
 
 #login-signin-box #providers #provider_facebook, #login-signin-box #providers #provider_twitter {
-  height: 80px;
+  height: 55px;
 }
 
 #login-signin-box #providers #provider_facebook {
-  margin:40px 58px 20px;
+  margin:10px 58px 0px;
 }
 
 #login-signin-box #providers #provider_twitter {
-  margin:0px 58px 20px;
+  margin:0px 58px 0px;
 }
 
 #sign-up form label, #sign-in form label, #account form label{
@@ -562,6 +575,11 @@ ul.explination li h3 {
   width: 200px;
 }
 
+#account a, #account a:visited, #providers a, #providers a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
 #sign-up form input[type=text], #sign-up form input[type=password],
 #sign-in form input[type=text], #sign-in form input[type=password], 
 #account form input[type=text], #account form input[type=password] {
@@ -569,9 +587,10 @@ ul.explination li h3 {
   -webkit-border-radius:5px;
   border:3px solid #C2C2C2;
   color:#6B6B6B;
-  font-size:14px;
+  font-size:10px;
   padding:5px;
   width:250px;
+  height: 10px;
 }
 
 #sign-up form input[type=submit],
@@ -581,18 +600,19 @@ ul.explination li h3 {
   border:3px solid #28CAE8;
   color:#FFFFFF;
   float:right;
-  font-family:"GeorgiaBoldItalic";
-  font-size:17px;
-  margin:10px 0 0;
-  padding:3px 20px;
-  width:100px;
+  font-family: georgia;
+  font-weight: bold italic;
+  font-size: 17px;
+  margin: 10px 0 0;
+  padding: 3px 20px;
+  width: 120px;
 }
 
 #sign-up form p, #sign-in form p, #account form p {
   margin: 20px 5px;
 }
 
-#sign-up a, #sign-in a, #account a {
+#sign-up a, #sign-in a {
   color: #4CD3EC;
   text-decoration: none;
 }
@@ -652,7 +672,8 @@ ul.explination li h3 {
   border:3px solid #28CAE8;
   color:#FFFFFF;
   float:right;
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:17px;
   margin:10px 0 0;
   padding:3px 20px;
@@ -691,7 +712,8 @@ ul.explination li h3 {
   -webkit-border-radius:5px;
 }
 #content #col-1 #gift-header h1{
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:24px;
 }
 
@@ -863,7 +885,8 @@ input#event_end_at{
 }
 input#save{
   color:#FFF;
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:17px;
   padding:3px 20px;
   background-color:#4CD3EC;
@@ -894,7 +917,8 @@ input#save{
     border-radius:5px;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
-    font-family:"GeorgiaBoldItalic";
+    font-family: georgia;
+    font-weight: bold italic;
     font-size:24px;
 }
 
@@ -939,7 +963,8 @@ input#save{
   border:3px solid #28CAE8;
   color:#FFFFFF;
   float:right;
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:17px;
   margin:10px 0 0;
   padding:3px 20px;
@@ -1045,7 +1070,8 @@ input#save{
 }
 #content div.gift-profile #col-1 #gift .gift-donate a.submit, a.submit {
   color:#FFF;
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:17px;
   padding:3px 0;
   background-color:#4CD3EC;
@@ -1184,7 +1210,8 @@ input#save{
   border:3px solid #28CAE8;
   color:#FFFFFF;
   float:right;
-  font-family:"GeorgiaBoldItalic";
+  font-family: georgia;
+  font-weight: bold italic;
   font-size:17px;
   margin:10px 0 0;
   padding:3px 20px;

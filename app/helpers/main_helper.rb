@@ -11,9 +11,9 @@ module MainHelper
   def button_label(type)
     case type
     when 'sign-in'
-      'Sign Up'
+      'Sign me up'
     when 'login'
-      'Login'
+      'Log me in'
     end
   end
   

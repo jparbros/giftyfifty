@@ -17,8 +17,7 @@ namespace :deploy do
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-    invoke_command "cd #{deploy_to}"
-    invoke_command "thin restart -C config/thin.yml"
+    invoke_command "cd #{deploy_to}; rvm 1.8.7@gifty; sh script/server.sh"
   end
 end
         require 'config/boot'
