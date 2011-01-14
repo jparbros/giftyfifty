@@ -286,6 +286,42 @@ var qtipsEditEvent = function() {
   });
 };
 
+var qtipsShowEvent = function() {
+  $('.submit').qtip({
+    content: 'Edit your gift\'s details.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
+  });
+  $('#release-gift').qtip({
+    content: 'Do the checkout to get your gift.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
+  });
+  $('#gift_percentage').qtip({
+    content: 'This represent the percent you\'ve collected of your gift\'s cost.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('#event_rest_days').qtip({
+    content: 'This is the your friend\'s limit time to donate to your celebration\'s gift.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('#gift_donors').qtip({
+    content: 'They\'re your friends that have donated you!',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('.share-on').qtip({
+    content: 'Use your social networks or email and let your friends know about your special occasion.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('#event_url').qtip({
+    content: 'This is your unique URL, copy and share it everywhere you like!',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+};
+
 var remoteStatesFunction = function(action_url) {
   $('#user_address_attributes_country').change(function(){
     $.ajax({

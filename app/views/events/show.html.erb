@@ -31,7 +31,7 @@
         <% if is_owner? and @event.open %>
           <div class="gift-donate">
             <%= link_to 'Edit', edit_event_path(@event), {:class => "submit"}%>
-            <%= link_to 'Release','', {:class => "submit", :id => 'release-gift'}%>
+            <%= link_to 'Get Gift','', {:class => "submit", :id => 'release-gift'}%>
           </div>
         <%end%>
       </div>
@@ -46,34 +46,34 @@
   <div id="col-2" class="aside">
     <div class="first-container aside-container">
       <p class="title"><%= @event.porcentage_donation %>% closer to your gift</p>
-      <div class="info">
+      <div class="info" id='gift_percentage'>
         <div class="advance">
           <div class="stripes"></div>
         </div>
       </div>
       <div class="ends-on">
-        <p class="title">This celebration ends in:</p>
-        <div class="info"><%= @event.rest_days %> days</div>
+        <p class="title">This celebration takes place in:</p>
+        <div class="info center-text" id="event_rest_days"><%= @event.rest_days %> days</div>
       </div>
     </div>
-    <div class="aside-container">
-      <p class="title">Gift Donors</p>
+    <div class="aside-container" id="gift_donors">
+      <p class="title">Gift's Donors</p>
       <p>There are no donors yet</p>
     </div>
     <div class="aside-container">
       <% if is_owner? %>
         <div class="share-on">
           <p class="title">
-            Invite and tell your friends to donate on
+            Invite your friends to make donations on:
           </p>
             <%= twitter_link %>
             <%= facebook_link %>
             <%=  link_to(image_tag('share-mail.png'), '', :id => 'email-share-link') %>
-            <p class="title">
-              Your Link
-            </p>
-            <%= text_field_tag 'event_url', personal_urls_url(@event.identifier)%>
         </div>
+        <p class="title">
+          Your Event Link
+        </p>
+        <%= text_field_tag 'event_url', personal_urls_url(@event.identifier)%>
       <%end%>
       </div>
     </div>
@@ -121,6 +121,7 @@
       countCharacters();
       releaseBox();
       emailSharing();
+      qtipsShowEvent();
     });
   </script>
   <% end %>

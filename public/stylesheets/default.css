@@ -19,6 +19,9 @@
 body{
   background:url(../images/body_bg.jpg) repeat;
 }
+.center-text {
+  text-align: center;
+}
 #wrapper{
   width:927px;
   margin:5px auto;
@@ -1124,7 +1127,7 @@ input#save{
   padding-top:15px;
   border-top:#187D8E 1px dashed;
 }
-#content div.gift-profile .aside-container .share-on input{ 
+#content div.gift-profile .aside-container input[type=text]{ 
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
   border:3px solid #C2C2C2;
@@ -1147,9 +1150,9 @@ input#save{
   color:#FFF;
 }
 #content div.gift-profile .aside-container div.info{
-  background-color:#FFF;
+  background-color:#DDDDDD;
   color:#23B8D1;
-  border:#D5D4D2 4px solid;
+  border:#AAAAAA 4px solid;
   width:180px;
   height:20px;
   padding:5px;
