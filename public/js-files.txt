@@ -6,5 +6,6 @@ javascripts/jquery.counter.js
 javascripts/jquery.validate.js
 javascripts/jquery.fancybox.pack.js
 javascripts/jquery.mousewheel.pack.js
+javascripts/jquery.qtip.js
 javascripts/rails.js
 javascripts/application.js

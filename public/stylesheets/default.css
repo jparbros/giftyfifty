@@ -849,11 +849,18 @@ div.edit input, div.edit select, div.edit textarea{
 #occasion{
   float: left;
 }
+#dates {
+  float:left;
+}
 input#gift-occasion{
   width:190px;
 }
+.floatLeft {
+  float: left;
+}
 #title{
   float: right;
+  margin:0 0 0 70px;
 }
 input#gift-title{
   width:285px;
@@ -862,7 +869,7 @@ input#gift-title{
   float: left;
   margin: 10px 0 0 0;
 }
-textarea#gift-description{
+textarea#gift_description{
   width:370px;
   height:125px;
 }
@@ -870,15 +877,14 @@ textarea#gift-description{
   float: right;
 }
 #begin{
-  float: right;
-  margin: 10px 0 0 0;
+  margin: 10px 0 0 30px;
+  font-size: 14px;
 }
 input#event_start_at{
   width:105px;
 }
 #end{
-  float: right;
-  margin: 53px 0 0 0;
+  margin: 47px 0 0 30px;
 }
 input#event_end_at{
   width:105px;

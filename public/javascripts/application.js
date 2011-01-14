@@ -263,6 +263,29 @@ var validateEventEditForm = function() {
   });
 }
 
+var qtipsEditEvent = function() {
+  $('#event_occasion_id').qtip({
+    content: 'Select your special occasion.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
+  });
+  $('#event_title').qtip({
+    content: 'Enter a creative title for your special occasion.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
+  });
+  $('#gift_description').qtip({
+    content: 'Create a description to your friends,let them know exactly why you\'ll love to receive this gift!',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
+  });
+  $('#event_start_at').qtip({
+    content: 'From this date, your friends can start making donations.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
+  });
+  $('#event_end_at').qtip({
+    content: 'Until this date, your friends can making donations.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
+  });
+};
+
 var remoteStatesFunction = function(action_url) {
   $('#user_address_attributes_country').change(function(){
     $.ajax({

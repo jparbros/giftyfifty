@@ -2,9 +2,10 @@
 <div class="edit">
   <div id="col-1">
     <div id="gift-header">
-      <h1>Edit your Gift</h1>
+      <h1>Edit your Event</h1>
     </div>
     <div id="gift">
+      <h2>My Gift</h2>
       <div class="gift-image">
         <%= image_tag @event.item.image %>
       </div>
@@ -27,26 +28,30 @@
         </ul>
       </div>
     </div>
-      <div id="occasion">
-        <label for="gift-occasion">Occasion</label><br  />
-        <%= form.select 'occasion_id', options_for_select(@occasions), :html => {:id =>'gift-occasion'} %>
-      </div>
-      <div id="title">
-        <label for="gift-title">Title</label><br />
-        <%= form.text_field 'title', :html => {:id => 'gift-title'} %>
-      </div>
-      <div id="description">
-        <label for="gift-description">Description</label><br />
-        <%= form.text_area :description, :id => 'gift-description' %>
-      </div>
-      <div id="dates">
-        <div id="begin">
-          <label for="gift-begin">Donations Begin</label><br />
-          <%= form.text_field 'start_at' %>
+      <div class="floatLeft">
+        <div id="occasion">
+          <label for="gift-occasion">Occasion</label><br  />
+          <%= form.select 'occasion_id', options_for_select(@occasions), :html => {:id =>'gift-occasion'} %>
         </div>
-        <div id="end">
-          <label for="gift-end">Donations End</label><br />
-          <%= form.text_field 'end_at' %>
+        <div id="title">
+          <label for="gift-title">Title</label><br />
+          <%= form.text_field 'title', :html => {:id => 'gift-title'} %>
+        </div>
+      </div>
+      <div class="floatLeft">
+        <div id="description">
+          <label for="gift-description">Description</label><br />
+          <%= form.text_area :description, :id => 'gift_description' %>
+        </div>
+        <div id="dates">
+          <div id="begin">
+            <label for="gift-begin">Donations Begin</label><br />
+            <%= form.text_field 'start_at' %>
+          </div>
+          <div id="end">
+            <label for="gift-end">Donations End</label><br />
+            <%= form.text_field 'end_at' %>
+          </div>
         </div>
       </div>
       <input type="submit" value="Save" id="save" class="submit"/>
@@ -55,8 +60,8 @@
   </div>
   <div id="col-2" class="aside">
     <div class="aside-container">
-      <p class="title">Edit your gift</p>
-      <p>Some descriptive text here</p>
+      <p class="title">Here you got a tip:</p>
+      <p>Edit all the details of that special occasion you're waiting for to receive your wished gift. Don't forget anything!</p>
     </div>
   </div>
   <div class="clearBoth"></div>
@@ -67,6 +72,7 @@
 <script type="text/javascript">
   $(function() {
     validateEventEditForm();
+    qtipsEditEvent();
   });
 </script>
 <% end %>
