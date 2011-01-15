@@ -959,6 +959,14 @@ input#save{
   width: 80px;
 }
 
+.edit-settings form span {
+  font-size: 9px;
+}
+
+.edit-settings form input[type=file] {
+  margin: 0 0 0 30px;
+}
+
 .edit-settings form div.field_with_errors input {
   border: 1px solid red;
 }

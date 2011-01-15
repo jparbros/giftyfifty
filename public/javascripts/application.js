@@ -322,6 +322,24 @@ var qtipsShowEvent = function() {
   });
 };
 
+var qtipsEditSettings = function() {
+  $('#upload_avatar').qtip({
+    content: 'Your avatar is the picture we\'ll display on your profile.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topMiddle' } }
+  });
+  $('#upload_username').qtip({
+    content: 'Choose a unique username, it\'s important to give you a personilized URL.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topMiddle' } }
+  });
+  $('#delete_account').qtip({
+    content: 'This permanently delete your account, you won\'t be able to retrieve your information once you confirm it.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topMiddle' } }
+  });
+}
+
 var remoteStatesFunction = function(action_url) {
   $('#user_address_attributes_country').change(function(){
     $.ajax({
