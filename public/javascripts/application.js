@@ -115,9 +115,13 @@ var setTimePickers = function() {
     var option = this.id == "event_start_at" ? "minDate" : "maxDate",
     instance = $( this ).data( "datepicker" );
     date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings );
-    endInput.not( this ).datepicker( "option", option, date );
+    date.setTime(date.getTime()+5*24*60*60*1000)
+    _minDate = $.datepicker.formatDate($.datepicker._defaults.dateFormat, date);
+    date.setTime(date.getTime()+40*24*60*60*1000)
+    _maxDate = $.datepicker.formatDate($.datepicker._defaults.dateFormat, date);
+    console.log(_minDate);
+    endInput.datepicker({changeMonth: true, minDate : _minDate, maxDate : _maxDate });
     }});
-  endInput.datepicker({changeMonth: true});
   birthdayInput.datepicker({changeMonth: true,changeYear: true, yearRange : '1970:2011'});
 }
 
