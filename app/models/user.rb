@@ -53,10 +53,23 @@ class User < ActiveRecord::Base
     case provider
       when 'twitter'
         user.twitter_account = TwitterAccount.new({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
+        get_avatar(user, provider_info['extra']['user_hash']['profile_image_url'])
       when 'facebook'
         user.facebook_account = FacebookAccount.new({ :token => provider_info['credentials']['token']})
+        get_facebook_avatar(user)
     end
     user
+  end
+  
+  def get_facebook_avatar(user)
+    id = user.facebook_account.client.selection.me.info!.id
+    res = open("http://graph.facebook.con/#{id}/picture?type=large")
+    get_avatar(user, res.base_uri.to_s)
+  end
+  
+  def get_avatar(user, image_url)
+    user.remote_avatar_url = image_url
+    user.save
   end
   
   def self.find_by_uid_provider(provider, uid)
