@@ -13,4 +13,8 @@ class MainController < ApplicationController
     session[:locale] = params[:locale]
     redirect_to request.referrer
   end
+  
+  def email
+    render :text => "Test", :layout => 'email'
+  end
 end

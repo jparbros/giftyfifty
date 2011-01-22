@@ -43,7 +43,9 @@ class User < ActiveRecord::Base
     password = generate_password
     user = self.find_by_email(provider_info['extra']['user_hash']['email'] || '')
     unless user
-      user = self.new(:email => provider_info['extra']['user_hash']['email'] || "user_#{Time.now.to_i}@giftyfifty.com", :password => password, :password_confirmation => password)
+      provider_name = provider_info['extra']['user_hash']['email'].split(' ')
+      user = self.new(:email => provider_info['extra']['user_hash']['email'], :password => password, :password_confirmation => password, :first_name => provider_name.first, :last_name => provider_name.last)
+      user.remote_avatar_url = provider_info['extra']['user_hash']['profile_image_url']
       user.save
     else
       return user

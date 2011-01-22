@@ -30,6 +30,10 @@ Giftyfifty::Application.routes.draw do
   end
   
   
+  namespace :blablabla do
+    devise_for :users
+  end
+  
   
   
   match '/auth/:provider/callback', :to => 'sessions#create'
@@ -40,6 +44,7 @@ Giftyfifty::Application.routes.draw do
   match '/events/:event_id/donations/1/validate', :to => 'donations#validate', :as => 'validate_donation', :via => :post
   match '/my_account/profile', :to => 'my_account/profile#update', :as => 'update_profile', :via => :put
   match '/blank', :to => 'main#blank'
+  match '/email', :to => 'main#email'
   match '/users', :to => 'devise/registrations#update', :via => :put
   match '/:user_name', :to => 'my_account/profile#search', :as => 'personal_urls'
   match '/my_account/profile/states', :to => 'my_account/profile#states', :as => 'profile_states'

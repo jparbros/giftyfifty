@@ -4,6 +4,7 @@ class UserMailer < ActionMailer::Base
   def register_confirmation(user)
     @user = user
     mail(:to => user.email, :subject => "Welcome to GiftyFifty!")
+    headers('Content-Type' => 'text/html')
   end
   
   def test

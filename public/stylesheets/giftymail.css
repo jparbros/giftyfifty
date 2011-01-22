@@ -1,0 +1,48 @@
+/* CSS Document */
+
+/*==================================
+  Reset
+==================================*/
+
+*{
+  margin:0;
+  padding:0;
+  border:none;
+  font-family: Lucida Grande;
+  font-weight: Bold;
+}
+
+/*==================================
+  General
+==================================*/
+
+body{
+  background:url(../images/body_bg.jpg) repeat;
+  color: #959595;
+  font-family: Lucida;
+  font-size: 14px;
+}
+
+a {
+  color:#4CD3EC;
+  text-decoration:none;
+}
+
+#content{
+  margin: 50px auto;
+  background:#f5f5f5;
+  padding: 80px 45px 10px 45px;
+  width:820px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+.logo {
+  float: left;
+  margin: -120px 0 0 -90px;
+}
+
+.label-beta {
+  float: left ;
+  margin: -20px 0 0 -145px;
+}
