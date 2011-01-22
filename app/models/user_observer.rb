@@ -1,5 +1,5 @@
 class UserObserver < ActiveRecord::Observer
-  def after_update(user)
+  def after_create(user)
     account_confirmation(user)
   end
   
