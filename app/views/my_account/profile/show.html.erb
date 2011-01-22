@@ -38,13 +38,13 @@
 </div>
 
 <div id="share-facebook" title="Invite Your Friends - Facebook">
-  <%= form_tag event_facebook_path(current_user.events.last || Event.new) do %>
+  <%= form_tag event_facebook_path(current_user.events.last || 0) do %>
     <%= text_area_tag 'facebook_message'  %>
     
   <%end%>
 </div>
 <div id="share-twitter" title="Invite Your Friends - Twitter">
-  <%= form_tag event_twitter_path(current_user.events.last || Event.new) do %>
+  <%= form_tag event_twitter_path(current_user.events.last || 0) do %>
     <%= text_area_tag 'twitter_message'  %>
     <%= submit_tag 'Share', :class => 'submit'%>
   <%end%>
