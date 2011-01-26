@@ -37,7 +37,7 @@ Giftyfifty::Application.configure do
       if request.ssl?
         "#{request.protocol}asset0.giftyfifty.com"
       else
-        "#{request.protocol}asset%d.giftyfifty.com"
+        "http://asset%d.giftyfifty.com"
       end
     }
 
