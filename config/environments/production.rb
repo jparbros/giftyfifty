@@ -33,13 +33,7 @@ Giftyfifty::Application.configure do
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
-  config.action_controller.asset_host =  Proc.new { |source, request|
-      if request.ssl?
-        "#{request.protocol}asset0.giftyfifty.com"
-      else
-        "http://asset%d.giftyfifty.com"
-      end
-    }
+  config.action_controller.asset_host =  AssetHostingWithMinimumSsl.new("http://asset%d.giftyfifty.com","#{request.protocol}asset0.giftyfifty.com")
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
