@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include SslRequirement
   protect_from_forgery
 
   before_filter :get_user, :get_event_url, :redirect_to_new_event, :initialize_growl, :locales
