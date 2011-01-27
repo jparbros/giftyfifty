@@ -5,7 +5,7 @@
       <%= image_tag current_user.thumb_image if current_user.thumb_image %>
         <%= current_user.name %><br />
         <% if current_user.birthday %>
-          <span class="age"><%= current_user.age %> years old</span>
+          <span class="age"><%= unique_url(current_user) %></span>
         <% end %>
     </p>
     <h1>My Gifts</h1>
@@ -34,6 +34,12 @@
       <%= link_to(image_tag('invite-twitter.png'),'' , :id => 'twitter-share-link') %>
       <%= link_to(image_tag('invite-facebook.png'),'', :id => 'facebook-share-link') %>
     </div>
+    <%# unless current_user.profile_copleted? %>
+      <div class="aside-container">
+        <h3>Complete Your Profile</h3>
+        To enjoy better service complete your profile <%= link_to 'here', edit_user_registration_path %>.
+      </div>
+    <%# end %>
   </div>
 </div>
 
@@ -57,6 +63,7 @@
     loadShareObjects();
     dialogShareBoxes();
     countCharacters();
+    qtipsMyAccount();
   });
 </script>
 <% end %>

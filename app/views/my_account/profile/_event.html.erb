@@ -16,4 +16,5 @@
     </div>
   </div>
   <%= link_to 'View Event', event_path(event), {:class => 'view_event'}%>
+  <%= link_to 'Edit Event', event_path(event), {:class => 'edit_event'} if event.active %>
 </div>

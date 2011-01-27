@@ -344,6 +344,19 @@ var qtipsEditSettings = function() {
   });
 }
 
+var qtipsMyAccount = function() {
+  $('a.view_event').qtip({
+    content: 'See your active event, donations and friends comments.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topRight' } }
+  });
+  $('div.share-on').qtip({
+    content: 'Post on facebook or tweet for invite your friends to join Gifty Fifty and donate you!',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topRight' } }
+  });
+}
+
 var remoteStatesFunction = function(action_url) {
   $('#user_address_attributes_country').change(function(){
     $.ajax({
@@ -355,6 +368,7 @@ var remoteStatesFunction = function(action_url) {
     });
   })
 }
+
 
 $(document).ready(function() {
   cacheElements();

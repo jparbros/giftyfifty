@@ -1,4 +1,9 @@
 class InvitationsController < ApplicationController
+
+  def new
+
+  end
+
   def create
     event = Event.find(params[:event_id])
     if EventMailer.invite(event, params[:emails]).deliver

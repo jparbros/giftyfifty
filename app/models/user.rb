@@ -38,6 +38,12 @@ class User < ActiveRecord::Base
   #
   
   after_create :create_address
+  after_initialize :load_values
+  
+  def load_values
+    @twitter_friends = []
+    @facebook_friends = []
+  end
 
   def self.create_by_provider(provider_info,provider)
     password = generate_password
@@ -62,7 +68,7 @@ class User < ActiveRecord::Base
   end
   
   def self.get_facebook_avatar(user)
-    id = user.facebook_account.client.selection.me.info!.id
+    id = user.facebook_client.selection.me.info!.id
     res = open("http://graph.facebook.com/#{id}/picture?type=large")
     get_avatar(user, res.base_uri.to_s)
   end
@@ -150,6 +156,34 @@ class User < ActiveRecord::Base
   
   def profile_copleted?
     !first_name.nil? && !last_name.nil? && !birthday.nil? && !username.nil? && !email.nil? && address.completed? && !first_name.blank? && !last_name.blank? && !birthday.blank? && !username.blank? && !email.blank?
+  end
+  
+  def facebook_client
+    self.facebook_account.client
+  end
+  
+  def twitter_client
+    self.twitter_account.client
+  end
+  
+  def facebook_friends
+    if facebook_account and @facebook_friends.empty?
+      facebook_client.selection.me.friends.info!.data.collect{ |friend| friend.id  }.each do |friend_id|
+        friend_info = facebook_client.selection.user(friend_id).info!
+        res = open("http://graph.facebook.com/#{friend_id}/picture")
+        @facebook_friends << Friend.new(:name => friend_info.name, :social_id => friend_id, :picture => res.base_uri.to_s, :social_type => 'facebook')
+      end
+    end
+    return @facebook_friends
+  end
+  
+  def twitter_friends
+    if twitter_account and @twitter_friends.empty?
+      twitter_client.followers.each do |follower|
+        @twitter_friends << Friend.new(:name => follower['name'], :social_id => follower['id'], :picture => follower['profile_image_url'], :social_type => 'twitter')
+      end
+    end
+    return @twitter_friends
   end
   
   private

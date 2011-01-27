@@ -6,14 +6,16 @@ Giftyfifty::Application.routes.draw do
   resources :users
   
    resources :events, :except => [:index, :delete] do
-      resource :twitter, :only => :create
-      resource :facebook, :only => :create
-      resource :invitation, :only => :create
-      resources :donations, :only => [:new, :create, :show]
-      namespace :release do
-        resource :paypal, :only => :create
-      end
-    end
+     resource :twitter, :only => :create
+     resource :facebook, :only => :create
+     resource :invitation, :only => :create
+     resources :donations, :only => [:new, :create, :show]
+     namespace :release do
+       resource :paypal, :only => :create
+     end
+   end
+   
+   resources :invitations
   
   namespace :my_account do
     resource :main
@@ -27,11 +29,6 @@ Giftyfifty::Application.routes.draw do
         get 'create_facebook'
       end
     end
-  end
-  
-  
-  namespace :blablabla do
-    devise_for :users
   end
   
   

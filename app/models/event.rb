@@ -82,6 +82,10 @@ class Event < ActiveRecord::Base
   def rest_days
     (self.end_at)? (self.end_at - Time.now.to_date).to_i : 0
   end
+  
+  def active
+    ((self.start_at || Time.now.to_date) < Time.now.to_date) and ((self.end_at || Time.now.to_date) > Time.now.to_date)
+  end
 
   #
   # Private Methods
