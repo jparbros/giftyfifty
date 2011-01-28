@@ -168,10 +168,8 @@ class User < ActiveRecord::Base
   
   def facebook_friends
     if facebook_account and @facebook_friends.empty?
-      facebook_client.selection.me.friends.info!.data.collect{ |friend| friend.id  }.each do |friend_id|
-        friend_info = facebook_client.selection.user(friend_id).info!
-        res = open("http://graph.facebook.com/#{friend_id}/picture")
-        @facebook_friends << Friend.new(:name => friend_info.name, :social_id => friend_id, :picture => res.base_uri.to_s, :social_type => 'facebook')
+      facebook_client.selection.me.friends.info!.data.each do |friend|
+        @facebook_friends << Friend.new(:name => friend.name, :social_id => friend.id, :picture => "http://graph.facebook.com/#{friend.id}/picture", :social_type => 'facebook')
       end
     end
     return @facebook_friends
