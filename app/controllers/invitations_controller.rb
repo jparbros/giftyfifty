@@ -14,4 +14,10 @@ class InvitationsController < ApplicationController
     growl_message message_output
     redirect_to event_path(event)
   end
+  
+  def twitter
+  end
+  
+  def facebook
+  end
 end

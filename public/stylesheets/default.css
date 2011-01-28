@@ -1281,3 +1281,12 @@ div.selected {
 div.friend input[type=checkbox] {
   display: none;
 }
+
+img#ajax-loader {
+  left: 40%;
+  padding: 20px;
+  position: fixed;
+  top: 25%;
+  z-index: 10000;
+  display: none;
+}

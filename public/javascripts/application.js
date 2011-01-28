@@ -370,7 +370,7 @@ var remoteStatesFunction = function(action_url) {
 }
 
 var friendSelector = function() {
-  $('div.friend').click(function(){
+  $('div.friend').live('click',function(){
     checkbox = $(this).find('input[type=checkbox]')
     if(checkbox.attr('checked')) {
       $(this).removeClass('selected');
@@ -382,10 +382,19 @@ var friendSelector = function() {
   });
 };
 
+var loadingAjax = function() {
+  $("img#ajax-loader").bind("ajaxSend", function(){
+     $(this).show();
+   }).bind("ajaxComplete", function(){
+     $(this).hide();
+  });
+}
+
 $(document).ready(function() {
   cacheElements();
   setBoxes();
   setTimePickers();
   giftInputChangeText();
   menuFunctionality();
+  loadingAjax();
 });

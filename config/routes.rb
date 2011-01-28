@@ -15,7 +15,12 @@ Giftyfifty::Application.routes.draw do
      end
    end
    
-   resources :invitations
+   resource :invitations do
+    member do
+      get 'twitter'
+      get 'facebook'
+    end
+   end
   
   namespace :my_account do
     resource :main
