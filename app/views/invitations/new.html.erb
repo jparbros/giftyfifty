@@ -1,0 +1,17 @@
+<h1>Twitter friends</h1>
+
+<div id="twitter_friends">
+  <%= render :partial => 'friend', :collection => @current_user.twitter_friends %>
+</div>
+
+<h1>Facebook friends</h1>
+
+<div id="facebook_friends">
+  <%= render :partial => 'friend', :collection => @current_user.facebook_friends %>
+</div>
+
+<script>
+  $(function() {
+    friendSelector();
+  });
+</script>

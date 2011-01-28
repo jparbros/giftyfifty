@@ -369,6 +369,18 @@ var remoteStatesFunction = function(action_url) {
   })
 }
 
+var friendSelector = function() {
+  $('div.friend').click(function(){
+    checkbox = $(this).find('input[type=checkbox]')
+    if(checkbox.attr('checked')) {
+      $(this).removeClass('selected');
+      checkbox.attr('checked', false);
+    } else {
+      $(this).addClass('selected');
+      checkbox.attr('checked', true);
+    }
+  });
+};
 
 $(document).ready(function() {
   cacheElements();

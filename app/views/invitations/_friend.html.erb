@@ -1,0 +1,6 @@
+<div class="friend">
+  <%= image_tag(friend.picture) %>
+  <br />
+  <%= friend.name %>
+  <%= check_box_tag "#{friend.social_type}_friend", friend.social_id %>
+</div>
