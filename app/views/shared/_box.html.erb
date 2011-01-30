@@ -1,10 +1,10 @@
-<div id="account" class="<%= type %>">
+<div class="account <%= type %>" id="<%= type %>">
   <%= render :partial => 'shared/box_title', :locals => {:type => type} %>
   <%= form_for(@user, :url => form_path(type)) do |f| %>
     <% if type == 'sign-in' %>
       <p>
         <%= f.label :name %>
-        <%= f.password_field :first_name %>
+        <%= f.text_field :first_name %>
       </p>
     <%end%>
     <p>
@@ -31,6 +31,6 @@
     <% if type == 'sign-in' %>
       <span class="sign-in-text">By signing up, you agree to our terms of use.</span>
     <%end%>
-    <p><%= f.submit button_label(type) %></p>
+    <p><%= f.submit button_label(type), :class => 'button-blue' %></p>
   <% end %>
 </div>

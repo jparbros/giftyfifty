@@ -6,6 +6,8 @@
     <!--[if IE]>
     %link{:rel=>"stylesheet", :href=>"stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
     < ![endif]-->
+    = stylesheet_link_tag 'jquery.fancybox.css'
+    = javascript_include_tag 'jquery.min.js','jquery.fancybox.pack.js','jquery.mousewheel.pack.js','application.js'
   %body.home
     #header
       = image_tag 'label_beta.png', :id => 'label-beta'
@@ -39,3 +41,5 @@
           = link_to(image_tag('twitter.png'), 'href="http://www.twitter.com/giftyfifty', {:target => 'blank'})
         %li#facebook_link
           = link_to(image_tag('facebook.png'), 'http://www.facebook.com/giftyfifty', {:target => 'blank'})
+  
+    = render :partial => 'shared/login_box'

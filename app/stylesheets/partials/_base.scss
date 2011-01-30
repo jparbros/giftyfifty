@@ -35,6 +35,31 @@ body a:hover {
   clear: both;
 }
 
+#box-content {
+  display: none;
+}
+
+.button-blue {
+  background-color: #4CD3EC;
+  border: 3px solid #28CAE8;
+  color: #FFFFFF;
+  float: right;
+  font-family: georgia;
+  font-size: 17px;
+  margin: 10px;
+  padding: 3px 20px;
+  width: 120px;
+}
+
+h1 {
+  background-color: #DFF3F7;
+  color: #23B8D1;
+  font-family: georgia;
+  font-size: 24px;
+  padding: 7px 10px;
+  width: 260px;
+}
+
 #header {
   background: url("../images/home_header.png") no-repeat;
   display: block;

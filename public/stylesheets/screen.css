@@ -120,6 +120,34 @@ body a:hover {
 }
 
 /* line 38, ../../app/stylesheets/partials/_base.scss */
+#box-content {
+  display: none;
+}
+
+/* line 42, ../../app/stylesheets/partials/_base.scss */
+.button-blue {
+  background-color: #4CD3EC;
+  border: 3px solid #28CAE8;
+  color: #FFFFFF;
+  float: right;
+  font-family: georgia;
+  font-size: 17px;
+  margin: 10px;
+  padding: 3px 20px;
+  width: 120px;
+}
+
+/* line 54, ../../app/stylesheets/partials/_base.scss */
+h1 {
+  background-color: #DFF3F7;
+  color: #23B8D1;
+  font-family: georgia;
+  font-size: 24px;
+  padding: 7px 10px;
+  width: 260px;
+}
+
+/* line 63, ../../app/stylesheets/partials/_base.scss */
 #header {
   background: url("../images/home_header.png") no-repeat;
   display: block;
@@ -127,22 +155,22 @@ body a:hover {
   width: 927px;
   margin: 0 auto;
 }
-/* line 45, ../../app/stylesheets/partials/_base.scss */
+/* line 70, ../../app/stylesheets/partials/_base.scss */
 #header #login {
   float: right;
   margin: 95px 28px 0 0;
 }
-/* line 50, ../../app/stylesheets/partials/_base.scss */
+/* line 75, ../../app/stylesheets/partials/_base.scss */
 #header #login ul#login-links li {
   float: left;
   margin: 0  0 0 31px;
 }
-/* line 58, ../../app/stylesheets/partials/_base.scss */
+/* line 83, ../../app/stylesheets/partials/_base.scss */
 #header #label-beta {
   float: left;
   margin: 128px 0 0 -31px;
 }
-/* line 63, ../../app/stylesheets/partials/_base.scss */
+/* line 88, ../../app/stylesheets/partials/_base.scss */
 #header #logo {
   float: left;
   margin: 16px 0 0 -22px;
@@ -415,4 +443,95 @@ body.home #footer li#facebook_link {
 /* line 183, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#twitter_link {
   margin: -10px 0 0 0;
+}
+
+/* line 1, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box {
+  font-weight: bold;
+}
+/* line 4, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box div {
+  float: left;
+  padding: 0 10px 0 5px;
+  width: 290px;
+}
+/* line 10, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box .login {
+  background: url("../images/login_bg.png") no-repeat;
+  min-height: 230px;
+}
+/* line 15, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box .sign-in {
+  background: url("../images/login_big_bg.png") no-repeat scroll 0 0 transparent;
+  min-height: 334px;
+}
+/* line 20, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box .account {
+  margin: 0 75px 0 0;
+}
+/* line 24, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box .login {
+  margin-top: 50px !important;
+}
+/* line 29, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box #providers p {
+  margin: 10px;
+}
+/* line 32, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box #providers img {
+  float: left;
+  margin: 0 0 0 50px;
+  width: 15%;
+}
+/* line 37, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box #providers a {
+  font-size: 14px;
+}
+/* line 40, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box #providers a span {
+  font-size: 20px;
+}
+/* line 46, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box h1 {
+  background: none;
+  color: #FFFFFF;
+  font-family: Georgia;
+  font-size: 24px;
+  text-align: right;
+}
+/* line 54, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box label {
+  color: #3B3B3B;
+  display: inline-block;
+  font-size: 12px;
+  width: 200px;
+}
+/* line 62, ../../app/stylesheets/partials/_boxes.scss */
+div#login-signin-box input[type=text], div#login-signin-box input[type=password] {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  border: 3px solid #C2C2C2;
+  color: #6B6B6B;
+  font-size: 10px;
+  height: 10px;
+  padding: 5px;
+  width: 250px;
 }
