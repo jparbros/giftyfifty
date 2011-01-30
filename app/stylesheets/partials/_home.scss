@@ -1,0 +1,187 @@
+body.home {
+  #content {
+    width: 910px;
+    margin: 0 auto;
+
+    #main-content {
+      @include bottom-rounded(10px);
+      border: 3px solid $blue-border-color;
+      border-top: 0;
+      background: url("../images/content_bg.png");
+      height: 380px;
+
+      span#what {
+        float: left;
+        font-size: 19.62px;
+        margin: 28px 0 0 12px;
+      }
+      
+      input#gift_url {
+        border: 5px solid #67E5FB;
+        color: $input-text-color;
+        font-size: 18.90px;
+        margin: 7px 0 0 120px;
+        padding: 10px 0 14px 11px;
+        width: 566px;
+        @include border-rounded(15px);
+        @include shadow;
+        float: left;
+      }
+      
+      .search-submit {
+        background: transparent;
+        border: 0;
+        color: #FFFFFF;
+        font-size: 30.46px;
+        margin: 15px 0 0;
+        float: left;
+      }
+      
+      #lens {
+        margin: -10px 0 0 -22px;
+      }
+      
+      span#copy {
+        float:left;
+        line-height: 21px;
+        margin: 41px 0 0 39px;
+        text-align: center;
+        width: 150px;
+        @include ilustrations-text;
+      }
+      
+      span#paste {
+        float:left;
+        margin: -215px 0 0 659px;
+        @include ilustrations-text;
+      }
+
+    }
+    
+    ul#second-content {
+      margin: 12px 0 17px 0;
+      @include grey-box;
+      float: left;
+      height: 266px;
+      width: 904px;
+      @include border-rounded(10px);
+      
+      li {
+        background: url('../images/label.png') no-repeat;
+        float: left;
+        margin: 27px 37px 0 28px;
+        width: 240px;
+        
+        h3 {
+          color: $h3-color;
+          font: italic 23.5px Georgia;
+          margin: 0 0 0 19px;
+        }
+        
+        p {
+          margin: 0 0 0 19px;
+        }
+        
+        img {
+          margin: 5px 0 0 30px;
+        }
+      }
+      
+      li.last-label {
+        margin: 27px 0 0 21px;
+      }
+    }
+    
+    ul#third-content {
+      @include border-rounded(10px);
+      background: url("../images/content_bg.png");
+      border: 3px solid $blue-border-color;
+      float: left;
+      height: 125px;
+      width: 904px;
+      padding: 24px 0 0 0;
+      
+      li {
+        float: left;
+        margin: 0 22px 0 51px;
+        width: 240px;
+        
+        p {
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 16px;
+          width: 200px;
+        }
+      }
+      
+      li.last {
+        margin: 0 0px 0 37px;
+        
+        p {
+          width: 198px;
+        }
+      }
+      
+      h3 {
+        color: $h3-color-alt;
+        font: italic 25.3px Georgia;
+        margin: 0 0 7px 0;
+      }
+    }
+  }
+  
+  #footer {
+    font-size: 12px;
+    margin: 20px auto 0;
+    -moz-text-shadow: 0 3px 2px #333333;
+    -webkit-text-shadow: 0 3px 2px #333333;
+    text-shadow: 0 3px 2px #333333;
+    width: 911px;
+    
+    a {
+      font-size: 12px;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    ul#footer-legal {
+      float: left;
+      margin-left: 112px;
+    }
+    
+    ul#footer-friends {
+      float: left;
+      margin-left: 76px;
+    }
+    
+    li#about {
+      margin-right: 16px;
+    }
+    li#blog {
+      margin-right: 22px;
+    }
+    li#team {
+      margin-right: 22px;
+    }
+    li#copy {
+      margin-right: 18px;
+    }
+    li#terms {
+      margin-right: 23px;
+    }
+    li#privacy {
+      margin-right: 15px;
+    }
+    li#friend_us {
+      margin-right: 11px;
+    }
+    li#facebook_link {
+      margin: -9px 0 0 0;
+    }
+    li#twitter_link {
+      margin: -10px 0 0 0;
+    }
+  }
+}

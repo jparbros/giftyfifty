@@ -1,0 +1,70 @@
+@mixin regular-text($color: $text-color) {
+  color: $color;
+  font-family: Lucida Grande;
+  font-size: 12.66px;
+}
+
+@mixin ilustrations-text($color: $text-color) {
+  color: $color;
+  font-family: Georgia;
+  font-size: 21.5px;
+  font-style: italic;
+}
+
+@mixin grey-box {
+  background-color: #3B3B3B;
+  border: 3px solid #6B6B6B;
+}
+
+@mixin bottom-right-rounded($bottom-right-radius: 10px) {
+  -moz-border-radius-bottomright: $bottom-right-radius;
+  -webkit-border-bottom-right-radius: $bottom-right-radius;
+  border-bottom-right-radius: $bottom-right-radius;
+  -ms-border-radius-bottomright: $bottom-right-radius;
+  -khtml-border-radius-bottomright: $bottom-right-radius;
+}
+
+@mixin bottom-left-rounded($bottom-left-radius: 10px) {
+  -moz-border-radius-bottomleft: $bottom-left-radius;
+  -webkit-border-bottom-left-radius: $bottom-left-radius;
+  border-bottom-left-radius: $bottom-left-radius;
+  -ms-border-radius-bottomleft: $bottom-left-radius;
+  -khtml-border-radius-bottomleft: $bottom-left-radius;
+}
+
+@mixin top-left-rounded($top-left-radius: 10px) {
+  -moz-border-radius-topleft: $top-left-radius;
+  -webkit-border-top-left-radius: $top-left-radius;
+  border-top-left-radius: $top-left-radius;
+  -ms-border-radius-topleft: $top-left-radius;
+  -khtml-border-radius-topleft: $top-left-radius;
+}
+
+@mixin top-right-rounded($top-right-radius: 10px) {
+  -moz-border-radius-topright: $top-right-radius;
+  -webkit-border-top-right-radius: $top-right-radius;
+  border-top-right-radius: $top-right-radius;
+  -ms-border-radius-topright: $top-right-radius;
+  -khtml-border-radius-topright: $top-right-radius;
+}
+
+@mixin bottom-rounded($bottom-radius: 10px){
+  @include bottom-right-rounded($bottom-radius);
+  @include bottom-left-rounded($bottom-radius);
+}
+
+@mixin top-rounded($top-radius: 10px){
+  @include top-right-rounded($top-radius);
+  @include top-left-rounded($top-radius);
+}
+
+@mixin border-rounded($radius) {
+  @include top-rounded($radius);
+  @include bottom-rounded($radius);
+}
+
+@mixin shadow {
+  -moz-box-shadow: 4px 4px 5px $shadow-color;
+  -webkit-box-shadow: 4px 4px 5px $shadow-color;
+  box-shadow: 4px 4px 5px $shadow-color;
+}

@@ -1,0 +1,418 @@
+/* line 4, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 6, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+html {
+  font-size: 100.01%;
+}
+
+/* line 16, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" "";
+}
+/* line 45, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 20, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-1.8.7-p302@giftyfifty/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 12, ../../app/stylesheets/partials/_base.scss */
+ul {
+  list-style: none;
+}
+
+/* line 16, ../../app/stylesheets/partials/_base.scss */
+.last {
+  margin-right: 0px !important;
+}
+
+/* line 20, ../../app/stylesheets/partials/_base.scss */
+body {
+  background: url("../images/background.png");
+  color: white;
+  font-family: Lucida Grande;
+  font-size: 12.66px;
+}
+
+/* line 25, ../../app/stylesheets/partials/_base.scss */
+body a {
+  color: white;
+  font-family: Lucida Grande;
+  font-size: 12.66px;
+  text-decoration: none;
+}
+
+/* line 30, ../../app/stylesheets/partials/_base.scss */
+body a:hover {
+  color: #65cde2;
+  font-family: Lucida Grande;
+  font-size: 12.66px;
+}
+
+/* line 34, ../../app/stylesheets/partials/_base.scss */
+.clearBoth {
+  clear: both;
+}
+
+/* line 38, ../../app/stylesheets/partials/_base.scss */
+#header {
+  background: url("../images/home_header.png") no-repeat;
+  display: block;
+  height: 131px;
+  width: 927px;
+  margin: 0 auto;
+}
+/* line 45, ../../app/stylesheets/partials/_base.scss */
+#header #login {
+  float: right;
+  margin: 95px 28px 0 0;
+}
+/* line 50, ../../app/stylesheets/partials/_base.scss */
+#header #login ul#login-links li {
+  float: left;
+  margin: 0  0 0 31px;
+}
+/* line 58, ../../app/stylesheets/partials/_base.scss */
+#header #label-beta {
+  float: left;
+  margin: 128px 0 0 -31px;
+}
+/* line 63, ../../app/stylesheets/partials/_base.scss */
+#header #logo {
+  float: left;
+  margin: 16px 0 0 -22px;
+}
+
+/* line 2, ../../app/stylesheets/partials/_home.scss */
+body.home #content {
+  width: 910px;
+  margin: 0 auto;
+}
+/* line 6, ../../app/stylesheets/partials/_home.scss */
+body.home #content #main-content {
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -ms-border-radius-bottomright: 10px;
+  -khtml-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -ms-border-radius-bottomleft: 10px;
+  -khtml-border-radius-bottomleft: 10px;
+  border: 3px solid #10badb;
+  border-top: 0;
+  background: url("../images/content_bg.png");
+  height: 380px;
+}
+/* line 13, ../../app/stylesheets/partials/_home.scss */
+body.home #content #main-content span#what {
+  float: left;
+  font-size: 19.62px;
+  margin: 28px 0 0 12px;
+}
+/* line 19, ../../app/stylesheets/partials/_home.scss */
+body.home #content #main-content input#gift_url {
+  border: 5px solid #67E5FB;
+  color: #cecece;
+  font-size: 18.90px;
+  margin: 7px 0 0 120px;
+  padding: 10px 0 14px 11px;
+  width: 566px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-top-right-radius: 15px;
+  border-top-right-radius: 15px;
+  -ms-border-radius-topright: 15px;
+  -khtml-border-radius-topright: 15px;
+  -moz-border-radius-topleft: 15px;
+  -webkit-border-top-left-radius: 15px;
+  border-top-left-radius: 15px;
+  -ms-border-radius-topleft: 15px;
+  -khtml-border-radius-topleft: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  -ms-border-radius-bottomright: 15px;
+  -khtml-border-radius-bottomright: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  -ms-border-radius-bottomleft: 15px;
+  -khtml-border-radius-bottomleft: 15px;
+  -moz-box-shadow: 4px 4px 5px #56b1c1;
+  -webkit-box-shadow: 4px 4px 5px #56b1c1;
+  box-shadow: 4px 4px 5px #56b1c1;
+  float: left;
+}
+/* line 31, ../../app/stylesheets/partials/_home.scss */
+body.home #content #main-content .search-submit {
+  background: transparent;
+  border: 0;
+  color: #FFFFFF;
+  font-size: 30.46px;
+  margin: 15px 0 0;
+  float: left;
+}
+/* line 40, ../../app/stylesheets/partials/_home.scss */
+body.home #content #main-content #lens {
+  margin: -10px 0 0 -22px;
+}
+/* line 44, ../../app/stylesheets/partials/_home.scss */
+body.home #content #main-content span#copy {
+  float: left;
+  line-height: 21px;
+  margin: 41px 0 0 39px;
+  text-align: center;
+  width: 150px;
+  color: white;
+  font-family: Georgia;
+  font-size: 21.5px;
+  font-style: italic;
+}
+/* line 53, ../../app/stylesheets/partials/_home.scss */
+body.home #content #main-content span#paste {
+  float: left;
+  margin: -215px 0 0 659px;
+  color: white;
+  font-family: Georgia;
+  font-size: 21.5px;
+  font-style: italic;
+}
+/* line 61, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#second-content {
+  margin: 12px 0 17px 0;
+  background-color: #3B3B3B;
+  border: 3px solid #6B6B6B;
+  float: left;
+  height: 266px;
+  width: 904px;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  -ms-border-radius-topright: 10px;
+  -khtml-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -ms-border-radius-topleft: 10px;
+  -khtml-border-radius-topleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -ms-border-radius-bottomright: 10px;
+  -khtml-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -ms-border-radius-bottomleft: 10px;
+  -khtml-border-radius-bottomleft: 10px;
+}
+/* line 69, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#second-content li {
+  background: url("../images/label.png") no-repeat;
+  float: left;
+  margin: 27px 37px 0 28px;
+  width: 240px;
+}
+/* line 75, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#second-content li h3 {
+  color: #00cbeb;
+  font: italic 23.5px Georgia;
+  margin: 0 0 0 19px;
+}
+/* line 81, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#second-content li p {
+  margin: 0 0 0 19px;
+}
+/* line 85, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#second-content li img {
+  margin: 5px 0 0 30px;
+}
+/* line 90, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#second-content li.last-label {
+  margin: 27px 0 0 21px;
+}
+/* line 95, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#third-content {
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  -ms-border-radius-topright: 10px;
+  -khtml-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -ms-border-radius-topleft: 10px;
+  -khtml-border-radius-topleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -ms-border-radius-bottomright: 10px;
+  -khtml-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -ms-border-radius-bottomleft: 10px;
+  -khtml-border-radius-bottomleft: 10px;
+  background: url("../images/content_bg.png");
+  border: 3px solid #10badb;
+  float: left;
+  height: 125px;
+  width: 904px;
+  padding: 24px 0 0 0;
+}
+/* line 104, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#third-content li {
+  float: left;
+  margin: 0 22px 0 51px;
+  width: 240px;
+}
+/* line 109, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#third-content li p {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  width: 200px;
+}
+/* line 117, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#third-content li.last {
+  margin: 0 0px 0 37px;
+}
+/* line 120, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#third-content li.last p {
+  width: 198px;
+}
+/* line 125, ../../app/stylesheets/partials/_home.scss */
+body.home #content ul#third-content h3 {
+  color: #3b3b3b;
+  font: italic 25.3px Georgia;
+  margin: 0 0 7px 0;
+}
+/* line 133, ../../app/stylesheets/partials/_home.scss */
+body.home #footer {
+  font-size: 12px;
+  margin: 20px auto 0;
+  -moz-text-shadow: 0 3px 2px #333333;
+  -webkit-text-shadow: 0 3px 2px #333333;
+  text-shadow: 0 3px 2px #333333;
+  width: 911px;
+}
+/* line 141, ../../app/stylesheets/partials/_home.scss */
+body.home #footer a {
+  font-size: 12px;
+}
+/* line 145, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li {
+  float: left;
+}
+/* line 149, ../../app/stylesheets/partials/_home.scss */
+body.home #footer ul#footer-legal {
+  float: left;
+  margin-left: 112px;
+}
+/* line 154, ../../app/stylesheets/partials/_home.scss */
+body.home #footer ul#footer-friends {
+  float: left;
+  margin-left: 76px;
+}
+/* line 159, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#about {
+  margin-right: 16px;
+}
+/* line 162, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#blog {
+  margin-right: 22px;
+}
+/* line 165, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#team {
+  margin-right: 22px;
+}
+/* line 168, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#copy {
+  margin-right: 18px;
+}
+/* line 171, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#terms {
+  margin-right: 23px;
+}
+/* line 174, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#privacy {
+  margin-right: 15px;
+}
+/* line 177, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#friend_us {
+  margin-right: 11px;
+}
+/* line 180, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#facebook_link {
+  margin: -9px 0 0 0;
+}
+/* line 183, ../../app/stylesheets/partials/_home.scss */
+body.home #footer li#twitter_link {
+  margin: -10px 0 0 0;
+}

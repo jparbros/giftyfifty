@@ -1,0 +1,50 @@
+#main-content
+  %span#what
+    What gift do you want?
+  = form_tag event_form_path do 
+    = text_field_tag 'gift_url', t(:home_paste_here)
+    = submit_tag('GO', :id => (current_user)? 'search' : 'go-sign-in', :class => 'search-submit')
+  %span#copy
+    Copy the URL of your gift
+  = image_tag 'lens.png', :id => 'lens'
+  %span#paste
+    Paste it here
+
+%ul#second-content
+  %li
+    = image_tag 'gift_home.png', :class => 'step-1'
+    %h3
+      = t(:home_choose_gift)
+    %p
+      Find your gift on the internet, then copy-paste the URL in our home page and edit your event.
+  %li
+    = image_tag 'megaphone_home.png', :class => 'step-2'
+    %h3
+      = t(:home_spread_world)
+    %p
+      Invite your friends through your social networks to start making donations to your gift.
+  %li.last-label
+    = image_tag 'machine_home.png', :class => 'step-3'
+    %h3
+      = t(:home_get_it)
+    %p
+      Once you've reached your money goal thanks all your friends donations, you can buy it.
+      
+%ul#third-content
+  %li
+    %h3
+      What is Gifty Fifty?
+    %p
+      A service where your friends and family give a part of the total cost of your gift.
+  %li
+    %h3
+      Who is it for?
+    %p
+      For you and for everyone with a special occassion to celebrate.
+  %li.last
+    %h3
+      Why use it?
+    %p
+      We help you to get the gift want and your friends won't waste money on useless things you don't like.
+
+.clearBoth

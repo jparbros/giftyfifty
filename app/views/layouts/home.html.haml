@@ -1,0 +1,41 @@
+!!!Strict
+%html
+  %head
+    %link{:rel=>"stylesheet", :href=>"stylesheets/screen.css", :media=>"screen", :type=>"text/css"}
+    %link{:rel=>"stylesheet", :href=>"stylesheets/print.css", :media=>"print", :type=>"text/css"}
+    <!--[if IE]>
+    %link{:rel=>"stylesheet", :href=>"stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
+    < ![endif]-->
+  %body.home
+    #header
+      = image_tag 'label_beta.png', :id => 'label-beta'
+      = image_tag 'logo.png', :id => 'logo'
+      = render :partial => 'shared/login_status'
+    #content
+      = yield
+    #footer
+      %ul#footer-contact
+        %li#about
+          = link_to t(:about_gifty_footer), '#'
+        %li#blog
+          = link_to 'Blogifty', 'http://blog.giftyfifty.com/'
+        %li#team
+          = link_to t(:team_gifty_footer), '#'
+        %li#jobs
+          = link_to t(:jobs_support_footer), '#'
+      %ul#footer-legal
+        %li#copy
+          Gifty Fifty &copy; 2010
+        %li#terms
+          = link_to t(:terms_footer), '#'
+        %li#privacy
+          = link_to t(:pravicy_footer), '#'
+        %li#contact
+          = link_to t(:contact_footer), '#'
+      %ul#footer-friends
+        %li#friend_us
+          = t(:home_friend_us)
+        %li#twitter_link
+          = link_to(image_tag('twitter.png'), 'href="http://www.twitter.com/giftyfifty', {:target => 'blank'})
+        %li#facebook_link
+          = link_to(image_tag('facebook.png'), 'http://www.facebook.com/giftyfifty', {:target => 'blank'})

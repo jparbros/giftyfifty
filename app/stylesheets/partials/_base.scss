@@ -1,0 +1,68 @@
+// Here is where you can define your constants for your application and to configure the blueprint framework.
+// Feel free to delete these if you want keep the defaults:
+
+$blueprint-grid-columns: 24;
+$blueprint-container-size: 950px;
+$blueprint-grid-margin: 10px;
+
+// Use this to calculate the width based on the total width.
+// Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
+$blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;
+
+ul {
+  list-style: none;
+}
+
+.last {
+  margin-right: 0px !important;
+}
+
+body {
+  background: url('../images/background.png');
+  @include regular-text;
+}
+
+body a {
+  @include regular-text;
+  text-decoration: none;
+}
+
+body a:hover {
+  @include regular-text($text-color-alt);
+}
+
+.clearBoth {
+  clear: both;
+}
+
+#header {
+  background: url("../images/home_header.png") no-repeat;
+  display: block;
+  height: 131px;
+  width: 927px;
+  margin: 0 auto;
+  
+  #login {
+    float: right;
+    margin: 95px 28px 0 0;
+    
+    ul#login-links {
+      li {
+        float: left;
+        margin: 0  0 0 31px;
+      }
+    }
+    
+  }
+  
+  #label-beta {
+    float: left;
+    margin: 128px 0 0 -31px;
+  }
+
+  #logo {
+    float: left;
+    margin: 16px 0 0 -22px;
+  }
+  
+}

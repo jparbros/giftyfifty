@@ -93,7 +93,11 @@ class User < ActiveRecord::Base
   end
   
   def name
-    self.first_name.to_s + ' ' + self.last_name.to_s
+    if first.name.blank? and last_name.blank?
+      'Welcome'
+    else
+      first_name.to_s + ' ' + last_name.to_s
+    end
   end
   
   def password_required? 

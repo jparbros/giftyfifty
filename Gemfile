@@ -14,6 +14,8 @@ gem 'devise'
 gem "oauth"
 gem 'oauth2'
 gem "omniauth"
+gem 'haml'
+gem 'compass'
 
 gem 'hpricot'
 gem 'fbgraph'
