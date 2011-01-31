@@ -1,32 +1,87 @@
 <div class="confirm-donation">
-  <div id="col-1">
     <% form_for @donation, :url => event_donations_path(params[:event_id]) do |form| %>
       <div id="gift-header">
-        <h1>Donation</h1>
+        <h1>Contributions</h1>
       </div>
-      <p>
-        <%= form.label :name %>
-        <%= form.text_field :name %>
-      </p>
-      <p>
-        <%= form.label :credit_card %>
-        <%= form.text_field :credit_card %>
-      </p>
-      <p>
-        <%= form.label :expiration_date %>
-        <%= form.text_field :expiration_date %>
-      </p>
-      <p>
-        <%= form.label :verification_value %>
-        <%= form.text_field :verification_value %>
-      </p>
-      <p>
-        <%= form.label :amount %>
-        <%= form.text_field :amount %>
-      </p>
-      <p>
-        <%= form.submit 'Continue', :id => 'save' %>
-      </p>
+      <div id="left">
+        <div class="top">
+          <h4>How much happiness will you give to your friend?</h4>
+          Enter your contribution amount <%=form.text_field :amount, :size => '10' %>
+          <div id="breakdown">
+            Direct contribution: <span id="direct">$0</span>
+            <br />
+            Our handing cost: <span id="handing">$0</span>
+          </div>
+          <div class="clearBoth"></div>
+        </div>
+        <div class="bottom">
+          <div id="credit_card">
+            <h4>Please fill the spaces with your card info</h4>
+            <ul>
+              <li>
+                <%= form.label 'Card holder (*)' %>
+                <br/>
+                <%= form.text_field :name, :size => '15' %>
+              </li>
+              <li>
+                <%= form.label :expiration_date %>
+                <br/>
+                <%= form.select :month, options_for_select(Donation::MONTHS) %>
+                <%= form.select :year, Donation::years %>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <%= form.label :credit_card %>
+                <br/>
+                <%= form.text_field :credit_card, :size => '15' %>
+              </li>
+              <li>
+                <%= form.label :verification_value %>
+                <br/>
+                <%= form.text_field :verification_value, :size => '15' %>
+              </li>
+            </ul>
+          </div>
+          <div id="paypal">
+            <%= image_tag 'paypal_big.png'%>
+          </div>
+        </div>
+      </div>
+      <div id="right">
+        <div class="top">
+          <div class="payment_methods">
+            <div class="radio-button">
+              <%= radio_button_tag 'payment_method','credit_card', {:checked => 'checked'}%>
+            </div>
+            <%= image_tag 'card_accepted.png'%>
+          </div>
+          <div class="payment_methods">
+            <div class="radio-button">
+              <%= radio_button_tag 'payment_method','paypal'%>
+            </div>
+            <%= image_tag 'paypal.png'%>
+          </div>
+        </div>
+        <div class="bottom">
+          
+        </div>
+      </div>
+      <div id="continue">
+        <%= check_box_tag 'terms'%> I accept the therms of use
+        <br />
+        <%= form.submit 'Continue', :id => 'save', :class => 'disable', :disabled => 'disable' %>
+      </div>
     <%end%>
-  </div>
 </div>
+
+<% content_for :scripts do %>
+  <script type='text/javascript'>
+    $(function() {
+      donationCheckbox();
+      acceptTerms();
+      onlyNumber();
+      calculateFeed();
+    });
+  </script>
+<% end %>

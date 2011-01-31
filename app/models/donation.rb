@@ -3,11 +3,12 @@ class Donation < ActiveRecord::Base
   # Associations
   #
   belongs_to :event
+  belongs_to :user
   
   #
   # Attributes Accesors
   #
-  attr_accessor :name, :credit_card, :expiration_date, :ip, :verification_value, :amount
+  attr_accessor :name, :credit_card, :month, :year, :ip, :verification_value, :amount
   
   
   #
@@ -16,11 +17,25 @@ class Donation < ActiveRecord::Base
   after_initialize :amaunt_to_cents 
   before_create :calculate_fees
   
+  #
+  # Constants
+  #
+  
+  MONTHS = [['Jan','1'],['Feb','2'],['Mar','3'],['Apr','4'],['May','5'],['Jun','6'],['Jul','7'],['Aug','8'],['Sep','9'],['Oct','10'],['Nov','11'],['Dec','12']]
+  
   require 'gifty/cc'
   include ActiveMerchant::Billing
   include Gifty::Cc
   
   Base.mode = :test #(Rails.env.production? ? :production : :test)
+  
+  def self.years
+    _years = []
+    for i in Time.now.year.to_i..Time.now.year.to_i+15
+      _years << i
+    end
+    _years
+  end
   
   def donate!
     cc = CreditCard.new(formated_params)

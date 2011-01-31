@@ -158,22 +158,70 @@ h1 {
 /* line 70, ../../app/stylesheets/partials/_base.scss */
 #header #login {
   float: right;
-  margin: 95px 28px 0 0;
+  color: #23B8D1;
+  font-size: 16px;
+  margin: 80px 20px 0 0;
+  padding: 15px 10px 10px;
 }
-/* line 75, ../../app/stylesheets/partials/_base.scss */
+/* line 78, ../../app/stylesheets/partials/_base.scss */
 #header #login ul#login-links li {
   float: left;
   margin: 0  0 0 31px;
 }
-/* line 83, ../../app/stylesheets/partials/_base.scss */
+/* line 84, ../../app/stylesheets/partials/_base.scss */
+#header #login #user-menu {
+  background: url(../images/arrow-dropdown.png) no-repeat right;
+  padding: 0 20px 0 0;
+  cursor: pointer;
+}
+/* line 89, ../../app/stylesheets/partials/_base.scss */
+#header #login #user-menu img {
+  border: 3px solid #23B8D1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: -10px 0;
+}
+/* line 97, ../../app/stylesheets/partials/_base.scss */
+#header #login #menu-content {
+  background: #292929;
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  margin: 10px 0 0 -10px;
+}
+/* line 104, ../../app/stylesheets/partials/_base.scss */
+#header #login #menu-content li {
+  background: #5e5e5e;
+  margin: 0 0 0 10px;
+  float: left;
+  list-style: none;
+}
+/* line 110, ../../app/stylesheets/partials/_base.scss */
+#header #login #menu-content li a {
+  color: #23B8D1;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 0 0 0 5px;
+  width: 100%;
+  padding: 0;
+}
+/* line 120, ../../app/stylesheets/partials/_base.scss */
+#header #login #menu-content li#last {
+  margin-bottom: 10px;
+}
+/* line 124, ../../app/stylesheets/partials/_base.scss */
+#header #login #menu-content li:hover {
+  background: #797979;
+}
+/* line 131, ../../app/stylesheets/partials/_base.scss */
 #header #label-beta {
   float: left;
   margin: 128px 0 0 -31px;
 }
-/* line 88, ../../app/stylesheets/partials/_base.scss */
+/* line 136, ../../app/stylesheets/partials/_base.scss */
 #header #logo {
   float: left;
-  margin: 16px 0 0 -22px;
+  margin: 16px 0 0 -39px;
 }
 
 /* line 2, ../../app/stylesheets/partials/_home.scss */
@@ -202,14 +250,14 @@ body.home #content #main-content {
 body.home #content #main-content span#what {
   float: left;
   font-size: 19.62px;
-  margin: 28px 0 0 12px;
+  margin: 28px 0 0 -2px;
 }
 /* line 19, ../../app/stylesheets/partials/_home.scss */
 body.home #content #main-content input#gift_url {
   border: 5px solid #67E5FB;
   color: #cecece;
   font-size: 18.90px;
-  margin: 7px 0 0 120px;
+  margin: 7px 0 0 -8px;
   padding: 10px 0 14px 11px;
   width: 566px;
   -moz-border-radius-topright: 15px;
@@ -243,7 +291,7 @@ body.home #content #main-content .search-submit {
   border: 0;
   color: #FFFFFF;
   font-size: 30.46px;
-  margin: 15px 0 0;
+  margin: 6px 0 0;
   float: left;
 }
 /* line 40, ../../app/stylesheets/partials/_home.scss */

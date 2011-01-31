@@ -9,7 +9,6 @@
   padding:0;
   border:none;
   font-family: Lucida Grande;
-  font-weight: Bold;
 }
 
 /*==================================
@@ -17,7 +16,10 @@
 ==================================*/
 
 body{
-  background:url(../images/body_bg.jpg) repeat;
+  background:url(../images/background.png) repeat;
+}
+h1{
+  font-style: italic;
 }
 .center-text {
   text-align: center;
@@ -42,9 +44,9 @@ body{
 }
 #login{
   float: right;
-  margin: 85px 20px 0 0;
   color: #23B8D1;
-  padding: 10px 10px 10px;
+  margin: 80px 20px 0 0;
+  padding: 15px 10px 10px;
 }
 .left {
   float: left;
@@ -52,20 +54,20 @@ body{
 .hidden {
   display: none;
 }
-#login #menu_toggle {
+#login #user-menu {
   background: url(../images/arrow-dropdown.png) no-repeat right;
   padding: 0 20px 0 0;
   cursor: pointer;
 }
 
-#login #menu_toggle img {
+#login #user-menu img {
   border: 3px solid #23B8D1;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
   margin:-10px 0;
 }
 
-#login #menu_content {
+#login #menu-content {
   background: #292929;
   position:absolute;
   display: none;
@@ -73,23 +75,25 @@ body{
   margin: 10px 0 0 -10px;
 }
 
-#login #menu_content #menu_elements {
+#login #menu-content li {
   background: #5e5e5e;
-  margin:0 0 10px 10px;
+  margin:0 0 0 10px;
 }
 
-#login #menu_content #menu_elements a {
+#login #menu-content li a {
   color: #23B8D1;
   font-size: 14px;
   text-decoration: none;
   margin: 0 0 0 5px;
+  width: 100%;
+  padding: 0;
 }
 
-#login #menu_content #menu_elements p {
-  margin: 0 0 5px 0;
+#login #menu-content li#last {
+  margin-bottom: 10px;
 }
 
-#login #menu_content #menu_elements p:hover {
+#login #menu-content li:hover {
   background: #797979;
 }
 
@@ -111,7 +115,7 @@ body{
 
 #content{
   margin:-5px auto 0 auto;
-  background:#f5f5f5 url(../images/content_bg.jpg) repeat-x;
+  background:#ffffff;
   padding:45px 45px 10px 45px;
   width:820px
   ;
@@ -193,6 +197,7 @@ body{
 label.error {
   width: 100% !important;
   color: red !important;
+  float:left;
 }
 /*==================================
   Login modal box
@@ -202,6 +207,7 @@ div#login-signin-box h1 {
   color: #fff;
   background: none;
   text-align: right;
+  font-style: italic;
 }
 
 div#login-signin-box h2 {
@@ -677,7 +683,6 @@ ul.explination li h3 {
   -webkit-border-radius:5px;
   border:3px solid #C2C2C2;
   color:#6B6B6B;
-  font-size:14px;
   padding:5px;
   width:250px;
 }
@@ -716,7 +721,12 @@ ul.explination li h3 {
 #content #col-1{
   width:545px;
   float:left;
+  margin-left: -125px;
 }
+#content .edit-settings #col-1{ 
+  margin-left: 0 !important;
+}
+
 #content #col-1 #gift-header{
   padding:7px 10px;
   background-color:#DFF3F7;
@@ -831,7 +841,6 @@ ul.explination li h3 {
 #content p{
   font-size:14px;
   color:#959595;
-  line-height:28px;
 }
 #content p.title{
   font-size:16px;
@@ -885,21 +894,22 @@ input#gift-title{
   margin: 10px 0 0 0;
 }
 textarea#gift_description{
-  width:370px;
+  width:365px;
   height:125px;
 }
 #title{
   float: right;
 }
 #begin{
-  margin: 10px 0 0 30px;
-  font-size: 14px;
+  margin: 14px 0 0 30px;
+  width: 130px;
 }
 input#event_start_at{
   width:105px;
 }
 #end{
-  margin: 47px 0 0 30px;
+  margin: 45px 0 0 30px;
+  width: 130px;
 }
 input#event_end_at{
   width:105px;
@@ -909,6 +919,7 @@ input#save{
   font-family: georgia;
   font-weight: bold italic;
   font-size:17px;
+  font-style: italic;
   padding:3px 20px;
   background-color:#4CD3EC;
   border:#28CAE8 3px solid;
@@ -1289,4 +1300,75 @@ img#ajax-loader {
   top: 25%;
   z-index: 10000;
   display: none;
+}
+
+.confirm-donation #left{
+  float: left;
+  width: 52.5%;  
+  border-right: 1px #dedede dotted;
+}
+
+.confirm-donation #right{
+  float: left;
+  width: 47%;
+}
+
+.confirm-donation input, .confirm-donation select {
+  color:#23B8D1;
+  border:#C2C2C2 3px solid;
+  font-size:15px;
+  padding:7px;
+  border-radius:5px;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+}
+
+.confirm-donation #breakdown {
+    float: right;
+    width: 300px;
+}
+
+.confirm-donation .top {
+  border-bottom: 1px #dedede dotted;
+  height: 150px;
+  padding: 5px;
+}
+
+.confirm-donation .bottom {
+  height: 150px;
+  padding: 5px;
+}
+
+.confirm-donation .radio-button {
+  float: left;
+  margin: 8px 0 0 0;
+}
+
+.confirm-donation .payment_methods {
+  margin: 20px 10px;
+}
+
+.confirm-donation #continue {
+  width: 100%;
+  text-align: right;
+}
+
+.confirm-donation ul {
+  list-style-type:none;
+}
+
+.confirm-donation li {
+  float: left;
+  margin-right: 10px;
+}
+
+.confirm-donation #paypal {
+  display: none;
+  text-align: center;
+}
+
+.confirm-donation .disable {
+  background-color: #CCCCCC !important;
+  border: 3px solid #999999 !important;
+  color: #000000 !important;
 }

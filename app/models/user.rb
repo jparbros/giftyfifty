@@ -93,7 +93,7 @@ class User < ActiveRecord::Base
   end
   
   def name
-    if first.name.blank? and last_name.blank?
+    if first_name.blank? and last_name.blank?
       'Welcome'
     else
       first_name.to_s + ' ' + last_name.to_s

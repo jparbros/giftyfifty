@@ -26,8 +26,44 @@
         document.getElementById('fb-root').appendChild(e);
       }());
   };
+  $.giftInputChangeText = function() {
+    var giftInput = $('input#gift_url');
+    var giftUrlText = giftInput.attr('value');
+    giftInput.focusin(function(){
+      $(this).attr('value','')
+    });
+    giftInput.focusout(function(){
+      if($(this).attr('value') == '') {
+        $(this).attr('value',giftUrlText)
+      }
+    });
+  };
+
+  var menuStyle = function() {
+    width = menuToggle.width() + 20;
+    menuElements.width(width)
+    menuContent.width(width+20);
+    if(menuContent.css('display') == 'block'){
+      loginBox.css('background-color','')
+    } else {
+      loginBox.css('background','#292929') 
+    }
+  }
+
+  $.menuFunctionality = function() {
+    menuToggle = $('div#login div#user-menu');
+    menuContent = $('div#login ul#menu-content');
+    menuElements = $('#menu-content li');
+    loginBox = $('div#login');
+    menuToggle.click(function(){
+      menuStyle();
+      menuContent.toggle();
+    });
+  }
 })(jQuery);
 
 $(document).ready(function(){
   $.loginSigninBox();
+  $.giftInputChangeText();
+  $.menuFunctionality();
 });

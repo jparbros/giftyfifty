@@ -34,8 +34,8 @@ module Gifty
       type = cc_type(self.credit_card)
       {:first_name => self.name.split(" ").first,
       :last_name => self.name.split(" ").last,
-      :month => self.expiration_date.split("/").first,
-      :year => self.expiration_date.split("/").last,
+      :month => self.month,
+      :year => self.year,
       :type => COMPANIES_NAMES[type],
       :number => self.credit_card,
       :verification_value => self.verification_value

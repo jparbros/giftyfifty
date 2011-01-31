@@ -13,14 +13,14 @@ body.home {
       span#what {
         float: left;
         font-size: 19.62px;
-        margin: 28px 0 0 12px;
+        margin: 28px 0 0 -2px;
       }
       
       input#gift_url {
         border: 5px solid #67E5FB;
         color: $input-text-color;
         font-size: 18.90px;
-        margin: 7px 0 0 120px;
+        margin: 7px 0 0 -8px;
         padding: 10px 0 14px 11px;
         width: 566px;
         @include border-rounded(15px);
@@ -33,7 +33,7 @@ body.home {
         border: 0;
         color: #FFFFFF;
         font-size: 30.46px;
-        margin: 15px 0 0;
+        margin: 6px 0 0;
         float: left;
       }
       

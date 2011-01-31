@@ -9,7 +9,11 @@ Giftyfifty::Application.routes.draw do
      resource :twitter, :only => :create
      resource :facebook, :only => :create
      resource :invitation, :only => :create
-     resources :donations, :only => [:new, :create, :show]
+     resources :donations, :only => [:new, :create, :show] do
+        member do
+          get 'ipn'
+        end
+     end
      namespace :release do
        resource :paypal, :only => :create
      end

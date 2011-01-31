@@ -75,9 +75,9 @@ var giftInputChangeText = function() {
 }
 
 var menuElements = function() {
-  menuToggle = $('div#login div#menu_toggle');
-  menuContent = $('div#login div#menu_content');
-  menuElements = $('div#login div#menu_elements');
+  menuToggle = $('div#login div#user-menu');
+  menuContent = $('div#login ul#menu-content');
+  menuElements = $('#menu-content li');
   loginBox = $('div#login');
   
 }
@@ -387,6 +387,59 @@ var loadingAjax = function() {
      $(this).show();
    }).bind("ajaxComplete", function(){
      $(this).hide();
+  });
+}
+
+var donationCheckbox = function() {
+  $(':radio').change(function(){
+    if($(this).attr('value')==='credit_card') {
+      $('div#credit_card').show();
+      $('div#paypal').hide();
+    }
+    if($(this).attr('value')==='paypal') {
+      $('div#credit_card').hide();
+      $('div#paypal').show();
+    }
+  });
+}
+
+var acceptTerms = function() {
+  $('input#terms, #donation_amount, #donation_name, #donation_credit_card, #donation_verification_value, #payment_method_credit_card, #payment_method_paypal').change(function(){
+    if( ($('input#terms').attr('checked') === true)  && ($('#donation_amount').val() != '') && ($('#donation_amount').val() != ' ')) {
+      if($('#payment_method_credit_card').attr('checked') == true) {
+        if(($('#donation_name').attr('value') != '') && ($('#donation_credit_card').attr('value') != '') && ($('#donation_verification_value').attr('value') != '')) {
+          $('input#save').removeAttr('disabled').removeClass('disable');
+        } else {
+          $('input#save').attr('disabled','disabled').addClass('disable');
+        }
+      } else {
+        $('input#save').removeAttr('disabled').removeClass('disable');
+      }
+    } else {
+      $('input#save').attr('disabled','disabled').addClass('disable');
+    }
+  });
+}
+
+var onlyNumber = function() {
+  $("#donation_amount").keypress(function (e)
+  {
+    if( e.which!=8 && e.which!=0 && (e.which<48 || e.which>57))
+    {
+      return false;
+    }
+  });
+}
+
+var calculateFeed = function() {
+  $('#donation_amount').change(function(){
+    donation = $('#donation_amount').attr('value') * 100;
+    payment_fee = (donation * 0.0229) + 30;
+    our_fee = (donation * 0.05);
+    total_fee = (payment_fee + our_fee)/100;
+    donation = (donation/100.00)-total_fee;
+    $('#direct').html('$' + donation.toFixed(2));
+    $('#handing').html('$' + total_fee.toFixed(2))
   });
 }
 

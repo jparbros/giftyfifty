@@ -5,14 +5,14 @@
       = current_user.name
     %ul#menu-content
       %li
-        = link_to(content_tag('p', t(:my_profile)), show_profile_path)
+        = link_to(t(:my_profile), show_profile_path)
       %li
-        = link_to(content_tag('p', t(:my_settings)), edit_user_registration_path,{:id => 'my-account-link'})
+        = link_to(t(:my_settings), edit_user_registration_path,{:id => 'my-account-link'})
       - unless current_user.active_event.blank?
         %li
-          = link_to(content_tag('p', t(:my_event)),event_path(current_user.active_event.last))
-      %li
-        = link_to(content_tag('p', t(:logout)),destroy_user_session_path)
+          = link_to(t(:my_event),event_path(current_user.active_event.last))
+      %li#last
+        = link_to(t(:logout),destroy_user_session_path)
   - else
     %ul#login-links
       %li

@@ -69,12 +69,60 @@ h1 {
   
   #login {
     float: right;
-    margin: 95px 28px 0 0;
+    color: #23B8D1;
+    font-size: 16px;
+    margin: 80px 20px 0 0;
+    padding: 15px 10px 10px;
     
     ul#login-links {
       li {
         float: left;
         margin: 0  0 0 31px;
+      }
+    }
+    
+    #user-menu {
+      background: url(../images/arrow-dropdown.png) no-repeat right;
+      padding: 0 20px 0 0;
+      cursor: pointer;
+      
+      img {
+        border: 3px solid #23B8D1;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        margin:-10px 0;
+      }
+    }
+    
+    #menu-content {
+      background: #292929;
+      position:absolute;
+      display: none;
+      z-index:1000;
+      margin: 10px 0 0 -10px;
+      
+      li {
+        background: #5e5e5e;
+        margin:0 0 0 10px;
+        float:left;
+        list-style: none;
+        
+        a {
+          color: #23B8D1;
+          font-size: 14px;
+          text-decoration: none;
+          margin: 0 0 0 5px;
+          width: 100%;
+          padding: 0;
+        }
+      }
+      
+      li#last {
+        margin-bottom: 10px;
+      }
+      
+      li:hover {
+        background: #797979;
       }
     }
     
@@ -87,7 +135,7 @@ h1 {
 
   #logo {
     float: left;
-    margin: 16px 0 0 -22px;
+    margin: 16px 0 0 -39px;
   }
   
 }

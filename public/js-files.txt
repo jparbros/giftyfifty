@@ -8,4 +8,4 @@ javascripts/jquery.fancybox.pack.js
 javascripts/jquery.mousewheel.pack.js
 javascripts/jquery.qtip.js
 javascripts/rails.js
-javascripts/application.js
+javascripts/_application.js
