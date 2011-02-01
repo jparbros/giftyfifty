@@ -5,10 +5,10 @@
     = text_field_tag 'gift_url', t(:home_paste_here)
     = submit_tag('GO', :id => (current_user)? 'search' : 'go-sign-in', :class => 'search-submit')
   %span#copy
-    Copy the URL of your gift
+    1. Copy the URL of your gift
   = image_tag 'lens.png', :id => 'lens'
   %span#paste
-    Paste it here
+    2. Paste it here
 
 %ul#second-content
   %li
