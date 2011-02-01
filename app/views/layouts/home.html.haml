@@ -8,6 +8,12 @@
     < ![endif]-->
     = stylesheet_link_tag 'jquery.fancybox.css'
     = javascript_include_tag 'jquery.min.js','jquery.fancybox.pack.js','jquery.mousewheel.pack.js','application.js'
+    = javascript_tag do
+      $(document).ready(function(){
+      $.giftInputChangeText();
+      $('#go-sign-in').getGiftUrl();
+      });
+    = csrf_meta_tag
   %body.home
     #header
       = image_tag 'logo.png', :id => 'logo'

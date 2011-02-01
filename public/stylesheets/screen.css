@@ -291,7 +291,7 @@ body.home #content #main-content .search-submit {
   border: 0;
   color: #FFFFFF;
   font-size: 30.46px;
-  margin: 6px 0 0;
+  margin: 15px 0 0;
   float: left;
 }
 /* line 40, ../../app/stylesheets/partials/_home.scss */
@@ -454,7 +454,7 @@ body.home #footer ul#footer-legal {
 /* line 154, ../../app/stylesheets/partials/_home.scss */
 body.home #footer ul#footer-friends {
   float: left;
-  margin-left: 76px;
+  margin-left: 60px;
 }
 /* line 159, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#about {
