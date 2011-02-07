@@ -94,12 +94,13 @@ ul {
 /* line 20, ../../app/stylesheets/partials/_base.scss */
 body {
   background: url("../images/background.png");
+  margin: 10px 0 0 0;
   color: white;
   font-family: Lucida Grande;
   font-size: 12.66px;
 }
 
-/* line 25, ../../app/stylesheets/partials/_base.scss */
+/* line 26, ../../app/stylesheets/partials/_base.scss */
 body a {
   color: white;
   font-family: Lucida Grande;
@@ -107,29 +108,29 @@ body a {
   text-decoration: none;
 }
 
-/* line 30, ../../app/stylesheets/partials/_base.scss */
+/* line 31, ../../app/stylesheets/partials/_base.scss */
 body a:hover {
   color: #65cde2;
   font-family: Lucida Grande;
   font-size: 12.66px;
 }
 
-/* line 34, ../../app/stylesheets/partials/_base.scss */
+/* line 35, ../../app/stylesheets/partials/_base.scss */
 .clearBoth {
   clear: both;
 }
 
-/* line 38, ../../app/stylesheets/partials/_base.scss */
+/* line 39, ../../app/stylesheets/partials/_base.scss */
 .emptyField {
   border: solid 3px #FF0000 !important;
 }
 
-/* line 42, ../../app/stylesheets/partials/_base.scss */
+/* line 43, ../../app/stylesheets/partials/_base.scss */
 #box-content {
   display: none;
 }
 
-/* line 46, ../../app/stylesheets/partials/_base.scss */
+/* line 47, ../../app/stylesheets/partials/_base.scss */
 .button-blue {
   background-color: #4CD3EC;
   border: 3px solid #28CAE8;
@@ -142,7 +143,7 @@ body a:hover {
   width: 120px;
 }
 
-/* line 58, ../../app/stylesheets/partials/_base.scss */
+/* line 59, ../../app/stylesheets/partials/_base.scss */
 h1 {
   background-color: #DFF3F7;
   color: #23B8D1;
@@ -152,7 +153,7 @@ h1 {
   width: 260px;
 }
 
-/* line 67, ../../app/stylesheets/partials/_base.scss */
+/* line 68, ../../app/stylesheets/partials/_base.scss */
 #header {
   background: url("../images/home_header.png") no-repeat;
   display: block;
@@ -160,7 +161,7 @@ h1 {
   width: 927px;
   margin: 0 auto;
 }
-/* line 74, ../../app/stylesheets/partials/_base.scss */
+/* line 75, ../../app/stylesheets/partials/_base.scss */
 #header #login {
   float: right;
   color: #23B8D1;
@@ -168,25 +169,25 @@ h1 {
   margin: 80px 20px 0 0;
   padding: 15px 10px 10px;
 }
-/* line 82, ../../app/stylesheets/partials/_base.scss */
+/* line 83, ../../app/stylesheets/partials/_base.scss */
 #header #login ul#login-links li {
   float: left;
   margin: 0  0 0 31px;
 }
-/* line 88, ../../app/stylesheets/partials/_base.scss */
+/* line 89, ../../app/stylesheets/partials/_base.scss */
 #header #login #user-menu {
   background: url(../images/arrow-dropdown.png) no-repeat right;
   padding: 0 20px 0 0;
   cursor: pointer;
 }
-/* line 93, ../../app/stylesheets/partials/_base.scss */
+/* line 94, ../../app/stylesheets/partials/_base.scss */
 #header #login #user-menu img {
   border: 3px solid #23B8D1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   margin: -10px 0;
 }
-/* line 101, ../../app/stylesheets/partials/_base.scss */
+/* line 102, ../../app/stylesheets/partials/_base.scss */
 #header #login #menu-content {
   background: #292929;
   position: absolute;
@@ -194,14 +195,14 @@ h1 {
   z-index: 1000;
   margin: 10px 0 0 -10px;
 }
-/* line 108, ../../app/stylesheets/partials/_base.scss */
+/* line 109, ../../app/stylesheets/partials/_base.scss */
 #header #login #menu-content li {
   background: #5e5e5e;
   margin: 0 0 0 10px;
   float: left;
   list-style: none;
 }
-/* line 114, ../../app/stylesheets/partials/_base.scss */
+/* line 115, ../../app/stylesheets/partials/_base.scss */
 #header #login #menu-content li a {
   color: #23B8D1;
   font-size: 14px;
@@ -210,20 +211,20 @@ h1 {
   width: 100%;
   padding: 0;
 }
-/* line 124, ../../app/stylesheets/partials/_base.scss */
+/* line 125, ../../app/stylesheets/partials/_base.scss */
 #header #login #menu-content li#last {
   margin-bottom: 10px;
 }
-/* line 128, ../../app/stylesheets/partials/_base.scss */
+/* line 129, ../../app/stylesheets/partials/_base.scss */
 #header #login #menu-content li:hover {
   background: #797979;
 }
-/* line 135, ../../app/stylesheets/partials/_base.scss */
+/* line 136, ../../app/stylesheets/partials/_base.scss */
 #header #label-beta {
   float: left;
   margin: 128px 0 0 -31px;
 }
-/* line 140, ../../app/stylesheets/partials/_base.scss */
+/* line 141, ../../app/stylesheets/partials/_base.scss */
 #header #logo {
   float: left;
   margin: 16px 0 0 -39px;
