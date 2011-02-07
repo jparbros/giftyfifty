@@ -1306,6 +1306,11 @@ img#ajax-loader {
  * Donations
  */
 
+.confirm-donation {
+  float: left;
+  margin: -30px 0 0;
+}
+
 .confirm-donation #left{
   float: left;
   width: 52.5%;  
