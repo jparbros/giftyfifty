@@ -452,12 +452,12 @@ body.home #footer li {
 /* line 146, ../../app/stylesheets/partials/_home.scss */
 body.home #footer ul#footer-legal {
   float: left;
-  margin-left: 112px;
+  margin-left: 140px;
 }
 /* line 151, ../../app/stylesheets/partials/_home.scss */
 body.home #footer ul#footer-friends {
   float: left;
-  margin-left: 60px;
+  margin-left: 160px;
 }
 /* line 156, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#about {
