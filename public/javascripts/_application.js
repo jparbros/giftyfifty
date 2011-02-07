@@ -355,7 +355,7 @@ var qtipsShowEventVisitor = function() {
 };
 
 var qtipsEditSettings = function() {
-  $('#upload_avatar').qtip({
+  $('#upload_avatar img').qtip({
     content: 'Your avatar is the picture we\'ll display on your profile.',
     style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
     position: { corner: { tooltip: 'bottomRight', target: 'topMiddle' } }

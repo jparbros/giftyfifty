@@ -116,9 +116,8 @@ h1{
 #content{
   margin:-5px auto 0 auto;
   background:#ffffff;
-  padding:45px 45px 10px 45px;
-  width:820px
-  ;
+  padding:100px 45px 10px 45px;
+  width:820px;
   -moz-border-radius: 0 0 10px 10px;
   -webkit-border-radius:0 0 10px 10px;
 }
@@ -721,8 +720,8 @@ ul.explination li h3 {
 #content #col-1{
   width:545px;
   float:left;
-  margin-left: -125px;
 }
+
 #content .edit-settings #col-1{ 
   margin-left: 0 !important;
 }
