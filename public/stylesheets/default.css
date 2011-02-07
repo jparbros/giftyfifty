@@ -1180,7 +1180,7 @@ input#save{
   color:#FFF;
 }
 #content div.gift-profile .aside-container div.info{
-  background-color:#DDDDDD;
+  background-color:#EEEEEE;
   color:#23B8D1;
   border:#AAAAAA 4px solid;
   width:180px;
@@ -1196,6 +1196,7 @@ input#save{
 #content div.gift-profile .aside-container div.advance{
   width:100%;
   overflow:hidden;
+  background: url("../images/stripes_grey.png");
 }
 #content div.gift-profile .aside-container div.stripes{
   background:url(../images/stripes.png) repeat-x;
