@@ -9,7 +9,7 @@ class DonationsController < ApplicationController
     if params[:payment_method] == 'credit_card'
       @donation = current_user.donations.new params[:donation].merge({:ip => request.env["HTTP_X_FORWARDED_FOR"],:event_id => params[:event_id]})
       if @donation.donate! == true
-        redirect_to event_donation_path(:event_id => params[:event_id], :id => @donation.id)
+        redirect_to event_url(params[:event_id], :donation => true)
       else
         growl_message 'The credit card is not valid.'
         redirect_to new_event_donation_path
@@ -19,7 +19,7 @@ class DonationsController < ApplicationController
       paypal = Gifty::Paypal.new
       response = paypal.call('SetExpressCheckout',{
           :PAYMENTREQUEST_0_AMT => params[:donation][:amount], 
-          :RETURNURL => ipn_event_donation_url(:event_id => params[:event_id], :id => 0), 
+          :RETURNURL => event_url(params[:event_id], :donation => true), 
           :CANCELURL => new_event_donation_url(:event_id => params[:event_id]),
           :PAYMENTREQUEST_0_DESC => "Gifty Fifty: Donation to #{event.user.name}'s gift."
       })

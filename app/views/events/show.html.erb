@@ -109,6 +109,7 @@
     <%end%>
   </div>
 
+  <%= render :partial => 'donation' if params[:donation] == 'true'%>
 
   <% content_for :scripts do %>
   <%= javascript_include_tag 'jquery.counter'%>
