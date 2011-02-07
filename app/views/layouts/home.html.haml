@@ -7,11 +7,11 @@
     %link{:rel=>"stylesheet", :href=>"http://asset1.giftyfifty.com/stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
     < ![endif]-->
     = stylesheet_link_tag 'jquery.fancybox.css'
-    = javascript_include_tag 'jquery.min.js','jquery.fancybox.pack.js','jquery.mousewheel.pack.js','application.js'
+    = javascript_include_tag 'jquery.min.js', 'jquery.fancybox.pack.js', 'jquery.mousewheel.pack.js', 'jgrowl.js', 'application.js'
     = javascript_tag do
       $(document).ready(function(){
       $.giftInputChangeText();
-      $('#go-sign-in').getGiftUrl();
+      $('#main-content form input[type=submit]').getGiftUrl();
       });
     = csrf_meta_tag
   %body.home
@@ -48,3 +48,5 @@
           = link_to(image_tag('facebook.png'), 'http://www.facebook.com/giftyfifty', {:target => 'blank'})
   
     = render :partial => 'shared/login_box'
+    
+= growl

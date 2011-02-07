@@ -1,15 +1,23 @@
 $.fn.extend({
   getGiftUrl: function(){
-    console.log(this.selector);
     this.click(function(){
       giftInput = $('input#gift_url');
-      loginGiftInputs = $('#new_user #gift_url');
       gift_url = giftInput.attr('value');
-      loginGiftInputs.attr('value',gift_url);
-      $('#login-box #providers a').each(function(){
-         _href = this.href;
-          this.href = _href + '?gift_url=' + gift_url
-      });
+      if ($.validUrl(gift_url)) {
+        if ( $(this).attr('id') === 'go-sign-in') {          
+          loginGiftInputs = $('#new_user #gift_url');
+          loginGiftInputs.attr('value',gift_url);
+          $('#login-box #providers a').each(function(){
+             _href = this.href;
+              this.href = _href + '?gift_url=' + gift_url
+          });
+          $.loginFancybox();
+          return false;
+        }
+      } else {
+        $.jGrowl('Please, Insert a valid url.', { header: 'Important', sticky: true });
+        return false;
+      }
     });
   }
 });
@@ -52,19 +60,23 @@ $.extend({
       })();
   },
   
+  loginFancybox: function() {
+    $.fancybox({
+        'titlePosition' : 'inside',
+        'transitionIn' : 'none',
+        'transitionOut' : 'none',
+        'width' : '1100',
+        'height' : '350',
+        'autoScale' : false,
+        'autoDimensions' : false,
+        'content': $('#box-content').html(),
+    });
+    return false;
+  },
+  
   loginSigninBox: function() {
-    $('a#sigin-link, a#login-link, input#go-sign-in').click(function(){
-      $.fancybox({
-          'titlePosition' : 'inside',
-          'transitionIn' : 'none',
-          'transitionOut' : 'none',
-          'width' : '1100',
-          'height' : '350',
-          'autoScale' : false,
-          'autoDimensions' : false,
-          'content': $('#box-content').html(),
-      });
-      return false;
+    $('a#sigin-link, a#login-link').click(function(){
+      $.loginFancybox();
     });
   },
   
@@ -131,6 +143,15 @@ $.extend({
         $(this).attr('value',giftUrlText)
       }
     });
+  },
+  
+  validUrl: function(inputValue){
+    var url_pattern = new RegExp("((http|https)(:\/\/))?([a-zA-Z0-9]+[.]{1}){2}[a-zA-z0-9]+(\/{1}[a-zA-Z0-9]+)*\/?", "i");
+    if(url_pattern.test(inputValue)) { 
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 
