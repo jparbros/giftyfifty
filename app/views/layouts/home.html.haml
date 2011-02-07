@@ -1,17 +1,17 @@
 !!!Strict
 %html
   %head
-    %link{:rel=>"stylesheet", :href=>"http://asset0.giftyfifty.com/stylesheets/screen.css", :media=>"screen", :type=>"text/css"}
-    %link{:rel=>"stylesheet", :href=>"http://asset1.giftyfifty.com/stylesheets/print.css", :media=>"print", :type=>"text/css"}
+    = stylesheet_link_tag 'screen','print'
     <!--[if IE]>
     %link{:rel=>"stylesheet", :href=>"http://asset1.giftyfifty.com/stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
     < ![endif]-->
     = stylesheet_link_tag 'jquery.fancybox.css'
-    = javascript_include_tag 'jquery.min.js', 'jquery.fancybox.pack.js', 'jquery.mousewheel.pack.js', 'jgrowl.js', 'application.js'
+    = javascript_include_tag 'jquery.min.js', 'jquery.fancybox.pack.js', 'jquery.mousewheel.pack.js', 'jgrowl.js', 'jquery.validate.js', 'application.js'
     = javascript_tag do
       $(document).ready(function(){
       $.giftInputChangeText();
       $('#main-content form input[type=submit]').getGiftUrl();
+      $.validateSignup();
       });
     = csrf_meta_tag
   %body.home

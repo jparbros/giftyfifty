@@ -35,6 +35,10 @@ body a:hover {
   clear: both;
 }
 
+.emptyField {
+  border: solid 3px #FF0000 !important;
+}
+
 #box-content {
   display: none;
 }

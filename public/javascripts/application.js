@@ -71,12 +71,13 @@ $.extend({
         'autoDimensions' : false,
         'content': $('#box-content').html(),
     });
-    return false;
+    $.validateSignup();
   },
   
   loginSigninBox: function() {
     $('a#sigin-link, a#login-link').click(function(){
       $.loginFancybox();
+      return false;
     });
   },
   
@@ -152,6 +153,16 @@ $.extend({
     } else {
       return false;
     }
+  },
+  validateSignup: function() {
+    $('div#fancybox-content div#sign-in #user_submit').click(function(){
+      $('div#fancybox-content div#sign-in input, div#fancybox-content div#sign-in input:password').removeClass('emptyField');
+      inputs = $('div#fancybox-content div#sign-in input:text[value=""], div#fancybox-content div#sign-in input:password[value=""]');
+      inputs.addClass('emptyField');
+      if(inputs.size() > 0) {
+        return false;
+      }
+    });
   }
 });
 
