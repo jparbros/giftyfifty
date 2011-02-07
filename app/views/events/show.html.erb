@@ -60,22 +60,24 @@
       <p class="title">Gift's Donors</p>
       <p>There are no donors yet</p>
     </div>
-    <div class="aside-container">
       <% if is_owner? %>
-        <div class="share-on">
+        <div class="aside-container">
+          <div class="share-on">
+            <p class="title">
+              Invite your friends to make donations on:
+            </p>
+              <%= twitter_link %>
+              <%= facebook_link %>
+              <%=  link_to(image_tag('share-mail.png'), '', :id => 'email-share-link') %>
+          </div>
           <p class="title">
-            Invite your friends to make donations on:
+            Your Event Link
           </p>
-            <%= twitter_link %>
-            <%= facebook_link %>
-            <%=  link_to(image_tag('share-mail.png'), '', :id => 'email-share-link') %>
+          <%= text_field_tag 'event_url', personal_urls_url(@event.identifier)%>
         </div>
-        <p class="title">
-          Your Event Link
-        </p>
-        <%= text_field_tag 'event_url', personal_urls_url(@event.identifier)%>
+      <% else %>
+        <%= link_to(image_tag('banner.png', :id => 'submit-gift'), root_url) %>
       <%end%>
-      </div>
     </div>
   </div>
   

@@ -1214,6 +1214,10 @@ input#save{
    margin: 7px auto;
 }
 
+#content div.gift-profile #col-2 #submit-gift {
+  margin: 20px 0 0 53px;
+}
+
 #share-facebook textarea, #share-twitter textarea {
   width: 300px !important;
   height: 200px !important;
