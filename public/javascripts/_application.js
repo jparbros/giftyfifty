@@ -291,7 +291,7 @@ var qtipsEditEvent = function() {
 };
 
 var qtipsShowEvent = function() {
-  $('.submit').qtip({
+  $('#edit_event').qtip({
     content: 'Edit your gift\'s details.',
     style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
   });
@@ -321,6 +321,34 @@ var qtipsShowEvent = function() {
   });
   $('#event_url').qtip({
     content: 'This is your unique URL, copy and share it everywhere you like!',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+};
+
+var qtipsShowEventVisitor = function() {
+  $('#gift_percentage').qtip({
+    content: 'This represent the percent collected of the gift\'s cost.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('#event_rest_days').qtip({
+    content: 'This is the limit time to donate to celebration\'s gift.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('#gift_donors').qtip({
+    content: 'They\'re friends that have donated!',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('.share-on').qtip({
+    content: 'Use social networks or email and let your friends know about this special occasion.',
+    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
+  });
+  $('#event_url').qtip({
+    content: 'This is the unique URL, copy and share it everywhere you like!',
     style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
     position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
   });

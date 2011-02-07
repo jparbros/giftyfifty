@@ -30,7 +30,7 @@
         <% end %>
         <% if is_owner? and @event.open %>
           <div class="gift-donate">
-            <%= link_to 'Edit', edit_event_path(@event), {:class => "submit"}%>
+            <%= link_to 'Edit', edit_event_path(@event), {:class => "submit", :id => 'edit_event'}%>
             <%= link_to 'Get Gift','', {:class => "submit", :id => 'release-gift'}%>
           </div>
         <%end%>
@@ -122,7 +122,11 @@
       countCharacters();
       releaseBox();
       emailSharing();
-      qtipsShowEvent();
+      <% if is_owner? %>
+        qtipsShowEvent(); 
+      <% else %>
+        qtipsShowEventVisitor();
+      <% end %>
     });
   </script>
   <% end %>
