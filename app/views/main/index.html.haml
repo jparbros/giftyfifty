@@ -2,7 +2,7 @@
   %span#what
     What gift do you want?
   = form_tag event_form_path do 
-    = text_field_tag 'gift_url', t(:home_paste_here)
+    = text_field_tag 'gift_url', t(:home_paste_here), {:autocomplete => "off"}
     = submit_tag('GO', :id => (current_user)? 'search' : 'go-sign-in', :class => 'search-submit')
   %span#copy
     1. Copy the URL of your gift
