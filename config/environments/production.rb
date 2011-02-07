@@ -59,8 +59,8 @@ Giftyfifty::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'giftyfifty.com',
-    :user_name            => 'sendgrid@giftyfifty.com',
-    :password             => 'Sendgrid1',
+    :user_name            => 'donotreply@giftyfifty.com',
+    :password             => 'Donotreply1',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
