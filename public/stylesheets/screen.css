@@ -439,62 +439,59 @@ body.home #content ul#third-content h3 {
 body.home #footer {
   font-size: 12px;
   margin: 20px auto 0;
-  -moz-text-shadow: 0 3px 2px #333333;
-  -webkit-text-shadow: 0 3px 2px #333333;
-  text-shadow: 0 3px 2px #333333;
   width: 911px;
 }
-/* line 141, ../../app/stylesheets/partials/_home.scss */
+/* line 138, ../../app/stylesheets/partials/_home.scss */
 body.home #footer a {
   font-size: 12px;
 }
-/* line 145, ../../app/stylesheets/partials/_home.scss */
+/* line 142, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li {
   float: left;
 }
-/* line 149, ../../app/stylesheets/partials/_home.scss */
+/* line 146, ../../app/stylesheets/partials/_home.scss */
 body.home #footer ul#footer-legal {
   float: left;
   margin-left: 112px;
 }
-/* line 154, ../../app/stylesheets/partials/_home.scss */
+/* line 151, ../../app/stylesheets/partials/_home.scss */
 body.home #footer ul#footer-friends {
   float: left;
   margin-left: 60px;
 }
-/* line 159, ../../app/stylesheets/partials/_home.scss */
+/* line 156, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#about {
   margin-right: 16px;
 }
-/* line 162, ../../app/stylesheets/partials/_home.scss */
+/* line 159, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#blog {
   margin-right: 22px;
 }
-/* line 165, ../../app/stylesheets/partials/_home.scss */
+/* line 162, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#team {
   margin-right: 22px;
 }
-/* line 168, ../../app/stylesheets/partials/_home.scss */
+/* line 165, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#copy {
   margin-right: 18px;
 }
-/* line 171, ../../app/stylesheets/partials/_home.scss */
+/* line 168, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#terms {
   margin-right: 23px;
 }
-/* line 174, ../../app/stylesheets/partials/_home.scss */
+/* line 171, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#privacy {
   margin-right: 15px;
 }
-/* line 177, ../../app/stylesheets/partials/_home.scss */
+/* line 174, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#friend_us {
   margin-right: 11px;
 }
-/* line 180, ../../app/stylesheets/partials/_home.scss */
+/* line 177, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#facebook_link {
   margin: -9px 0 0 0;
 }
-/* line 183, ../../app/stylesheets/partials/_home.scss */
+/* line 180, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#twitter_link {
   margin: -10px 0 0 0;
 }
