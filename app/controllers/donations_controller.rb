@@ -3,6 +3,7 @@ class DonationsController < ApplicationController
 
   def new
     @donation = Donation.new
+    @event = Event.find(params[:event_id])
   end
   
   def create

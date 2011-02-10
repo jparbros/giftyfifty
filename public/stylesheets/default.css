@@ -726,22 +726,16 @@ ul.explination li h3 {
   margin-left: 0 !important;
 }
 
-#content #col-1 #gift-header{
+#gift-header{
   padding:7px 10px;
   background-color:#DFF3F7;
   color:#23B8D1;
-  width:260px;
   border-radius:5px;
   -moz-border-radius:5px;
   -webkit-border-radius:5px;
 }
-#content #col-1 #gift-header h1{
-  font-family: georgia;
-  font-weight: bold italic;
-  font-size:24px;
-}
 
-#content #col-1 #gift{
+#gift{
   border:#CCC dashed 1px;
   margin:20px 0;
   padding:20px;
@@ -750,34 +744,34 @@ ul.explination li h3 {
 .gift a.view_event {
   color: #23B8D1;
 }
-#content #col-1 #gift .gift-image{
+#gift .gift-image{
   float:left;
   margin-right:10px;
 }
-#content #col-1 #gift .gift-image img{
+#gift .gift-image img{
   max-width: 85px;
 }
-#content #col-1 #gift #gift-description{
+#gift #gift-description{
   float:left;
   width:405px;
 }
-#content #col-1 #gift .gift-title{
+#gift .gift-title{
   font-size:13px;
   color:#3B3B3B;
 }
-#content #col-1 #gift .gift-price{
+#gift .gift-price{
   font-size:19px;
   color:#23B8D1;
 }
-#content #col-1 #gift .gift-details{
+.gift-details{
   list-style-type:none;
   line-height:18px;
 }
-#content #col-1 #gift .gift-by, #content #col-1 #gift .gift-categories, #content #col-1 #gift .gift-powered{
+.gift-by, .gift-categories, .gift-powered{
   font-size:12px;
   color:#6B6B6B;
 }
-#content #col-1 #gift .gift-by span, #content #col-1 #gift .gift-categories span, #content #col-1 #gift .gift-powered span{
+.gift-by span, .gift-categories span, .gift-powered span{
   color:#23B8D1;
   text-decoration:none;
 }
@@ -940,7 +934,7 @@ input#save{
   width: 380px !important;
 }
 
-.edit-settings h1 {
+.edit-settings h1, #gift-header h1, #gift-title h1 {
     padding:7px 10px;
     background-color:#DFF3F7;
     color:#23B8D1;
@@ -1050,15 +1044,16 @@ input#save{
 #content div.gift-profile #col-1 #gift {
   border:none;
 }
-#content div.gift-profile #col-1 #gift .gift-title, #content div.gift-profile #col-1 #gift .gift-price {
+#gift .gift-title, #gift .gift-price {
   font-size:16px;
   float:left;
 }
-#content div.gift-profile #col-1 #gift .gift-price{
+#gift .gift-price{
   margin-left:10px;
   line-height:normal;
 }
-#content div.gift-profile #col-1 #gift .gift-details{
+ 
+.gift-details{
   background-color:#DFF3F7;
   overflow:hidden;
   border-radius:5px;
@@ -1066,22 +1061,22 @@ input#save{
   -webkit-border-radius:5px;
   clear:both;
 }
-#content div.gift-profile #col-1 #gift .gift-details li{
+.gift-details li{
   font-size:12px;
   padding:0 5px;
   float:left;
 }
-#content div.gift-profile #col-1 #gift .gift-description{
+.gift-description{
   font-size:17px;
   color:#23B8D1;
   margin-top:35px;
 }
-#content div.gift-profile #col-1 #gift .gift-description p{
+.gift-description p{
   font-size:13px;
   line-height:20px;
   color:#6B6B6B;
 }
-#content div.gift-profile #col-1 #gift .gift-donate{
+#gift .gift-donate{
   margin-top:25px;
   width:350px;
   color:#6B6B6B;
@@ -1317,13 +1312,13 @@ img#ajax-loader {
 
 .confirm-donation #left{
   float: left;
-  width: 52.5%;  
+  width: 55.5%;  
   border-right: 1px #dedede dotted;
 }
 
 .confirm-donation #right{
   float: left;
-  width: 47%;
+  width: 44%;
 }
 
 .confirm-donation input, .confirm-donation select {
@@ -1338,12 +1333,14 @@ img#ajax-loader {
 
 .confirm-donation #breakdown {
     float: right;
-    width: 300px;
+    width: 200px;
+    font-size: 10px;
+    text-align: right;
 }
 
 .confirm-donation .top {
   border-bottom: 1px #dedede dotted;
-  height: 150px;
+  height: 250px;
   padding: 5px;
 }
 
@@ -1366,8 +1363,9 @@ img#ajax-loader {
   text-align: right;
 }
 
-.confirm-donation ul {
+.confirm-donation #credit_card ul {
   list-style-type:none;
+  height: 70px;
 }
 
 .confirm-donation li {
@@ -1384,6 +1382,23 @@ img#ajax-loader {
   background-color: #CCCCCC !important;
   border: 3px solid #999999 !important;
   color: #000000 !important;
+}
+
+.confirm-donation #gift-header span {
+  font-size: 24px;
+  font-family: georgia;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.confirm-donation #gift {
+  border: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.confirm-donation #gift #gift-description {
+  width: 305px;
 }
 
 #donation-thanks {
