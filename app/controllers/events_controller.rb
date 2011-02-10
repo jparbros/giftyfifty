@@ -53,7 +53,7 @@ class EventsController < ApplicationController
         @event.activate!
         redirect_to event_path(@event)
       else
-        edit_user_registration_path(current_user)
+        redirect_to edit_user_registration_url(current_user)
       end
     else
       render :edit

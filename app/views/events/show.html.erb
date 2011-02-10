@@ -23,7 +23,7 @@
           <h3><%= @event.title %></h3>
           <p><%= @event.description %></p>
         </div>
-        <% unless is_owner? and @event.active? %>
+        <% unless is_owner? and !@event.active? %>
           <div class="gift-donate">
             <%= link_to 'Donate', new_event_donation_path(@event), {:class => "submit"}%>
           </div>
