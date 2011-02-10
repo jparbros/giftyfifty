@@ -130,8 +130,12 @@ class User < ActiveRecord::Base
     valid_password?(password) and self.email == email
   end
   
-  def active_event
+  def active_events
     events.active
+  end
+  
+  def new_events
+    events.new_events
   end
   
   def menu_image

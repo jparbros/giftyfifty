@@ -14,7 +14,7 @@ class Release < ActiveRecord::Base
   include Ebay::Types
   
   def paypal(email)
-    if self.event.open
+    if self.event.active?
       paypal = Gifty::Paypal.new
       amount = self.event.item.price
       response = paypal.call 'MassPay',{'L_EMAIL0' => email, 'L_AMT0' => amount, 'RECEIVERTYPE' => 'EmailAddress','CURRENCYCODE'=>'USD'}
@@ -27,7 +27,7 @@ class Release < ActiveRecord::Base
   end
   
   def ebay(client_ip)
-    if self.event.open
+    if self.event.active?
       ebayapi = Ebay::Api.new
       item = self.event.item
       response = ebayapi.place_offer(:item_id => item.item_id, :end_user_ip => client_ip, :offer => Offer.new(:action => 'Purchase', :max_bid => Money.new(item.price, 'USD'), :quantity => 1))
@@ -56,7 +56,6 @@ class Release < ActiveRecord::Base
   private
   
   def close_event
-    self.event.open = false
-    self.event.save
+    self.event.completed!
   end
 end

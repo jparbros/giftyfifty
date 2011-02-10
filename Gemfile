@@ -16,6 +16,7 @@ gem 'oauth2'
 gem "omniauth"
 gem 'haml'
 gem 'compass'
+gem 'state_machine'
 
 gem 'hpricot'
 gem 'fbgraph'

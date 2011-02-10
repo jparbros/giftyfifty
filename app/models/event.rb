@@ -23,7 +23,8 @@ class Event < ActiveRecord::Base
   #
   # Scopes
   #
-  scope :active, where('events.start_at < ? and events.end_at > ?', Time.now,Time.now)
+  scope :active, where(:state => :active)
+  scope :new_events, where(:state => :new)
 
   #
   # Callbacks
@@ -35,6 +36,25 @@ class Event < ActiveRecord::Base
   #
   SOCIAL_MESSAGE = "Hey!!, looks my gift to my /OCCASION/ in GiftyFifty.com, /GIFT_URL/"
   SHARE_MESSAGE = "I donated to this gift /GIFT_URL/, hurry up and donate you too."
+  
+  state_machine :state, :initial => :new do
+    state :new
+    state :active
+    state :completed
+    state :archived
+    
+    event :activate do
+      transition :new => :active
+    end
+    
+    event :complete do
+      transition :active => :completed
+    end
+    
+    event :archive do
+      transition :completed => :archived
+    end
+  end
   
   #
   # Instances Methods

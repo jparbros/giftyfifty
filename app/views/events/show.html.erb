@@ -23,12 +23,12 @@
           <h3><%= @event.title %></h3>
           <p><%= @event.description %></p>
         </div>
-        <% unless is_owner? and @event.open %>
+        <% unless is_owner? and @event.active? %>
           <div class="gift-donate">
             <%= link_to 'Donate', new_event_donation_path(@event), {:class => "submit"}%>
           </div>
         <% end %>
-        <% if is_owner? and @event.open %>
+        <% if is_owner? and @event.active? %>
           <div class="gift-donate">
             <%= link_to 'Edit', edit_event_path(@event), {:class => "submit", :id => 'edit_event'}%>
             <%= link_to 'Get Gift','', {:class => "submit", :id => 'release-gift'}%>

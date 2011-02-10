@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110115012528) do
+ActiveRecord::Schema.define(:version => 20110210120532) do
 
   create_table "addresses", :force => true do |t|
     t.string   "country"
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(:version => 20110115012528) do
     t.date     "start_at"
     t.date     "end_at"
     t.boolean  "manual"
-    t.boolean  "open",        :default => true
     t.string   "identifier"
+    t.string   "state"
   end
 
   create_table "items", :force => true do |t|
