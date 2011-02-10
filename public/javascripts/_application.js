@@ -117,7 +117,7 @@ var setTimePickers = function() {
     date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings );
     date.setTime(date.getTime()+5*24*60*60*1000)
     _minDate = $.datepicker.formatDate($.datepicker._defaults.dateFormat, date);
-    date.setTime(date.getTime()+40*24*60*60*1000)
+    date.setTime(date.getTime()+50*24*60*60*1000)
     _maxDate = $.datepicker.formatDate($.datepicker._defaults.dateFormat, date);
     endInput.datepicker( "destroy" );
     endInput.datepicker({changeMonth: true, minDate : _minDate, maxDate : _maxDate });
