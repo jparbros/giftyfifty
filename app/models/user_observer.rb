@@ -4,6 +4,9 @@ class UserObserver < ActiveRecord::Observer
   end
   
   def account_confirmation(user)
-    UserMailer.register_confirmation(user).deliver
+    begin
+      UserMailer.register_confirmation(user).deliver
+    rescue Exception => e
+    end
   end
 end
