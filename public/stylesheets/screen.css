@@ -162,7 +162,7 @@ h1 {
   margin: 0 auto;
 }
 /* line 75, ../../app/stylesheets/partials/_base.scss */
-#header #login {
+#header #login-box {
   float: right;
   color: #23B8D1;
   font-size: 16px;
@@ -170,25 +170,25 @@ h1 {
   padding: 15px 10px 10px;
 }
 /* line 83, ../../app/stylesheets/partials/_base.scss */
-#header #login ul#login-links li {
+#header #login-box ul#login-links li {
   float: left;
   margin: 0  0 0 31px;
 }
 /* line 89, ../../app/stylesheets/partials/_base.scss */
-#header #login #user-menu {
+#header #login-box #user-menu {
   background: url(../images/arrow-dropdown.png) no-repeat right;
   padding: 0 20px 0 0;
   cursor: pointer;
 }
 /* line 94, ../../app/stylesheets/partials/_base.scss */
-#header #login #user-menu img {
+#header #login-box #user-menu img {
   border: 3px solid #23B8D1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   margin: -10px 0;
 }
 /* line 102, ../../app/stylesheets/partials/_base.scss */
-#header #login #menu-content {
+#header #login-box #menu-content {
   background: #292929;
   position: absolute;
   display: none;
@@ -196,14 +196,14 @@ h1 {
   margin: 10px 0 0 -10px;
 }
 /* line 109, ../../app/stylesheets/partials/_base.scss */
-#header #login #menu-content li {
+#header #login-box #menu-content li {
   background: #5e5e5e;
   margin: 0 0 0 10px;
   float: left;
   list-style: none;
 }
 /* line 115, ../../app/stylesheets/partials/_base.scss */
-#header #login #menu-content li a {
+#header #login-box #menu-content li a {
   color: #23B8D1;
   font-size: 14px;
   text-decoration: none;
@@ -212,11 +212,11 @@ h1 {
   padding: 0;
 }
 /* line 125, ../../app/stylesheets/partials/_base.scss */
-#header #login #menu-content li#last {
+#header #login-box #menu-content li#last {
   margin-bottom: 10px;
 }
 /* line 129, ../../app/stylesheets/partials/_base.scss */
-#header #login #menu-content li:hover {
+#header #login-box #menu-content li:hover {
   background: #797979;
 }
 /* line 136, ../../app/stylesheets/partials/_base.scss */
@@ -472,7 +472,7 @@ body.home #footer li#team {
   margin-right: 22px;
 }
 /* line 165, ../../app/stylesheets/partials/_home.scss */
-body.home #footer li#copy {
+body.home #footer li#copys {
   margin-right: 18px;
 }
 /* line 168, ../../app/stylesheets/partials/_home.scss */
