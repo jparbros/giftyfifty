@@ -1,0 +1,63 @@
+#main
+  %h1
+    My Profile
+  %p.profile
+    = image_tag current_user.thumb_image if current_user.thumb_image 
+    = current_user.name 
+    %br
+    %span.age
+      = unique_url(current_user)
+
+  %h1
+    My Gifts
+  - current_user.events.each do |event| 
+    = render :partial => 'event', :locals => {:event => event} 
+
+  - if current_user.events.blank? 
+    %div
+      You haven't submit gift yet.
+      
+  %hr
+  %h1.donations
+    My Donations
+    
+  - current_user.donations.each do |donation| 
+    = render :partial => 'donation', :locals => {:donation => donation} 
+  
+  - if current_user.donations.blank? 
+    %p.donation
+      You haven't made donations yet.
+
+#aside
+  .aside-container.share-on
+    %h3
+      Invite Your Friends
+    = link_to(image_tag('invite-twitter.png'),'' , :id => 'twitter-share-link') 
+    = link_to(image_tag('invite-facebook.png'),'', :id => 'facebook-share-link') 
+  
+  - unless current_user.profile_copleted?
+    .aside-container
+      %h3
+        Complete Your Profile
+      To enjoy better service complete your profile = link_to 'here', edit_user_registration_path . 
+      
+.clearBoth
+
+#share-facebook{:title => "Invite Your Friends - Facebook"}
+  = form_tag event_facebook_path(current_user.events.last || 0) do 
+    = text_area_tag 'facebook_message'  
+
+#share-twitter{:title => "Invite Your Friends - Twitter"}
+  = form_tag event_twitter_path(current_user.events.last || 0) do 
+    = text_area_tag 'twitter_message'  
+    = submit_tag 'Share', :class => 'submit'
+
+- content_for :scripts do 
+  <script type="text/javascript">
+  $(function() {
+  $.loadShareObjects();
+  $.dialogShareBoxes();
+  $.countCharacters();
+  $.qtipsMyAccount();
+  });
+  </script>

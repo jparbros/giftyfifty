@@ -1,0 +1,27 @@
+.gift
+  = link_to(image_tag(event.item.image), event.item.purchase_url, {:target => 'blank'}) 
+  .gift-info
+    = event.item.name  
+    %span.price
+      = number_to_currency((event.item.formated_price))
+    %ul
+      - if event.item 
+        %li
+          Categories: 
+          %span
+            = event.item.category
+      - if event.provider 
+        %li
+          Powered by: 
+          %span
+            = link_to(event.provider.name.humanize, event.provider.url, {:target => 'blank'})
+
+    %span.porcentage_gift
+      = event.porcentage_donation 
+      = "% closer to your gift"
+    .porcentage-info
+      .advance
+        .stripes{:style =>"width: #{event.porcentage_donation}%"}
+
+  = link_to 'View Event', event_path(event), {:class => 'view_event'}
+  = link_to 'Edit Event', event_path(event), {:class => 'edit_event'} if event.active 

@@ -4,11 +4,11 @@
   %meta{:charset=>"utf-8"}
   %title
     Gifty Fifty
-  = stylesheet_link_merged :base
+  = stylesheet_link_tag 'base_packaged.css'
   <!--[if lt IE 9]>
   %script{:src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
   <![endif]-->
-  = javascript_include_merged :base
+  = javascript_include_tag 'base_packaged.js'
   = yield :styles
   = yield :scripts
   = csrf_meta_tag

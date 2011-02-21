@@ -87,3 +87,7 @@ body.bp button {
   position: relative;
   top: 0.25em;
 }
+
+body.home #content #main-content #lens {
+  margin: 113px 0 0 -170px;
+}

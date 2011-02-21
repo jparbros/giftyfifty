@@ -1,0 +1,51 @@
+.profile{
+  border: 1px dotted;
+  float: left;
+  font-size: 24px !important;
+  margin: 20px 0 !important;
+  padding: 10px;
+  width: 100%;
+}
+
+.gift {
+  float: left;
+  margin: 20px 0;
+  
+  img {
+    float: left;
+    margin: 0 auto 10px;
+    max-width: 85px;
+  }
+  
+  .gift-info {
+      color: #000000;
+      float: left;
+      margin: 0 0 0 10px;
+      width: 450px;
+      
+      span.price {
+        color: #23B8D1;
+      }
+      
+      ul  {
+          @include border-rounded(5px);
+          background-color: #DFF3F7;
+          line-height: 18px;
+          list-style-type: none;
+          margin: 10px 0;
+          overflow: hidden;
+          
+          li {
+              float: left;
+              font-size: 12px;
+              padding: 0 5px;
+          }
+      }
+      
+      .porcentage_gift {
+        color: #187D8E;
+        font-size: 14px;
+      }
+  }
+}
+

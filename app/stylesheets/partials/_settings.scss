@@ -6,10 +6,14 @@ label#pobox {
   width: 250px !important;
 }
 
-#user_avatar {
-   margin: 0 0 0 30px;
+#user_avatar{
+  margin: 0 0 0 30px;
 }
 
-section#personal-info, section#bottom {
+#upload_avatar span{
+  font-size: 9px;
+}
+
+#personal-info, #bottom {
   border-bottom: 1px dotted #3B3B3B;
 }

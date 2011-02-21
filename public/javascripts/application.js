@@ -163,6 +163,116 @@ $.extend({
         return false;
       }
     });
+  },
+  loadShareObjects: function() {
+    twitterBox = $('div#share-twitter');
+    facebookBox = $('div#share-facebook');
+    emailBox = $('div#share-email');
+    twitterButton = $('div.share-on a#twitter-share-link');
+    facebookButton = $('div.share-on a#facebook-share-link');
+    emailButton = $('div.share-on a#email-share-link');
+    twitterTextarea = $('div#share-twitter textarea');
+    twitterCounter = $('div.ui-dialog span#twitter_counter');
+  },
+  dialogShareBoxes: function() {
+    twitterBox.dialog({
+      resizable: false,
+      stack: false,
+      autoOpen: false,
+      height: 350,
+      width: 350,
+      modal: true,
+    });
+    facebookBox.dialog({
+      resizable: false,
+      stack: false,
+      autoOpen: false,
+      height: 350,
+      width: 350,
+      modal: true,
+    });
+    emailBox.dialog({
+      resizable: false,
+      stack: false,
+      autoOpen: false,
+      height: 350,
+      width: 350,
+      modal: true,
+    });
+    twitterButton.click(function(){
+      twitterBox.dialog('open');
+      return false;
+    });
+    facebookButton.click(function(){
+      facebookBox.dialog('open');
+      return false;
+    });
+    emailButton.click(function(){
+      emailBox.dialog('open');
+      return false;
+    });
+  },
+  countCharacters : function() {
+    twitterTextarea.counter({
+      count: 'down', 
+      goal: 140
+    });
+  },
+  qtipsMyAccount: function() {
+    $('a.view_event').qtip({
+      content: 'See your active event, donations and friends comments.',
+      style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+      position: { corner: { tooltip: 'bottomRight', target: 'topRight' } }
+    });
+    $('div.share-on').qtip({
+      content: 'Post on facebook or tweet for invite your friends to join Gifty Fifty and donate you!',
+      style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+      position: { corner: { tooltip: 'bottomRight', target: 'topRight' } }
+    });
+  },
+  validateUserEditForm: function() {
+    $('#user_edit').validate({
+        rules: {
+            'user[first_name]': 'required',
+            'user[last_name]': 'required',
+            'user[birthday]': 'required',
+            'user[username]': 'required'
+        },
+        messages: {
+            'user[first_name]': 'The first name is required.',
+            'user[last_name]': 'The last name is required.',
+            'user[birthday]': 'The birthday is required.',
+            'user[username]': 'The username is required.'
+        }
+    });
+  },
+  remoteStatesFunction: function(action_url) {
+    $('#user_address_attributes_country').change(function(){
+      $.ajax({
+        url: action_url,
+        data: "country=" + $('#user_address_attributes_country').attr('value'),
+        success: function(data) {
+          $('#user_edit_states').html(data);
+        }
+      });
+    })
+  },
+  qtipsEditSettings: function() {
+    $('#upload_avatar img').qtip({
+      content: 'Your avatar is the picture we\'ll display on your profile.',
+      style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+      position: { corner: { tooltip: 'bottomRight', target: 'topMiddle' } }
+    });
+    $('#upload_username').qtip({
+      content: 'Choose a unique username, it\'s important to give you a personilized URL.',
+      style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+      position: { corner: { tooltip: 'bottomRight', target: 'topMiddle' } }
+    });
+    $('#delete_account').qtip({
+      content: 'This permanently delete your account, you won\'t be able to retrieve your information once you confirm it.',
+      style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
+      position: { corner: { tooltip: 'bottomRight', target: 'topMiddle' } }
+    });
   }
 });
 

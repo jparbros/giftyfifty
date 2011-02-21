@@ -4,12 +4,11 @@
   %meta{:charset=>"utf-8"}
   %title
     Gifty Fifty
-  = stylesheet_link_tag 'screen','print'
+  = stylesheet_link_tag 'base_packaged.css'
   <!--[if lt IE 9]>
   %script{:src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
   <![endif]-->
-  = stylesheet_link_tag 'jquery.fancybox.css'
-  = javascript_include_tag 'jquery.min.js', 'jquery.fancybox.pack.js', 'jquery.mousewheel.pack.js', 'jgrowl.js', 'jquery.validate.js', 'application.js'
+  = javascript_include_tag 'base_packaged.js'
   = javascript_tag do
     $(document).ready(function(){
     $.giftInputChangeText();

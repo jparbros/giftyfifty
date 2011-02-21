@@ -2,7 +2,7 @@
   Edit Settings
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put , :multipart => true}) do |f|
   = devise_error_messages!
-  %section#personal-info
+  #personal-info
     #col-left
       %h2
         Personal Info
@@ -44,7 +44,7 @@
           *Email
         = f.text_field :email 
 
-    %div#col-right
+    #col-right
       = f.fields_for :address do |f_address| 
         %h2
           Shipping Info
@@ -93,7 +93,7 @@
 
     %div.clearBoth
 
-  %section#bottom
+  #bottom
     %h2
       Change Password
     %i
@@ -119,11 +119,10 @@
   %div.clearBoth
       
 - content_for :scripts do 
-  = javascript_include_tag 'jquery.counter'
   <script type='text/javascript'>
   $(function() {
-  validateUserEditForm();
-  remoteStatesFunction('= profile_states_path ');
-  qtipsEditSettings();
+  $.validateUserEditForm();
+  $.remoteStatesFunction('#{profile_states_path}');
+  $.qtipsEditSettings();
   });
   </script>

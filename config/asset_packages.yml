@@ -1,11 +1,11 @@
 --- 
 javascripts: 
 - base: 
+  - jquery.min
   - rails
   - jquery.validate
   - jquery.qtip
   - jquery.mousewheel.pack
-  - jquery.min
   - jquery.fancybox.pack
   - jquery.counter
   - jquery-ui.min
