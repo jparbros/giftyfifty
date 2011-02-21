@@ -230,6 +230,130 @@ h1 {
   margin: 16px 0 0 -39px;
 }
 
+/* line 149, ../../app/stylesheets/partials/_base.scss */
+body.application #content {
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -ms-border-radius-bottomright: 10px;
+  -khtml-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -ms-border-radius-bottomleft: 10px;
+  -khtml-border-radius-bottomleft: 10px;
+  background: #FFFFFF;
+  margin: 0 auto 0;
+  padding: 100px 45px 10px;
+  width: 820px;
+}
+/* line 156, ../../app/stylesheets/partials/_base.scss */
+body.application #content p {
+  color: #959595;
+  font-size: 14px;
+  margin: 20px 5px;
+}
+/* line 162, ../../app/stylesheets/partials/_base.scss */
+body.application #content a {
+  color: #4CD3EC;
+  text-decoration: none;
+}
+/* line 166, ../../app/stylesheets/partials/_base.scss */
+body.application #content label {
+  color: #3B3B3B;
+  display: inline-block;
+  font-size: 12px;
+  width: 80px;
+}
+/* line 173, ../../app/stylesheets/partials/_base.scss */
+body.application #content h2 {
+  color: #23B8D1;
+  font-size: 16px;
+  margin-top: 20px;
+}
+/* line 179, ../../app/stylesheets/partials/_base.scss */
+body.application #content #col-left, body.application #content #col-right {
+  float: left;
+  margin: 0;
+  width: 400px;
+}
+/* line 185, ../../app/stylesheets/partials/_base.scss */
+body.application #content #col-left {
+  margin: 0 10px 0 0;
+}
+/* line 189, ../../app/stylesheets/partials/_base.scss */
+body.application #content input[type=text], body.application #content input[type=password], body.application #content select {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  border: 3px solid #C2C2C2;
+  color: #6B6B6B;
+  font-size: 14px;
+  padding: 5px;
+  width: 250px;
+}
+/* line 198, ../../app/stylesheets/partials/_base.scss */
+body.application #content input[type=submit] {
+  background-color: #4CD3EC;
+  border: 3px solid #28CAE8;
+  color: #FFFFFF;
+  float: right;
+  font-family: georgia;
+  font-size: 17px;
+  margin: 10px 0 0;
+  padding: 3px 20px;
+  width: 100px;
+}
+/* line 211, ../../app/stylesheets/partials/_base.scss */
+body.application #footer {
+  background-color: #3B3B3B;
+  font-size: 12px;
+  height: 85px;
+  margin: 10px auto 0;
+  overflow: hidden;
+  padding-top: 12px;
+  text-shadow: 1px 1px 1px #8F8F8F;
+}
+/* line 220, ../../app/stylesheets/partials/_base.scss */
+body.application #footer #footer-links {
+  margin: 10px auto 30px;
+  overflow: hidden;
+  padding-top: 12px;
+  text-shadow: 1px 1px 1px #8F8F8F;
+  width: 910px;
+}
+/* line 227, ../../app/stylesheets/partials/_base.scss */
+body.application #footer #footer-links ul#footer-contact {
+  float: left;
+}
+/* line 231, ../../app/stylesheets/partials/_base.scss */
+body.application #footer #footer-links ul#footer-legal {
+  float: right;
+}
+/* line 235, ../../app/stylesheets/partials/_base.scss */
+body.application #footer #footer-links li {
+  color: #FFFFFF;
+  float: left;
+  padding: 0 10px;
+}
+
 /* line 2, ../../app/stylesheets/partials/_home.scss */
 body.home #content {
   width: 910px;
@@ -585,4 +709,24 @@ div#login-signin-box input[type=text], div#login-signin-box input[type=password]
   height: 10px;
   padding: 5px;
   width: 250px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_settings.scss */
+a#delete_account {
+  font-size: 14px;
+}
+
+/* line 5, ../../app/stylesheets/partials/_settings.scss */
+label#pobox {
+  width: 250px !important;
+}
+
+/* line 9, ../../app/stylesheets/partials/_settings.scss */
+#user_avatar {
+  margin: 0 0 0 30px;
+}
+
+/* line 13, ../../app/stylesheets/partials/_settings.scss */
+section#personal-info, section#bottom {
+  border-bottom: 1px dotted #3B3B3B;
 }

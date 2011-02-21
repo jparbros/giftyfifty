@@ -1,0 +1,129 @@
+%h1
+  Edit Settings
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put , :multipart => true}) do |f|
+  = devise_error_messages!
+  %section#personal-info
+    #col-left
+      %h2
+        Personal Info
+      %p
+        Please fill with your data all the boxes, it's very important for complete your profile.
+      %p#upload_avatar
+        = image_tag(current_user.thumb_image)
+        = f.file_field :avatar
+        = f.hidden_field :avatar_cache
+        %br
+        %span
+          Files must be image formats (.bmp, .png, .jpeg or .gif) and be lighter than 1MB.
+      %p
+        %label
+          *First Name
+        = f.text_field :first_name
+
+      %p
+        %label
+          *Last Name
+        = f.text_field :last_name
+
+      %p
+        %label
+          *Birthday  
+        = f.text_field :birthday 
+
+      %p#upload_username
+        %label
+          *Username
+        = f.text_field :username 
+
+      %p
+        = f.label :gender 
+        = f.select :gender, options_for_select([[],['Male','male'],['Female','female']],current_user.gender) 
+
+      %p
+        %label
+          *Email
+        = f.text_field :email 
+
+    %div#col-right
+      = f.fields_for :address do |f_address| 
+        %h2
+          Shipping Info
+
+        %p
+          Please enter your adress data to assure the shipping of your gift.
+
+        %p
+          %label
+            *Country
+          = f_address.select :country, options_for_select([[]].concat(Carmen.countries), current_user.address.country || 'US')
+
+        %p#user_edit_states
+          = render :partial => 'states', :locals => {:f_address => f_address }
+
+        %p
+          %label
+            *City
+          = f_address.text_field :city 
+
+        %p
+          %label
+            *Address 1
+          = f_address.text_field :address_1 
+
+        %p
+          = f_address.label :address_2 
+          = f_address.text_field :address_2 
+
+        %p
+          %label
+            *Zip Code
+          = f_address.text_field :zip_code 
+
+        %p
+          = f_address.label :phone 
+          = f_address.text_field :phone 
+
+        %p
+          = f_address.label :mobile_phone 
+          = f_address.text_field :mobile_phone 
+
+        %p
+          = f_address.label 'Is this address a PO, APO or AE box?', :id => 'pobox' 
+          = f_address.check_box :pobox 
+
+    %div.clearBoth
+
+  %section#bottom
+    %h2
+      Change Password
+    %i
+      Leave this section in blank if you don't want to change it.
+
+    %p
+      = f.label :current_password 
+      = f.password_field :current_password 
+
+    %p
+      = f.label :new_password 
+      = f.password_field :password 
+
+    %p
+      = f.label :password_confirmation 
+      = f.password_field :password_confirmation 
+      
+  %p
+    = link_to "Delete Account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete, :id => 'delete_account' 
+  %p
+    = f.submit "Save"
+    
+  %div.clearBoth
+      
+- content_for :scripts do 
+  = javascript_include_tag 'jquery.counter'
+  <script type='text/javascript'>
+  $(function() {
+  validateUserEditForm();
+  remoteStatesFunction('= profile_states_path ');
+  qtipsEditSettings();
+  });
+  </script>

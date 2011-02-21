@@ -108,10 +108,10 @@ $.extend({
   },
   
   menuElements : function() {
-    menuToggle = $('div#login div#user-menu');
-    menuContent = $('div#login ul#menu-content');
+    menuToggle = $('div#login-box div#user-menu');
+    menuContent = $('div#login-box ul#menu-content');
     menuElements = $('#menu-content li');
-    loginBox = $('div#login');
+    loginBox = $('div#login-box');
   },
   
   menuStyle: function() {

@@ -1,0 +1,21 @@
+--- 
+javascripts: 
+- base: 
+  - rails
+  - jquery.validate
+  - jquery.qtip
+  - jquery.mousewheel.pack
+  - jquery.min
+  - jquery.fancybox.pack
+  - jquery.counter
+  - jquery-ui.min
+  - jquery-combobox
+  - jgrowl
+  - application
+stylesheets: 
+- base: 
+  - jgrowl
+  - jquery-ui
+  - jquery.fancybox
+  - print
+  - screen

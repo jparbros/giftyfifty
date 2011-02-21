@@ -1,0 +1,40 @@
+!!!HTML
+%html{:lang=>"en"}
+%head
+  %meta{:charset=>"utf-8"}
+  %title
+    Gifty Fifty
+  = stylesheet_link_merged :base
+  <!--[if lt IE 9]>
+  %script{:src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
+  <![endif]-->
+  = javascript_include_merged :base
+  = yield :styles
+  = yield :scripts
+  = csrf_meta_tag
+
+%body.application
+  #header
+    = image_tag 'logo.png', :id => 'logo'
+    %nav
+      = render :partial => 'shared/login_status'
+  #content
+    = yield
+  #footer
+    #footer-links
+      %ul#footer-contact
+        %li
+          = link_to t(:about_gifty_footer), 'about'
+        %li
+          = link_to 'Blogifty', 'http://blog.giftyfifty.com/'
+      %ul#footer-legal
+        %li
+          Gifty Fifty &copy; 2010
+        %li
+          = link_to t(:terms_footer), 'terms'
+        %li
+          = link_to t(:contact_footer), 'contact'
+
+  = render :partial => 'shared/login_box'
+
+= growl

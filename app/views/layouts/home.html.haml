@@ -1,48 +1,53 @@
-!!!Strict
-%html
-  %head
-    = stylesheet_link_tag 'screen','print'
-    <!--[if IE]>
-    %link{:rel=>"stylesheet", :href=>"http://asset1.giftyfifty.com/stylesheets/ie.css", :media=>"screen, projection", :type=>"text/css"}
-    < ![endif]-->
-    = stylesheet_link_tag 'jquery.fancybox.css'
-    = javascript_include_tag 'jquery.min.js', 'jquery.fancybox.pack.js', 'jquery.mousewheel.pack.js', 'jgrowl.js', 'jquery.validate.js', 'application.js'
-    = javascript_tag do
-      $(document).ready(function(){
-      $.giftInputChangeText();
-      $('#main-content form input[type=submit]').getGiftUrl();
-      $.validateSignup();
-      });
-    = csrf_meta_tag
-  %body.home
-    #header
-      = image_tag 'logo.png', :id => 'logo'
+!!!HTML
+%html{:lang=>"en"}
+%head
+  %meta{:charset=>"utf-8"}
+  %title
+    Gifty Fifty
+  = stylesheet_link_tag 'screen','print'
+  <!--[if lt IE 9]>
+  %script{:src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
+  <![endif]-->
+  = stylesheet_link_tag 'jquery.fancybox.css'
+  = javascript_include_tag 'jquery.min.js', 'jquery.fancybox.pack.js', 'jquery.mousewheel.pack.js', 'jgrowl.js', 'jquery.validate.js', 'application.js'
+  = javascript_tag do
+    $(document).ready(function(){
+    $.giftInputChangeText();
+    $('#main-content form input[type=submit]').getGiftUrl();
+    $.validateSignup();
+    });
+  = csrf_meta_tag
+
+%body.home
+  #header
+    = image_tag 'logo.png', :id => 'logo'
+    %nav
       = render :partial => 'shared/login_status'
-    #content
-      = yield
-    #footer
-      %ul#footer-contact
-        %li#about
-          = link_to t(:about_gifty_footer), '#'
-        %li#blog
-          = link_to 'Blogifty', 'http://blog.giftyfifty.com/'
-      %ul#footer-legal
-        %li#copys
-          Gifty Fifty &copy; 2010
-        %li#terms
-          = link_to t(:terms_footer), '#'
-        %li#privacy
-          = link_to t(:pravicy_footer), '#'
-        %li#contact
-          = link_to t(:contact_footer), '#'
-      %ul#footer-friends
-        %li#friend_us
-          = t(:home_friend_us)
-        %li#twitter_link
-          = link_to(image_tag('twitter.png'), 'http://www.twitter.com/giftyfifty', {:target => 'blank'})
-        %li#facebook_link
-          = link_to(image_tag('facebook.png'), 'http://www.facebook.com/giftyfifty', {:target => 'blank'})
+  #content
+    = yield
+  #footer
+    %ul#footer-contact
+      %li#about
+        = link_to t(:about_gifty_footer), '#'
+      %li#blog
+        = link_to 'Blogifty', 'http://blog.giftyfifty.com/'
+    %ul#footer-legal
+      %li#copys
+        Gifty Fifty &copy; 2010
+      %li#terms
+        = link_to t(:terms_footer), '#'
+      %li#privacy
+        = link_to t(:pravicy_footer), '#'
+      %li#contact
+        = link_to t(:contact_footer), '#'
+    %ul#footer-friends
+      %li#friend_us
+        = t(:home_friend_us)
+      %li#twitter_link
+        = link_to(image_tag('twitter.png'), 'http://www.twitter.com/giftyfifty', {:target => 'blank'})
+      %li#facebook_link
+        = link_to(image_tag('facebook.png'), 'http://www.facebook.com/giftyfifty', {:target => 'blank'})
+
+  = render :partial => 'shared/login_box'
   
-    = render :partial => 'shared/login_box'
-    
 = growl
