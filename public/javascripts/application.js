@@ -15,7 +15,7 @@ $.fn.extend({
           return false;
         }
       } else {
-        $.jGrowl('Please, Insert a valid url.', { header: 'Important', sticky: true });
+        $.jGrowl('Please, Insert a valid url.', { sticky: true });
         return false;
       }
     });
