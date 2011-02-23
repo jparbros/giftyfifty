@@ -14,8 +14,8 @@
       Show off the world about your action and help your friend to get more contributions.
     
     %li#buttons
-      = link_to(image_tag('share-twitter.png'), event_twitter_path(@event,:message => 'share'), :method => :post) 
-      = link_to(image_tag('share-facebook.png'), event_facebook_path(@event,:message => 'share'), :method => :post ) 
+      = link_to(image_tag('share-twitter.png'), event_twitter_path(@event,:message => 'share'), :method => :post) if current_user.twitter_account
+      = link_to(image_tag('share-facebook.png'), event_facebook_path(@event,:message => 'share'), :method => :post ) if current_user.facebook_account
     
   
 
