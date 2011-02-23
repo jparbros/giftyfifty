@@ -1,0 +1,77 @@
+= form_for @event, :method => :put, :html => {:id => 'gift-form'} do |form| 
+  #main
+    %h1
+      Edit your Event
+    #gift-detail
+      = image_tag @event.item.image
+      #gift-description
+        %h2
+          = @event.item.name
+        %span#gift-price
+          - if @event.item == 0 || @event.item.nil? || @event.item.blank? 
+            = text_field_tag 'event[item_attributes][price]' 
+          - else 
+            = number_to_currency((@event.item.formated_price)) 
+ 
+        %ul
+          - if @event.item.category 
+            %li
+              Categories: 
+              %span
+                = @event.item.category 
+          - if @event.provider 
+            %li
+              Powered by: 
+              %span
+                = @event.provider.name.humanize
+
+    .floatLeft
+      #occasion
+        %label{:for => "gift-occasion"}
+          Occasion
+        %br
+        = form.select 'occasion_id', options_for_select(@occasions), :html => {:id => 'gift-occasion'} 
+      #title
+        %label{:for => "gift-title"}
+          Title
+        %br
+        = form.text_field 'title', :html => {:id => 'gift-title'} 
+    
+    .floatLeft
+      #description
+        %label{:fr => "gift-description"}
+          Description
+        %br
+        = form.text_area :description, :id => 'gift_description' 
+
+      #dates
+        #begin
+          %label{:for => "gift-begin"}
+            Contributions Begin
+          %br
+          = form.text_field 'start_at' 
+        #end
+          %label{:for => "gift-end"}
+            Contributions End
+          %br
+          = form.text_field 'end_at' 
+
+      = submit_tag "Save",  :class => "submit"
+      .clearBoth
+
+  #aside
+    %div.aside-container
+      %h2
+        Here you got a tip
+      %p
+        Edit all the details of that special occasion you're waiting for to receive your wished gift. Don't forget anything!
+  .clearBoth
+
+- content_for :scripts do 
+  <script type="text/javascript">
+  $(function() {
+  $.validateEventEditForm();
+  $.qtipsEditEvent();
+  $.setTimePickers();
+  });
+  </script>

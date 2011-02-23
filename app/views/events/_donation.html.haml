@@ -1,0 +1,49 @@
+#show-donation
+  %p#donation-thanks
+    Thank you for being part of #{@event.title}. 
+    %br
+    Your contribution has been done! 
+    %br
+    Now #{@event.user.name}  is #{@event.porcentage_donation}% closer to get his gift.
+  
+
+  %ul#donation-share
+    %li#share
+      %h3
+        Share your Contribution
+      Show off the world about your action and help your friend to get more contributions.
+    
+    %li#buttons
+      = link_to(image_tag('share-twitter.png'), event_twitter_path(@event,:message => 'share'), :method => :post) 
+      = link_to(image_tag('share-facebook.png'), event_facebook_path(@event,:message => 'share'), :method => :post ) 
+    
+  
+
+  %ul#your-gift.top-rounded
+    %li#share
+      %h3
+        Submit your Gift
+      Why don't you tell your friends what you want?
+    
+    %li#buttons
+      = link_to(image_tag('submit-gift.png'), root_path) 
+    
+  
+
+
+- content_for :scripts do 
+  <script type="text/javascript">
+  $(function() {
+  $.fancybox({
+  'titlePosition' : 'inside',
+  'transitionIn' : 'none',
+  'transitionOut' : 'none',
+  'width' : '1100',
+  'height' : '500',
+  'modal' : false,
+  'autoScale' : false,
+  'autoDimensions' : false,
+  'content': $('#show-donation').html(),
+  });
+  });
+  </script>

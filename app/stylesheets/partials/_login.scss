@@ -1,0 +1,43 @@
+#login-main {
+  float: left;
+  padding: 0 15px 0 0;
+  width: 440px;
+}
+
+#login-aside {
+  border-left: 1px dotted #000000;
+  float: left;
+  padding: 0 0 0 15px;
+  width: 345px;
+}
+
+.explination-box {
+  @include border-rounded(5px);
+  background-color: #DDF7FB;
+  float: left;
+  margin: 10px 0;
+  width: 90%;
+  
+  img, p {
+    float: left;
+  }
+  
+  p {
+    font-size: 10px !important;
+    width: 200px;
+    
+    span {
+      color: #23B8D1;
+      font-family: georgia;
+      font-size: 14px;
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+  
+  img {
+    margin: 25px 10px 0 10px;
+    max-width: 80px;
+  }
+  
+}

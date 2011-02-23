@@ -1,0 +1,74 @@
+.top {
+  height: 250px;
+}
+
+.payment_methods {
+  input{
+    float: left;
+  }
+  img {
+    float: left;
+  }
+}
+
+#continue {
+  border-top: 1px dotted #000000;
+  margin: 10px 0 0 0;
+  text-align: right;
+}
+
+#breakdown {
+  font-size: 10px;
+  text-align: right;
+}
+
+#donation_amount {
+  width: 150px !important;
+}
+
+#right-donation {
+  float: left;
+  margin: 10px 0 0 0; 
+  padding: 0 0 0 10px;
+  width: 43%;
+  
+  #credit-card {
+    input[type=text] {
+      width: 130px;
+    }
+    select {
+      width: 70px;
+    }
+    ul {
+      li {
+        float: left;
+        margin: 10px 0 0 10px;
+      }
+    }
+  }
+  #paypal {
+    display: none;
+  }
+  
+  .bottom {
+    float: left;
+    margin: 10px 0 0 0;
+  }
+}
+
+#left-donation {
+  border-right: 1px dotted #000000;
+  float: left;
+  margin: 10px 0 0 0;
+  padding: 0 10px 0 0;
+  width: 54%;
+  
+  .top {
+    h1 {
+      width: 300px !important;
+    }
+    #gift-description {
+      width: 300px !important;
+    }
+  }
+}

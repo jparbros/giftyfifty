@@ -1,15 +1,6 @@
 // This import applies a global reset to any page that imports this stylesheet.
 @import "blueprint/reset";
 
-// To configure blueprint, edit the partials/base.sass file.
-@import "partials/variables";
-@import "partials/mixins";
-@import "partials/base";
-@import "partials/home";
-@import "partials/boxes";
-@import "partials/settings";
-@import "partials/profile";
-
 // Import all the default blueprint modules so that we can access their mixins.
 @import "blueprint";
 
@@ -24,3 +15,15 @@
 // So that you can better control what pages use blueprint
 // when stylesheets are concatenated together.
 // @include blueprint-scaffolding("body.bp");
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/base";
+@import "partials/home";
+@import "partials/boxes";
+@import "partials/settings";
+@import "partials/profile";
+@import "partials/edit_gift";
+@import "partials/donations";
+@import "partials/login";

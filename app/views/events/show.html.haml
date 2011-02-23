@@ -1,0 +1,129 @@
+#main
+  #gift-header
+    = image_tag @event.user.thumb_image if @event.user.thumb_image  
+    %h1
+      = @event.user.name + "'s" 
+      = @event.occasion.name.humanize if @event.occasion
+      Gift
+  #gift-detail.no-border
+    = link_to(image_tag(@event.item.image), @event.item.purchase_url, {:target => 'blank'}) 
+    #gift-description
+      %h2
+        = @event.item.name
+      %span#gift-price
+        = number_to_currency((@event.item.formated_price))  
+      %span#shipping-cost
+        Shipping Cost 
+        = number_to_currency((@event.item.formated_shipping_cost))
+      %ul
+        - if @event.item.category 
+          %li
+            Categories: 
+            %span
+              = @event.item.category 
+        - if @event.provider 
+          %li
+            Powered by: 
+            %span
+              = @event.provider.name.humanize
+              
+  #gift-content
+    %h2
+      = @event.title
+    %p
+      = @event.description
+
+  - if !is_owner? and @event.active?
+    #gift-donate
+      = link_to(image_tag('donation_button.png'), new_event_donation_path(@event))
+  - if is_owner? and @event.active? 
+    #gift-donate
+      = link_to 'Edit', edit_event_path(@event), {:class => "submit", :id => 'edit_event'}
+      = link_to 'Get Gift','', {:class => "submit", :id => 'release-gift'}
+
+  #facebook-connect
+    %h3 Facebook Comments
+    %fb:comments{:xid => "#{@event.id.to_s + @event.created_at.to_i.to_s}", :numposts => "30", :width => "500", :publish_feed => "true"}
+
+#aside
+  .aside-blue-container
+    %h2
+      = @event.porcentage_donation.to_s + '% closer to your gift'
+    .porcentage-info
+      .advance
+        .stripes
+
+    #ends-on
+      %h2
+        This celebration takes place in:
+      .porcentage-info
+        = @event.print_rest_days
+
+  .aside-container.margin-top-10
+    %h2
+      Gift's Donors
+    %p
+      There are no donors yet
+
+  - if is_owner? 
+    .aside-container.margin-top-10
+      %h2
+        Invite your friends to make donations on:
+      %p
+        = twitter_link 
+        = facebook_link 
+        =  link_to(image_tag('share-mail.png'), '', :id => 'email-share-link') 
+
+      %h2
+        Your Event Link
+      %p
+        = text_field_tag 'event_url', personal_urls_url(@event.identifier)
+  - else 
+    = link_to(image_tag('banner.png', :id => 'submit-gift'), root_url) 
+  
+.clearBoth  
+
+#share-facebook{:title => "Facebook Message"}
+  = form_tag event_facebook_path(@event) do 
+    = text_area_tag 'facebook_message', @event.message('event', event_url(@event))  
+    
+#share-twitter{:title => "Twitter Message"}
+  = form_tag event_twitter_path(@event) do 
+    = text_area_tag 'twitter_message', @event.message('event', event_url(@event))  
+    = submit_tag 'Share', :class => 'submit'
+  
+#share-email{:title => "Email Invitation"}
+  = form_tag event_invitation_path(@event) do 
+    = text_field_tag 'add_email' 
+    = link_to 'Add','', {:class => "submit", :id => 'add-new-email'}
+    #all_emails
+      Send Invitation to:
+    = submit_tag 'Share', :class => 'submit'
+
+#release-box{:title => "Release Your Gift"}
+  = form_for @event.build_release, :url => event_release_paypal_path(@event) do |form|
+    = form.label 'Paypal email' 
+    = form.text_field :email 
+    = submit_tag 'Release', :class => 'submit'
+
+#fb-root
+
+= render :partial => 'donation' if params[:donation] == 'true'
+
+- content_for :scripts do 
+  <script type="text/javascript">
+  $(function() {
+  $('.stripes').width('#{@event.porcentage_donation}%');
+  $.loadFacebook();
+  $.loadShareObjects();
+  $.dialogShareBoxes();
+  $.countCharacters();
+  $.releaseBox();
+  $.emailSharing();
+  - if is_owner? 
+    $.qtipsShowEvent(); 
+  - else 
+    $.qtipsShowEventVisitor();
+  });
+  </script>
+ 

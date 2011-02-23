@@ -14,8 +14,8 @@ javascripts:
   - application
 stylesheets: 
 - base: 
+  - print
   - jgrowl
   - jquery-ui
   - jquery.fancybox
-  - print
   - screen

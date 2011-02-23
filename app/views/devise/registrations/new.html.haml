@@ -1,0 +1,62 @@
+%h1
+  Sign up
+  
+#login-main
+  %h2
+    Create your Gifty Fifty account, it’s free!
+  %p
+    Once you’ve made it, will be easier to make contributions to your friends or create your events with the gift you really want.
+  %p
+    = link_to(image_tag('connect_facebook.png'), '/auth/facebook')
+    = link_to(image_tag('connect_twitter.png'), '/auth/twitter')
+    
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| 
+    = devise_error_messages! 
+    
+    %p
+      = f.label :first_name 
+      = f.text_field :first_name
+    %p
+      = f.label :email 
+      = f.text_field :email 
+
+    %p
+      = f.label :password 
+      = f.password_field :password 
+
+    %p
+      = f.label :password_confirmation 
+      = f.password_field :password_confirmation 
+
+    %p
+      = f.submit "Sign up" 
+
+#login-aside
+  %h2
+    What is Gifty Fifty?
+  %p
+    A service where your friends and family contribuite with a part of the total cost of your gift.
+  %p
+    We help you to get the gift you want and your friends won't waste money on useless things you don't like.
+  .explination-box
+    = image_tag 'gift_home.png'
+    %p
+      %span
+        1. Choose your gift
+      %br
+      Find your gift on the internet, then copy-paste the URL in our home page and edit your event.
+  .explination-box
+    = image_tag 'megaphone_home.png'
+    %p
+      %span
+        2. Spread the word
+      %br
+      Invite your friends through your social networks to start making donations to your gift.
+  .explination-box
+    = image_tag 'machine_home.png'
+    %p
+      %span
+        3. Get it!
+      %br
+      Once you've reached your money goal thanks all your friends' donations, you can buy it.
+.clearBoth

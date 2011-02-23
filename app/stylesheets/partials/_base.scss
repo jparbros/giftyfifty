@@ -19,7 +19,7 @@ ul {
 
 body {
   background: url('../images/background.png');
-  margin: 10px 0 0 0;
+  margin: 0 0 0 0;
   @include regular-text;
 }
 
@@ -38,6 +38,31 @@ body a:hover {
 
 .emptyField {
   border: solid 3px #FF0000 !important;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.error {
+  color: #ff0000 !important;
+  width: 120px !important;
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+.margin-top-10 {
+  margin-top: 10px !important;
+}
+
+.left-border-dotted {
+  border-left: 1px dotted #000000;
+}
+
+.bottom-border-dotted {
+  border-bottom: 1px dotted #000000;
 }
 
 #box-content {
@@ -63,8 +88,15 @@ h1 {
   color: #23B8D1;
   font-family: georgia;
   font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
   padding: 7px 10px;
   width: 260px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
 }
 
 #header {
@@ -151,6 +183,8 @@ body.application {
   #content {
     @include bottom-rounded(10px);
     background: #FFFFFF;
+    color: #000000;
+    font-family: Lucida Grande;
     margin: 0 auto 0;
     padding: 100px 45px 10px;
     width: 820px;
@@ -169,7 +203,7 @@ body.application {
       color: #3B3B3B;
       display: inline-block;
       font-size: 12px;
-      width: 80px;
+      width: 120px;
     }
     
     h2 {
@@ -195,10 +229,50 @@ body.application {
     
     #aside {
       float: left;
-      width: 200px;
+      width: 275px;
+      
+      .aside-container {
+        @include border-rounded(5px);
+        background-color: #3B3B3B;
+        border: 3px solid #6B6B6B;
+        float: left;
+        margin: 65px 0 0 50px;
+        padding: 12px;
+        width: 195px;
+
+        h2 {
+          color: #23B8D1;
+          font-size: 16px;
+          margin: 0;
+          text-align: center;
+        }
+        
+        p {
+          text-align: center;
+        }
+        input {
+          width: 175px;
+        }
+        
+      }
+
+      .aside-blue-container {
+        @include border-rounded(5px);
+        background-color: #69D9ED;
+        border: 3px solid #AFECF7;
+        float: left;
+        margin: 0 0 0 50px;
+        padding: 12px;
+        width: 195px;
+        
+        h2 {
+          color: #187D8E;
+          font-size: 14px;
+        }
+      }
     }
     
-    input[type=text], input[type=password], select {
+    input[type=text], input[type=password], select, textarea {
       @include border-rounded(5px);
       border: 3px solid #C2C2C2;
       color: #6B6B6B;
@@ -208,6 +282,7 @@ body.application {
     }
     
     input[type=submit] {
+      @include border-rounded(5px);
       background-color: #4CD3EC;
       border: 3px solid #28CAE8;
       color: #FFFFFF;
@@ -219,14 +294,24 @@ body.application {
       width: 100px;
     }
     
-    .aside-container {
+    a.submit {
       @include border-rounded(5px);
-      background-color: #3B3B3B;
-      border: 3px solid #6B6B6B;
-      float: left;
-      margin: 65px 0 0 50px;
-      padding: 12px;
-      width: 195px;
+      background-color: #4CD3EC;
+      border: 3px solid #28CAE8;
+      color: #FFFFFF;
+      float: right;
+      font-family: georgia;
+      font-size: 17px;
+      margin: 10px 0 0 10px;
+      padding: 5px 10px;
+      text-align: center;
+      width: 100px;
+    }
+    
+    .disable  {
+        background-color: #CCCCCC !important;
+        border: 3px solid #999999 !important;
+        color: #000000 !important;
     }
     
     .porcentage-info {
@@ -234,9 +319,11 @@ body.application {
         background-color: #EEEEEE;
         border: 4px solid #AAAAAA;
         color: #23B8D1;
+        font-size: 16px;
         height: 20px;
         margin: 10px 0 0;
         padding: 5px;
+        text-align: center;
         width: 180px;
     
       .advance {

@@ -1,0 +1,112 @@
+= form_for @donation, :url => event_donations_path(params[:event_id]) do |form| 
+  %h1
+    Contributions
+
+  #left-donation
+    .top.bottom-border-dotted
+      #gift-header
+        = image_tag @event.user.thumb_image if @event.user.thumb_image  
+        %h1
+          = @event.user.first_name + "'s"
+          Gift
+      #gift-detail.no-border
+        = link_to(image_tag(@event.item.image), @event.item.purchase_url, {:target => 'blank'}) 
+        #gift-description
+          %h2
+            = @event.item.name
+          %span#gift-price
+            = number_to_currency((@event.item.formated_price))  
+          %span#shipping-cost
+            Shipping Cost 
+            = number_to_currency((@event.item.formated_shipping_cost))
+          %ul
+            - if @event.item.category 
+              %li
+                Categories: 
+                %span
+                  = @event.item.category 
+            - if @event.provider 
+              %li
+                Powered by: 
+                %span
+                  = @event.provider.name.humanize
+      .clearBoth
+      
+    .bottom
+      %h4
+        How much happiness will you give to your friend?
+      Enter your contribution amount 
+      =form.text_field :amount, :size => '10' 
+      #breakdown
+        Direct contribution: 
+        %span#direct
+          $0
+        %br
+        Our handing cost: 
+        %span#handing
+          $0
+      
+    .clearBoth
+
+  #right-donation
+    .top.bottom-border-dotted
+      #credit-card
+        %h4
+          Please fill the spaces with your card info
+        %ul
+          %li
+            = form.label 'Card holder (*)' 
+            %br
+            = form.text_field :name, :size => '15' 
+          
+          %li
+            = form.label :expiration_date 
+            %br
+            = form.select :month, options_for_select(Donation::MONTHS) 
+            = form.select :year, Donation::years 
+          
+        %ul
+          %li
+            = form.label :credit_card 
+            %br/
+            = form.text_field :credit_card, :size => '15' 
+          
+          %li
+            = form.label :verification_value 
+            %br/
+            = form.text_field :verification_value, :size => '12' 
+          
+        
+      
+      #paypal
+        = image_tag 'paypal_big.png'
+      
+    
+    .bottom
+      .payment_methods
+        = radio_button_tag 'payment_method','credit_card', {:checked => 'checked'}
+        = image_tag 'card_accepted.png'
+      %br
+      .payment_methods
+        = radio_button_tag 'payment_method','paypal'        
+        = image_tag 'paypal.png'    
+        
+  .clearBoth
+  #continue
+    = check_box_tag 'terms' 
+    I accept the therms of use
+    %br
+    = form.submit 'Continue', :id => 'save', :class => 'disable', :disabled => 'disable' 
+
+.clearBoth
+
+- content_for :scripts do 
+  <script type='text/javascript'>
+  $(function() {
+  $.donationCheckbox();
+  $.acceptTerms();
+  $.onlyNumber();
+  $.calculateFeed();
+  });
+  </script>
+

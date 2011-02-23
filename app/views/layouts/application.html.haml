@@ -15,7 +15,7 @@
 
 %body.application
   #header
-    = image_tag 'logo.png', :id => 'logo'
+    = link_to(image_tag('logo.png', :id => 'logo'), root_url)
     %nav
       = render :partial => 'shared/login_status'
   #content

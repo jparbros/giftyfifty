@@ -94,7 +94,7 @@ ul {
 /* line 20, ../../app/stylesheets/partials/_base.scss */
 body {
   background: url("../images/background.png");
-  margin: 10px 0 0 0;
+  margin: 0 0 0 0;
   color: white;
   font-family: Lucida Grande;
   font-size: 12.66px;
@@ -126,11 +126,42 @@ body a:hover {
 }
 
 /* line 43, ../../app/stylesheets/partials/_base.scss */
+.floatLeft {
+  float: left;
+}
+
+/* line 47, ../../app/stylesheets/partials/_base.scss */
+.error {
+  color: #ff0000 !important;
+  width: 120px !important;
+}
+
+/* line 52, ../../app/stylesheets/partials/_base.scss */
+.no-border {
+  border: 0 !important;
+}
+
+/* line 56, ../../app/stylesheets/partials/_base.scss */
+.margin-top-10 {
+  margin-top: 10px !important;
+}
+
+/* line 60, ../../app/stylesheets/partials/_base.scss */
+.left-border-dotted {
+  border-left: 1px dotted #000000;
+}
+
+/* line 64, ../../app/stylesheets/partials/_base.scss */
+.bottom-border-dotted {
+  border-bottom: 1px dotted #000000;
+}
+
+/* line 68, ../../app/stylesheets/partials/_base.scss */
 #box-content {
   display: none;
 }
 
-/* line 47, ../../app/stylesheets/partials/_base.scss */
+/* line 72, ../../app/stylesheets/partials/_base.scss */
 .button-blue {
   background-color: #4CD3EC;
   border: 3px solid #28CAE8;
@@ -143,7 +174,7 @@ body a:hover {
   width: 120px;
 }
 
-/* line 59, ../../app/stylesheets/partials/_base.scss */
+/* line 84, ../../app/stylesheets/partials/_base.scss */
 h1 {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -170,11 +201,19 @@ h1 {
   color: #23B8D1;
   font-family: georgia;
   font-size: 24px;
+  font-style: italic;
+  font-weight: bold;
   padding: 7px 10px;
   width: 260px;
 }
 
-/* line 70, ../../app/stylesheets/partials/_base.scss */
+/* line 97, ../../app/stylesheets/partials/_base.scss */
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* line 102, ../../app/stylesheets/partials/_base.scss */
 #header {
   background: url("../images/home_header.png") no-repeat;
   display: block;
@@ -182,7 +221,7 @@ h1 {
   width: 927px;
   margin: 0 auto;
 }
-/* line 77, ../../app/stylesheets/partials/_base.scss */
+/* line 109, ../../app/stylesheets/partials/_base.scss */
 #header #login-box {
   float: right;
   color: #23B8D1;
@@ -190,25 +229,25 @@ h1 {
   margin: 80px 20px 0 0;
   padding: 15px 10px 10px;
 }
-/* line 85, ../../app/stylesheets/partials/_base.scss */
+/* line 117, ../../app/stylesheets/partials/_base.scss */
 #header #login-box ul#login-links li {
   float: left;
   margin: 0  0 0 31px;
 }
-/* line 91, ../../app/stylesheets/partials/_base.scss */
+/* line 123, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #user-menu {
   background: url(../images/arrow-dropdown.png) no-repeat right;
   padding: 0 20px 0 0;
   cursor: pointer;
 }
-/* line 96, ../../app/stylesheets/partials/_base.scss */
+/* line 128, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #user-menu img {
   border: 3px solid #23B8D1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   margin: -10px 0;
 }
-/* line 104, ../../app/stylesheets/partials/_base.scss */
+/* line 136, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content {
   background: #292929;
   position: absolute;
@@ -216,14 +255,14 @@ h1 {
   z-index: 1000;
   margin: 10px 0 0 -10px;
 }
-/* line 111, ../../app/stylesheets/partials/_base.scss */
+/* line 143, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li {
   background: #5e5e5e;
   margin: 0 0 0 10px;
   float: left;
   list-style: none;
 }
-/* line 117, ../../app/stylesheets/partials/_base.scss */
+/* line 149, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li a {
   color: #23B8D1;
   font-size: 14px;
@@ -232,26 +271,26 @@ h1 {
   width: 100%;
   padding: 0;
 }
-/* line 127, ../../app/stylesheets/partials/_base.scss */
+/* line 159, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li#last {
   margin-bottom: 10px;
 }
-/* line 131, ../../app/stylesheets/partials/_base.scss */
+/* line 163, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li:hover {
   background: #797979;
 }
-/* line 138, ../../app/stylesheets/partials/_base.scss */
+/* line 170, ../../app/stylesheets/partials/_base.scss */
 #header #label-beta {
   float: left;
   margin: 128px 0 0 -31px;
 }
-/* line 143, ../../app/stylesheets/partials/_base.scss */
+/* line 175, ../../app/stylesheets/partials/_base.scss */
 #header #logo {
   float: left;
   margin: 16px 0 0 -39px;
 }
 
-/* line 151, ../../app/stylesheets/partials/_base.scss */
+/* line 183, ../../app/stylesheets/partials/_base.scss */
 body.application #content {
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px;
@@ -264,96 +303,58 @@ body.application #content {
   -ms-border-radius-bottomleft: 10px;
   -khtml-border-radius-bottomleft: 10px;
   background: #FFFFFF;
+  color: #000000;
+  font-family: Lucida Grande;
   margin: 0 auto 0;
   padding: 100px 45px 10px;
   width: 820px;
 }
-/* line 158, ../../app/stylesheets/partials/_base.scss */
+/* line 192, ../../app/stylesheets/partials/_base.scss */
 body.application #content p {
   color: #959595;
   font-size: 14px;
   margin: 20px 5px;
 }
-/* line 164, ../../app/stylesheets/partials/_base.scss */
+/* line 198, ../../app/stylesheets/partials/_base.scss */
 body.application #content a {
   color: #4CD3EC;
   text-decoration: none;
 }
-/* line 168, ../../app/stylesheets/partials/_base.scss */
+/* line 202, ../../app/stylesheets/partials/_base.scss */
 body.application #content label {
   color: #3B3B3B;
   display: inline-block;
   font-size: 12px;
-  width: 80px;
+  width: 120px;
 }
-/* line 175, ../../app/stylesheets/partials/_base.scss */
+/* line 209, ../../app/stylesheets/partials/_base.scss */
 body.application #content h2 {
   color: #23B8D1;
   font-size: 16px;
   margin-top: 20px;
 }
-/* line 181, ../../app/stylesheets/partials/_base.scss */
+/* line 215, ../../app/stylesheets/partials/_base.scss */
 body.application #content #col-left, body.application #content #col-right {
   float: left;
   margin: 0;
   width: 400px;
 }
-/* line 187, ../../app/stylesheets/partials/_base.scss */
+/* line 221, ../../app/stylesheets/partials/_base.scss */
 body.application #content #col-left {
   margin: 0 10px 0 0;
 }
-/* line 191, ../../app/stylesheets/partials/_base.scss */
+/* line 225, ../../app/stylesheets/partials/_base.scss */
 body.application #content #main {
   float: left;
   width: 545px;
 }
-/* line 196, ../../app/stylesheets/partials/_base.scss */
+/* line 230, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside {
   float: left;
-  width: 200px;
+  width: 275px;
 }
-/* line 201, ../../app/stylesheets/partials/_base.scss */
-body.application #content input[type=text], body.application #content input[type=password], body.application #content select {
-  -moz-border-radius-topright: 5px;
-  -webkit-border-top-right-radius: 5px;
-  border-top-right-radius: 5px;
-  -ms-border-radius-topright: 5px;
-  -khtml-border-radius-topright: 5px;
-  -moz-border-radius-topleft: 5px;
-  -webkit-border-top-left-radius: 5px;
-  border-top-left-radius: 5px;
-  -ms-border-radius-topleft: 5px;
-  -khtml-border-radius-topleft: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  -ms-border-radius-bottomright: 5px;
-  -khtml-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  -ms-border-radius-bottomleft: 5px;
-  -khtml-border-radius-bottomleft: 5px;
-  border: 3px solid #C2C2C2;
-  color: #6B6B6B;
-  font-size: 14px;
-  padding: 5px;
-  width: 250px;
-}
-/* line 210, ../../app/stylesheets/partials/_base.scss */
-body.application #content input[type=submit] {
-  background-color: #4CD3EC;
-  border: 3px solid #28CAE8;
-  color: #FFFFFF;
-  float: right;
-  font-family: georgia;
-  font-size: 17px;
-  margin: 10px 0 0;
-  padding: 3px 20px;
-  width: 100px;
-}
-/* line 222, ../../app/stylesheets/partials/_base.scss */
-body.application #content .aside-container {
+/* line 234, ../../app/stylesheets/partials/_base.scss */
+body.application #content #aside .aside-container {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
   border-top-right-radius: 5px;
@@ -381,7 +382,155 @@ body.application #content .aside-container {
   padding: 12px;
   width: 195px;
 }
-/* line 232, ../../app/stylesheets/partials/_base.scss */
+/* line 243, ../../app/stylesheets/partials/_base.scss */
+body.application #content #aside .aside-container h2 {
+  color: #23B8D1;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+}
+/* line 250, ../../app/stylesheets/partials/_base.scss */
+body.application #content #aside .aside-container p {
+  text-align: center;
+}
+/* line 253, ../../app/stylesheets/partials/_base.scss */
+body.application #content #aside .aside-container input {
+  width: 175px;
+}
+/* line 259, ../../app/stylesheets/partials/_base.scss */
+body.application #content #aside .aside-blue-container {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  background-color: #69D9ED;
+  border: 3px solid #AFECF7;
+  float: left;
+  margin: 0 0 0 50px;
+  padding: 12px;
+  width: 195px;
+}
+/* line 268, ../../app/stylesheets/partials/_base.scss */
+body.application #content #aside .aside-blue-container h2 {
+  color: #187D8E;
+  font-size: 14px;
+}
+/* line 275, ../../app/stylesheets/partials/_base.scss */
+body.application #content input[type=text], body.application #content input[type=password], body.application #content select, body.application #content textarea {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  border: 3px solid #C2C2C2;
+  color: #6B6B6B;
+  font-size: 14px;
+  padding: 5px;
+  width: 250px;
+}
+/* line 284, ../../app/stylesheets/partials/_base.scss */
+body.application #content input[type=submit] {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  background-color: #4CD3EC;
+  border: 3px solid #28CAE8;
+  color: #FFFFFF;
+  float: right;
+  font-family: georgia;
+  font-size: 17px;
+  margin: 10px 0 0;
+  padding: 3px 20px;
+  width: 100px;
+}
+/* line 297, ../../app/stylesheets/partials/_base.scss */
+body.application #content a.submit {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  background-color: #4CD3EC;
+  border: 3px solid #28CAE8;
+  color: #FFFFFF;
+  float: right;
+  font-family: georgia;
+  font-size: 17px;
+  margin: 10px 0 0 10px;
+  padding: 5px 10px;
+  text-align: center;
+  width: 100px;
+}
+/* line 311, ../../app/stylesheets/partials/_base.scss */
+body.application #content .disable {
+  background-color: #CCCCCC !important;
+  border: 3px solid #999999 !important;
+  color: #000000 !important;
+}
+/* line 317, ../../app/stylesheets/partials/_base.scss */
 body.application #content .porcentage-info {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -406,12 +555,14 @@ body.application #content .porcentage-info {
   background-color: #EEEEEE;
   border: 4px solid #AAAAAA;
   color: #23B8D1;
+  font-size: 16px;
   height: 20px;
   margin: 10px 0 0;
   padding: 5px;
+  text-align: center;
   width: 180px;
 }
-/* line 242, ../../app/stylesheets/partials/_base.scss */
+/* line 329, ../../app/stylesheets/partials/_base.scss */
 body.application #content .porcentage-info .advance {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -438,7 +589,7 @@ body.application #content .porcentage-info .advance {
   overflow: hidden;
   width: 100%;
 }
-/* line 249, ../../app/stylesheets/partials/_base.scss */
+/* line 336, ../../app/stylesheets/partials/_base.scss */
 body.application #content .porcentage-info .advance .stripes {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -465,7 +616,7 @@ body.application #content .porcentage-info .advance .stripes {
   height: 20px;
   max-width: 100%;
 }
-/* line 260, ../../app/stylesheets/partials/_base.scss */
+/* line 347, ../../app/stylesheets/partials/_base.scss */
 body.application #footer {
   background-color: #3B3B3B;
   font-size: 12px;
@@ -475,7 +626,7 @@ body.application #footer {
   padding-top: 12px;
   text-shadow: 1px 1px 1px #8F8F8F;
 }
-/* line 269, ../../app/stylesheets/partials/_base.scss */
+/* line 356, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links {
   margin: 10px auto 30px;
   overflow: hidden;
@@ -483,15 +634,15 @@ body.application #footer #footer-links {
   text-shadow: 1px 1px 1px #8F8F8F;
   width: 910px;
 }
-/* line 276, ../../app/stylesheets/partials/_base.scss */
+/* line 363, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links ul#footer-contact {
   float: left;
 }
-/* line 280, ../../app/stylesheets/partials/_base.scss */
+/* line 367, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links ul#footer-legal {
   float: right;
 }
-/* line 284, ../../app/stylesheets/partials/_base.scss */
+/* line 371, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links li {
   color: #FFFFFF;
   float: left;
@@ -950,4 +1101,452 @@ label#pobox {
 .gift .gift-info .porcentage_gift {
   color: #187D8E;
   font-size: 14px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-header {
+  -moz-border-radius: 5px 5px 5px 5px;
+  background-color: #DFF3F7;
+  color: #23B8D1;
+  padding: 7px 10px;
+}
+
+/* line 8, ../../app/stylesheets/partials/_edit_gift.scss */
+h2 {
+  color: #23B8D1;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+}
+
+/* line 15, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-content {
+  border-top: 1px dotted #000000;
+  float: left;
+  width: 100%;
+}
+
+/* line 20, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail {
+  border: 1px dashed #CCCCCC;
+  float: left;
+  margin: 20px 0;
+  padding: 20px;
+}
+/* line 26, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail img {
+  float: left;
+  margin-right: 10px;
+  max-width: 85px;
+}
+/* line 32, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description {
+  float: left;
+  width: 405px;
+}
+/* line 36, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description h2 {
+  color: #3B3B3B;
+  float: left;
+  font-size: 16px;
+}
+/* line 42, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description h3 {
+  color: #23B8D1;
+  font-size: 16px;
+  margin: 10px 0 10px 0;
+}
+/* line 48, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description span#gift-price {
+  color: #23B8D1;
+  float: left;
+  font-size: 16px;
+  line-height: normal;
+  text-decoration: none;
+}
+/* line 56, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description span#shipping-cost {
+  color: #23B8D1;
+  float: left;
+  font-size: 10px;
+}
+/* line 62, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description ul {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  background-color: #DFF3F7;
+  clear: both;
+  line-height: 18px;
+  list-style-type: none;
+  overflow: hidden;
+}
+/* line 70, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description ul li {
+  color: #6B6B6B;
+  float: left;
+  font-size: 12px;
+  padding: 0 5px;
+}
+/* line 76, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-detail #gift-description ul li span {
+  color: #23B8D1;
+  text-decoration: none;
+}
+
+/* line 85, ../../app/stylesheets/partials/_edit_gift.scss */
+#occasion {
+  float: left;
+}
+/* line 88, ../../app/stylesheets/partials/_edit_gift.scss */
+#occasion select {
+  width: 150px !important;
+}
+
+/* line 93, ../../app/stylesheets/partials/_edit_gift.scss */
+#title {
+  float: left;
+  margin: 0 0 0 128px;
+}
+
+/* line 98, ../../app/stylesheets/partials/_edit_gift.scss */
+#description {
+  float: left;
+  margin: 10px 0 0 0;
+}
+/* line 102, ../../app/stylesheets/partials/_edit_gift.scss */
+#description textarea {
+  height: 125px;
+  width: 365px !important;
+}
+
+/* line 108, ../../app/stylesheets/partials/_edit_gift.scss */
+#dates {
+  float: left;
+  margin: 10px 0 0 26px;
+}
+/* line 113, ../../app/stylesheets/partials/_edit_gift.scss */
+#dates #begin label {
+  width: 120px !important;
+}
+/* line 116, ../../app/stylesheets/partials/_edit_gift.scss */
+#dates #begin input {
+  width: 120px;
+}
+/* line 121, ../../app/stylesheets/partials/_edit_gift.scss */
+#dates #end {
+  margin: 60px 0 0;
+}
+/* line 123, ../../app/stylesheets/partials/_edit_gift.scss */
+#dates #end label {
+  width: 120px !important;
+}
+/* line 126, ../../app/stylesheets/partials/_edit_gift.scss */
+#dates #end input {
+  width: 120px;
+}
+
+/* line 132, ../../app/stylesheets/partials/_edit_gift.scss */
+#ends-on {
+  border-top: 1px solid dotted #000000;
+}
+
+/* line 137, ../../app/stylesheets/partials/_edit_gift.scss */
+#facebook-connect h3 {
+  border-bottom: 2px solid #333333;
+  color: #333333;
+  display: inline;
+  float: left;
+  font-size: 16px;
+  margin: 15px 0 10px;
+  padding-bottom: 5px;
+  width: 500px;
+}
+
+/* line 149, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-header {
+  float: left;
+}
+/* line 152, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-header img {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  border: 3px solid #23B8D1;
+  float: left;
+}
+/* line 157, ../../app/stylesheets/partials/_edit_gift.scss */
+#gift-header h1 {
+  float: left;
+  margin: -50px 0 0 80px;
+  width: 420px;
+}
+
+/* line 164, ../../app/stylesheets/partials/_edit_gift.scss */
+#donation-thanks {
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  -ms-border-radius-topright: 10px;
+  -khtml-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -ms-border-radius-topleft: 10px;
+  -khtml-border-radius-topleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -ms-border-radius-bottomright: 10px;
+  -khtml-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -ms-border-radius-bottomleft: 10px;
+  -khtml-border-radius-bottomleft: 10px;
+  background: url("../images/content_bg.png");
+  border: 3px solid #10BADB;
+  color: #FFFFFF !important;
+  font-family: Georgia;
+  font-size: 23px !important;
+  font-style: italic;
+  font-weight: bold;
+  margin: 25px auto 0;
+  padding: 25px 0;
+  text-align: center;
+  width: 575px;
+}
+
+/* line 179, ../../app/stylesheets/partials/_edit_gift.scss */
+#donation-share, #your-gift {
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  -ms-border-radius-topright: 10px;
+  -khtml-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -ms-border-radius-topleft: 10px;
+  -khtml-border-radius-topleft: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -ms-border-radius-bottomright: 10px;
+  -khtml-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -ms-border-radius-bottomleft: 10px;
+  -khtml-border-radius-bottomleft: 10px;
+  background: url("../images/transparent_bg.png");
+  color: #FFFFFF;
+  float: left;
+  font-family: Lucida;
+  font-size: 14px;
+  font-weight: normal;
+  list-style: none outside none;
+  margin: 0 330px 10px;
+  padding: 10px;
+  width: 410px;
+}
+/* line 192, ../../app/stylesheets/partials/_edit_gift.scss */
+#donation-share li, #your-gift li {
+  float: left;
+}
+/* line 196, ../../app/stylesheets/partials/_edit_gift.scss */
+#donation-share li#share, #your-gift li#share {
+  width: 270px;
+}
+/* line 200, ../../app/stylesheets/partials/_edit_gift.scss */
+#donation-share li#buttons, #your-gift li#buttons {
+  width: 130px;
+}
+
+/* line 205, ../../app/stylesheets/partials/_edit_gift.scss */
+#show-donation {
+  display: none;
+}
+
+/* line 209, ../../app/stylesheets/partials/_edit_gift.scss */
+#submit-gift {
+  margin: 20px 0 0 50px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_donations.scss */
+.top {
+  height: 250px;
+}
+
+/* line 6, ../../app/stylesheets/partials/_donations.scss */
+.payment_methods input {
+  float: left;
+}
+/* line 9, ../../app/stylesheets/partials/_donations.scss */
+.payment_methods img {
+  float: left;
+}
+
+/* line 14, ../../app/stylesheets/partials/_donations.scss */
+#continue {
+  border-top: 1px dotted #000000;
+  margin: 10px 0 0 0;
+  text-align: right;
+}
+
+/* line 20, ../../app/stylesheets/partials/_donations.scss */
+#breakdown {
+  font-size: 10px;
+  text-align: right;
+}
+
+/* line 25, ../../app/stylesheets/partials/_donations.scss */
+#donation_amount {
+  width: 150px !important;
+}
+
+/* line 29, ../../app/stylesheets/partials/_donations.scss */
+#right-donation {
+  float: left;
+  margin: 10px 0 0 0;
+  padding: 0 0 0 10px;
+  width: 43%;
+}
+/* line 36, ../../app/stylesheets/partials/_donations.scss */
+#right-donation #credit-card input[type=text] {
+  width: 130px;
+}
+/* line 39, ../../app/stylesheets/partials/_donations.scss */
+#right-donation #credit-card select {
+  width: 70px;
+}
+/* line 43, ../../app/stylesheets/partials/_donations.scss */
+#right-donation #credit-card ul li {
+  float: left;
+  margin: 10px 0 0 10px;
+}
+/* line 49, ../../app/stylesheets/partials/_donations.scss */
+#right-donation #paypal {
+  display: none;
+}
+/* line 53, ../../app/stylesheets/partials/_donations.scss */
+#right-donation .bottom {
+  float: left;
+  margin: 10px 0 0 0;
+}
+
+/* line 59, ../../app/stylesheets/partials/_donations.scss */
+#left-donation {
+  border-right: 1px dotted #000000;
+  float: left;
+  margin: 10px 0 0 0;
+  padding: 0 10px 0 0;
+  width: 54%;
+}
+/* line 67, ../../app/stylesheets/partials/_donations.scss */
+#left-donation .top h1 {
+  width: 300px !important;
+}
+/* line 70, ../../app/stylesheets/partials/_donations.scss */
+#left-donation .top #gift-description {
+  width: 300px !important;
+}
+
+/* line 1, ../../app/stylesheets/partials/_login.scss */
+#login-main {
+  float: left;
+  padding: 0 15px 0 0;
+  width: 440px;
+}
+
+/* line 7, ../../app/stylesheets/partials/_login.scss */
+#login-aside {
+  border-left: 1px dotted #000000;
+  float: left;
+  padding: 0 0 0 15px;
+  width: 345px;
+}
+
+/* line 14, ../../app/stylesheets/partials/_login.scss */
+.explination-box {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -ms-border-radius-topright: 5px;
+  -khtml-border-radius-topright: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  -ms-border-radius-topleft: 5px;
+  -khtml-border-radius-topleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -ms-border-radius-bottomright: 5px;
+  -khtml-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -ms-border-radius-bottomleft: 5px;
+  -khtml-border-radius-bottomleft: 5px;
+  background-color: #DDF7FB;
+  float: left;
+  margin: 10px 0;
+  width: 90%;
+}
+/* line 21, ../../app/stylesheets/partials/_login.scss */
+.explination-box img, .explination-box p {
+  float: left;
+}
+/* line 25, ../../app/stylesheets/partials/_login.scss */
+.explination-box p {
+  font-size: 10px !important;
+  width: 200px;
+}
+/* line 29, ../../app/stylesheets/partials/_login.scss */
+.explination-box p span {
+  color: #23B8D1;
+  font-family: georgia;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+}
+/* line 38, ../../app/stylesheets/partials/_login.scss */
+.explination-box img {
+  margin: 25px 10px 0 10px;
+  max-width: 80px;
 }

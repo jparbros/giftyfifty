@@ -9,8 +9,7 @@ var cacheElements = function() {
   siginLink = $('a#sigin-link');
   buttonLogin = $('input#go-sign-in');
   buttonSearch = $('input#search-gift');
-  startInput = $('input#event_start_at');
-  endInput = $('input#event_end_at');
+  
   giftInput = $('input#gift_url');
   loginGiftInputs = $('#new_user #gift_url');
   linksProviders = $('#login-box #providers a');
@@ -49,19 +48,6 @@ var mainLoginBox = function() {
     'content': $('#fancybox-content').html(),
   });
 };
-
-var loadFacebook = function() {
-   window.fbAsyncInit = function() {
-      FB.init({appId: '175826409094308', status: true, cookie: true,
-               xfbml: true});
-    };
-    $(function() {
-      var e = document.createElement('script'); e.async = true;
-      e.src = document.location.protocol +
-        '//connect.facebook.net/en_US/all.js';
-      document.getElementById('fb-root').appendChild(e);
-    }());
-}
 
 var giftInputChangeText = function() {
   giftInput.focusin(function(){
@@ -110,21 +96,6 @@ var getGiftUrl = function(){
   });
 }
 
-var setTimePickers = function() {
-  startInput.datepicker({ minDate: 0,onSelect: function( selectedDate ) {
-    var option = this.id == "event_start_at" ? "minDate" : "maxDate",
-    instance = $( this ).data( "datepicker" );
-    date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings );
-    date.setTime(date.getTime()+5*24*60*60*1000)
-    _minDate = $.datepicker.formatDate($.datepicker._defaults.dateFormat, date);
-    date.setTime(date.getTime()+50*24*60*60*1000)
-    _maxDate = $.datepicker.formatDate($.datepicker._defaults.dateFormat, date);
-    endInput.datepicker( "destroy" );
-    endInput.datepicker({changeMonth: true, minDate : _minDate, maxDate : _maxDate });
-    }});
-  birthdayInput.datepicker({changeMonth: true,changeYear: true, yearRange : '1970:2011'});
-}
-
 var setTabs = function() {
   tabsContent.tabs();
 }
@@ -137,152 +108,6 @@ var buttonsCreateEvent = function(){
     tabsContent.tabs({ selected: 2 });
   });
 }
-
-var 
-
-var emailSharing = function() {
-  addEmail = $('div.ui-dialog #add-new-email');
-  emailsBox = $('div.ui-dialog #all_emails');
-  emailInput = $('div.ui-dialog #add_email');
-  addEmail.click(function(){
-    createEmail(emailInput.attr('value'));
-    return false;
-  });
-};
-
-var createEmail = function(email_text) {
-  new_box = $('<div>'+ email_text +'</div>');
-  new_box.appendTo(emailsBox);
-  $('<input type="hidden" />').attr('name', 'emails[]').attr('value',email_text).appendTo(new_box);
-  close_button = $('<span>X</span>');
-  close_button.appendTo(new_box);
-  close_button.css({'cursor':'pointer'});
-  emailInput.attr('value','');
-  close_button.click(function(){
-    $(this).parent().remove();
-  });
-};
-
-var ;
-
-var releaseBox = function() {
-  release = $('div#release-box');
-  releaseButton = $('a#release-gift');
-  release.dialog({
-    resizable: false,
-    stack: false,
-    autoOpen: false,
-    height: 150,
-    width: 450,
-    modal: true,
-  });
-  releaseButton.click(function(){
-    release.dialog('open');
-    return false;
-  });
-}
-
-var validateEventEditForm = function() {
-  $('#gift-form').validate({
-      rules: {
-          'event[title]': 'required',
-          'event[start_at]': 'required',
-          'event[end_at]': 'required'
-      },
-      messages: {
-          'event[title]': 'The title is required.',
-          'event[start_at]': 'The start date is required.',
-          'event[end_at]': 'The end date is required.',
-      }
-  });
-}
-
-var qtipsEditEvent = function() {
-  $('#event_occasion_id').qtip({
-    content: 'Select your special occasion.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
-  });
-  $('#event_title').qtip({
-    content: 'Enter a creative title for your special occasion.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
-  });
-  $('#gift_description').qtip({
-    content: 'Create a description to your friends,let them know exactly why you\'ll love to receive this gift!',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
-  });
-  $('#event_start_at').qtip({
-    content: 'From this date, your friends can start making donations.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
-  });
-  $('#event_end_at').qtip({
-    content: 'Until this date, your friends can making donations.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
-  });
-};
-
-var qtipsShowEvent = function() {
-  $('#edit_event').qtip({
-    content: 'Edit your gift\'s details.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
-  });
-  $('#release-gift').qtip({
-    content: 'Do the checkout to get your gift.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true }
-  });
-  $('#gift_percentage').qtip({
-    content: 'This represent the percent you\'ve collected of your gift\'s cost.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('#event_rest_days').qtip({
-    content: 'This is the your friend\'s limit time to donate to your celebration\'s gift.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('#gift_donors').qtip({
-    content: 'They\'re your friends that have donated you!',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('.share-on').qtip({
-    content: 'Use your social networks or email and let your friends know about your special occasion.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('#event_url').qtip({
-    content: 'This is your unique URL, copy and share it everywhere you like!',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-};
-
-var qtipsShowEventVisitor = function() {
-  $('#gift_percentage').qtip({
-    content: 'This represent the percent collected of the gift\'s cost.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('#event_rest_days').qtip({
-    content: 'This is the limit time to donate to celebration\'s gift.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('#gift_donors').qtip({
-    content: 'They\'re friends that have donated!',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('.share-on').qtip({
-    content: 'Use social networks or email and let your friends know about this special occasion.',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-  $('#event_url').qtip({
-    content: 'This is the unique URL, copy and share it everywhere you like!',
-    style: { name: 'dark', border: { width: 0,radius: 4 }, tip: true },
-    position: { corner: { tooltip: 'bottomRight', target: 'topLeft' } }
-  });
-};
 
 var friendSelector = function() {
   $('div.friend').live('click',function(){
@@ -297,67 +122,6 @@ var friendSelector = function() {
   });
 };
 
-var loadingAjax = function() {
-  $("img#ajax-loader").bind("ajaxSend", function(){
-     $(this).show();
-   }).bind("ajaxComplete", function(){
-     $(this).hide();
-  });
-}
-
-var donationCheckbox = function() {
-  $(':radio').change(function(){
-    if($(this).attr('value')==='credit_card') {
-      $('div#credit_card').show();
-      $('div#paypal').hide();
-    }
-    if($(this).attr('value')==='paypal') {
-      $('div#credit_card').hide();
-      $('div#paypal').show();
-    }
-  });
-}
-
-var acceptTerms = function() {
-  $('input#terms, #donation_amount, #donation_name, #donation_credit_card, #donation_verification_value, #payment_method_credit_card, #payment_method_paypal').change(function(){
-    if( ($('input#terms').attr('checked') === true)  && ($('#donation_amount').val() != '') && ($('#donation_amount').val() != ' ')) {
-      if($('#payment_method_credit_card').attr('checked') == true) {
-        if(($('#donation_name').attr('value') != '') && ($('#donation_credit_card').attr('value') != '') && ($('#donation_verification_value').attr('value') != '')) {
-          $('input#save').removeAttr('disabled').removeClass('disable');
-        } else {
-          $('input#save').attr('disabled','disabled').addClass('disable');
-        }
-      } else {
-        $('input#save').removeAttr('disabled').removeClass('disable');
-      }
-    } else {
-      $('input#save').attr('disabled','disabled').addClass('disable');
-    }
-  });
-}
-
-var onlyNumber = function() {
-  $("#donation_amount").keypress(function (e)
-  {
-    if( e.which!=8 && e.which!=0 && (e.which<48 || e.which>57))
-    {
-      return false;
-    }
-  });
-}
-
-var calculateFeed = function() {
-  $('#donation_amount').change(function(){
-    donation = $('#donation_amount').attr('value') * 100;
-    payment_fee = (donation * 0.0229) + 30;
-    our_fee = (donation * 0.05);
-    total_fee = (payment_fee + our_fee)/100;
-    donation = (donation/100.00)-total_fee;
-    $('#direct').html('$' + donation.toFixed(2));
-    $('#handing').html('$' + total_fee.toFixed(2))
-  });
-}
-
 $(document).ready(function() {
   cacheElements();
   setBoxes();
@@ -365,4 +129,5 @@ $(document).ready(function() {
   giftInputChangeText();
   menuFunctionality();
   loadingAjax();
+  birthdayInput.datepicker({changeMonth: true,changeYear: true, yearRange : '1970:2011'});
 });

@@ -103,6 +103,14 @@ class Event < ActiveRecord::Base
     (self.end_at)? (self.end_at - Time.now.to_date).to_i : 0
   end
   
+  def print_rest_days
+    if rest_days > 0
+      "#{rest_days} days"
+    else
+      "Finished"
+    end
+  end
+  
   def active
     ((self.start_at || Time.now.to_date) < Time.now.to_date) and ((self.end_at || Time.now.to_date) > Time.now.to_date)
   end

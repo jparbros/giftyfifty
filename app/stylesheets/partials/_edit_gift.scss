@@ -1,0 +1,212 @@
+#gift-header {
+    -moz-border-radius: 5px 5px 5px 5px;
+    background-color: #DFF3F7;
+    color: #23B8D1;
+    padding: 7px 10px;
+}
+
+h2 {
+  color: #23B8D1;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+}
+
+#gift-content {
+  border-top: 1px dotted #000000;
+  float: left;
+  width: 100%;
+}
+
+#gift-detail {
+  border: 1px dashed #CCCCCC;
+  float: left;
+  margin: 20px 0;
+  padding: 20px;
+
+  img  {
+    float: left;
+    margin-right: 10px;
+    max-width: 85px;
+  }
+
+  #gift-description  {
+    float: left;
+    width: 405px;
+    
+    h2 {
+      color: #3B3B3B;
+      float: left;
+      font-size: 16px;
+    }
+    
+    h3 {
+      color: #23B8D1;
+      font-size: 16px;
+      margin: 10px 0 10px 0;
+    }
+    
+    span#gift-price { 
+      color: #23B8D1;
+      float: left;
+      font-size: 16px;
+      line-height: normal;
+      text-decoration: none;
+    }
+    
+    span#shipping-cost { 
+      color: #23B8D1;
+      float: left;
+      font-size: 10px;
+    }
+    
+    ul {
+      @include  border-rounded(5px);
+      background-color: #DFF3F7;
+      clear: both;
+      line-height: 18px;
+      list-style-type: none;
+      overflow: hidden;
+      
+      li {
+        color: #6B6B6B;
+        float: left;
+        font-size: 12px;
+        padding: 0 5px;
+        
+        span {
+          color: #23B8D1;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+#occasion {
+  float:left;
+  
+  select {
+    width: 150px !important;
+  }
+}
+
+#title {
+  float:left;
+  margin: 0 0 0 128px;
+}
+
+#description{
+  float:left;
+  margin: 10px 0 0 0;
+  
+  textarea {
+    height: 125px;
+    width: 365px !important;
+  }
+}
+
+#dates {
+  float: left;
+  margin: 10px 0 0 26px;
+  
+  #begin {
+    label {
+      width: 120px !important;
+    }
+    input {
+      width: 120px;
+    }
+  }
+  
+  #end {
+    margin: 60px 0 0;
+    label {
+      width: 120px !important;
+    }
+    input {
+      width: 120px;
+    }
+  }
+}
+
+#ends-on {
+  border-top: 1px solid dotted #000000;
+}
+
+#facebook-connect {
+  h3 {
+    border-bottom: 2px solid #333333;
+    color: #333333;
+    display: inline;
+    float: left;
+    font-size: 16px;
+    margin: 15px 0 10px;
+    padding-bottom: 5px;
+    width: 500px;
+  }
+}
+
+#gift-header {
+  float: left;
+  
+  img {
+    @include  border-rounded(5px);
+    border: 3px solid #23B8D1;
+    float: left;
+  }
+  h1 {
+    float: left;
+    margin: -50px 0 0 80px;
+    width: 420px;
+  }
+}
+
+#donation-thanks  {
+    @include  border-rounded(10px);
+    background: url("../images/content_bg.png");
+    border: 3px solid #10BADB;
+    color: #FFFFFF !important;
+    font-family: Georgia;
+    font-size: 23px !important;
+    font-style: italic;
+    font-weight: bold;
+    margin: 25px auto 0;
+    padding: 25px 0;
+    text-align: center;
+    width: 575px;
+}
+
+#donation-share, #your-gift {
+    @include  border-rounded(10px);
+    background: url("../images/transparent_bg.png");
+    color: #FFFFFF;
+    float: left;
+    font-family: Lucida;
+    font-size: 14px;
+    font-weight: normal;
+    list-style: none outside none;
+    margin: 0 330px 10px;
+    padding: 10px;
+    width: 410px;
+    
+    li {
+      float: left;
+    }
+    
+    li#share {
+        width: 270px;
+    }
+    
+    li#buttons {
+        width: 130px;
+    }
+}
+
+#show-donation {
+  display: none;
+}
+
+#submit-gift {
+  margin: 20px 0 0 50px;
+}

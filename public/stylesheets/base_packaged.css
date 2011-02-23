@@ -1,4 +1,18 @@
- div.jGrowl {padding: 10px; z-index: 9999; color: #fff; font-size: 12px}
+ body.bp {line-height: 1.5; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; color: black; background: none; font-size: 10pt}
+ body.bp .container {background: none}
+ body.bp hr {background: #cccccc; color: #cccccc; width: 100%; height: 2px; margin: 2em 0; padding: 0; border: none}
+ body.bp hr.space {background: white; color: white}
+ body.bp h1, body.bp h2, body.bp h3, body.bp h4, body.bp h5, body.bp h6 {font-family: "Helvetica Neue", Arial, Helvetica, sans-serif}
+ body.bp code {font-size: 0.9em; font-family: "andale mono", "lucida console", monospace}
+ body.bp a img {border: none}
+ body.bp a:link, body.bp a:visited {background: transparent; font-weight: 700; text-decoration: underline}
+ body.bp p img.top {margin-top: 0}
+ body.bp blockquote {margin: 1.5em; padding: 1em; font-style: italic; font-size: 0.9em}
+ body.bp .small {font-size: 0.9em}
+ body.bp .large {font-size: 1.1em}
+ body.bp .quiet {color: #999999}
+ body.bp .hide {display: none}
+div.jGrowl {padding: 0px; z-index: 9999; color: #fff; font-size: 16px; width: 100%}
  div.ie6 {position: absolute}
 div.ie6.top-right {right: auto; bottom: auto; left: expression( ( 0 - jGrowl.offsetWidth + ( document.documentElement.clientWidth ? document.documentElement.clientWidth : document.body.clientWidth ) + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' ); top: expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' )}
 div.ie6.top-left {left: expression( ( 0 + ( ignoreMe2 = document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ) ) + 'px' ); top: expression( ( 0 + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ) ) + 'px' )}
@@ -13,7 +27,8 @@ div.jGrowl.bottom-left {left: 0px; bottom: 0px}
 div.jGrowl.bottom-right {right: 0px; bottom: 0px}
 div.jGrowl.center {top: 0px; width: 50%; left: 25%}
  div.center div.jGrowl-notification, div.center div.jGrowl-closer {margin-left: auto; margin-right: auto}
-div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {background-color: #000; opacity: .85; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85); zoom: 1; width: 235px; padding: 10px; margin-top: 5px; margin-bottom: 5px; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 1em; text-align: left; display: none; -moz-border-radius: 5px; -webkit-border-radius: 5px}
+div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {background-color: #3DA2B4; border-bottom: 2px solid #93DFED; opacity: .85; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)"; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85); zoom: 1; width: 100%; padding: 10px; margin: 0px; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 16px; text-align: center; display: none}
+div.jGrowl-close {margin: 0 20px 0 0}
 div.jGrowl div.jGrowl-notification {min-height: 40px}
 div.jGrowl div.jGrowl-notification div.jGrowl-header {font-weight: bold; font-size: .85em}
 div.jGrowl div.jGrowl-notification div.jGrowl-close {z-index: 99; float: right; font-weight: bold; font-size: 1em; cursor: pointer}
@@ -431,20 +446,6 @@ button.ui-button-icons-only {width: 3.7em}
 .fancybox-ie #fancybox-bg-sw {filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_sw.png', sizingMethod='scale')}
 .fancybox-ie #fancybox-bg-w {filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_w.png', sizingMethod='scale')}
 .fancybox-ie #fancybox-bg-nw {filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/fancybox/fancy_shadow_nw.png', sizingMethod='scale')}
- body.bp {line-height: 1.5; font-family: "Helvetica Neue", Arial, Helvetica, sans-serif; color: black; background: none; font-size: 10pt}
- body.bp .container {background: none}
- body.bp hr {background: #cccccc; color: #cccccc; width: 100%; height: 2px; margin: 2em 0; padding: 0; border: none}
- body.bp hr.space {background: white; color: white}
- body.bp h1, body.bp h2, body.bp h3, body.bp h4, body.bp h5, body.bp h6 {font-family: "Helvetica Neue", Arial, Helvetica, sans-serif}
- body.bp code {font-size: 0.9em; font-family: "andale mono", "lucida console", monospace}
- body.bp a img {border: none}
- body.bp a:link, body.bp a:visited {background: transparent; font-weight: 700; text-decoration: underline}
- body.bp p img.top {margin-top: 0}
- body.bp blockquote {margin: 1.5em; padding: 1em; font-style: italic; font-size: 0.9em}
- body.bp .small {font-size: 0.9em}
- body.bp .large {font-size: 1.1em}
- body.bp .quiet {color: #999999}
- body.bp .hide {display: none}
  html, body {margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline}
  html {font-size: 100.01%}
  div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline}
@@ -455,14 +456,21 @@ button.ui-button-icons-only {width: 3.7em}
  a img {border: none}
  ul {list-style: none}
  .last {margin-right: 0px !important}
- body {background: url("../images/background.png"); margin: 10px 0 0 0; color: white; font-family: Lucida Grande; font-size: 12.66px}
+ body {background: url("../images/background.png"); margin: 0 0 0 0; color: white; font-family: Lucida Grande; font-size: 12.66px}
  body a {color: white; font-family: Lucida Grande; font-size: 12.66px; text-decoration: none}
  body a:hover {color: #65cde2; font-family: Lucida Grande; font-size: 12.66px}
  .clearBoth {clear: both}
  .emptyField {border: solid 3px #FF0000 !important}
+ .floatLeft {float: left}
+ .error {color: #ff0000 !important; width: 120px !important}
+ .no-border {border: 0 !important}
+ .margin-top-10 {margin-top: 10px !important}
+ .left-border-dotted {border-left: 1px dotted #000000}
+ .bottom-border-dotted {border-bottom: 1px dotted #000000}
  #box-content {display: none}
  .button-blue {background-color: #4CD3EC; border: 3px solid #28CAE8; color: #FFFFFF; float: right; font-family: georgia; font-size: 17px; margin: 10px; padding: 3px 20px; width: 120px}
- h1 {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #DFF3F7; clear: both; color: #23B8D1; font-family: georgia; font-size: 24px; padding: 7px 10px; width: 260px}
+ h1 {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #DFF3F7; clear: both; color: #23B8D1; font-family: georgia; font-size: 24px; font-style: italic; font-weight: bold; padding: 7px 10px; width: 260px}
+ h4 {font-weight: bold; font-size: 14px}
  #header {background: url("../images/home_header.png") no-repeat; display: block; height: 131px; width: 927px; margin: 0 auto}
  #header #login-box {float: right; color: #23B8D1; font-size: 16px; margin: 80px 20px 0 0; padding: 15px 10px 10px}
  #header #login-box ul#login-links li {float: left; margin: 0 0 0 31px}
@@ -475,19 +483,26 @@ button.ui-button-icons-only {width: 3.7em}
  #header #login-box #menu-content li:hover {background: #797979}
  #header #label-beta {float: left; margin: 128px 0 0 -31px}
  #header #logo {float: left; margin: 16px 0 0 -39px}
- body.application #content {-moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; -ms-border-radius-bottomright: 10px; -khtml-border-radius-bottomright: 10px; -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; border-bottom-left-radius: 10px; -ms-border-radius-bottomleft: 10px; -khtml-border-radius-bottomleft: 10px; background: #FFFFFF; margin: 0 auto 0; padding: 100px 45px 10px; width: 820px}
+ body.application #content {-moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; -ms-border-radius-bottomright: 10px; -khtml-border-radius-bottomright: 10px; -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; border-bottom-left-radius: 10px; -ms-border-radius-bottomleft: 10px; -khtml-border-radius-bottomleft: 10px; background: #FFFFFF; color: #000000; font-family: Lucida Grande; margin: 0 auto 0; padding: 100px 45px 10px; width: 820px}
  body.application #content p {color: #959595; font-size: 14px; margin: 20px 5px}
  body.application #content a {color: #4CD3EC; text-decoration: none}
- body.application #content label {color: #3B3B3B; display: inline-block; font-size: 12px; width: 80px}
+ body.application #content label {color: #3B3B3B; display: inline-block; font-size: 12px; width: 120px}
  body.application #content h2 {color: #23B8D1; font-size: 16px; margin-top: 20px}
  body.application #content #col-left, body.application #content #col-right {float: left; margin: 0; width: 400px}
  body.application #content #col-left {margin: 0 10px 0 0}
  body.application #content #main {float: left; width: 545px}
- body.application #content #aside {float: left; width: 200px}
- body.application #content input[type=text], body.application #content input[type=password], body.application #content select {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; border: 3px solid #C2C2C2; color: #6B6B6B; font-size: 14px; padding: 5px; width: 250px}
- body.application #content input[type=submit] {background-color: #4CD3EC; border: 3px solid #28CAE8; color: #FFFFFF; float: right; font-family: georgia; font-size: 17px; margin: 10px 0 0; padding: 3px 20px; width: 100px}
- body.application #content .aside-container {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #3B3B3B; border: 3px solid #6B6B6B; float: left; margin: 65px 0 0 50px; padding: 12px; width: 195px}
- body.application #content .porcentage-info {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #EEEEEE; border: 4px solid #AAAAAA; color: #23B8D1; height: 20px; margin: 10px 0 0; padding: 5px; width: 180px}
+ body.application #content #aside {float: left; width: 275px}
+ body.application #content #aside .aside-container {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #3B3B3B; border: 3px solid #6B6B6B; float: left; margin: 65px 0 0 50px; padding: 12px; width: 195px}
+ body.application #content #aside .aside-container h2 {color: #23B8D1; font-size: 16px; margin: 0; text-align: center}
+ body.application #content #aside .aside-container p {text-align: center}
+ body.application #content #aside .aside-container input {width: 175px}
+ body.application #content #aside .aside-blue-container {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #69D9ED; border: 3px solid #AFECF7; float: left; margin: 0 0 0 50px; padding: 12px; width: 195px}
+ body.application #content #aside .aside-blue-container h2 {color: #187D8E; font-size: 14px}
+ body.application #content input[type=text], body.application #content input[type=password], body.application #content select, body.application #content textarea {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; border: 3px solid #C2C2C2; color: #6B6B6B; font-size: 14px; padding: 5px; width: 250px}
+ body.application #content input[type=submit] {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #4CD3EC; border: 3px solid #28CAE8; color: #FFFFFF; float: right; font-family: georgia; font-size: 17px; margin: 10px 0 0; padding: 3px 20px; width: 100px}
+ body.application #content a.submit {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #4CD3EC; border: 3px solid #28CAE8; color: #FFFFFF; float: right; font-family: georgia; font-size: 17px; margin: 10px 0 0 10px; padding: 5px 10px; text-align: center; width: 100px}
+ body.application #content .disable {background-color: #CCCCCC !important; border: 3px solid #999999 !important; color: #000000 !important}
+ body.application #content .porcentage-info {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #EEEEEE; border: 4px solid #AAAAAA; color: #23B8D1; font-size: 16px; height: 20px; margin: 10px 0 0; padding: 5px; text-align: center; width: 180px}
  body.application #content .porcentage-info .advance {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background: url("../images/stripes_grey.png") repeat-x; margin: 0; overflow: hidden; width: 100%}
  body.application #content .porcentage-info .advance .stripes {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background: url("../images/stripes.png") repeat-x; display: block; height: 20px; max-width: 100%}
  body.application #footer {background-color: #3B3B3B; font-size: 12px; height: 85px; margin: 10px auto 0; overflow: hidden; padding-top: 12px; text-shadow: 1px 1px 1px #8F8F8F}
@@ -555,3 +570,61 @@ button.ui-button-icons-only {width: 3.7em}
  .gift .gift-info ul {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #DFF3F7; line-height: 18px; list-style-type: none; margin: 10px 0; overflow: hidden}
  .gift .gift-info ul li {float: left; font-size: 12px; padding: 0 5px}
  .gift .gift-info .porcentage_gift {color: #187D8E; font-size: 14px}
+ #gift-header {-moz-border-radius: 5px 5px 5px 5px; background-color: #DFF3F7; color: #23B8D1; padding: 7px 10px}
+ h2 {color: #23B8D1; font-size: 18px; font-weight: bold; margin: 10px 0 10px 0}
+ #gift-content {border-top: 1px dotted #000000; float: left; width: 100%}
+ #gift-detail {border: 1px dashed #CCCCCC; float: left; margin: 20px 0; padding: 20px}
+ #gift-detail img {float: left; margin-right: 10px; max-width: 85px}
+ #gift-detail #gift-description {float: left; width: 405px}
+ #gift-detail #gift-description h2 {color: #3B3B3B; float: left; font-size: 16px}
+ #gift-detail #gift-description h3 {color: #23B8D1; font-size: 16px; margin: 10px 0 10px 0}
+ #gift-detail #gift-description span#gift-price {color: #23B8D1; float: left; font-size: 16px; line-height: normal; text-decoration: none}
+ #gift-detail #gift-description span#shipping-cost {color: #23B8D1; float: left; font-size: 10px}
+ #gift-detail #gift-description ul {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #DFF3F7; clear: both; line-height: 18px; list-style-type: none; overflow: hidden}
+ #gift-detail #gift-description ul li {color: #6B6B6B; float: left; font-size: 12px; padding: 0 5px}
+ #gift-detail #gift-description ul li span {color: #23B8D1; text-decoration: none}
+ #occasion {float: left}
+ #occasion select {width: 150px !important}
+ #title {float: left; margin: 0 0 0 128px}
+ #description {float: left; margin: 10px 0 0 0}
+ #description textarea {height: 125px; width: 365px !important}
+ #dates {float: left; margin: 10px 0 0 26px}
+ #dates #begin label {width: 120px !important}
+ #dates #begin input {width: 120px}
+ #dates #end {margin: 60px 0 0}
+ #dates #end label {width: 120px !important}
+ #dates #end input {width: 120px}
+ #ends-on {border-top: 1px solid dotted #000000}
+ #facebook-connect h3 {border-bottom: 2px solid #333333; color: #333333; display: inline; float: left; font-size: 16px; margin: 15px 0 10px; padding-bottom: 5px; width: 500px}
+ #gift-header {float: left}
+ #gift-header img {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; border: 3px solid #23B8D1; float: left}
+ #gift-header h1 {float: left; margin: -50px 0 0 80px; width: 420px}
+ #donation-thanks {-moz-border-radius-topright: 10px; -webkit-border-top-right-radius: 10px; border-top-right-radius: 10px; -ms-border-radius-topright: 10px; -khtml-border-radius-topright: 10px; -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; border-top-left-radius: 10px; -ms-border-radius-topleft: 10px; -khtml-border-radius-topleft: 10px; -moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; -ms-border-radius-bottomright: 10px; -khtml-border-radius-bottomright: 10px; -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; border-bottom-left-radius: 10px; -ms-border-radius-bottomleft: 10px; -khtml-border-radius-bottomleft: 10px; background: url("../images/content_bg.png"); border: 3px solid #10BADB; color: #FFFFFF !important; font-family: Georgia; font-size: 23px !important; font-style: italic; font-weight: bold; margin: 25px auto 0; padding: 25px 0; text-align: center; width: 575px}
+ #donation-share, #your-gift {-moz-border-radius-topright: 10px; -webkit-border-top-right-radius: 10px; border-top-right-radius: 10px; -ms-border-radius-topright: 10px; -khtml-border-radius-topright: 10px; -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; border-top-left-radius: 10px; -ms-border-radius-topleft: 10px; -khtml-border-radius-topleft: 10px; -moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; border-bottom-right-radius: 10px; -ms-border-radius-bottomright: 10px; -khtml-border-radius-bottomright: 10px; -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; border-bottom-left-radius: 10px; -ms-border-radius-bottomleft: 10px; -khtml-border-radius-bottomleft: 10px; background: url("../images/transparent_bg.png"); color: #FFFFFF; float: left; font-family: Lucida; font-size: 14px; font-weight: normal; list-style: none outside none; margin: 0 330px 10px; padding: 10px; width: 410px}
+ #donation-share li, #your-gift li {float: left}
+ #donation-share li#share, #your-gift li#share {width: 270px}
+ #donation-share li#buttons, #your-gift li#buttons {width: 130px}
+ #show-donation {display: none}
+ #submit-gift {margin: 20px 0 0 50px}
+ .top {height: 250px}
+ .payment_methods input {float: left}
+ .payment_methods img {float: left}
+ #continue {border-top: 1px dotted #000000; margin: 10px 0 0 0; text-align: right}
+ #breakdown {font-size: 10px; text-align: right}
+ #donation_amount {width: 150px !important}
+ #right-donation {float: left; margin: 10px 0 0 0; padding: 0 0 0 10px; width: 43%}
+ #right-donation #credit-card input[type=text] {width: 130px}
+ #right-donation #credit-card select {width: 70px}
+ #right-donation #credit-card ul li {float: left; margin: 10px 0 0 10px}
+ #right-donation #paypal {display: none}
+ #right-donation .bottom {float: left; margin: 10px 0 0 0}
+ #left-donation {border-right: 1px dotted #000000; float: left; margin: 10px 0 0 0; padding: 0 10px 0 0; width: 54%}
+ #left-donation .top h1 {width: 300px !important}
+ #left-donation .top #gift-description {width: 300px !important}
+ #login-main {float: left; padding: 0 15px 0 0; width: 440px}
+ #login-aside {border-left: 1px dotted #000000; float: left; padding: 0 0 0 15px; width: 345px}
+ .explination-box {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #DDF7FB; float: left; margin: 10px 0; width: 90%}
+ .explination-box img, .explination-box p {float: left}
+ .explination-box p {font-size: 10px !important; width: 200px}
+ .explination-box p span {color: #23B8D1; font-family: georgia; font-size: 14px; font-style: italic; font-weight: bold}
+ .explination-box img {margin: 25px 10px 0 10px; max-width: 80px}

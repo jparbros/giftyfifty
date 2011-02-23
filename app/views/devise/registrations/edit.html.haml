@@ -1,5 +1,6 @@
 %h1
   Edit Settings
+
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put , :multipart => true}) do |f|
   = devise_error_messages!
   #personal-info
@@ -18,30 +19,36 @@
       %p
         %label
           *First Name
+        %br
         = f.text_field :first_name
 
       %p
         %label
           *Last Name
+        %br
         = f.text_field :last_name
 
       %p
         %label
-          *Birthday  
+          *Birthday
+        %br
         = f.text_field :birthday 
 
       %p#upload_username
         %label
           *Username
+        %br
         = f.text_field :username 
 
       %p
-        = f.label :gender 
+        = f.label :gender
+        %br
         = f.select :gender, options_for_select([[],['Male','male'],['Female','female']],current_user.gender) 
 
       %p
         %label
           *Email
+        %br
         = f.text_field :email 
 
     #col-right
@@ -55,6 +62,7 @@
         %p
           %label
             *Country
+          %br
           = f_address.select :country, options_for_select([[]].concat(Carmen.countries), current_user.address.country || 'US')
 
         %p#user_edit_states
@@ -63,28 +71,34 @@
         %p
           %label
             *City
+          %br
           = f_address.text_field :city 
 
         %p
           %label
             *Address 1
+          %br
           = f_address.text_field :address_1 
 
         %p
-          = f_address.label :address_2 
+          = f_address.label :address_2
+          %br
           = f_address.text_field :address_2 
 
         %p
           %label
             *Zip Code
+          %br
           = f_address.text_field :zip_code 
 
         %p
-          = f_address.label :phone 
+          = f_address.label :phone
+          %br
           = f_address.text_field :phone 
 
         %p
-          = f_address.label :mobile_phone 
+          = f_address.label :mobile_phone
+          %br
           = f_address.text_field :mobile_phone 
 
         %p

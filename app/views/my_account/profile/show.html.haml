@@ -30,16 +30,18 @@
 
 #aside
   .aside-container.share-on
-    %h3
+    %h2
       Invite Your Friends
-    = link_to(image_tag('invite-twitter.png'),'' , :id => 'twitter-share-link') 
-    = link_to(image_tag('invite-facebook.png'),'', :id => 'facebook-share-link') 
+    %p
+      = link_to(image_tag('invite-twitter.png'),'' , :id => 'twitter-share-link') 
+      = link_to(image_tag('invite-facebook.png'),'', :id => 'facebook-share-link') 
   
   - unless current_user.profile_copleted?
     .aside-container
-      %h3
+      %h2
         Complete Your Profile
-      To enjoy better service complete your profile = link_to 'here', edit_user_registration_path . 
+      %p
+        To enjoy better service complete your profile = link_to 'here', edit_user_registration_path . 
       
 .clearBoth
 
