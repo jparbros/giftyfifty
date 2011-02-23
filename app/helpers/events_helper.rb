@@ -7,8 +7,16 @@ module EventsHelper
     end
   end
   
+  def twitter_account?
+    current_user.twitter_account
+  end
+  
+  def facebook_account?
+    current_user.facebook_account
+  end
+  
   def twitter_link
-    if current_user.twitter_account
+    if twitter_account?
       link_to(image_tag('share-twitter.png'), '', :id => 'twitter-share-link')
     else
       link_to(image_tag('connect_twitter.png'), new_my_account_twitter_path)
@@ -16,7 +24,7 @@ module EventsHelper
   end
   
   def facebook_link
-    if current_user.facebook_account
+    if facebook_account?
       link_to(image_tag('share-facebook.png'), '', :id => 'facebook-share-link')
     else
       link_to(image_tag('connect_facebook.png'), new_my_account_facebook_path)

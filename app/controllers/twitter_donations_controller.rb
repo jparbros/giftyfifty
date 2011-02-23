@@ -1,4 +1,4 @@
-class TwitterDonationController < ApplicationController
+class TwitterDonationsController < ApplicationController
   def create
     event = Event.find(params[:event_id])
     message = current_user.share_donation_message(event)

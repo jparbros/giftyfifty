@@ -108,7 +108,7 @@
 
 #fb-root
 
-= render :partial => 'donation' if params[:donation] == 'true'
+= render :partial => 'donation' if params[:donation] == 'true' and current_user
 
 - content_for :scripts do 
   <script type="text/javascript">
