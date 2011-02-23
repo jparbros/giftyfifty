@@ -34,9 +34,13 @@ class User < ActiveRecord::Base
   scope :by_twitter_uid, lambda {|uid| joins(:twitter_account).where('oauth_accounts.uid' => uid) }
   
   #
+  # Constants
+  #
+  DONATION_SHARE = "I just being part of /friend/'s gift and now  is /porcentage_donation/% closer to get his gift"
+  
+  #
   # Callbacks
   #
-  
   after_create :create_address
   after_initialize :load_values
   
@@ -190,6 +194,18 @@ class User < ActiveRecord::Base
       end
     end
     return @twitter_friends
+  end
+  
+  def twitter_share(message = 'Visit GiftyFifty.com')
+    twitter_client.update(message)
+  end
+  
+  def facebook_share(message = 'Visit GiftyFifty.com')
+    facebook_client.selection.me.feed.publish!(:message => message)
+  end
+  
+  def share_donation_message(event)
+    DONATION_SHARE.gsub('/friend/',event.user.name).gsub('/porcentage_donation/',event.porcentage_donation.to_s)
   end
   
   private
