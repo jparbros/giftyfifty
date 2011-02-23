@@ -721,9 +721,10 @@ body.home #content #main-content .search-submit {
 }
 /* line 40, ../../app/stylesheets/partials/_home.scss */
 body.home #content #main-content #lens {
+  float: left;
   margin: -10px 0 0 -22px;
 }
-/* line 44, ../../app/stylesheets/partials/_home.scss */
+/* line 45, ../../app/stylesheets/partials/_home.scss */
 body.home #content #main-content span#copy {
   float: left;
   line-height: 21px;
@@ -735,7 +736,7 @@ body.home #content #main-content span#copy {
   font-size: 21.5px;
   font-style: italic;
 }
-/* line 53, ../../app/stylesheets/partials/_home.scss */
+/* line 54, ../../app/stylesheets/partials/_home.scss */
 body.home #content #main-content span#paste {
   float: left;
   margin: -215px 0 0 659px;
@@ -744,7 +745,7 @@ body.home #content #main-content span#paste {
   font-size: 21.5px;
   font-style: italic;
 }
-/* line 61, ../../app/stylesheets/partials/_home.scss */
+/* line 62, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#second-content {
   margin: 12px 0 17px 0;
   background-color: #3B3B3B;
@@ -773,32 +774,32 @@ body.home #content ul#second-content {
   -ms-border-radius-bottomleft: 10px;
   -khtml-border-radius-bottomleft: 10px;
 }
-/* line 69, ../../app/stylesheets/partials/_home.scss */
+/* line 70, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#second-content li {
   background: url("../images/label.png") no-repeat;
   float: left;
   margin: 27px 37px 0 28px;
   width: 240px;
 }
-/* line 75, ../../app/stylesheets/partials/_home.scss */
+/* line 76, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#second-content li h3 {
   color: #00cbeb;
   font: italic 23.5px Georgia;
   margin: 0 0 0 19px;
 }
-/* line 81, ../../app/stylesheets/partials/_home.scss */
+/* line 82, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#second-content li p {
   margin: 0 0 0 19px;
 }
-/* line 85, ../../app/stylesheets/partials/_home.scss */
+/* line 86, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#second-content li img {
   margin: 5px 0 0 30px;
 }
-/* line 90, ../../app/stylesheets/partials/_home.scss */
+/* line 91, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#second-content li.last-label {
   margin: 27px 0 0 21px;
 }
-/* line 95, ../../app/stylesheets/partials/_home.scss */
+/* line 96, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#third-content {
   -moz-border-radius-topright: 10px;
   -webkit-border-top-right-radius: 10px;
@@ -827,90 +828,90 @@ body.home #content ul#third-content {
   width: 904px;
   padding: 24px 0 0 0;
 }
-/* line 104, ../../app/stylesheets/partials/_home.scss */
+/* line 105, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#third-content li {
   float: left;
   margin: 0 22px 0 51px;
   width: 240px;
 }
-/* line 109, ../../app/stylesheets/partials/_home.scss */
+/* line 110, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#third-content li p {
   font-size: 12px;
   font-weight: bold;
   line-height: 16px;
   width: 200px;
 }
-/* line 117, ../../app/stylesheets/partials/_home.scss */
+/* line 118, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#third-content li.last {
   margin: 0 0px 0 37px;
 }
-/* line 120, ../../app/stylesheets/partials/_home.scss */
+/* line 121, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#third-content li.last p {
   width: 198px;
 }
-/* line 125, ../../app/stylesheets/partials/_home.scss */
+/* line 126, ../../app/stylesheets/partials/_home.scss */
 body.home #content ul#third-content h3 {
   color: #3b3b3b;
   font: italic 25.3px Georgia;
   margin: 0 0 7px 0;
 }
-/* line 133, ../../app/stylesheets/partials/_home.scss */
+/* line 134, ../../app/stylesheets/partials/_home.scss */
 body.home #footer {
   font-size: 12px;
   margin: 20px auto 0;
   width: 911px;
 }
-/* line 138, ../../app/stylesheets/partials/_home.scss */
+/* line 139, ../../app/stylesheets/partials/_home.scss */
 body.home #footer a {
   font-size: 12px;
 }
-/* line 142, ../../app/stylesheets/partials/_home.scss */
+/* line 143, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li {
   float: left;
 }
-/* line 146, ../../app/stylesheets/partials/_home.scss */
+/* line 147, ../../app/stylesheets/partials/_home.scss */
 body.home #footer ul#footer-legal {
   float: left;
   margin-left: 140px;
 }
-/* line 151, ../../app/stylesheets/partials/_home.scss */
+/* line 152, ../../app/stylesheets/partials/_home.scss */
 body.home #footer ul#footer-friends {
   float: left;
   margin-left: 160px;
 }
-/* line 156, ../../app/stylesheets/partials/_home.scss */
+/* line 157, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#about {
   margin-right: 16px;
 }
-/* line 159, ../../app/stylesheets/partials/_home.scss */
+/* line 160, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#blog {
   margin-right: 22px;
 }
-/* line 162, ../../app/stylesheets/partials/_home.scss */
+/* line 163, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#team {
   margin-right: 22px;
 }
-/* line 165, ../../app/stylesheets/partials/_home.scss */
+/* line 166, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#copys {
   margin-right: 18px;
 }
-/* line 168, ../../app/stylesheets/partials/_home.scss */
+/* line 169, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#terms {
   margin-right: 23px;
 }
-/* line 171, ../../app/stylesheets/partials/_home.scss */
+/* line 172, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#privacy {
   margin-right: 15px;
 }
-/* line 174, ../../app/stylesheets/partials/_home.scss */
+/* line 175, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#friend_us {
   margin-right: 11px;
 }
-/* line 177, ../../app/stylesheets/partials/_home.scss */
+/* line 178, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#facebook_link {
   margin: -9px 0 0 0;
 }
-/* line 180, ../../app/stylesheets/partials/_home.scss */
+/* line 181, ../../app/stylesheets/partials/_home.scss */
 body.home #footer li#twitter_link {
   margin: -10px 0 0 0;
 }
@@ -1126,37 +1127,37 @@ h2 {
   width: 100%;
 }
 
-/* line 20, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 21, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail {
   border: 1px dashed #CCCCCC;
   float: left;
   margin: 20px 0;
   padding: 20px;
 }
-/* line 26, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 27, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail img {
   float: left;
   margin-right: 10px;
   max-width: 85px;
 }
-/* line 32, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 33, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description {
   float: left;
   width: 405px;
 }
-/* line 36, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 37, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description h2 {
   color: #3B3B3B;
   float: left;
   font-size: 16px;
 }
-/* line 42, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 43, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description h3 {
   color: #23B8D1;
   font-size: 16px;
   margin: 10px 0 10px 0;
 }
-/* line 48, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 49, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description span#gift-price {
   color: #23B8D1;
   float: left;
@@ -1164,13 +1165,13 @@ h2 {
   line-height: normal;
   text-decoration: none;
 }
-/* line 56, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 57, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description span#shipping-cost {
   color: #23B8D1;
   float: left;
   font-size: 10px;
 }
-/* line 62, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 63, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description ul {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -1198,77 +1199,77 @@ h2 {
   list-style-type: none;
   overflow: hidden;
 }
-/* line 70, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 71, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description ul li {
   color: #6B6B6B;
   float: left;
   font-size: 12px;
   padding: 0 5px;
 }
-/* line 76, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 77, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-detail #gift-description ul li span {
   color: #23B8D1;
   text-decoration: none;
 }
 
-/* line 85, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 86, ../../app/stylesheets/partials/_edit_gift.scss */
 #occasion {
   float: left;
 }
-/* line 88, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 89, ../../app/stylesheets/partials/_edit_gift.scss */
 #occasion select {
   width: 150px !important;
 }
 
-/* line 93, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 94, ../../app/stylesheets/partials/_edit_gift.scss */
 #title {
   float: left;
   margin: 0 0 0 128px;
 }
 
-/* line 98, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 99, ../../app/stylesheets/partials/_edit_gift.scss */
 #description {
   float: left;
   margin: 10px 0 0 0;
 }
-/* line 102, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 103, ../../app/stylesheets/partials/_edit_gift.scss */
 #description textarea {
   height: 125px;
   width: 365px !important;
 }
 
-/* line 108, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 109, ../../app/stylesheets/partials/_edit_gift.scss */
 #dates {
   float: left;
   margin: 10px 0 0 26px;
 }
-/* line 113, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 114, ../../app/stylesheets/partials/_edit_gift.scss */
 #dates #begin label {
   width: 120px !important;
 }
-/* line 116, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 117, ../../app/stylesheets/partials/_edit_gift.scss */
 #dates #begin input {
   width: 120px;
 }
-/* line 121, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 122, ../../app/stylesheets/partials/_edit_gift.scss */
 #dates #end {
   margin: 60px 0 0;
 }
-/* line 123, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 124, ../../app/stylesheets/partials/_edit_gift.scss */
 #dates #end label {
   width: 120px !important;
 }
-/* line 126, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 127, ../../app/stylesheets/partials/_edit_gift.scss */
 #dates #end input {
   width: 120px;
 }
 
-/* line 132, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 133, ../../app/stylesheets/partials/_edit_gift.scss */
 #ends-on {
   border-top: 1px solid dotted #000000;
 }
 
-/* line 137, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 138, ../../app/stylesheets/partials/_edit_gift.scss */
 #facebook-connect h3 {
   border-bottom: 2px solid #333333;
   color: #333333;
@@ -1280,11 +1281,11 @@ h2 {
   width: 500px;
 }
 
-/* line 149, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 150, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-header {
   float: left;
 }
-/* line 152, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 153, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-header img {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -1309,14 +1310,14 @@ h2 {
   border: 3px solid #23B8D1;
   float: left;
 }
-/* line 157, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 158, ../../app/stylesheets/partials/_edit_gift.scss */
 #gift-header h1 {
   float: left;
   margin: -50px 0 0 80px;
   width: 420px;
 }
 
-/* line 164, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 165, ../../app/stylesheets/partials/_edit_gift.scss */
 #donation-thanks {
   -moz-border-radius-topright: 10px;
   -webkit-border-top-right-radius: 10px;
@@ -1351,7 +1352,7 @@ h2 {
   width: 575px;
 }
 
-/* line 179, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 180, ../../app/stylesheets/partials/_edit_gift.scss */
 #donation-share, #your-gift {
   -moz-border-radius-topright: 10px;
   -webkit-border-top-right-radius: 10px;
@@ -1384,25 +1385,25 @@ h2 {
   padding: 10px;
   width: 410px;
 }
-/* line 192, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 193, ../../app/stylesheets/partials/_edit_gift.scss */
 #donation-share li, #your-gift li {
   float: left;
 }
-/* line 196, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 197, ../../app/stylesheets/partials/_edit_gift.scss */
 #donation-share li#share, #your-gift li#share {
   width: 270px;
 }
-/* line 200, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 201, ../../app/stylesheets/partials/_edit_gift.scss */
 #donation-share li#buttons, #your-gift li#buttons {
   width: 130px;
 }
 
-/* line 205, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 206, ../../app/stylesheets/partials/_edit_gift.scss */
 #show-donation {
   display: none;
 }
 
-/* line 209, ../../app/stylesheets/partials/_edit_gift.scss */
+/* line 210, ../../app/stylesheets/partials/_edit_gift.scss */
 #submit-gift {
   margin: 20px 0 0 50px;
 }
