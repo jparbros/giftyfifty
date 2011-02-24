@@ -4,6 +4,7 @@ class DonationsController < ApplicationController
   def new
     @donation = Donation.new
     @event = Event.find(params[:event_id])
+    redirect_to event_path(@event) unless @event.active?
   end
   
   def create
