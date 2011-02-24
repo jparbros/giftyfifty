@@ -72,6 +72,7 @@ $.extend({
         'content': $('#box-content').html(),
     });
     $.validateSignup();
+    $.validateLogin();
   },
   
   loginSigninBox: function() {
@@ -158,6 +159,16 @@ $.extend({
     $('div#fancybox-content div#sign-in #user_submit').click(function(){
       $('div#fancybox-content div#sign-in input, div#fancybox-content div#sign-in input:password').removeClass('emptyField');
       inputs = $('div#fancybox-content div#sign-in input:text[value=""], div#fancybox-content div#sign-in input:password[value=""]');
+      inputs.addClass('emptyField');
+      if(inputs.size() > 0) {
+        return false;
+      }
+    });
+  },
+  validateLogin: function() {
+    $('div#fancybox-content div#login #user_submit').click(function(){
+      $('div#fancybox-content div#login input, div#fancybox-content div#login input:password').removeClass('emptyField');
+      inputs = $('div#fancybox-content div#login input:text[value=""], div#fancybox-content div#login input:password[value=""]');
       inputs.addClass('emptyField');
       if(inputs.size() > 0) {
         return false;
@@ -493,5 +504,6 @@ $(document).ready(function(){
   $.loginSigninBox();
   $.giftInputChangeText();
   $.menuFunctionality();
+  
   $.loadingAjax();
 });

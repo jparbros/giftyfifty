@@ -7,6 +7,10 @@ class Item < ActiveRecord::Base
     self.image_url ? self.image_url : self.image_uploaded.url
   end
   
+  def total
+    (price || 0 + shipping_cost || 0)
+  end
+  
   def formated_price
     (((self.price || 0) + (self.shipping_cost || 0))/100.00)
   end

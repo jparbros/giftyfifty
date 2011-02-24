@@ -16,6 +16,7 @@ class Donation < ActiveRecord::Base
   #
   after_initialize :amaunt_to_cents 
   before_create :calculate_fees
+  after_create :check_donation_amount
   
   #
   # Constants
@@ -72,6 +73,10 @@ class Donation < ActiveRecord::Base
   
   def amaunt_to_cents
     self.donation = (self.amount.to_i * 100)
+  end
+  
+  def check_donation_amount
+    event.donations_completed? 
   end
   
 end

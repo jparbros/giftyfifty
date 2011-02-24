@@ -114,6 +114,18 @@ class Event < ActiveRecord::Base
   def active
     ((self.start_at || Time.now.to_date) < Time.now.to_date) and ((self.end_at || Time.now.to_date) > Time.now.to_date)
   end
+  
+  def donations_completed?
+    completed! if total_donations >= item.total
+  end
+  
+  def total
+    (price + shipping_cost)
+  end
+  
+  def formated_price
+    (total/100)
+  end
 
   #
   # Private Methods
