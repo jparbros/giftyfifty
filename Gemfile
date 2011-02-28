@@ -1,38 +1,25 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
-gem 'mysql'
-
-gem 'jquery-rails'
-
-# Heroku gem
-gem 'heroku'
-gem 'hoptoad_notifier'
-
+gem 'activemerchant'
+gem 'carmen'
+gem "carrierwave", "~>0.5.0"
+gem 'compass'
 gem 'devise'
-
+gem 'ebayapi'
+gem 'fbgraph'
+gem 'hpricot'
+gem 'haml'
+gem 'hoptoad_notifier'
+gem 'jquery-rails'
+gem 'mysql'
+gem 'mini_magick'
 gem "oauth"
 gem 'oauth2'
 gem "omniauth"
-gem 'haml'
-gem 'compass'
+gem 'rails', '3.0.1'
 gem 'state_machine'
-
-gem 'hpricot'
-gem 'fbgraph'
-
-gem 'activemerchant'
-
 gem 'twitter_oauth'
-
-gem "carrierwave", "~>0.5.0"
-gem "mini_magick"
-
-gem 'ebayapi'
 gem 'xml-mapping','0.8.1'
-gem 'carmen'
-
-gem 'mini_magick'
 
 group :production do
   gem 'unicorn'
@@ -42,13 +29,15 @@ group :production do
 end
 
 group :test do
-  gem 'cucumber-rails'
   gem 'capybara'
-  gem 'pickle'
+  gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'shoulda'
+  gem 'faker'
+  gem 'pickle'
   gem 'mocha'
+  gem 'machinist'
   gem 'rcov'
+  gem 'shoulda'
 end
 
 group :development do

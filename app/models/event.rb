@@ -25,6 +25,7 @@ class Event < ActiveRecord::Base
   #
   scope :active, where(:state => :active)
   scope :new_events, where(:state => :new)
+  scope :recent_completed, where('end_at < ?', Time.now)
 
   #
   # Callbacks
