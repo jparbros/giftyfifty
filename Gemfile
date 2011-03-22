@@ -5,7 +5,7 @@ gem 'carmen'
 gem "carrierwave", "~>0.5.0"
 gem 'compass'
 gem 'devise'
-gem 'ebayapi'
+#gem 'ebayapi'
 gem 'fbgraph'
 gem 'hpricot'
 gem 'haml'
@@ -22,7 +22,7 @@ gem 'twitter_oauth'
 gem 'xml-mapping','0.8.1'
 
 group :production do
-  gem 'unicorn'
+  gem 'thin'
   gem 'capistrano'
   gem 'memcache'
   gem 'memcache-client'
