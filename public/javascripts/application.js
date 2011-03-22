@@ -170,7 +170,7 @@ $.extend({
     }
   },
   validateSignup: function() {
-    $('div#fancybox-content div#sign-in #user_submit').click(function(){
+    $('div#fancybox-content div#sign-in #user_submit').live('click', function(){
       $('div#fancybox-content div#sign-in input, div#fancybox-content div#sign-in input:password').removeClass('emptyField');
       inputs = $('div#fancybox-content div#sign-in input:text[value=""], div#fancybox-content div#sign-in input:password[value=""]');
       inputs.addClass('emptyField');
@@ -180,7 +180,7 @@ $.extend({
     });
   },
   validateLogin: function() {
-    $('div#fancybox-content div#login #user_submit').click(function(){
+    $('div#fancybox-content div#login #user_submit').live('click', function(){
       $('div#fancybox-content div#login input, div#fancybox-content div#login input:password').removeClass('emptyField');
       inputs = $('div#fancybox-content div#login input:text[value=""], div#fancybox-content div#login input:password[value=""]');
       inputs.addClass('emptyField');
