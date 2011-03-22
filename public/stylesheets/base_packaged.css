@@ -467,7 +467,6 @@ button.ui-button-icons-only {width: 3.7em}
  .margin-top-10 {margin-top: 10px !important}
  .left-border-dotted {border-left: 1px dotted #000000}
  .bottom-border-dotted {border-bottom: 1px dotted #000000}
- #box-content {display: none}
  .button-blue {background-color: #4CD3EC; border: 3px solid #28CAE8; color: #FFFFFF; float: right; font-family: georgia; font-size: 17px; margin: 10px; padding: 3px 20px; width: 120px}
  h1 {-moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; border-top-right-radius: 5px; -ms-border-radius-topright: 5px; -khtml-border-radius-topright: 5px; -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; border-top-left-radius: 5px; -ms-border-radius-topleft: 5px; -khtml-border-radius-topleft: 5px; -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; -ms-border-radius-bottomright: 5px; -khtml-border-radius-bottomright: 5px; -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px; -ms-border-radius-bottomleft: 5px; -khtml-border-radius-bottomleft: 5px; background-color: #DFF3F7; clear: both; color: #23B8D1; font-family: georgia; font-size: 24px; font-style: italic; font-weight: bold; padding: 7px 10px; width: 260px}
  h4 {font-weight: bold; font-size: 14px}

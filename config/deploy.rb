@@ -15,13 +15,22 @@ set :branch, "master"
 
 namespace :deploy do
   task :start do
-    invoke_command "cd #{deploy_to} && thin start -C config/thin.yml"
+    find_and_execute_task("thin:start")
   end
   task :stop do 
-    invoke_command "cd #{deploy_to} && thin stop -C config/thin.yml"
+    find_and_execute_task("thin:stop")
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    invoke_command "cd #{deploy_to} && thin restart -C config/thin.yml"
+    find_and_execute_task("thin:restart")
+  end
+end
+
+namespace :thin do  
+  %w(start stop restart).each do |action| 
+  desc "#{action} the app's Thin Cluster"  
+    task action.to_sym, :roles => :app do  
+      run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -C #{deploy_to}/config/thin.yml" 
+    end
   end
 end
 

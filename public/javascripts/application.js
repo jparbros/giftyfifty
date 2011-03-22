@@ -69,17 +69,31 @@ $.extend({
         'height' : '350',
         'autoScale' : false,
         'autoDimensions' : false,
-        'content': $('#box-content').html(),
+        'href' : '/main_box'
     });
-    $.validateSignup();
-    $.validateLogin();
   },
   
   loginSigninBox: function() {
-    $('a#sigin-link, a#login-link').click(function(){
-      $.loginFancybox();
-      return false;
+    $('a#sigin-link').fancybox({
+        'titlePosition' : 'inside',
+        'transitionIn' : 'none',
+        'transitionOut' : 'none',
+        'width' : '700',
+        'height' : '350',
+        'autoScale' : false,
+        'autoDimensions' : false,
     });
+    $('a#login-link').fancybox({
+        'titlePosition' : 'inside',
+        'transitionIn' : 'none',
+        'transitionOut' : 'none',
+        'width' : '700',
+        'height' : '350',
+        'autoScale' : false,
+        'autoDimensions' : false,
+    });
+    $.validateSignup();
+    $.validateLogin();
   },
   
   loadFacebook: function() {

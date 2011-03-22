@@ -1,0 +1,17 @@
+#box-content
+  #login-signin-box 
+    = render :partial => 'shared/box', :locals => {:type => 'login'} unless user_signed_in?
+    = render :partial => 'shared/box', :locals => {:type => 'sign-in'} unless user_signed_in?
+    #providers.login
+      %h1
+        Social Log In
+      %span.sign-in-text
+        It's faster use your social accounts.
+      %p#provider-facebook
+        = link_to(image_tag('facebook_64.png') + content_tag('span','Login with') + tag('br') + 'facebook','/auth/facebook')
+      %p#provider-twitter
+        = link_to(image_tag('twitter_64.png') + content_tag('span','Login with') + tag('br') + 'facebook','/auth/twitter')
+      %span.sign-in-text
+        Privacy: We don’t share any of your Gifty
+      %span.sign-in-text
+        Fifty data with Facebook or Twitter.

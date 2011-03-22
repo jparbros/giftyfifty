@@ -17,4 +17,16 @@ class MainController < ApplicationController
   def email
     render :text => "Test", :layout => 'email'
   end
+  
+  def login_box
+    render :layout => false
+  end
+  
+  def sign_box
+    render :layout => false
+  end
+  
+  def main_box
+    render :layout => false
+  end
 end

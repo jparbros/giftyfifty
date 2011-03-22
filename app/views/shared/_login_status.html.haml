@@ -16,6 +16,6 @@
   - else
     %ul#login-links
       %li
-        = link_to(t(:sign_up),'#login-signin-box',{:id => 'login-link'})
+        = link_to(t(:sign_up),sign_box_path,{:id => 'login-link'})
       %li
-        = link_to(t(:login),'#login-signin-box',{:id => 'sigin-link'})
+        = link_to(t(:login), login_box_path,{:id => 'sigin-link'})

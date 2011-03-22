@@ -157,11 +157,6 @@ body a:hover {
 }
 
 /* line 68, ../../app/stylesheets/partials/_base.scss */
-#box-content {
-  display: none;
-}
-
-/* line 72, ../../app/stylesheets/partials/_base.scss */
 .button-blue {
   background-color: #4CD3EC;
   border: 3px solid #28CAE8;
@@ -174,7 +169,7 @@ body a:hover {
   width: 120px;
 }
 
-/* line 84, ../../app/stylesheets/partials/_base.scss */
+/* line 80, ../../app/stylesheets/partials/_base.scss */
 h1 {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -207,13 +202,13 @@ h1 {
   width: 260px;
 }
 
-/* line 97, ../../app/stylesheets/partials/_base.scss */
+/* line 93, ../../app/stylesheets/partials/_base.scss */
 h4 {
   font-weight: bold;
   font-size: 14px;
 }
 
-/* line 102, ../../app/stylesheets/partials/_base.scss */
+/* line 98, ../../app/stylesheets/partials/_base.scss */
 #header {
   background: url("../images/home_header.png") no-repeat;
   display: block;
@@ -221,7 +216,7 @@ h4 {
   width: 927px;
   margin: 0 auto;
 }
-/* line 109, ../../app/stylesheets/partials/_base.scss */
+/* line 105, ../../app/stylesheets/partials/_base.scss */
 #header #login-box {
   float: right;
   color: #23B8D1;
@@ -229,25 +224,25 @@ h4 {
   margin: 80px 20px 0 0;
   padding: 15px 10px 10px;
 }
-/* line 117, ../../app/stylesheets/partials/_base.scss */
+/* line 113, ../../app/stylesheets/partials/_base.scss */
 #header #login-box ul#login-links li {
   float: left;
   margin: 0  0 0 31px;
 }
-/* line 123, ../../app/stylesheets/partials/_base.scss */
+/* line 119, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #user-menu {
   background: url(../images/arrow-dropdown.png) no-repeat right;
   padding: 0 20px 0 0;
   cursor: pointer;
 }
-/* line 128, ../../app/stylesheets/partials/_base.scss */
+/* line 124, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #user-menu img {
   border: 3px solid #23B8D1;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   margin: -10px 0;
 }
-/* line 136, ../../app/stylesheets/partials/_base.scss */
+/* line 132, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content {
   background: #292929;
   position: absolute;
@@ -255,14 +250,14 @@ h4 {
   z-index: 1000;
   margin: 10px 0 0 -10px;
 }
-/* line 143, ../../app/stylesheets/partials/_base.scss */
+/* line 139, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li {
   background: #5e5e5e;
   margin: 0 0 0 10px;
   float: left;
   list-style: none;
 }
-/* line 149, ../../app/stylesheets/partials/_base.scss */
+/* line 145, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li a {
   color: #23B8D1;
   font-size: 14px;
@@ -271,26 +266,26 @@ h4 {
   width: 100%;
   padding: 0;
 }
-/* line 159, ../../app/stylesheets/partials/_base.scss */
+/* line 155, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li#last {
   margin-bottom: 10px;
 }
-/* line 163, ../../app/stylesheets/partials/_base.scss */
+/* line 159, ../../app/stylesheets/partials/_base.scss */
 #header #login-box #menu-content li:hover {
   background: #797979;
 }
-/* line 170, ../../app/stylesheets/partials/_base.scss */
+/* line 166, ../../app/stylesheets/partials/_base.scss */
 #header #label-beta {
   float: left;
   margin: 128px 0 0 -31px;
 }
-/* line 175, ../../app/stylesheets/partials/_base.scss */
+/* line 171, ../../app/stylesheets/partials/_base.scss */
 #header #logo {
   float: left;
   margin: 16px 0 0 -39px;
 }
 
-/* line 183, ../../app/stylesheets/partials/_base.scss */
+/* line 179, ../../app/stylesheets/partials/_base.scss */
 body.application #content {
   -moz-border-radius-bottomright: 10px;
   -webkit-border-bottom-right-radius: 10px;
@@ -309,51 +304,51 @@ body.application #content {
   padding: 100px 45px 10px;
   width: 820px;
 }
-/* line 192, ../../app/stylesheets/partials/_base.scss */
+/* line 188, ../../app/stylesheets/partials/_base.scss */
 body.application #content p {
   color: #959595;
   font-size: 14px;
   margin: 20px 5px;
 }
-/* line 198, ../../app/stylesheets/partials/_base.scss */
+/* line 194, ../../app/stylesheets/partials/_base.scss */
 body.application #content a {
   color: #4CD3EC;
   text-decoration: none;
 }
-/* line 202, ../../app/stylesheets/partials/_base.scss */
+/* line 198, ../../app/stylesheets/partials/_base.scss */
 body.application #content label {
   color: #3B3B3B;
   display: inline-block;
   font-size: 12px;
   width: 120px;
 }
-/* line 209, ../../app/stylesheets/partials/_base.scss */
+/* line 205, ../../app/stylesheets/partials/_base.scss */
 body.application #content h2 {
   color: #23B8D1;
   font-size: 16px;
   margin-top: 20px;
 }
-/* line 215, ../../app/stylesheets/partials/_base.scss */
+/* line 211, ../../app/stylesheets/partials/_base.scss */
 body.application #content #col-left, body.application #content #col-right {
   float: left;
   margin: 0;
   width: 400px;
 }
-/* line 221, ../../app/stylesheets/partials/_base.scss */
+/* line 217, ../../app/stylesheets/partials/_base.scss */
 body.application #content #col-left {
   margin: 0 10px 0 0;
 }
-/* line 225, ../../app/stylesheets/partials/_base.scss */
+/* line 221, ../../app/stylesheets/partials/_base.scss */
 body.application #content #main {
   float: left;
   width: 545px;
 }
-/* line 230, ../../app/stylesheets/partials/_base.scss */
+/* line 226, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside {
   float: left;
   width: 275px;
 }
-/* line 234, ../../app/stylesheets/partials/_base.scss */
+/* line 230, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside .aside-container {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -382,22 +377,22 @@ body.application #content #aside .aside-container {
   padding: 12px;
   width: 195px;
 }
-/* line 243, ../../app/stylesheets/partials/_base.scss */
+/* line 239, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside .aside-container h2 {
   color: #23B8D1;
   font-size: 16px;
   margin: 0;
   text-align: center;
 }
-/* line 250, ../../app/stylesheets/partials/_base.scss */
+/* line 246, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside .aside-container p {
   text-align: center;
 }
-/* line 253, ../../app/stylesheets/partials/_base.scss */
+/* line 249, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside .aside-container input {
   width: 175px;
 }
-/* line 259, ../../app/stylesheets/partials/_base.scss */
+/* line 255, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside .aside-blue-container {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -426,12 +421,12 @@ body.application #content #aside .aside-blue-container {
   padding: 12px;
   width: 195px;
 }
-/* line 268, ../../app/stylesheets/partials/_base.scss */
+/* line 264, ../../app/stylesheets/partials/_base.scss */
 body.application #content #aside .aside-blue-container h2 {
   color: #187D8E;
   font-size: 14px;
 }
-/* line 275, ../../app/stylesheets/partials/_base.scss */
+/* line 271, ../../app/stylesheets/partials/_base.scss */
 body.application #content input[type=text], body.application #content input[type=password], body.application #content select, body.application #content textarea {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -459,7 +454,7 @@ body.application #content input[type=text], body.application #content input[type
   padding: 5px;
   width: 250px;
 }
-/* line 284, ../../app/stylesheets/partials/_base.scss */
+/* line 280, ../../app/stylesheets/partials/_base.scss */
 body.application #content input[type=submit] {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -491,7 +486,7 @@ body.application #content input[type=submit] {
   padding: 3px 20px;
   width: 100px;
 }
-/* line 297, ../../app/stylesheets/partials/_base.scss */
+/* line 293, ../../app/stylesheets/partials/_base.scss */
 body.application #content a.submit {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -524,13 +519,13 @@ body.application #content a.submit {
   text-align: center;
   width: 100px;
 }
-/* line 311, ../../app/stylesheets/partials/_base.scss */
+/* line 307, ../../app/stylesheets/partials/_base.scss */
 body.application #content .disable {
   background-color: #CCCCCC !important;
   border: 3px solid #999999 !important;
   color: #000000 !important;
 }
-/* line 317, ../../app/stylesheets/partials/_base.scss */
+/* line 313, ../../app/stylesheets/partials/_base.scss */
 body.application #content .porcentage-info {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -562,7 +557,7 @@ body.application #content .porcentage-info {
   text-align: center;
   width: 180px;
 }
-/* line 329, ../../app/stylesheets/partials/_base.scss */
+/* line 325, ../../app/stylesheets/partials/_base.scss */
 body.application #content .porcentage-info .advance {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -589,7 +584,7 @@ body.application #content .porcentage-info .advance {
   overflow: hidden;
   width: 100%;
 }
-/* line 336, ../../app/stylesheets/partials/_base.scss */
+/* line 332, ../../app/stylesheets/partials/_base.scss */
 body.application #content .porcentage-info .advance .stripes {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
@@ -616,7 +611,7 @@ body.application #content .porcentage-info .advance .stripes {
   height: 20px;
   max-width: 100%;
 }
-/* line 347, ../../app/stylesheets/partials/_base.scss */
+/* line 343, ../../app/stylesheets/partials/_base.scss */
 body.application #footer {
   background-color: #3B3B3B;
   font-size: 12px;
@@ -626,7 +621,7 @@ body.application #footer {
   padding-top: 12px;
   text-shadow: 1px 1px 1px #8F8F8F;
 }
-/* line 356, ../../app/stylesheets/partials/_base.scss */
+/* line 352, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links {
   margin: 10px auto 30px;
   overflow: hidden;
@@ -634,15 +629,15 @@ body.application #footer #footer-links {
   text-shadow: 1px 1px 1px #8F8F8F;
   width: 910px;
 }
-/* line 363, ../../app/stylesheets/partials/_base.scss */
+/* line 359, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links ul#footer-contact {
   float: left;
 }
-/* line 367, ../../app/stylesheets/partials/_base.scss */
+/* line 363, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links ul#footer-legal {
   float: right;
 }
-/* line 371, ../../app/stylesheets/partials/_base.scss */
+/* line 367, ../../app/stylesheets/partials/_base.scss */
 body.application #footer #footer-links li {
   color: #FFFFFF;
   float: left;
