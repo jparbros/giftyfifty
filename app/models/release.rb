@@ -11,7 +11,7 @@ class Release < ActiveRecord::Base
   
   attr_accessor :email
   
-  include Ebay::Types
+  #include Ebay::Types
   
   def paypal(email)
     if self.event.active?

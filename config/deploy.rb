@@ -21,7 +21,7 @@ namespace :deploy do
     invoke_command "cd #{deploy_to} && thin stop -C config/thin.yml"
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    invoke_command "cd #{deploy_to} && rvm 1.8.7@gifty && thin restart -C config/thin.yml"
+    invoke_command "cd #{deploy_to} && thin restart -C config/thin.yml"
   end
 end
 
