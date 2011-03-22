@@ -28,10 +28,14 @@ end
 namespace :thin do  
   %w(start stop restart).each do |action| 
   desc "#{action} the app's Thin Cluster"  
-    task action.to_sym, :roles => :app do  
-      run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -C #{deploy_to}/config/thin.yml" 
+    task action.to_sym, :roles => :app do
+      run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -C #{deploy_to}/current/config/thin.yml" 
     end
   end
+end
+
+before "deploy:update_code" do
+  run "cd #{deploy_to} && git reset --hard" 
 end
 
 require 'config/boot'
