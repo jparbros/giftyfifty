@@ -1,3 +1,8 @@
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"
+set :rvm_ruby_string, '1.8.7@gifty'
+set :rvm_type, :user
+
 set :application, "dev.giftyfifty.com:65000"
 role :app, application
 role :web, application

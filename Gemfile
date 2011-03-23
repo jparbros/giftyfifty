@@ -4,6 +4,7 @@ gem 'activemerchant'
 gem 'carmen'
 gem "carrierwave", "~>0.5.0"
 gem 'compass'
+gem 'capistrano'
 gem 'devise'
 #gem 'ebayapi'
 gem 'fbgraph'
@@ -23,7 +24,6 @@ gem 'xml-mapping','0.8.1'
 
 group :production do
   gem 'thin'
-  gem 'capistrano'
   gem 'memcache'
   gem 'memcache-client'
 end
