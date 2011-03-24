@@ -30,17 +30,28 @@ namespace :deploy do
   end
 end
 
+namespace :config do |variable|
+  task :database do
+    run "ln -s #{deploy_to}/shared/config/database.yml #{deploy_to}/current/config/database.yml "
+  end
+  task :thins do
+    run "ln -s #{deploy_to}/shared/config/thin.yml #{deploy_to}/current/config/thin.yml "
+  end
+end
+
 namespace :thin do  
   %w(start stop restart).each do |action| 
   desc "#{action} the app's Thin Cluster"  
     task action.to_sym, :roles => :app do
-      run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -C #{deploy_to}/current/config/thin.yml" 
+      #run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -p 3000 -e production -s 5 -P #{deploy_to}/current/tmp/pids/thin.pid -d" 
+      #run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -C #{deploy_to}/thin.yml" 
+      run "thin #{action} -C #{deploy_to}/current/config/thin.yml"
     end
   end
 end
 
-before "deploy:update_code" do
-  run "cd #{deploy_to} && git reset --hard" 
+after "deploy:symlink" do
+  find_and_execute_task("config:database")
 end
 
 require 'config/boot'
