@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
     if user.blank?
       user = User.create_by_provider(auth,params[:provider])
       debugger
-      if params[:gift_url] and params[:from_main] and !params[:gift_url].blank?
+      if (params[:gift_url] and params[:from_main] and !params[:gift_url].blank?) || session['gift_url']
         sign_in(:user, user)
-        redirect_to redirect_to_event_path('gift_url' => params[:gift_url])
+        redirect_to redirect_to_event_path('gift_url' => params[:gift_url] || session['gift_url'])
       else
         sign_in_and_redirect(:user, user)
       end
