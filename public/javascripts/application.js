@@ -4,14 +4,8 @@ $.fn.extend({
       giftInput = $('input#gift_url');
       gift_url = giftInput.attr('value');
       if ($.validUrl(gift_url)) {
-        if ( $(this).attr('id') === 'go-sign-in') {          
-          loginGiftInputs = $('#new_user #gift_url');
-          loginGiftInputs.attr('value',gift_url);
-          $('#login-box #providers a').each(function(){
-             _href = this.href;
-              this.href = _href + '?gift_url=' + gift_url
-          });
-          $.loginFancybox();
+        if ( $(this).attr('id') === 'go-sign-in') {     
+          $.loginFancybox();     
           return false;
         }
       } else {
@@ -69,7 +63,15 @@ $.extend({
         'height' : '350',
         'autoScale' : false,
         'autoDimensions' : false,
-        'href' : '/main_box'
+        'href' : '/main_box',
+        onComplete : function() {
+          loginGiftInputs = $('#new_user #hidden-gift_url');
+          loginGiftInputs.attr('value',gift_url);
+          $('#providers a').each(function(){
+             _href = this.href;
+              this.href = _href + '?gift_url=' + gift_url
+          });
+        }
     });
   },
   

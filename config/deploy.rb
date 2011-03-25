@@ -43,8 +43,6 @@ namespace :thin do
   %w(start stop restart).each do |action| 
   desc "#{action} the app's Thin Cluster"  
     task action.to_sym, :roles => :app do
-      #run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -p 3000 -e production -s 5 -P #{deploy_to}/current/tmp/pids/thin.pid -d" 
-      #run "cd #{deploy_to} && thin #{action} -c #{deploy_to}/current -C #{deploy_to}/thin.yml" 
       run "thin #{action} -C #{deploy_to}/current/config/thin.yml"
     end
   end
@@ -52,6 +50,7 @@ end
 
 after "deploy:symlink" do
   find_and_execute_task("config:database")
+  find_and_execute_task("config:thins")
 end
 
 require 'config/boot'
