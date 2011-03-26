@@ -69,7 +69,7 @@ $.extend({
           loginGiftInputs.attr('value',gift_url);
           $('#providers a').each(function(){
              _href = this.href;
-              this.href = _href + '?gift_url=' + gift_url + '&from_main=true'
+              this.href = _href + '?gift_url=' + escape(gift_url) + '&from_main=true'
           });
         }
     });
