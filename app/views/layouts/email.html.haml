@@ -6,7 +6,8 @@
   %body{:style => "margin: 0; padding: 0;font-family: arial;background-image:url(http://asset0.giftyfifty.com/images/body_bg.jpg);background-position:repeat; background-color:#767676;"}
     #gifty-body{:style => "background-image:url(http://asset0.giftyfifty.com/images/body_bg.jpg); background-position:repeat; background-color:#767676; color:#959595; font-family:Lucida; font-size:14px; width:800px"}
       #separator{:style => 'height:50px'}
-      #gifty-content{:style => "margin-top:50px; margin-left:auto; margin-right:auto; margin-bottom:50px; background:#f5f5f5; padding-top:80px; padding-right:45px; padding-bottom:10px; padding-left:45px; width:620px; -moz-border-radius: 10px; -webkit-border-radius: 10px;"}
-        = link_to(image_tag('http://asset2.giftyfifty.com/images/logo.png'), root_url(:host => 'www.giftyfifty.com'), :class => 'logo', :style => 'float:left; margin-top:-120px; margin-left:-90px; text-decoration:none; border:0 transparent')
-        = yield 
+      #gifty-content{:style => "margin-top:50px; margin-left:auto; margin-right:auto; margin-bottom:50px; background:#f5f5f5; padding-right:45px; padding-bottom:10px; padding-left:45px; padding-top:-10px;width:620px; -moz-border-radius: 10px; -webkit-border-radius: 10px;"}
+        = link_to(image_tag('http://asset2.giftyfifty.com/images/logo.png'), root_url(:host => 'www.giftyfifty.com'), :class => 'logo', :style => 'float:left; margin-top:-120px; margin-left:-90px; text-decoration:none; border:0;')
+        #text-content{:style => 'padding-top:80px;float:left'}
+          = yield 
       #separator{:style => 'height:50px'}
