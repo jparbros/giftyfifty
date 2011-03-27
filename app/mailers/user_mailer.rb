@@ -1,5 +1,6 @@
 class UserMailer < ActionMailer::Base
   layout 'email'
+  default :from => "no-reply@giftyfifty.com"
   
   def register_confirmation(user)
     @user = user
