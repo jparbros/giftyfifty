@@ -13,8 +13,6 @@ class ApplicationController < ActionController::Base
   end
   
   def redirect_to_new_event
-    puts "dddddd"
-    puts (session['gift_url'] and current_user and session['gift_url'] != 'Paste the URL of your Gift').to_s
     if session['gift_url'] and current_user and session['gift_url'] != 'Paste the URL of your Gift'
       gift_url = session['gift_url']
       session['gift_url'] = nil
