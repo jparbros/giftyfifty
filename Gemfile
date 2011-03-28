@@ -1,6 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'activemerchant'
+gem 'aws-s3'
+gem 'fog'
 gem 'carmen'
 gem "carrierwave", "~>0.5.0"
 gem 'compass'
