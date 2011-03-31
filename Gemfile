@@ -1,8 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'minitest'
 gem 'activemerchant'
-gem 'aws-s3'
-gem 'fog'
 gem 'carmen'
 gem "carrierwave", "~>0.5.0"
 gem 'compass'
@@ -10,6 +9,7 @@ gem 'capistrano'
 gem 'devise'
 #gem 'ebayapi'
 gem 'fbgraph'
+gem 'fog'
 gem 'hpricot'
 gem 'haml'
 gem 'hoptoad_notifier'

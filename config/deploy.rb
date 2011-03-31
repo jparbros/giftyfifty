@@ -37,6 +37,9 @@ namespace :config do |variable|
   task :thins do
     run "ln -s #{deploy_to}/shared/config/thin.yml #{deploy_to}/current/config/thin.yml "
   end
+  task :bundle do
+    run "bundle install --gemfile=#{deploy_to}/current/Gemfile"
+  end
 end
 
 namespace :thin do  
@@ -46,6 +49,10 @@ namespace :thin do
       run "thin #{action} -C #{deploy_to}/current/config/thin.yml"
     end
   end
+end
+
+after "deploy:update_code" do
+  find_and_execute_task("config:bundle")
 end
 
 after "deploy:symlink" do

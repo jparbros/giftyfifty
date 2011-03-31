@@ -35,10 +35,6 @@ GEM
     addressable (2.2.4)
     arel (1.0.1)
       activesupport (~> 3.0.0)
-    aws-s3 (0.6.2)
-      builder
-      mime-types
-      xml-simple
     bcrypt-ruby (2.1.4)
     braintree (2.8.0)
       builder
@@ -154,6 +150,7 @@ GEM
     mime-types (1.16)
     mini_magick (3.2)
       subexec (~> 0.0.4)
+    minitest (2.0.2)
     mocha (0.9.12)
     mongrel (1.1.5)
       cgi_multipart_eof_fix (>= 2.4)
@@ -275,7 +272,6 @@ GEM
     warden (1.0.3)
       rack (>= 1.0.0)
     xml-mapping (0.8.1)
-    xml-simple (1.0.15)
     xpath (0.1.3)
       nokogiri (~> 1.3)
 
@@ -284,7 +280,6 @@ PLATFORMS
 
 DEPENDENCIES
   activemerchant
-  aws-s3
   capistrano
   capybara
   carmen
@@ -304,6 +299,7 @@ DEPENDENCIES
   memcache
   memcache-client
   mini_magick
+  minitest
   mocha
   mongrel
   mysql
