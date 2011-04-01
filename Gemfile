@@ -25,7 +25,6 @@ gem 'twitter_oauth'
 gem 'xml-mapping','0.8.1'
 
 group :production do
-  gem 'thin'
   gem 'memcache'
   gem 'memcache-client'
 end
