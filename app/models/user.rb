@@ -119,8 +119,6 @@ class User < ActiveRecord::Base
     current_password.blank?
 
     result = if valid_password?(current_password) or current_password.blank?
-      avatar = params[:avatar]
-      params.delete(:avatar)
       update_attributes(params)
     else
       self.errors.add(:current_password, current_password.blank? ? :blank : :invalid)

@@ -56,11 +56,11 @@ Giftyfifty::Application.configure do
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
+    :address              => "smtp.sendgrid.net",
+    :port                 => 25,
     :domain               => 'giftyfifty.com',
-    :user_name            => 'donotreply@giftyfifty.com',
-    :password             => 'Donotreply1',
+    :user_name            => 'jorge@giftyfifty.com',
+    :password             => '271185',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
