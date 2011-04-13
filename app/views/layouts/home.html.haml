@@ -9,6 +9,7 @@
   %script{:src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
   <![endif]-->
   = javascript_include_tag 'base_packaged.js'
+  = hoptoad_javascript_notifier
   = javascript_tag do
     $(document).ready(function(){
     $.giftInputChangeText();
