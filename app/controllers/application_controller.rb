@@ -2,15 +2,9 @@ class ApplicationController < ActionController::Base
   include SslRequirement
   protect_from_forgery
 
-  before_filter :get_user, :get_event_url, :redirect_to_new_event, :initialize_growl, :locales
+  before_filter :get_user, :redirect_to_new_event, :initialize_growl, :locales
 
   private
-  
-  def get_event_url
-    if params[:gift_url] and params[:from_main] and !params[:gift_url].blank?
-      session['gift_url'] = params[:gift_url]
-    end
-  end
   
   def redirect_to_new_event
     if session['gift_url'] and current_user and session['gift_url'] != 'Paste the URL of your Gift'
