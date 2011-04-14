@@ -31,7 +31,8 @@ class EventsController < ApplicationController
         growl_message 'You have an event active. Not is possible create another until the actual event finish.'
         redirect_to event_url(current_user.active_events.first)
       end
-    rescue
+    rescue Exception => e
+      puts e.message
       growl_message 'The url is not valid.<br/> Please enter a url from any product of amazon or ebay.'
       redirect_to new_event_url
     end

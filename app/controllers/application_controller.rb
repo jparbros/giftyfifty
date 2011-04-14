@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_user, :redirect_to_new_event, :initialize_growl, :locales
 
   private
-  
+    
   def redirect_to_new_event
     if session['gift_url'] and current_user and session['gift_url'] != 'Paste the URL of your Gift'
       gift_url = session['gift_url']
