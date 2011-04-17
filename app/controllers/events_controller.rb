@@ -9,8 +9,8 @@ class EventsController < ApplicationController
   
   def create
     begin
-      if current_user.active_events.blank?
-        if current_user.new_events.blank?
+      if current_user.events_active.blank?
+        if current_user.events_new_events.blank?
           if params[:event]
             @event = current_user.events.new(params[:event])
           else
@@ -25,11 +25,11 @@ class EventsController < ApplicationController
           end
         else
           growl_message 'You have an new active. Not is possible create another until the actual event finish.'
-          redirect_to edit_event_url(current_user.new_events.first)
+          redirect_to edit_event_url(current_user.events_new_events.first)
         end
       else
         growl_message 'You have an event active. Not is possible create another until the actual event finish.'
-        redirect_to event_url(current_user.active_events.first)
+        redirect_to event_url(current_user.events_active.first)
       end
     rescue Exception => e
       puts e.message

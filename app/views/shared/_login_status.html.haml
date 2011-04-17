@@ -8,9 +8,9 @@
         = link_to(t(:my_profile), show_profile_path)
       %li
         = link_to(t(:my_settings), edit_user_registration_path,{:id => 'my-account-link'})
-      - unless current_user.active_events.blank?
+      - unless current_user.events_active.blank?
         %li
-          = link_to(t(:my_event),event_path(current_user.active_events.last))
+          = link_to(t(:my_event),event_path(current_user.events_active.last))
       %li#last
         = link_to(t(:logout),destroy_user_session_path)
   - else
