@@ -42,60 +42,83 @@ class User < ActiveRecord::Base
   # Callbacks
   #
   after_create :create_address
-  after_initialize :load_values
   
-  def load_values
-    @twitter_friends = []
-    @facebook_friends = []
-  end
+  #
+  # Delegates
+  #
+  delegate :share, :friends, :client, :to => :facebook_account, :allow_nil => true, :prefix => 'facebook'
+  delegate :share, :friends, :client, :to => :twitter_account, :allow_nil => true, :prefix => 'twitter'
+  delegate :active, :new_events, :to => :events, :allow_nil => true, :prefix => true
 
-  def self.create_by_provider(provider_info,provider)
-    password = generate_password
-    user = self.find_by_email(provider_info['extra']['user_hash']['email'] || '')
-    unless user
-      provider_name = provider_info['extra']['user_hash']['name'].split(' ')
-      user = self.new(:email => provider_info['extra']['user_hash']['email'] || "#{Time.now.to_i}@giftyfifty.com", :password => password, :password_confirmation => password, :first_name => provider_name.first, :last_name => provider_name.last)
-      user.remote_avatar_url = provider_info['extra']['user_hash']['profile_image_url']
-      user.save
-    else
-      return user
+  #
+  # Class methods
+  #
+  class << self
+    
+    def create_by_provider(provider_info,provider)
+      password = generate_password
+      user = find_by_email(provider_info['extra']['user_hash']['email'] || '')
+      unless user
+        provider_name = provider_info['extra']['user_hash']['name'].split(' ')
+        user = self.new(:email => provider_info['extra']['user_hash']['email'] || "#{Time.now.to_i}@giftyfifty.com", :password => password, :password_confirmation => password, :first_name => provider_name.first, :last_name => provider_name.last)
+        user.add_provider provider, provider_info
+        user.save
+      else
+        return user
+      end
+      user
     end
-    case provider
-      when 'twitter'
-        user.twitter_account = TwitterAccount.new({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
-        get_avatar(user, provider_info['extra']['user_hash']['profile_image_url'])
-      when 'facebook'
-        user.facebook_account = FacebookAccount.new({ :token => provider_info['credentials']['token']})
-        get_facebook_avatar(user)
+
+    def find_by_uid_provider(provider, uid)
+      case provider
+        when 'twitter'
+          self.by_twitter_uid(uid)
+        when 'facebook'
+          self.by_facebook_uid(uid)
+      end
     end
-    user
-  end
-  
-  def self.get_facebook_avatar(user)
-    id = user.facebook_client.selection.me.info!.id
-    res = open("http://graph.facebook.com/#{id}/picture?type=large")
-    get_avatar(user, res.base_uri.to_s)
-  end
-  
-  def self.get_avatar(user, image_url)
-    user.remote_avatar_url = image_url
-    user.save
-  end
-  
-  def self.find_by_uid_provider(provider, uid)
-    case provider
-    when 'twitter'
-      self.by_twitter_uid(uid)
-    when 'facebook'
-      self.by_facebook_uid(uid)
+     
+    private
+    
+    def generate_password(length = 10)
+      chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + %w{$ | !}
+      code = ""
+      1.upto(length) { |i| code << chars[rand(chars.size-1)] }
+      code
     end
   end
+  
+  #
+  # Instance Methods
+  #
   
   def create_address
     address = self.build_address
     address.save
   end
   
+  def add_provider(provider, provider_info)
+    case provider
+      when 'twitter'
+        twitter_account = TwitterAccount.new({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
+        get_avatar(provider_info['extra']['user_hash']['profile_image_url'])
+      when 'facebook'
+        facebook_account = FacebookAccount.new({ :token => provider_info['credentials']['token']})
+        get_facebook_avatar
+    end
+  end
+  
+  def get_facebook_avatar
+    id = facebook_client.selection.me.info!.id
+    res = open("http://graph.facebook.com/#{id}/picture?type=large")
+    get_avatar(res.base_uri.to_s)
+  end
+
+  def get_avatar(image_url)
+    remote_avatar_url = image_url
+    save
+  end
+
   def name
     if first_name.blank? and last_name.blank?
       'Welcome'
@@ -103,7 +126,7 @@ class User < ActiveRecord::Base
       first_name.to_s + ' ' + last_name.to_s
     end
   end
-  
+
   def password_required? 
     new_record? 
   end
@@ -134,14 +157,6 @@ class User < ActiveRecord::Base
     valid_password?(password) and self.email == email
   end
   
-  def active_events
-    events.active
-  end
-  
-  def new_events
-    events.new_events
-  end
-  
   def menu_image
     if self.avatar.menu.url
       self.avatar.menu.url
@@ -170,50 +185,8 @@ class User < ActiveRecord::Base
     !first_name.nil? && !last_name.nil? && !birthday.nil? && !username.nil? && !email.nil? && address.completed? && !first_name.blank? && !last_name.blank? && !birthday.blank? && !username.blank? && !email.blank?
   end
   
-  def facebook_client
-    self.facebook_account.client
-  end
-  
-  def twitter_client
-    self.twitter_account.client
-  end
-  
-  def facebook_friends
-    if facebook_account and @facebook_friends.empty?
-      facebook_client.selection.me.friends.info!.data.each do |friend|
-        @facebook_friends << Friend.new(:name => friend.name, :social_id => friend.id, :picture => "http://graph.facebook.com/#{friend.id}/picture", :social_type => 'facebook')
-      end
-    end
-    return @facebook_friends
-  end
-  
-  def twitter_friends
-    if twitter_account and @twitter_friends.empty?
-      twitter_client.followers.each do |follower|
-        @twitter_friends << Friend.new(:name => follower['name'], :social_id => follower['id'], :picture => follower['profile_image_url'], :social_type => 'twitter')
-      end
-    end
-    return @twitter_friends
-  end
-  
-  def twitter_share(message = 'Visit GiftyFifty.com')
-    twitter_client.update(message)
-  end
-  
-  def facebook_share(message = 'Visit GiftyFifty.com')
-    facebook_client.selection.me.feed.publish!(:message => message)
-  end
-  
   def share_donation_message(event)
     DONATION_SHARE.gsub('/friend/',event.user.name).gsub('/porcentage_donation/',event.porcentage_donation.to_s)
   end
   
-  private
-  
-  def self.generate_password(length = 10)
-    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a + %w{$ | !}
-    code = ""
-    1.upto(length) { |i| code << chars[rand(chars.size-1)] }
-    code
-  end
 end
