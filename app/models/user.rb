@@ -100,10 +100,11 @@ class User < ActiveRecord::Base
   def add_provider(provider, provider_info)
     case provider
       when 'twitter'
-        self.twitter_account.create({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
+        debugger
+        self.twitter_account = TwitterAccount.create({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
         get_avatar(provider_info['extra']['user_hash']['profile_image_url'])
       when 'facebook'
-        self.facebook_account.create({ :token => provider_info['credentials']['token']})
+        self.facebook_account = FacebookAccount.create({ :token => provider_info['credentials']['token']})
         get_facebook_avatar
     end
   end
