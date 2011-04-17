@@ -116,8 +116,8 @@ class User < ActiveRecord::Base
   end
 
   def get_avatar(image_url)
-    remote_avatar_url = image_url
-    save
+    self.remote_avatar_url = image_url
+    self.save
   end
 
   def name
