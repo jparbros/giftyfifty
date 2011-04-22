@@ -42,12 +42,12 @@ GEM
     capistrano (2.5.20)
       highline
       highline
-      net-scp (>= 1.0.0)
       net-scp
+      net-scp (>= 1.0.0)
       net-sftp
       net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
       net-ssh
+      net-ssh (>= 2.0.14)
       net-ssh-gateway
       net-ssh-gateway (>= 1.0.0)
     capybara (0.4.1.2)
@@ -96,7 +96,7 @@ GEM
       multipart-post (~> 1.1.0)
       rack (< 2, >= 1.1.0)
     fastthread (1.0.7)
-    fbgraph (1.7.1)
+    fbgraph (1.8.0)
       activesupport
       activesupport
       hashie
@@ -109,6 +109,8 @@ GEM
       oauth2
       rest-client
       rest-client
+      typhoeus
+      typhoeus
     ffi (1.0.7)
       rake (>= 0.8.7)
     fog (0.7.1)
@@ -263,6 +265,9 @@ GEM
       json (>= 1.1.9)
       mime-types (>= 1.16)
       oauth (>= 0.4.1)
+    typhoeus (0.2.4)
+      mime-types
+      mime-types
     tzinfo (0.3.25)
     warden (1.0.3)
       rack (>= 1.0.0)
