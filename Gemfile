@@ -28,6 +28,7 @@ gem 'xml-mapping','0.8.1'
 group :production do
   gem 'memcache'
   gem 'memcache-client'
+  gem 'thin'
 end
 
 group :test do
