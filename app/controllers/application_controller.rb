@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
   include SslRequirement
   protect_from_forgery
 
