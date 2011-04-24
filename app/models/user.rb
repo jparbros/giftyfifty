@@ -56,11 +56,11 @@ class User < ActiveRecord::Base
   class << self
     
     def create_by_provider(provider_info,provider)
-      password = generate_password
       user = find_by_email(provider_info['extra']['user_hash']['email'] || '')
       unless user
+        tmp_password = generate_password
         provider_name = provider_info['extra']['user_hash']['name'].split(' ')
-        user = self.new(:email => provider_info['extra']['user_hash']['email'] || "#{Time.now.to_i}@giftyfifty.com", :password => password, :password_confirmation => password, :first_name => provider_name.first, :last_name => provider_name.last)
+        user = self.new(:email => provider_info['extra']['user_hash']['email'] || "#{Time.now.to_i}@giftyfifty.com", :password => tmp_password, :password_confirmation => tmp_password, :first_name => provider_name.first, :last_name => provider_name.last)
         user.add_provider provider, provider_info
         user.save
       else
@@ -100,7 +100,6 @@ class User < ActiveRecord::Base
   def add_provider(provider, provider_info)
     case provider
       when 'twitter'
-        debugger
         self.twitter_account = TwitterAccount.create({:token => provider_info['credentials']['token'], :secret =>provider_info['credentials']['secret']})
         get_avatar(provider_info['extra']['user_hash']['profile_image_url'])
       when 'facebook'
