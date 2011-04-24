@@ -35,9 +35,9 @@ Giftyfifty::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
   config.action_controller.asset_host =  Proc.new { |source, request|
     if request.ssl?
-      "https://asset0.giftyfifty.com"
+      "https://assets0.giftyfifty.com"
     else
-      "http://asset#{source.hash % 4}.giftyfifty.com"
+      "http://assets#{source.hash % 4}.giftyfifty.com"
     end
   }
   
