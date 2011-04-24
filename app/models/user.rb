@@ -110,7 +110,8 @@ class User < ActiveRecord::Base
   end
   
   def get_facebook_avatar
-    res = open("http://graph.facebook.com/#{facebook_client.selection.me.info!.data.id}/picture?type=large")
+    fb_id = facebook_client.selection.me.info!.data.id
+    res = open("http://graph.facebook.com/#{fb_id}/picture?type=large")
     get_avatar(res.base_uri.to_s)
   end
 
