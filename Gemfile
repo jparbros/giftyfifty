@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'minitest'
 gem 'activemerchant'
 gem 'carmen'
 gem "carrierwave", "~>0.5.0"
@@ -9,7 +8,6 @@ gem 'capistrano'
 gem 'devise'
 #gem 'ebayapi'
 gem 'fbgraph'
-#gem 'facebook_oauth'
 gem 'fog'
 gem 'hpricot'
 gem 'haml'
@@ -20,7 +18,7 @@ gem 'mini_magick'
 gem "oauth"
 gem 'oauth2'
 gem "omniauth"
-gem 'rails', '3.0.1'
+gem 'rails'
 gem 'state_machine'
 gem 'twitter_oauth'
 gem 'xml-mapping','0.8.1'
@@ -28,6 +26,7 @@ gem 'xml-mapping','0.8.1'
 group :production do
   gem 'memcache'
   gem 'memcache-client'
+  gem 'dalli'
   gem 'thin'
 end
 
@@ -39,6 +38,7 @@ group :test do
   gem 'pickle'
   gem 'mocha'
   gem 'machinist'
+  gem 'minitest'
   gem 'rcov'
   gem 'shoulda'
 end
