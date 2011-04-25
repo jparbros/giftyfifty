@@ -1,8 +1,8 @@
 PAYPAL = {
-  :api_login => 'jparbr_1284421598_biz_api1.hotmail.com',
-  :api_password => 'GURZH3JQEVKC565V',
-  :api_signature => 'A-SMGdR2nxn64QVetldFLk6l1s8dAItq5d9Eb02CVuh9nY1rY404tVYa',
-  :api_url => 'api.sandbox.paypal.com'
+  :api_login => ENV['PAYPAL_API_LOGIN'],
+  :api_password => ENV['PAYPAL_API_PASSWORD'],
+  :api_signature => ENV['PAYPAL_API_SIGNATURE'],
+  :api_url => ENV['PAYPAL_API_HTTP']
 }
 
 require 'gifty/paypal'

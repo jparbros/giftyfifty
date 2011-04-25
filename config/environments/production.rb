@@ -56,11 +56,11 @@ Giftyfifty::Application.configure do
   
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.sendgrid.net",
+    :address              => ENV['SENDGRID_HTTP'],
     :port                 => 25,
     :domain               => 'giftyfifty.com',
-    :user_name            => 'jorge@giftyfifty.com',
-    :password             => '271185',
+    :user_name            => ENV['SENDGRID_USERNAME'],
+    :password             => ENV['SENDGRID_PASSWORD'],
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
